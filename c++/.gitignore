@@ -5,3 +5,5 @@
 /.vs/
 /jmtp.sdf
 /jmtp.opensdf
+/jmtp/Release/
+/jmtp/x64/
