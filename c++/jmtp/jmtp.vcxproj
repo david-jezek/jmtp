@@ -93,7 +93,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Program Files\Java\jdk1.6.0_05\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%JAVA_HOME%\include\win32;%JAVA_HOME%\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -142,6 +142,8 @@
   <ItemGroup>
     <ClCompile Include="src\Com.cpp" />
     <ClCompile Include="src\jmtp.cpp" />
+    <ClCompile Include="src\jmtp_implWin32_PortableDeviceObjectInputStream.cpp" />
+    <ClCompile Include="src\jmtp_implWin32_PortableDeviceObjectOutputStream.cpp" />
     <ClCompile Include="src\OleDate.cpp" />
     <ClCompile Include="src\PortableDevice.cpp" />
     <ClCompile Include="src\PortableDeviceContent.cpp" />
@@ -149,6 +151,7 @@
     <ClCompile Include="src\PortableDeviceManager.cpp" />
     <ClCompile Include="src\PortableDeviceProperties.cpp" />
     <ClCompile Include="src\PortableDevicePropVariantCollection.cpp" />
+    <ClCompile Include="src\PortableDeviceResource.cpp" />
     <ClCompile Include="src\PortableDeviceValues.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,14 +159,17 @@
     <ClInclude Include="src\be_derycke_pieter_com_COMReference.h" />
     <ClInclude Include="src\be_derycke_pieter_com_OleDate.h" />
     <ClInclude Include="src\jmtp.h" />
-    <ClInclude Include="src\jmtp_PortableDeviceContentImplWin32.h" />
-    <ClInclude Include="src\jmtp_PortableDeviceImplWin32.h" />
-    <ClInclude Include="src\jmtp_PortableDeviceKeyCollectionImplWin32.h" />
-    <ClInclude Include="src\jmtp_PortableDeviceManagerImplWin32.h" />
-    <ClInclude Include="src\jmtp_PortableDeviceManagerImplWin32_PortableDeviceIterator.h" />
-    <ClInclude Include="src\jmtp_PortableDevicePropertiesImplWin32.h" />
-    <ClInclude Include="src\jmtp_PortableDevicePropVariantCollectionImplWin32.h" />
-    <ClInclude Include="src\jmtp_PortableDeviceValuesImplWin32.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceContentImplWin32.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceImplWin32.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceKeyCollectionImplWin32.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceManagerImplWin32.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceObjectImplWin32.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceObjectInputStream.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceObjectOutputStream.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDevicePropertiesImplWin32.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDevicePropVariantCollectionImplWin32.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceResourcesImplWin32.h" />
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceValuesImplWin32.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

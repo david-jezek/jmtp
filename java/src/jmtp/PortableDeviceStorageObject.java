@@ -25,8 +25,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Date;
 
-public interface PortableDeviceStorageObject extends PortableDeviceFunctionalObject {
-	public PortableDeviceObject[] getChildObjects();
+public interface PortableDeviceStorageObject extends PortableDeviceFunctionalObject, PortableDeviceContainerObject {
 	public PortableDeviceAudioObject addAudioObject(File bestand, 
 			String artist, String title, BigInteger duration) throws FileNotFoundException, IOException;
     public PortableDeviceAudioObject addAudioObject(File file,
@@ -34,7 +33,6 @@ public interface PortableDeviceStorageObject extends PortableDeviceFunctionalObj
 			String genre, String album, Date releaseDate, int track) throws FileNotFoundException, IOException;
     public PortableDevicePlaylistObject createPlaylistObject(String name,
     		PortableDeviceObject[] references);
-	public PortableDeviceFolderObject createFolderObject(String name);
 	
 	public String getFileSystemType();
 	public String getDescription();

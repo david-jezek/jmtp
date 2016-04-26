@@ -22,6 +22,11 @@
 #include <objbase.h>
 #include <atlbase.h>
 #include <jni.h>
+#include <PortableDeviceApi.h>
+#include <PortableDevice.h>
+
+#include <wrl/client.h>
+using namespace Microsoft::WRL;
 
 void ThrowCOMException(JNIEnv* env, LPWSTR message, HRESULT hr);
 
@@ -34,10 +39,19 @@ PROPERTYKEY ConvertJavaToPropertyKey(JNIEnv* env, jobject jKey);
 jobject ConvertPropVariantToJava(JNIEnv* env, PROPVARIANT pv);
 PROPVARIANT ConvertJavaToPropVariant(JNIEnv* env, jobject jobjPropVariant);
 
+jobject CreateJavaValueKeyPair(JNIEnv* env, PROPERTYKEY key, PROPVARIANT pv);
+
 ULONGLONG ConvertJavaToUnsignedLongLong(JNIEnv* env, jobject jobjBigInteger);
 jobject ConvertUnsignedLongLongToJava(JNIEnv* env, ULONGLONG number);
 
 jobject RetrieveCOMReferenceFromCOMReferenceable(JNIEnv* env, jobject jobjCOMReferenceable);
 jlong ConvertComReferenceToPointer(JNIEnv* env, jobject jobjReference);
+void* RetrievePointerFromCOMReferenceable(JNIEnv* env, jobject jobjCOMReferenceable);
 jlong GetComReferencePointer(JNIEnv* env, jobject obj, const char* fieldName);
 jlong GetComReferencePointerFromComReferenceable(JNIEnv* env, jobject jobjCOMReferenceable);
+jobject CreateReferencableObject(JNIEnv* env, const char *className, IUnknown *ref);
+jobject CreateReferenceToKeyCollection(JNIEnv* env, IPortableDeviceKeyCollection *ref);
+jobject CreateReferenceToValues(JNIEnv* env, IPortableDeviceValues *ref);
+jstring NewJStringFromWCHAR(JNIEnv* env, LPWSTR str);
+LPWSTR ConvertJavaStringToWCHAR(JNIEnv* env, jstring objectString);
+void CheckSuccess(JNIEnv* env, HRESULT hr, LPWSTR exceptionMessage);

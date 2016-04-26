@@ -23,11 +23,12 @@ package jmtp;
  *
  * @author Pieter De Rycke
  */
-public interface PortableDevice {
+public interface PortableDevice extends AutoCloseable {
     
     public String getFriendlyName();
     public String getManufacturer();
     public String getDescription();
+    public String getId();
     public void open(String appName, int appMajor, int appMinor, int appRevision);
     public void open();
     public void close();
@@ -43,4 +44,5 @@ public interface PortableDevice {
     public PortableDeviceType getType();
     public PowerSource getPowerSource();
     public boolean isNonConsumableSupported();
+    public PortableDeviceObject findObjectById(String id);
 }

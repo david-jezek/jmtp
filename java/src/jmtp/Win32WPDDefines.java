@@ -1,3 +1,22 @@
+/*
+ * Original work Copyright 2007 Pieter De Rycke
+ * Modified work Copyright 2015 David Jezek
+ * 
+ * This file is part of JMTP.
+ * 
+ * JTMP is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as 
+ * published by the Free Software Foundation, either version 3 of 
+ * the License, or any later version.
+ * 
+ * JMTP is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU LesserGeneral Public 
+ * License along with JMTP. If not, see <http://www.gnu.org/licenses/>.
+ */
 package jmtp;
 
 //PLACE GENERATED IMPOPRT HERE BEGIN
@@ -5,6 +24,8 @@ import be.derycke.pieter.com.Guid;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 //PLACE GENERATED IMPOPRT HERE END
 
 public class Win32WPDDefines {
@@ -21,1427 +42,2620 @@ public class Win32WPDDefines {
 	//MANUALY ADDED BLOCK END
 
 	//PLACE GENERATED CODE HERE BEGIN
-	static final Guid GUID_DEVINTERFACE_WPD = new Guid(0x6AC27878l, 0xA6FA, 0x4155, new short[]{0xBA, 0x85, 0xF9, 0x8F, 0x49, 0x1D, 0x4F, 0x33});
-	static final Guid GUID_DEVINTERFACE_WPD_PRIVATE = new Guid(0xBA0C718Fl, 0x4DED, 0x49B7, new short[]{0xBD, 0xD3, 0xFA, 0xBE, 0x28, 0x66, 0x12, 0x11});
-	static final Guid GUID_DEVINTERFACE_WPD_SERVICE = new Guid(0x9EF44F80l, 0x3D64, 0x4246, new short[]{0xA6, 0xAA, 0x20, 0x6F, 0x32, 0x8D, 0x1E, 0xDC});
-	static final String WPD_DEVICE_OBJECT_ID = "DEVICE";
-	static final String PORTABLE_DEVICE_TYPE = "PortableDeviceType";
-	static final String PORTABLE_DEVICE_ICON = "Icons";
-	static final String PORTABLE_DEVICE_NAMESPACE_TIMEOUT = "PortableDeviceNameSpaceTimeout";
-	static final String PORTABLE_DEVICE_NAMESPACE_EXCLUDE_FROM_SHELL = "PortableDeviceNameSpaceExcludeFromShell";
-	static final String PORTABLE_DEVICE_NAMESPACE_THUMBNAIL_CONTENT_TYPES = "PortableDeviceNameSpaceThumbnailContentTypes";
-	static final String PORTABLE_DEVICE_IS_MASS_STORAGE = "PortableDeviceIsMassStorage";
-	static final String PORTABLE_DEVICE_DRM_SCHEME_WMDRM10_PD = "WMDRM10-PD";
-	static final String PORTABLE_DEVICE_DRM_SCHEME_PDDRM = "PDDRM";
-	static final Guid WPD_EVENT_NOTIFICATION = new Guid(0x2BA2E40Al, 0x6B4C, 0x4295, new short[]{0xBB, 0x43, 0x26, 0x32, 0x2B, 0x99, 0xAE, 0xB2});
-	static final Guid WPD_EVENT_OBJECT_ADDED = new Guid(0xA726DA95l, 0xE207, 0x4B02, new short[]{0x8D, 0x44, 0xBE, 0xF2, 0xE8, 0x6C, 0xBF, 0xFC});
-	static final Guid WPD_EVENT_OBJECT_REMOVED = new Guid(0xBE82AB88l, 0xA52C, 0x4823, new short[]{0x96, 0xE5, 0xD0, 0x27, 0x26, 0x71, 0xFC, 0x38});
-	static final Guid WPD_EVENT_OBJECT_UPDATED = new Guid(0x1445A759l, 0x2E01, 0x485D, new short[]{0x9F, 0x27, 0xFF, 0x07, 0xDA, 0xE6, 0x97, 0xAB});
-	static final Guid WPD_EVENT_DEVICE_RESET = new Guid(0x7755CF53l, 0xC1ED, 0x44F3, new short[]{0xB5, 0xA2, 0x45, 0x1E, 0x2C, 0x37, 0x6B, 0x27});
-	static final Guid WPD_EVENT_DEVICE_CAPABILITIES_UPDATED = new Guid(0x36885AA1l, 0xCD54, 0x4DAA, new short[]{0xB3, 0xD0, 0xAF, 0xB3, 0xE0, 0x3F, 0x59, 0x99});
-	static final Guid WPD_EVENT_STORAGE_FORMAT = new Guid(0x3782616Bl, 0x22BC, 0x4474, new short[]{0xA2, 0x51, 0x30, 0x70, 0xF8, 0xD3, 0x88, 0x57});
-	static final Guid WPD_EVENT_OBJECT_TRANSFER_REQUESTED = new Guid(0x8D16A0A1l, 0xF2C6, 0x41DA, new short[]{0x8F, 0x19, 0x5E, 0x53, 0x72, 0x1A, 0xDB, 0xF2});
-	static final Guid WPD_EVENT_DEVICE_REMOVED = new Guid(0xE4CBCA1Bl, 0x6918, 0x48B9, new short[]{0x85, 0xEE, 0x02, 0xBE, 0x7C, 0x85, 0x0A, 0xF9});
-	static final Guid WPD_EVENT_SERVICE_METHOD_COMPLETE = new Guid(0x8A33F5F8l, 0x0ACC, 0x4D9B, new short[]{0x9C, 0xC4, 0x11, 0x2D, 0x35, 0x3B, 0x86, 0xCA});
-	static final Guid WPD_CONTENT_TYPE_FUNCTIONAL_OBJECT = new Guid(0x99ED0160l, 0x17FF, 0x4C44, new short[]{0x9D, 0x98, 0x1D, 0x7A, 0x6F, 0x94, 0x19, 0x21});
-	static final Guid WPD_CONTENT_TYPE_FOLDER = new Guid(0x27E2E392l, 0xA111, 0x48E0, new short[]{0xAB, 0x0C, 0xE1, 0x77, 0x05, 0xA0, 0x5F, 0x85});
-	static final Guid WPD_CONTENT_TYPE_IMAGE = new Guid(0xef2107d5l, 0xa52a, 0x4243, new short[]{0xa2, 0x6b, 0x62, 0xd4, 0x17, 0x6d, 0x76, 0x03});
-	static final Guid WPD_CONTENT_TYPE_DOCUMENT = new Guid(0x680ADF52l, 0x950A, 0x4041, new short[]{0x9B, 0x41, 0x65, 0xE3, 0x93, 0x64, 0x81, 0x55});
-	static final Guid WPD_CONTENT_TYPE_CONTACT = new Guid(0xEABA8313l, 0x4525, 0x4707, new short[]{0x9F, 0x0E, 0x87, 0xC6, 0x80, 0x8E, 0x94, 0x35});
-	static final Guid WPD_CONTENT_TYPE_CONTACT_GROUP = new Guid(0x346B8932l, 0x4C36, 0x40D8, new short[]{0x94, 0x15, 0x18, 0x28, 0x29, 0x1F, 0x9D, 0xE9});
-	static final Guid WPD_CONTENT_TYPE_AUDIO = new Guid(0x4AD2C85El, 0x5E2D, 0x45E5, new short[]{0x88, 0x64, 0x4F, 0x22, 0x9E, 0x3C, 0x6C, 0xF0});
-	static final Guid WPD_CONTENT_TYPE_VIDEO = new Guid(0x9261B03Cl, 0x3D78, 0x4519, new short[]{0x85, 0xE3, 0x02, 0xC5, 0xE1, 0xF5, 0x0B, 0xB9});
-	static final Guid WPD_CONTENT_TYPE_TELEVISION = new Guid(0x60A169CFl, 0xF2AE, 0x4E21, new short[]{0x93, 0x75, 0x96, 0x77, 0xF1, 0x1C, 0x1C, 0x6E});
-	static final Guid WPD_CONTENT_TYPE_PLAYLIST = new Guid(0x1A33F7E4l, 0xAF13, 0x48F5, new short[]{0x99, 0x4E, 0x77, 0x36, 0x9D, 0xFE, 0x04, 0xA3});
-	static final Guid WPD_CONTENT_TYPE_MIXED_CONTENT_ALBUM = new Guid(0x00F0C3ACl, 0xA593, 0x49AC, new short[]{0x92, 0x19, 0x24, 0xAB, 0xCA, 0x5A, 0x25, 0x63});
-	static final Guid WPD_CONTENT_TYPE_AUDIO_ALBUM = new Guid(0xAA18737El, 0x5009, 0x48FA, new short[]{0xAE, 0x21, 0x85, 0xF2, 0x43, 0x83, 0xB4, 0xE6});
-	static final Guid WPD_CONTENT_TYPE_IMAGE_ALBUM = new Guid(0x75793148l, 0x15F5, 0x4A30, new short[]{0xA8, 0x13, 0x54, 0xED, 0x8A, 0x37, 0xE2, 0x26});
-	static final Guid WPD_CONTENT_TYPE_VIDEO_ALBUM = new Guid(0x012B0DB7l, 0xD4C1, 0x45D6, new short[]{0xB0, 0x81, 0x94, 0xB8, 0x77, 0x79, 0x61, 0x4F});
-	static final Guid WPD_CONTENT_TYPE_MEMO = new Guid(0x9CD20ECFl, 0x3B50, 0x414F, new short[]{0xA6, 0x41, 0xE4, 0x73, 0xFF, 0xE4, 0x57, 0x51});
-	static final Guid WPD_CONTENT_TYPE_EMAIL = new Guid(0x8038044Al, 0x7E51, 0x4F8F, new short[]{0x88, 0x3D, 0x1D, 0x06, 0x23, 0xD1, 0x45, 0x33});
-	static final Guid WPD_CONTENT_TYPE_APPOINTMENT = new Guid(0x0FED060El, 0x8793, 0x4B1E, new short[]{0x90, 0xC9, 0x48, 0xAC, 0x38, 0x9A, 0xC6, 0x31});
-	static final Guid WPD_CONTENT_TYPE_TASK = new Guid(0x63252F2Cl, 0x887F, 0x4CB6, new short[]{0xB1, 0xAC, 0xD2, 0x98, 0x55, 0xDC, 0xEF, 0x6C});
-	static final Guid WPD_CONTENT_TYPE_PROGRAM = new Guid(0xD269F96Al, 0x247C, 0x4BFF, new short[]{0x98, 0xFB, 0x97, 0xF3, 0xC4, 0x92, 0x20, 0xE6});
-	static final Guid WPD_CONTENT_TYPE_GENERIC_FILE = new Guid(0x0085E0A6l, 0x8D34, 0x45D7, new short[]{0xBC, 0x5C, 0x44, 0x7E, 0x59, 0xC7, 0x3D, 0x48});
-	static final Guid WPD_CONTENT_TYPE_CALENDAR = new Guid(0xA1FD5967l, 0x6023, 0x49A0, new short[]{0x9D, 0xF1, 0xF8, 0x06, 0x0B, 0xE7, 0x51, 0xB0});
-	static final Guid WPD_CONTENT_TYPE_GENERIC_MESSAGE = new Guid(0xE80EAAF8l, 0xB2DB, 0x4133, new short[]{0xB6, 0x7E, 0x1B, 0xEF, 0x4B, 0x4A, 0x6E, 0x5F});
-	static final Guid WPD_CONTENT_TYPE_NETWORK_ASSOCIATION = new Guid(0x031DA7EEl, 0x18C8, 0x4205, new short[]{0x84, 0x7E, 0x89, 0xA1, 0x12, 0x61, 0xD0, 0xF3});
-	static final Guid WPD_CONTENT_TYPE_CERTIFICATE = new Guid(0xDC3876E8l, 0xA948, 0x4060, new short[]{0x90, 0x50, 0xCB, 0xD7, 0x7E, 0x8A, 0x3D, 0x87});
-	static final Guid WPD_CONTENT_TYPE_WIRELESS_PROFILE = new Guid(0x0BAC070Al, 0x9F5F, 0x4DA4, new short[]{0xA8, 0xF6, 0x3D, 0xE4, 0x4D, 0x68, 0xFD, 0x6C});
-	static final Guid WPD_CONTENT_TYPE_MEDIA_CAST = new Guid(0x5E88B3CCl, 0x3E65, 0x4E62, new short[]{0xBF, 0xFF, 0x22, 0x94, 0x95, 0x25, 0x3A, 0xB0});
-	static final Guid WPD_CONTENT_TYPE_SECTION = new Guid(0x821089F5l, 0x1D91, 0x4DC9, new short[]{0xBE, 0x3C, 0xBB, 0xB1, 0xB3, 0x5B, 0x18, 0xCE});
-	static final Guid WPD_CONTENT_TYPE_UNSPECIFIED = new Guid(0x28D8D31El, 0x249C, 0x454E, new short[]{0xAA, 0xBC, 0x34, 0x88, 0x31, 0x68, 0xE6, 0x34});
-	static final Guid WPD_CONTENT_TYPE_ALL = new Guid(0x80E170D2l, 0x1055, 0x4A3E, new short[]{0xB9, 0x52, 0x82, 0xCC, 0x4F, 0x8A, 0x86, 0x89});
-	static final Guid WPD_FUNCTIONAL_CATEGORY_DEVICE = new Guid(0x08EA466Bl, 0xE3A4, 0x4336, new short[]{0xA1, 0xF3, 0xA4, 0x4D, 0x2B, 0x5C, 0x43, 0x8C});
-	static final Guid WPD_FUNCTIONAL_CATEGORY_STORAGE = new Guid(0x23F05BBCl, 0x15DE, 0x4C2A, new short[]{0xA5, 0x5B, 0xA9, 0xAF, 0x5C, 0xE4, 0x12, 0xEF});
-	static final Guid WPD_FUNCTIONAL_CATEGORY_STILL_IMAGE_CAPTURE = new Guid(0x613CA327l, 0xAB93, 0x4900, new short[]{0xB4, 0xFA, 0x89, 0x5B, 0xB5, 0x87, 0x4B, 0x79});
-	static final Guid WPD_FUNCTIONAL_CATEGORY_AUDIO_CAPTURE = new Guid(0x3F2A1919l, 0xC7C2, 0x4A00, new short[]{0x85, 0x5D, 0xF5, 0x7C, 0xF0, 0x6D, 0xEB, 0xBB});
-	static final Guid WPD_FUNCTIONAL_CATEGORY_VIDEO_CAPTURE = new Guid(0xE23E5F6Bl, 0x7243, 0x43AA, new short[]{0x8D, 0xF1, 0x0E, 0xB3, 0xD9, 0x68, 0xA9, 0x18});
-	static final Guid WPD_FUNCTIONAL_CATEGORY_SMS = new Guid(0x0044A0B1l, 0xC1E9, 0x4AFD, new short[]{0xB3, 0x58, 0xA6, 0x2C, 0x61, 0x17, 0xC9, 0xCF});
-	static final Guid WPD_FUNCTIONAL_CATEGORY_RENDERING_INFORMATION = new Guid(0x08600BA4l, 0xA7BA, 0x4A01, new short[]{0xAB, 0x0E, 0x00, 0x65, 0xD0, 0xA3, 0x56, 0xD3});
-	static final Guid WPD_FUNCTIONAL_CATEGORY_NETWORK_CONFIGURATION = new Guid(0x48F4DB72l, 0x7C6A, 0x4AB0, new short[]{0x9E, 0x1A, 0x47, 0x0E, 0x3C, 0xDB, 0xF2, 0x6A});
-	static final Guid WPD_FUNCTIONAL_CATEGORY_ALL = new Guid(0x2D8A6512l, 0xA74C, 0x448E, new short[]{0xBA, 0x8A, 0xF4, 0xAC, 0x07, 0xC4, 0x93, 0x99});
-	static final Guid WPD_OBJECT_FORMAT_ICON = new Guid(0x077232EDl, 0x102C, 0x4638, new short[]{0x9C, 0x22, 0x83, 0xF1, 0x42, 0xBF, 0xC8, 0x22});
-	static final Guid WPD_OBJECT_FORMAT_M4A = new Guid(0x30ABA7ACl, 0x6FFD, 0x4C23, new short[]{0xA3, 0x59, 0x3E, 0x9B, 0x52, 0xF3, 0xF1, 0xC8});
-	static final Guid WPD_OBJECT_FORMAT_NETWORK_ASSOCIATION = new Guid(0xB1020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_X509V3CERTIFICATE = new Guid(0xB1030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MICROSOFT_WFC = new Guid(0xB1040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_3GPA = new Guid(0xE5172730l, 0xF971, 0x41EF, new short[]{0xA1, 0x0B, 0x22, 0x71, 0xA0, 0x01, 0x9D, 0x7A});
-	static final Guid WPD_OBJECT_FORMAT_3G2A = new Guid(0x1A11202Dl, 0x8759, 0x4E34, new short[]{0xBA, 0x5E, 0xB1, 0x21, 0x10, 0x87, 0xEE, 0xE4});
-	static final Guid WPD_OBJECT_FORMAT_ALL = new Guid(0xC1F62EB2l, 0x4BB3, 0x479C, new short[]{0x9C, 0xFA, 0x05, 0xB5, 0xF3, 0xA5, 0x7B, 0x22});
-	static final Guid WPD_CATEGORY_NULL = new Guid(0x00000000l, 0x0000, 0x0000, new short[]{0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00});
-	static final PropertyKey WPD_PROPERTY_NULL = new PropertyKey(WPD_CATEGORY_NULL , 0);
-	static final Guid WPD_OBJECT_PROPERTIES_V1 = new Guid(0xEF6B490Dl, 0x5CD8, 0x437A, new short[]{0xAF, 0xFC, 0xDA, 0x8B, 0x60, 0xEE, 0x4A, 0x3C});
-	static final PropertyKey WPD_OBJECT_CONTENT_TYPE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_OBJECT_REFERENCES = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 14);
-	static final PropertyKey WPD_OBJECT_CONTAINER_FUNCTIONAL_OBJECT_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 23);
-	static final PropertyKey WPD_OBJECT_GENERATE_THUMBNAIL_FROM_RESOURCE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 24);
-	static final PropertyKey WPD_OBJECT_HINT_LOCATION_DISPLAY_NAME = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 25);
-	static final Guid WPD_OBJECT_PROPERTIES_V2 = new Guid(0x0373CD3Dl, 0x4A46, 0x40D7, new short[]{0xB4, 0xD8, 0x73, 0xE8, 0xDA, 0x74, 0xE7, 0x75});
-	static final PropertyKey WPD_OBJECT_SUPPORTED_UNITS = new PropertyKey(WPD_OBJECT_PROPERTIES_V2 , 2);
-	static final Guid WPD_FUNCTIONAL_OBJECT_PROPERTIES_V1 = new Guid(0x8F052D93l, 0xABCA, 0x4FC5, new short[]{0xA5, 0xAC, 0xB0, 0x1D, 0xF4, 0xDB, 0xE5, 0x98});
-	static final PropertyKey WPD_FUNCTIONAL_OBJECT_CATEGORY = new PropertyKey(WPD_FUNCTIONAL_OBJECT_PROPERTIES_V1 , 2);
-	static final Guid WPD_STORAGE_OBJECT_PROPERTIES_V1 = new Guid(0x01A3057Al, 0x74D6, 0x4E80, new short[]{0xBE, 0xA7, 0xDC, 0x4C, 0x21, 0x2C, 0xE5, 0x0A});
-	static final PropertyKey WPD_STORAGE_TYPE = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_STORAGE_FILE_SYSTEM_TYPE = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_STORAGE_CAPACITY = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_STORAGE_FREE_SPACE_IN_BYTES = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_STORAGE_FREE_SPACE_IN_OBJECTS = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_STORAGE_DESCRIPTION = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_STORAGE_SERIAL_NUMBER = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_STORAGE_MAX_OBJECT_SIZE = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_STORAGE_CAPACITY_IN_OBJECTS = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_STORAGE_ACCESS_CAPABILITY = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 11);
-	static final Guid WPD_NETWORK_ASSOCIATION_PROPERTIES_V1 = new Guid(0xE4C93C1Fl, 0xB203, 0x43F1, new short[]{0xA1, 0x00, 0x5A, 0x07, 0xD1, 0x1B, 0x02, 0x74});
-	static final PropertyKey WPD_NETWORK_ASSOCIATION_HOST_NETWORK_IDENTIFIERS = new PropertyKey(WPD_NETWORK_ASSOCIATION_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_NETWORK_ASSOCIATION_X509V3SEQUENCE = new PropertyKey(WPD_NETWORK_ASSOCIATION_PROPERTIES_V1 , 3);
-	static final Guid WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 = new Guid(0x58C571ECl, 0x1BCB, 0x42A7, new short[]{0x8A, 0xC5, 0xBB, 0x29, 0x15, 0x73, 0xA2, 0x60});
-	static final PropertyKey WPD_STILL_IMAGE_CAPTURE_RESOLUTION = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_STILL_IMAGE_CAPTURE_FORMAT = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_STILL_IMAGE_COMPRESSION_SETTING = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_STILL_IMAGE_WHITE_BALANCE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_STILL_IMAGE_RGB_GAIN = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_STILL_IMAGE_FNUMBER = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_STILL_IMAGE_FOCAL_LENGTH = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_STILL_IMAGE_FOCUS_DISTANCE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_STILL_IMAGE_FOCUS_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_METERING_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 11);
-	static final PropertyKey WPD_STILL_IMAGE_FLASH_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 12);
-	static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_TIME = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 13);
-	static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_PROGRAM_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 14);
-	static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_INDEX = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 15);
-	static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_BIAS_COMPENSATION = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 16);
-	static final PropertyKey WPD_STILL_IMAGE_CAPTURE_DELAY = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 17);
-	static final PropertyKey WPD_STILL_IMAGE_CAPTURE_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 18);
-	static final PropertyKey WPD_STILL_IMAGE_CONTRAST = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 19);
-	static final PropertyKey WPD_STILL_IMAGE_SHARPNESS = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 20);
-	static final PropertyKey WPD_STILL_IMAGE_DIGITAL_ZOOM = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 21);
-	static final PropertyKey WPD_STILL_IMAGE_EFFECT_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 22);
-	static final PropertyKey WPD_STILL_IMAGE_BURST_NUMBER = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 23);
-	static final PropertyKey WPD_STILL_IMAGE_BURST_INTERVAL = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 24);
-	static final PropertyKey WPD_STILL_IMAGE_TIMELAPSE_NUMBER = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 25);
-	static final PropertyKey WPD_STILL_IMAGE_TIMELAPSE_INTERVAL = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 26);
-	static final PropertyKey WPD_STILL_IMAGE_FOCUS_METERING_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 27);
-	static final PropertyKey WPD_STILL_IMAGE_UPLOAD_URL = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 28);
-	static final PropertyKey WPD_STILL_IMAGE_ARTIST = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 29);
-	static final PropertyKey WPD_STILL_IMAGE_CAMERA_MODEL = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 30);
-	static final PropertyKey WPD_STILL_IMAGE_CAMERA_MANUFACTURER = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 31);
-	static final Guid WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1 = new Guid(0xC53D039Fl, 0xEE23, 0x4A31, new short[]{0x85, 0x90, 0x76, 0x39, 0x87, 0x98, 0x70, 0xB4});
-	static final PropertyKey WPD_RENDERING_INFORMATION_PROFILES = new PropertyKey(WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_RENDERING_INFORMATION_PROFILE_ENTRY_TYPE = new PropertyKey(WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_RENDERING_INFORMATION_PROFILE_ENTRY_CREATABLE_RESOURCES = new PropertyKey(WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1 , 4);
-	static final Guid WPD_CLIENT_INFORMATION_PROPERTIES_V1 = new Guid(0x204D9F0Cl, 0x2292, 0x4080, new short[]{0x9F, 0x42, 0x40, 0x66, 0x4E, 0x70, 0xF8, 0x59});
-	static final PropertyKey WPD_CLIENT_NAME = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_CLIENT_MAJOR_VERSION = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_CLIENT_MINOR_VERSION = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_CLIENT_REVISION = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_CLIENT_WMDRM_APPLICATION_PRIVATE_KEY = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_CLIENT_WMDRM_APPLICATION_CERTIFICATE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_CLIENT_SECURITY_QUALITY_OF_SERVICE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_CLIENT_DESIRED_ACCESS = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_CLIENT_SHARE_MODE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_CLIENT_EVENT_COOKIE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 11);
-	static final PropertyKey WPD_CLIENT_MINIMUM_RESULTS_BUFFER_SIZE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 12);
-	static final PropertyKey WPD_CLIENT_MANUAL_CLOSE_ON_DISCONNECT = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 13);
-	static final Guid WPD_PROPERTY_ATTRIBUTES_V1 = new Guid(0xAB7943D8l, 0x6332, 0x445F, new short[]{0xA0, 0x0D, 0x8D, 0x5E, 0xF1, 0xE9, 0x6F, 0x37});
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_FORM = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 2);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_CAN_READ = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 3);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_CAN_WRITE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 4);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_CAN_DELETE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 5);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_DEFAULT_VALUE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 6);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_FAST_PROPERTY = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 7);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_RANGE_MIN = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 8);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_RANGE_MAX = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 9);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_RANGE_STEP = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 10);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_ENUMERATION_ELEMENTS = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 11);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_REGULAR_EXPRESSION = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 12);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_MAX_SIZE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 13);
-	static final Guid WPD_PROPERTY_ATTRIBUTES_V2 = new Guid(0x5D9DA160l, 0x74AE, 0x43CC, new short[]{0x85, 0xA9, 0xFE, 0x55, 0x5A, 0x80, 0x79, 0x8E});
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_NAME = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V2 , 2);
-	static final PropertyKey WPD_PROPERTY_ATTRIBUTE_VARTYPE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V2 , 3);
-	static final Guid WPD_CLASS_EXTENSION_OPTIONS_V1 = new Guid(0x6309FFEFl, 0xA87C, 0x4CA7, new short[]{0x84, 0x34, 0x79, 0x75, 0x76, 0xE4, 0x0A, 0x96});
-	static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_SUPPORTED_CONTENT_TYPES = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V1 , 2);
-	static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_DONT_REGISTER_WPD_DEVICE_INTERFACE = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V1 , 3);
-	static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_REGISTER_WPD_PRIVATE_DEVICE_INTERFACE = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V1 , 4);
-	static final Guid WPD_CLASS_EXTENSION_OPTIONS_V2 = new Guid(0x3E3595DAl, 0x4D71, 0x49FE, new short[]{0xA0, 0xB4, 0xD4, 0x40, 0x6C, 0x3A, 0xE9, 0x3F});
-	static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_MULTITRANSPORT_MODE = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V2 , 2);
-	static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_DEVICE_IDENTIFICATION_VALUES = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V2 , 3);
-	static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_TRANSPORT_BANDWIDTH = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V2 , 4);
-	static final Guid WPD_CLASS_EXTENSION_OPTIONS_V3 = new Guid(0x65C160F8l, 0x1367, 0x4CE2, new short[]{0x93, 0x9D, 0x83, 0x10, 0x83, 0x9F, 0x0D, 0x30});
-	static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_SILENCE_AUTOPLAY = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V3 , 2);
-	static final Guid WPD_RESOURCE_ATTRIBUTES_V1 = new Guid(0x1EB6F604l, 0x9278, 0x429F, new short[]{0x93, 0xCC, 0x5B, 0xB8, 0xC0, 0x66, 0x56, 0xB6});
-	static final PropertyKey WPD_RESOURCE_ATTRIBUTE_TOTAL_SIZE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 2);
-	static final PropertyKey WPD_RESOURCE_ATTRIBUTE_CAN_READ = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 3);
-	static final PropertyKey WPD_RESOURCE_ATTRIBUTE_CAN_WRITE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 4);
-	static final PropertyKey WPD_RESOURCE_ATTRIBUTE_CAN_DELETE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 5);
-	static final PropertyKey WPD_RESOURCE_ATTRIBUTE_OPTIMAL_READ_BUFFER_SIZE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 6);
-	static final PropertyKey WPD_RESOURCE_ATTRIBUTE_OPTIMAL_WRITE_BUFFER_SIZE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 7);
-	static final PropertyKey WPD_RESOURCE_ATTRIBUTE_FORMAT = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 8);
-	static final PropertyKey WPD_RESOURCE_ATTRIBUTE_RESOURCE_KEY = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 9);
-	static final Guid WPD_DEVICE_PROPERTIES_V1 = new Guid(0x26D4979Al, 0xE643, 0x4626, new short[]{0x9E, 0x2B, 0x73, 0x6D, 0xC0, 0xC9, 0x2F, 0xDC});
-	static final PropertyKey WPD_DEVICE_SYNC_PARTNER = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_DEVICE_FIRMWARE_VERSION = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_DEVICE_POWER_LEVEL = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_DEVICE_POWER_SOURCE = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_DEVICE_PROTOCOL = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_DEVICE_MANUFACTURER = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_DEVICE_MODEL = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_DEVICE_SERIAL_NUMBER = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_DEVICE_SUPPORTS_NON_CONSUMABLE = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_DEVICE_DATETIME = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 11);
-	static final PropertyKey WPD_DEVICE_FRIENDLY_NAME = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 12);
-	static final PropertyKey WPD_DEVICE_SUPPORTED_DRM_SCHEMES = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 13);
-	static final PropertyKey WPD_DEVICE_SUPPORTED_FORMATS_ARE_ORDERED = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 14);
-	static final PropertyKey WPD_DEVICE_TYPE = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 15);
-	static final PropertyKey WPD_DEVICE_NETWORK_IDENTIFIER = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 16);
-	static final Guid WPD_DEVICE_PROPERTIES_V2 = new Guid(0x463DD662l, 0x7FC4, 0x4291, new short[]{0x91, 0x1C, 0x7F, 0x4C, 0x9C, 0xCA, 0x97, 0x99});
-	static final PropertyKey WPD_DEVICE_FUNCTIONAL_UNIQUE_ID = new PropertyKey(WPD_DEVICE_PROPERTIES_V2 , 2);
-	static final PropertyKey WPD_DEVICE_MODEL_UNIQUE_ID = new PropertyKey(WPD_DEVICE_PROPERTIES_V2 , 3);
-	static final PropertyKey WPD_DEVICE_TRANSPORT = new PropertyKey(WPD_DEVICE_PROPERTIES_V2 , 4);
-	static final PropertyKey WPD_DEVICE_USE_DEVICE_STAGE = new PropertyKey(WPD_DEVICE_PROPERTIES_V2 , 5);
-	static final Guid WPD_SERVICE_PROPERTIES_V1 = new Guid(0x7510698Al, 0xCB54, 0x481C, new short[]{0xB8, 0xDB, 0x0D, 0x75, 0xC9, 0x3F, 0x1C, 0x06});
-	static final PropertyKey WPD_SERVICE_VERSION = new PropertyKey(WPD_SERVICE_PROPERTIES_V1 , 2);
-	static final Guid WPD_EVENT_PROPERTIES_V1 = new Guid(0x15AB1953l, 0xF817, 0x4FEF, new short[]{0xA9, 0x21, 0x56, 0x76, 0xE8, 0x38, 0xF6, 0xE0});
-	static final PropertyKey WPD_EVENT_PARAMETER_PNP_DEVICE_ID = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_EVENT_PARAMETER_EVENT_ID = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_EVENT_PARAMETER_OPERATION_STATE = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_EVENT_PARAMETER_OPERATION_PROGRESS = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_EVENT_PARAMETER_OBJECT_PARENT_PERSISTENT_UNIQUE_ID = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_EVENT_PARAMETER_OBJECT_CREATION_COOKIE = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_EVENT_PARAMETER_CHILD_HIERARCHY_CHANGED = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 8);
-	static final Guid WPD_EVENT_PROPERTIES_V2 = new Guid(0x52807B8Al, 0x4914, 0x4323, new short[]{0x9B, 0x9A, 0x74, 0xF6, 0x54, 0xB2, 0xB8, 0x46});
-	static final PropertyKey WPD_EVENT_PARAMETER_SERVICE_METHOD_CONTEXT = new PropertyKey(WPD_EVENT_PROPERTIES_V2 , 2);
-	static final Guid WPD_EVENT_OPTIONS_V1 = new Guid(0xB3D8DAD7l, 0xA361, 0x4B83, new short[]{0x8A, 0x48, 0x5B, 0x02, 0xCE, 0x10, 0x71, 0x3B});
-	static final PropertyKey WPD_EVENT_OPTION_IS_BROADCAST_EVENT = new PropertyKey(WPD_EVENT_OPTIONS_V1 , 2);
-	static final PropertyKey WPD_EVENT_OPTION_IS_AUTOPLAY_EVENT = new PropertyKey(WPD_EVENT_OPTIONS_V1 , 3);
-	static final Guid WPD_EVENT_ATTRIBUTES_V1 = new Guid(0x10C96578l, 0x2E81, 0x4111, new short[]{0xAD, 0xDE, 0xE0, 0x8C, 0xA6, 0x13, 0x8F, 0x6D});
-	static final PropertyKey WPD_EVENT_ATTRIBUTE_NAME = new PropertyKey(WPD_EVENT_ATTRIBUTES_V1 , 2);
-	static final PropertyKey WPD_EVENT_ATTRIBUTE_PARAMETERS = new PropertyKey(WPD_EVENT_ATTRIBUTES_V1 , 3);
-	static final PropertyKey WPD_EVENT_ATTRIBUTE_OPTIONS = new PropertyKey(WPD_EVENT_ATTRIBUTES_V1 , 4);
-	static final Guid WPD_API_OPTIONS_V1 = new Guid(0x10E54A3El, 0x052D, 0x4777, new short[]{0xA1, 0x3C, 0xDE, 0x76, 0x14, 0xBE, 0x2B, 0xC4});
-	static final PropertyKey WPD_API_OPTION_USE_CLEAR_DATA_STREAM = new PropertyKey(WPD_API_OPTIONS_V1 , 2);
-	static final PropertyKey WPD_API_OPTION_IOCTL_ACCESS = new PropertyKey(WPD_API_OPTIONS_V1 , 3);
-	static final Guid WPD_FORMAT_ATTRIBUTES_V1 = new Guid(0xA0A02000l, 0xBCAF, 0x4BE8, new short[]{0xB3, 0xF5, 0x23, 0x3F, 0x23, 0x1C, 0xF5, 0x8F});
-	static final PropertyKey WPD_FORMAT_ATTRIBUTE_NAME = new PropertyKey(WPD_FORMAT_ATTRIBUTES_V1 , 2);
-	static final PropertyKey WPD_FORMAT_ATTRIBUTE_MIMETYPE = new PropertyKey(WPD_FORMAT_ATTRIBUTES_V1 , 3);
-	static final Guid WPD_METHOD_ATTRIBUTES_V1 = new Guid(0xF17A5071l, 0xF039, 0x44AF, new short[]{0x8E, 0xFE, 0x43, 0x2C, 0xF3, 0x2E, 0x43, 0x2A});
-	static final PropertyKey WPD_METHOD_ATTRIBUTE_NAME = new PropertyKey(WPD_METHOD_ATTRIBUTES_V1 , 2);
-	static final PropertyKey WPD_METHOD_ATTRIBUTE_ASSOCIATED_FORMAT = new PropertyKey(WPD_METHOD_ATTRIBUTES_V1 , 3);
-	static final PropertyKey WPD_METHOD_ATTRIBUTE_ACCESS = new PropertyKey(WPD_METHOD_ATTRIBUTES_V1 , 4);
-	static final PropertyKey WPD_METHOD_ATTRIBUTE_PARAMETERS = new PropertyKey(WPD_METHOD_ATTRIBUTES_V1 , 5);
-	static final Guid WPD_PARAMETER_ATTRIBUTES_V1 = new Guid(0xE6864DD7l, 0xF325, 0x45EA, new short[]{0xA1, 0xD5, 0x97, 0xCF, 0x73, 0xB6, 0xCA, 0x58});
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_ORDER = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 2);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_USAGE = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 3);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_FORM = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 4);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_DEFAULT_VALUE = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 5);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_RANGE_MIN = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 6);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_RANGE_MAX = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 7);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_RANGE_STEP = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 8);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_ENUMERATION_ELEMENTS = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 9);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_REGULAR_EXPRESSION = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 10);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_MAX_SIZE = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 11);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_VARTYPE = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 12);
-	static final PropertyKey WPD_PARAMETER_ATTRIBUTE_NAME = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 13);
-	static final Guid WPD_CATEGORY_COMMON = new Guid(0xF0422A9Cl, 0x5DC8, 0x4440, new short[]{0xB5, 0xBD, 0x5D, 0xF2, 0x88, 0x35, 0x65, 0x8A});
-	static final PropertyKey WPD_COMMAND_COMMON_RESET_DEVICE = new PropertyKey(WPD_CATEGORY_COMMON , 2);
-	static final PropertyKey WPD_COMMAND_COMMON_GET_OBJECT_IDS_FROM_PERSISTENT_UNIQUE_IDS = new PropertyKey(WPD_CATEGORY_COMMON , 3);
-	static final PropertyKey WPD_COMMAND_COMMON_SAVE_CLIENT_INFORMATION = new PropertyKey(WPD_CATEGORY_COMMON , 4);
-	static final PropertyKey WPD_PROPERTY_COMMON_COMMAND_CATEGORY = new PropertyKey(WPD_CATEGORY_COMMON , 1001);
-	static final PropertyKey WPD_PROPERTY_COMMON_COMMAND_ID = new PropertyKey(WPD_CATEGORY_COMMON , 1002);
-	static final PropertyKey WPD_PROPERTY_COMMON_HRESULT = new PropertyKey(WPD_CATEGORY_COMMON , 1003);
-	static final PropertyKey WPD_PROPERTY_COMMON_DRIVER_ERROR_CODE = new PropertyKey(WPD_CATEGORY_COMMON , 1004);
-	static final PropertyKey WPD_PROPERTY_COMMON_COMMAND_TARGET = new PropertyKey(WPD_CATEGORY_COMMON , 1006);
-	static final PropertyKey WPD_PROPERTY_COMMON_PERSISTENT_UNIQUE_IDS = new PropertyKey(WPD_CATEGORY_COMMON , 1007);
-	static final PropertyKey WPD_PROPERTY_COMMON_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_COMMON , 1008);
-	static final PropertyKey WPD_PROPERTY_COMMON_CLIENT_INFORMATION = new PropertyKey(WPD_CATEGORY_COMMON , 1009);
-	static final PropertyKey WPD_PROPERTY_COMMON_CLIENT_INFORMATION_CONTEXT = new PropertyKey(WPD_CATEGORY_COMMON , 1010);
-	static final PropertyKey WPD_PROPERTY_COMMON_ACTIVITY_ID = new PropertyKey(WPD_CATEGORY_COMMON , 1011);
-	static final PropertyKey WPD_OPTION_VALID_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_COMMON , 5001);
-	static final Guid WPD_CATEGORY_OBJECT_ENUMERATION = new Guid(0xB7474E91l, 0xE7F8, 0x4AD9, new short[]{0xB4, 0x00, 0xAD, 0x1A, 0x4B, 0x58, 0xEE, 0xEC});
-	static final PropertyKey WPD_COMMAND_OBJECT_ENUMERATION_START_FIND = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 2);
-	static final PropertyKey WPD_COMMAND_OBJECT_ENUMERATION_FIND_NEXT = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 3);
-	static final PropertyKey WPD_COMMAND_OBJECT_ENUMERATION_END_FIND = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 4);
-	static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_PARENT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1001);
-	static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_FILTER = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1002);
-	static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1003);
-	static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_CONTEXT = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1004);
-	static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_NUM_OBJECTS_REQUESTED = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1005);
-	static final Guid WPD_CATEGORY_OBJECT_PROPERTIES = new Guid(0x9E5582E4l, 0x0814, 0x44E6, new short[]{0x98, 0x1A, 0xB2, 0x99, 0x8D, 0x58, 0x38, 0x04});
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_GET_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 2);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_GET_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 3);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_GET = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 4);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_SET = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 5);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_GET_ALL = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 6);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_DELETE = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 7);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1001);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1002);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1003);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_VALUES = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1004);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_WRITE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1005);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_DELETE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1006);
-	static final Guid WPD_CATEGORY_OBJECT_PROPERTIES_BULK = new Guid(0x11C824DDl, 0x04CD, 0x4E4E, new short[]{0x8C, 0x7B, 0xF6, 0xEF, 0xB7, 0x94, 0xD8, 0x4E});
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_START = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 2);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_NEXT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 3);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_END = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 4);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_START = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 5);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_NEXT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 6);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_END = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 7);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_START = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 8);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_NEXT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 9);
-	static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_END = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 10);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1001);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_CONTEXT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1002);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_VALUES = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1003);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1004);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_DEPTH = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1005);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PARENT_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1006);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_FORMAT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1007);
-	static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_WRITE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1008);
-	static final Guid WPD_CATEGORY_OBJECT_RESOURCES = new Guid(0xB3A2B22Dl, 0xA595, 0x4108, new short[]{0xBE, 0x0A, 0xFC, 0x3C, 0x96, 0x5F, 0x3D, 0x4A});
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_GET_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 2);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_GET_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 3);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_OPEN = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 4);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_READ = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 5);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_WRITE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 6);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_CLOSE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 7);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_DELETE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 8);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_CREATE_RESOURCE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 9);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_REVERT = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 10);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_SEEK = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 11);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_COMMIT = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 12);
-	static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_SEEK_IN_UNITS = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 13);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1001);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_ACCESS_MODE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1002);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_KEYS = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1003);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1004);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_CONTEXT = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1005);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_READ = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1006);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_READ = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1007);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_WRITE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1008);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_WRITTEN = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1009);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1010);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_OPTIMAL_TRANSFER_BUFFER_SIZE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1011);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_SEEK_OFFSET = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1012);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_SEEK_ORIGIN_FLAG = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1013);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_POSITION_FROM_START = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1014);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_SUPPORTS_UNITS = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1015);
-	static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_STREAM_UNITS = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1016);
-	static final PropertyKey WPD_OPTION_OBJECT_RESOURCES_SEEK_ON_READ_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 5001);
-	static final PropertyKey WPD_OPTION_OBJECT_RESOURCES_SEEK_ON_WRITE_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 5002);
-	static final PropertyKey WPD_OPTION_OBJECT_RESOURCES_NO_INPUT_BUFFER_ON_READ = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 5003);
-	static final Guid WPD_CATEGORY_OBJECT_MANAGEMENT = new Guid(0xEF1E43DDl, 0xA9ED, 0x4341, new short[]{0x8B, 0xCC, 0x18, 0x61, 0x92, 0xAE, 0xA0, 0x89});
-	static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_ONLY = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 2);
-	static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_AND_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 3);
-	static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_WRITE_OBJECT_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 4);
-	static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_COMMIT_OBJECT = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 5);
-	static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_REVERT_OBJECT = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 6);
-	static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_DELETE_OBJECTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 7);
-	static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_MOVE_OBJECTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 8);
-	static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_COPY_OBJECTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 9);
-	static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_UPDATE_OBJECT_WITH_PROPERTIES_AND_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 10);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_CREATION_PROPERTIES = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1001);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_CONTEXT = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1002);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_TO_WRITE = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1003);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_WRITTEN = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1004);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1005);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1006);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_OPTIONS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1007);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_OPTIMAL_TRANSFER_BUFFER_SIZE = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1008);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1009);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1010);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_DESTINATION_FOLDER_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1011);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_MOVE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1012);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_COPY_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1013);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_UPDATE_PROPERTIES = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1014);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1015);
-	static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_FORMAT = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1016);
-	static final PropertyKey WPD_OPTION_OBJECT_MANAGEMENT_RECURSIVE_DELETE_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 5001);
-	static final Guid WPD_CATEGORY_CAPABILITIES = new Guid(0x0CABEC78l, 0x6B74, 0x41C6, new short[]{0x92, 0x16, 0x26, 0x39, 0xD1, 0xFC, 0xE3, 0x56});
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_COMMANDS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 2);
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_COMMAND_OPTIONS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 3);
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FUNCTIONAL_CATEGORIES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 4);
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_FUNCTIONAL_OBJECTS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 5);
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_CONTENT_TYPES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 6);
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMATS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 7);
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 8);
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_FIXED_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 9);
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_EVENTS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 10);
-	static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_EVENT_OPTIONS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 11);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_SUPPORTED_COMMANDS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1001);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_COMMAND = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1002);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_COMMAND_OPTIONS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1003);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORIES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1004);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORY = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1005);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_OBJECTS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1006);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_CONTENT_TYPES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1007);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_CONTENT_TYPE = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1008);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_FORMATS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1009);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_FORMAT = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1010);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1011);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1012);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_SUPPORTED_EVENTS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1013);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_EVENT = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1014);
-	static final PropertyKey WPD_PROPERTY_CAPABILITIES_EVENT_OPTIONS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1015);
-	static final Guid WPD_CATEGORY_STORAGE = new Guid(0xD8F907A6l, 0x34CC, 0x45FA, new short[]{0x97, 0xFB, 0xD0, 0x07, 0xFA, 0x47, 0xEC, 0x94});
-	static final PropertyKey WPD_COMMAND_STORAGE_FORMAT = new PropertyKey(WPD_CATEGORY_STORAGE , 2);
-	static final PropertyKey WPD_COMMAND_STORAGE_EJECT = new PropertyKey(WPD_CATEGORY_STORAGE , 4);
-	static final PropertyKey WPD_PROPERTY_STORAGE_OBJECT_ID = new PropertyKey(WPD_CATEGORY_STORAGE , 1001);
-	static final PropertyKey WPD_PROPERTY_STORAGE_DESTINATION_OBJECT_ID = new PropertyKey(WPD_CATEGORY_STORAGE , 1002);
-	static final Guid WPD_CATEGORY_SMS = new Guid(0xAFC25D66l, 0xFE0D, 0x4114, new short[]{0x90, 0x97, 0x97, 0x0C, 0x93, 0xE9, 0x20, 0xD1});
-	static final PropertyKey WPD_COMMAND_SMS_SEND = new PropertyKey(WPD_CATEGORY_SMS , 2);
-	static final PropertyKey WPD_PROPERTY_SMS_RECIPIENT = new PropertyKey(WPD_CATEGORY_SMS , 1001);
-	static final PropertyKey WPD_PROPERTY_SMS_MESSAGE_TYPE = new PropertyKey(WPD_CATEGORY_SMS , 1002);
-	static final PropertyKey WPD_PROPERTY_SMS_TEXT_MESSAGE = new PropertyKey(WPD_CATEGORY_SMS , 1003);
-	static final PropertyKey WPD_PROPERTY_SMS_BINARY_MESSAGE = new PropertyKey(WPD_CATEGORY_SMS , 1004);
-	static final PropertyKey WPD_OPTION_SMS_BINARY_MESSAGE_SUPPORTED = new PropertyKey(WPD_CATEGORY_SMS , 5001);
-	static final Guid WPD_CATEGORY_STILL_IMAGE_CAPTURE = new Guid(0x4FCD6982l, 0x22A2, 0x4B05, new short[]{0xA4, 0x8B, 0x62, 0xD3, 0x8B, 0xF2, 0x7B, 0x32});
-	static final PropertyKey WPD_COMMAND_STILL_IMAGE_CAPTURE_INITIATE = new PropertyKey(WPD_CATEGORY_STILL_IMAGE_CAPTURE , 2);
-	static final Guid WPD_CATEGORY_MEDIA_CAPTURE = new Guid(0x59B433BAl, 0xFE44, 0x4D8D, new short[]{0x80, 0x8C, 0x6B, 0xCB, 0x9B, 0x0F, 0x15, 0xE8});
-	static final PropertyKey WPD_COMMAND_MEDIA_CAPTURE_START = new PropertyKey(WPD_CATEGORY_MEDIA_CAPTURE , 2);
-	static final PropertyKey WPD_COMMAND_MEDIA_CAPTURE_STOP = new PropertyKey(WPD_CATEGORY_MEDIA_CAPTURE , 3);
-	static final PropertyKey WPD_COMMAND_MEDIA_CAPTURE_PAUSE = new PropertyKey(WPD_CATEGORY_MEDIA_CAPTURE , 4);
-	static final Guid WPD_CATEGORY_DEVICE_HINTS = new Guid(0x0D5FB92Bl, 0xCB46, 0x4C4F, new short[]{0x83, 0x43, 0x0B, 0xC3, 0xD3, 0xF1, 0x7C, 0x84});
-	static final PropertyKey WPD_COMMAND_DEVICE_HINTS_GET_CONTENT_LOCATION = new PropertyKey(WPD_CATEGORY_DEVICE_HINTS , 2);
-	static final PropertyKey WPD_PROPERTY_DEVICE_HINTS_CONTENT_TYPE = new PropertyKey(WPD_CATEGORY_DEVICE_HINTS , 1001);
-	static final PropertyKey WPD_PROPERTY_DEVICE_HINTS_CONTENT_LOCATIONS = new PropertyKey(WPD_CATEGORY_DEVICE_HINTS , 1002);
-	static final Guid WPD_CLASS_EXTENSION_V1 = new Guid(0x33FB0D11l, 0x64A3, 0x4FAC, new short[]{0xB4, 0xC7, 0x3D, 0xFE, 0xAA, 0x99, 0xB0, 0x51});
-	static final PropertyKey WPD_COMMAND_CLASS_EXTENSION_WRITE_DEVICE_INFORMATION = new PropertyKey(WPD_CLASS_EXTENSION_V1 , 2);
-	static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_VALUES = new PropertyKey(WPD_CLASS_EXTENSION_V1 , 1001);
-	static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_WRITE_RESULTS = new PropertyKey(WPD_CLASS_EXTENSION_V1 , 1002);
-	static final Guid WPD_CLASS_EXTENSION_V2 = new Guid(0x7F0779B5l, 0xFA2B, 0x4766, new short[]{0x9C, 0xB2, 0xF7, 0x3B, 0xA3, 0x0B, 0x67, 0x58});
-	static final PropertyKey WPD_COMMAND_CLASS_EXTENSION_REGISTER_SERVICE_INTERFACES = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 2);
-	static final PropertyKey WPD_COMMAND_CLASS_EXTENSION_UNREGISTER_SERVICE_INTERFACES = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 3);
-	static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_SERVICE_OBJECT_ID = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 1001);
-	static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_SERVICE_INTERFACES = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 1002);
-	static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_SERVICE_REGISTRATION_RESULTS = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 1003);
-	static final Guid WPD_CATEGORY_NETWORK_CONFIGURATION = new Guid(0x78F9C6FCl, 0x79B8, 0x473C, new short[]{0x90, 0x60, 0x6B, 0xD2, 0x3D, 0xD0, 0x72, 0xC4});
-	static final PropertyKey WPD_COMMAND_GENERATE_KEYPAIR = new PropertyKey(WPD_CATEGORY_NETWORK_CONFIGURATION , 2);
-	static final PropertyKey WPD_COMMAND_COMMIT_KEYPAIR = new PropertyKey(WPD_CATEGORY_NETWORK_CONFIGURATION , 3);
-	static final PropertyKey WPD_COMMAND_PROCESS_WIRELESS_PROFILE = new PropertyKey(WPD_CATEGORY_NETWORK_CONFIGURATION , 4);
-	static final PropertyKey WPD_PROPERTY_PUBLIC_KEY = new PropertyKey(WPD_CATEGORY_NETWORK_CONFIGURATION , 1001);
-	static final Guid WPD_CATEGORY_SERVICE_COMMON = new Guid(0x322F071Dl, 0x36EF, 0x477F, new short[]{0xB4, 0xB5, 0x6F, 0x52, 0xD7, 0x34, 0xBA, 0xEE});
-	static final PropertyKey WPD_COMMAND_SERVICE_COMMON_GET_SERVICE_OBJECT_ID = new PropertyKey(WPD_CATEGORY_SERVICE_COMMON , 2);
-	static final PropertyKey WPD_PROPERTY_SERVICE_OBJECT_ID = new PropertyKey(WPD_CATEGORY_SERVICE_COMMON , 1001);
-	static final Guid WPD_CATEGORY_SERVICE_CAPABILITIES = new Guid(0x24457E74l, 0x2E9F, 0x44F9, new short[]{0x8C, 0x57, 0x1D, 0x1B, 0xCB, 0x17, 0x0B, 0x89});
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 2);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS_BY_FORMAT = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 3);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 4);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_PARAMETER_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 5);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMATS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 6);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 7);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 8);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 9);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_EVENTS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 10);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 11);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_PARAMETER_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 12);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_INHERITED_SERVICES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 13);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_RENDERING_PROFILES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 14);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_COMMANDS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 15);
-	static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_COMMAND_OPTIONS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 16);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_METHODS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1001);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1002);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1003);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1004);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1005);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1006);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_FORMATS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1007);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1008);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1009);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1010);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_EVENTS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1011);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1012);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1013);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITANCE_TYPE = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1014);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITED_SERVICES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1015);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_RENDERING_PROFILES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1016);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_COMMANDS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1017);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1018);
-	static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND_OPTIONS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1019);
-	static final Guid WPD_CATEGORY_SERVICE_METHODS = new Guid(0x2D521CA8l, 0xC1B0, 0x4268, new short[]{0xA3, 0x42, 0xCF, 0x19, 0x32, 0x15, 0x69, 0xBC});
-	static final PropertyKey WPD_COMMAND_SERVICE_METHODS_START_INVOKE = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 2);
-	static final PropertyKey WPD_COMMAND_SERVICE_METHODS_CANCEL_INVOKE = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 3);
-	static final PropertyKey WPD_COMMAND_SERVICE_METHODS_END_INVOKE = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 4);
-	static final PropertyKey WPD_PROPERTY_SERVICE_METHOD = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1001);
-	static final PropertyKey WPD_PROPERTY_SERVICE_METHOD_PARAMETER_VALUES = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1002);
-	static final PropertyKey WPD_PROPERTY_SERVICE_METHOD_RESULT_VALUES = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1003);
-	static final PropertyKey WPD_PROPERTY_SERVICE_METHOD_CONTEXT = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1004);
-	static final PropertyKey WPD_PROPERTY_SERVICE_METHOD_HRESULT = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1005);
-	static final PropertyKey WPD_RESOURCE_DEFAULT = new PropertyKey(new Guid(0xE81E79BEl, 0x34F0, 0x41BF, new short[]{0xB5, 0x3F, 0xF1, 0xA0, 0x6A, 0xE8, 0x78, 0x42}), 0);
-	static final PropertyKey WPD_RESOURCE_CONTACT_PHOTO = new PropertyKey(new Guid(0x2C4D6803l, 0x80EA, 0x4580, new short[]{0xAF, 0x9A, 0x5B, 0xE1, 0xA2, 0x3E, 0xDD, 0xCB}), 0);
-	static final PropertyKey WPD_RESOURCE_THUMBNAIL = new PropertyKey(new Guid(0xC7C407BAl, 0x98FA, 0x46B5, new short[]{0x99, 0x60, 0x23, 0xFE, 0xC1, 0x24, 0xCF, 0xDE}), 0);
-	static final PropertyKey WPD_RESOURCE_ICON = new PropertyKey(new Guid(0xF195FED8l, 0xAA28, 0x4EE3, new short[]{0xB1, 0x53, 0xE1, 0x82, 0xDD, 0x5E, 0xDC, 0x39}), 0);
-	static final PropertyKey WPD_RESOURCE_AUDIO_CLIP = new PropertyKey(new Guid(0x3BC13982l, 0x85B1, 0x48E0, new short[]{0x95, 0xA6, 0x8D, 0x3A, 0xD0, 0x6B, 0xE1, 0x17}), 0);
-	static final PropertyKey WPD_RESOURCE_ALBUM_ART = new PropertyKey(new Guid(0xF02AA354l, 0x2300, 0x4E2D, new short[]{0xA1, 0xB9, 0x3B, 0x67, 0x30, 0xF7, 0xFA, 0x21}), 0);
-	static final PropertyKey WPD_RESOURCE_GENERIC = new PropertyKey(new Guid(0xB9B9F515l, 0xBA70, 0x4647, new short[]{0x94, 0xDC, 0xFA, 0x49, 0x25, 0xE9, 0x5A, 0x07}), 0);
-	static final PropertyKey WPD_RESOURCE_VIDEO_CLIP = new PropertyKey(new Guid(0xB566EE42l, 0x6368, 0x4290, new short[]{0x86, 0x62, 0x70, 0x18, 0x2F, 0xB7, 0x9F, 0x20}), 0);
-	static final PropertyKey WPD_RESOURCE_BRANDING_ART = new PropertyKey(new Guid(0xB633B1AEl, 0x6CAF, 0x4A87, new short[]{0x95, 0x89, 0x22, 0xDE, 0xD6, 0xDD, 0x58, 0x99}), 0);
-	static final Guid WPD_OBJECT_FORMAT_PROPERTIES_ONLY = new Guid(0x30010000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_UNSPECIFIED = new Guid(0x30000000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_SCRIPT = new Guid(0x30020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_EXECUTABLE = new Guid(0x30030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_TEXT = new Guid(0x30040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_HTML = new Guid(0x30050000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_DPOF = new Guid(0x30060000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_AIFF = new Guid(0x30070000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_WAVE = new Guid(0x30080000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MP3 = new Guid(0x30090000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_AVI = new Guid(0x300A0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MPEG = new Guid(0x300B0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_ASF = new Guid(0x300C0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_EXIF = new Guid(0x38010000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_TIFFEP = new Guid(0x38020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_FLASHPIX = new Guid(0x38030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_BMP = new Guid(0x38040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_CIFF = new Guid(0x38050000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_GIF = new Guid(0x38070000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_JFIF = new Guid(0x38080000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_PCD = new Guid(0x38090000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_PICT = new Guid(0x380A0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_PNG = new Guid(0x380B0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_TIFF = new Guid(0x380D0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_TIFFIT = new Guid(0x380E0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_JP2 = new Guid(0x380F0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_JPX = new Guid(0x38100000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_WBMP = new Guid(0xB8030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_JPEGXR = new Guid(0xB8040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_WINDOWSIMAGEFORMAT = new Guid(0xB8810000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_WMA = new Guid(0xB9010000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_WMV = new Guid(0xB9810000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_WPLPLAYLIST = new Guid(0xBA100000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_M3UPLAYLIST = new Guid(0xBA110000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MPLPLAYLIST = new Guid(0xBA120000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_ASXPLAYLIST = new Guid(0xBA130000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_PLSPLAYLIST = new Guid(0xBA140000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_ABSTRACT_CONTACT_GROUP = new Guid(0xBA060000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_ABSTRACT_MEDIA_CAST = new Guid(0xBA0B0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_VCALENDAR1 = new Guid(0xBE020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_ICALENDAR = new Guid(0xBE030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_ABSTRACT_CONTACT = new Guid(0xBB810000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_VCARD2 = new Guid(0xBB820000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_VCARD3 = new Guid(0xBB830000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_XML = new Guid(0xBA820000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_AAC = new Guid(0xB9030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_AUDIBLE = new Guid(0xB9040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_FLAC = new Guid(0xB9060000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_QCELP = new Guid(0xB9070000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_AMR = new Guid(0xB9080000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_OGG = new Guid(0xB9020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MP4 = new Guid(0xB9820000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MP2 = new Guid(0xB9830000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MICROSOFT_WORD = new Guid(0xBA830000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MHT_COMPILED_HTML = new Guid(0xBA840000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MICROSOFT_EXCEL = new Guid(0xBA850000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MICROSOFT_POWERPOINT = new Guid(0xBA860000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_3GP = new Guid(0xB9840000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_3G2 = new Guid(0xB9850000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_AVCHD = new Guid(0xB9860000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_ATSCTS = new Guid(0xB9870000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_DVBTS = new Guid(0xB9880000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final Guid WPD_OBJECT_FORMAT_MKV = new Guid(0xB9900000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xc5, 0x7B, 0x46, 0x96, 0x5F, 0xE7});
-	static final PropertyKey WPD_OBJECT_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_OBJECT_PARENT_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_OBJECT_NAME = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_OBJECT_PERSISTENT_UNIQUE_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_OBJECT_FORMAT = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_OBJECT_ISHIDDEN = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_OBJECT_ISSYSTEM = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_OBJECT_SIZE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 11);
-	static final PropertyKey WPD_OBJECT_ORIGINAL_FILE_NAME = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 12);
-	static final PropertyKey WPD_OBJECT_NON_CONSUMABLE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 13);
-	static final PropertyKey WPD_OBJECT_KEYWORDS = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 15);
-	static final PropertyKey WPD_OBJECT_SYNC_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 16);
-	static final PropertyKey WPD_OBJECT_IS_DRM_PROTECTED = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 17);
-	static final PropertyKey WPD_OBJECT_DATE_CREATED = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 18);
-	static final PropertyKey WPD_OBJECT_DATE_MODIFIED = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 19);
-	static final PropertyKey WPD_OBJECT_DATE_AUTHORED = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 20);
-	static final PropertyKey WPD_OBJECT_BACK_REFERENCES = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 21);
-	static final PropertyKey WPD_OBJECT_CAN_DELETE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 26);
-	static final PropertyKey WPD_OBJECT_LANGUAGE_LOCALE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 27);
-	static final Guid WPD_FOLDER_OBJECT_PROPERTIES_V1 = new Guid(0x7E9A7ABFl, 0xE568, 0x4B34, new short[]{0xAA, 0x2F, 0x13, 0xBB, 0x12, 0xAB, 0x17, 0x7D});
-	static final PropertyKey WPD_FOLDER_CONTENT_TYPES_ALLOWED = new PropertyKey(WPD_FOLDER_OBJECT_PROPERTIES_V1 , 2);
-	static final Guid WPD_IMAGE_OBJECT_PROPERTIES_V1 = new Guid(0x63D64908l, 0x9FA1, 0x479F, new short[]{0x85, 0xBA, 0x99, 0x52, 0x21, 0x64, 0x47, 0xDB});
-	static final PropertyKey WPD_IMAGE_BITDEPTH = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_IMAGE_CROPPED_STATUS = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_IMAGE_COLOR_CORRECTED_STATUS = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_IMAGE_FNUMBER = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_IMAGE_EXPOSURE_TIME = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_IMAGE_EXPOSURE_INDEX = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_IMAGE_HORIZONTAL_RESOLUTION = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_IMAGE_VERTICAL_RESOLUTION = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 10);
-	static final Guid WPD_DOCUMENT_OBJECT_PROPERTIES_V1 = new Guid(0x0B110203l, 0xEB95, 0x4F02, new short[]{0x93, 0xE0, 0x97, 0xC6, 0x31, 0x49, 0x3A, 0xD5});
-	static final Guid WPD_MEDIA_PROPERTIES_V1 = new Guid(0x2ED8BA05l, 0x0AD3, 0x42DC, new short[]{0xB0, 0xD0, 0xBC, 0x95, 0xAC, 0x39, 0x6A, 0xC8});
-	static final PropertyKey WPD_MEDIA_TOTAL_BITRATE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_MEDIA_BITRATE_TYPE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_MEDIA_COPYRIGHT = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_MEDIA_SUBSCRIPTION_CONTENT_ID = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_MEDIA_USE_COUNT = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_MEDIA_SKIP_COUNT = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_MEDIA_LAST_ACCESSED_TIME = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_MEDIA_PARENTAL_RATING = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_MEDIA_META_GENRE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_MEDIA_COMPOSER = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 11);
-	static final PropertyKey WPD_MEDIA_EFFECTIVE_RATING = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 12);
-	static final PropertyKey WPD_MEDIA_SUB_TITLE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 13);
-	static final PropertyKey WPD_MEDIA_RELEASE_DATE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 14);
-	static final PropertyKey WPD_MEDIA_SAMPLE_RATE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 15);
-	static final PropertyKey WPD_MEDIA_STAR_RATING = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 16);
-	static final PropertyKey WPD_MEDIA_USER_EFFECTIVE_RATING = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 17);
-	static final PropertyKey WPD_MEDIA_TITLE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 18);
-	static final PropertyKey WPD_MEDIA_DURATION = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 19);
-	static final PropertyKey WPD_MEDIA_BUY_NOW = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 20);
-	static final PropertyKey WPD_MEDIA_ENCODING_PROFILE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 21);
-	static final PropertyKey WPD_MEDIA_WIDTH = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 22);
-	static final PropertyKey WPD_MEDIA_HEIGHT = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 23);
-	static final PropertyKey WPD_MEDIA_ARTIST = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 24);
-	static final PropertyKey WPD_MEDIA_ALBUM_ARTIST = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 25);
-	static final PropertyKey WPD_MEDIA_OWNER = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 26);
-	static final PropertyKey WPD_MEDIA_MANAGING_EDITOR = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 27);
-	static final PropertyKey WPD_MEDIA_WEBMASTER = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 28);
-	static final PropertyKey WPD_MEDIA_SOURCE_URL = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 29);
-	static final PropertyKey WPD_MEDIA_DESTINATION_URL = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 30);
-	static final PropertyKey WPD_MEDIA_DESCRIPTION = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 31);
-	static final PropertyKey WPD_MEDIA_GENRE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 32);
-	static final PropertyKey WPD_MEDIA_TIME_BOOKMARK = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 33);
-	static final PropertyKey WPD_MEDIA_OBJECT_BOOKMARK = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 34);
-	static final PropertyKey WPD_MEDIA_LAST_BUILD_DATE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 35);
-	static final PropertyKey WPD_MEDIA_BYTE_BOOKMARK = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 36);
-	static final PropertyKey WPD_MEDIA_TIME_TO_LIVE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 37);
-	static final PropertyKey WPD_MEDIA_GUID = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 38);
-	static final PropertyKey WPD_MEDIA_SUB_DESCRIPTION = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 39);
-	static final PropertyKey WPD_MEDIA_AUDIO_ENCODING_PROFILE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 49);
-	static final Guid WPD_CONTACT_OBJECT_PROPERTIES_V1 = new Guid(0xFBD4FDABl, 0x987D, 0x4777, new short[]{0xB3, 0xF9, 0x72, 0x61, 0x85, 0xA9, 0x31, 0x2B});
-	static final PropertyKey WPD_CONTACT_DISPLAY_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_CONTACT_FIRST_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_CONTACT_MIDDLE_NAMES = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_CONTACT_LAST_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_CONTACT_PREFIX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_CONTACT_SUFFIX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_CONTACT_PHONETIC_FIRST_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_CONTACT_PHONETIC_LAST_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_CONTACT_PERSONAL_FULL_POSTAL_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE1 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 11);
-	static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 12);
-	static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_CITY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 13);
-	static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_REGION = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 14);
-	static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_POSTAL_CODE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 15);
-	static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_COUNTRY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 16);
-	static final PropertyKey WPD_CONTACT_BUSINESS_FULL_POSTAL_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 17);
-	static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE1 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 18);
-	static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 19);
-	static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_CITY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 20);
-	static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_REGION = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 21);
-	static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_POSTAL_CODE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 22);
-	static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_COUNTRY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 23);
-	static final PropertyKey WPD_CONTACT_OTHER_FULL_POSTAL_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 24);
-	static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE1 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 25);
-	static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 26);
-	static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_CITY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 27);
-	static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_REGION = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 28);
-	static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_CODE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 29);
-	static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_COUNTRY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 30);
-	static final PropertyKey WPD_CONTACT_PRIMARY_EMAIL_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 31);
-	static final PropertyKey WPD_CONTACT_PERSONAL_EMAIL = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 32);
-	static final PropertyKey WPD_CONTACT_PERSONAL_EMAIL2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 33);
-	static final PropertyKey WPD_CONTACT_BUSINESS_EMAIL = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 34);
-	static final PropertyKey WPD_CONTACT_BUSINESS_EMAIL2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 35);
-	static final PropertyKey WPD_CONTACT_OTHER_EMAILS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 36);
-	static final PropertyKey WPD_CONTACT_PRIMARY_PHONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 37);
-	static final PropertyKey WPD_CONTACT_PERSONAL_PHONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 38);
-	static final PropertyKey WPD_CONTACT_PERSONAL_PHONE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 39);
-	static final PropertyKey WPD_CONTACT_BUSINESS_PHONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 40);
-	static final PropertyKey WPD_CONTACT_BUSINESS_PHONE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 41);
-	static final PropertyKey WPD_CONTACT_MOBILE_PHONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 42);
-	static final PropertyKey WPD_CONTACT_MOBILE_PHONE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 43);
-	static final PropertyKey WPD_CONTACT_PERSONAL_FAX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 44);
-	static final PropertyKey WPD_CONTACT_BUSINESS_FAX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 45);
-	static final PropertyKey WPD_CONTACT_PAGER = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 46);
-	static final PropertyKey WPD_CONTACT_OTHER_PHONES = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 47);
-	static final PropertyKey WPD_CONTACT_PRIMARY_WEB_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 48);
-	static final PropertyKey WPD_CONTACT_PERSONAL_WEB_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 49);
-	static final PropertyKey WPD_CONTACT_BUSINESS_WEB_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 50);
-	static final PropertyKey WPD_CONTACT_INSTANT_MESSENGER = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 51);
-	static final PropertyKey WPD_CONTACT_INSTANT_MESSENGER2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 52);
-	static final PropertyKey WPD_CONTACT_INSTANT_MESSENGER3 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 53);
-	static final PropertyKey WPD_CONTACT_COMPANY_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 54);
-	static final PropertyKey WPD_CONTACT_PHONETIC_COMPANY_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 55);
-	static final PropertyKey WPD_CONTACT_ROLE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 56);
-	static final PropertyKey WPD_CONTACT_BIRTHDATE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 57);
-	static final PropertyKey WPD_CONTACT_PRIMARY_FAX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 58);
-	static final PropertyKey WPD_CONTACT_SPOUSE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 59);
-	static final PropertyKey WPD_CONTACT_CHILDREN = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 60);
-	static final PropertyKey WPD_CONTACT_ASSISTANT = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 61);
-	static final PropertyKey WPD_CONTACT_ANNIVERSARY_DATE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 62);
-	static final PropertyKey WPD_CONTACT_RINGTONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 63);
-	static final Guid WPD_MUSIC_OBJECT_PROPERTIES_V1 = new Guid(0xB324F56Al, 0xDC5D, 0x46E5, new short[]{0xB6, 0xDF, 0xD2, 0xEA, 0x41, 0x48, 0x88, 0xC6});
-	static final PropertyKey WPD_MUSIC_ALBUM = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_MUSIC_TRACK = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_MUSIC_LYRICS = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_MUSIC_MOOD = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_AUDIO_BITRATE = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_AUDIO_CHANNEL_COUNT = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_AUDIO_FORMAT_CODE = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 11);
-	static final PropertyKey WPD_AUDIO_BIT_DEPTH = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 12);
-	static final PropertyKey WPD_AUDIO_BLOCK_ALIGNMENT = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 13);
-	static final Guid WPD_VIDEO_OBJECT_PROPERTIES_V1 = new Guid(0x346F2163l, 0xF998, 0x4146, new short[]{0x8B, 0x01, 0xD1, 0x9B, 0x4C, 0x00, 0xDE, 0x9A});
-	static final PropertyKey WPD_VIDEO_AUTHOR = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_VIDEO_RECORDEDTV_STATION_NAME = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_VIDEO_RECORDEDTV_CHANNEL_NUMBER = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_VIDEO_RECORDEDTV_REPEAT = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_VIDEO_BUFFER_SIZE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_VIDEO_CREDITS = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_VIDEO_KEY_FRAME_DISTANCE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_VIDEO_QUALITY_SETTING = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 11);
-	static final PropertyKey WPD_VIDEO_SCAN_TYPE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 12);
-	static final PropertyKey WPD_VIDEO_BITRATE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 13);
-	static final PropertyKey WPD_VIDEO_FOURCC_CODE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 14);
-	static final PropertyKey WPD_VIDEO_FRAMERATE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 15);
-	static final Guid WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 = new Guid(0xB28AE94Bl, 0x05A4, 0x4E8E, new short[]{0xBE, 0x01, 0x72, 0xCC, 0x7E, 0x09, 0x9D, 0x8F});
-	static final PropertyKey WPD_COMMON_INFORMATION_SUBJECT = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_COMMON_INFORMATION_BODY_TEXT = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_COMMON_INFORMATION_PRIORITY = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_COMMON_INFORMATION_START_DATETIME = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 5);
-	static final PropertyKey WPD_COMMON_INFORMATION_END_DATETIME = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_COMMON_INFORMATION_NOTES = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 7);
-	static final Guid WPD_MEMO_OBJECT_PROPERTIES_V1 = new Guid(0x5FFBFC7Bl, 0x7483, 0x41AD, new short[]{0xAF, 0xB9, 0xDA, 0x3F, 0x4E, 0x59, 0x2B, 0x8D});
-	static final Guid WPD_EMAIL_OBJECT_PROPERTIES_V1 = new Guid(0x41F8F65Al, 0x5484, 0x4782, new short[]{0xB1, 0x3D, 0x47, 0x40, 0xDD, 0x7C, 0x37, 0xC5});
-	static final PropertyKey WPD_EMAIL_TO_LINE = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_EMAIL_CC_LINE = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_EMAIL_BCC_LINE = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_EMAIL_HAS_BEEN_READ = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_EMAIL_RECEIVED_TIME = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_EMAIL_HAS_ATTACHMENTS = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_EMAIL_SENDER_ADDRESS = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 10);
-	static final Guid WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 = new Guid(0xF99EFD03l, 0x431D, 0x40D8, new short[]{0xA1, 0xC9, 0x4E, 0x22, 0x0D, 0x9C, 0x88, 0xD3});
-	static final PropertyKey WPD_APPOINTMENT_LOCATION = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_APPOINTMENT_TYPE = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 7);
-	static final PropertyKey WPD_APPOINTMENT_REQUIRED_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_APPOINTMENT_OPTIONAL_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 9);
-	static final PropertyKey WPD_APPOINTMENT_ACCEPTED_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_APPOINTMENT_RESOURCES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 11);
-	static final PropertyKey WPD_APPOINTMENT_TENTATIVE_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 12);
-	static final PropertyKey WPD_APPOINTMENT_DECLINED_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 13);
-	static final Guid WPD_TASK_OBJECT_PROPERTIES_V1 = new Guid(0xE354E95El, 0xD8A0, 0x4637, new short[]{0xA0, 0x3A, 0x0C, 0xB2, 0x68, 0x38, 0xDB, 0xC7});
-	static final PropertyKey WPD_TASK_STATUS = new PropertyKey(WPD_TASK_OBJECT_PROPERTIES_V1 , 6);
-	static final PropertyKey WPD_TASK_PERCENT_COMPLETE = new PropertyKey(WPD_TASK_OBJECT_PROPERTIES_V1 , 8);
-	static final PropertyKey WPD_TASK_REMINDER_DATE = new PropertyKey(WPD_TASK_OBJECT_PROPERTIES_V1 , 10);
-	static final PropertyKey WPD_TASK_OWNER = new PropertyKey(WPD_TASK_OBJECT_PROPERTIES_V1 , 11);
-	static final Guid WPD_SMS_OBJECT_PROPERTIES_V1 = new Guid(0x7E1074CCl, 0x50FF, 0x4DD1, new short[]{0xA7, 0x42, 0x53, 0xBE, 0x6F, 0x09, 0x3A, 0x0D});
-	static final PropertyKey WPD_SMS_PROVIDER = new PropertyKey(WPD_SMS_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_SMS_TIMEOUT = new PropertyKey(WPD_SMS_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_SMS_MAX_PAYLOAD = new PropertyKey(WPD_SMS_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_SMS_ENCODING = new PropertyKey(WPD_SMS_OBJECT_PROPERTIES_V1 , 5);
-	static final Guid WPD_SECTION_OBJECT_PROPERTIES_V1 = new Guid(0x516AFD2Bl, 0xC64E, 0x44F0, new short[]{0x98, 0xDC, 0xBE, 0xE1, 0xC8, 0x8F, 0x7D, 0x66});
-	static final PropertyKey WPD_SECTION_DATA_OFFSET = new PropertyKey(WPD_SECTION_OBJECT_PROPERTIES_V1 , 2);
-	static final PropertyKey WPD_SECTION_DATA_LENGTH = new PropertyKey(WPD_SECTION_OBJECT_PROPERTIES_V1 , 3);
-	static final PropertyKey WPD_SECTION_DATA_UNITS = new PropertyKey(WPD_SECTION_OBJECT_PROPERTIES_V1 , 4);
-	static final PropertyKey WPD_SECTION_DATA_REFERENCED_OBJECT_RESOURCE = new PropertyKey(WPD_SECTION_OBJECT_PROPERTIES_V1 , 5);
-	static final Collection<PropertyKey> WPD_FORMAT_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_FORMAT_ATTRIBUTE_NAME , 
-		WPD_FORMAT_ATTRIBUTE_MIMETYPE ));
-	static final Collection<PropertyKey> WPD_API_OPTIONS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_API_OPTION_USE_CLEAR_DATA_STREAM , 
-		WPD_API_OPTION_IOCTL_ACCESS ));
-	static final Collection<PropertyKey> WPD_CATEGORY_COMMON_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_COMMON_RESET_DEVICE , 
-		WPD_COMMAND_COMMON_GET_OBJECT_IDS_FROM_PERSISTENT_UNIQUE_IDS , 
-		WPD_COMMAND_COMMON_SAVE_CLIENT_INFORMATION ));
-	static final Collection<PropertyKey> WPD_CATEGORY_STORAGE_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_STORAGE_FORMAT , 
-		WPD_COMMAND_STORAGE_EJECT ));
-	static final Collection<PropertyKey> WPD_DEVICE_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_DEVICE_SYNC_PARTNER , 
-		WPD_DEVICE_FIRMWARE_VERSION , 
-		WPD_DEVICE_POWER_LEVEL , 
-		WPD_DEVICE_POWER_SOURCE , 
-		WPD_DEVICE_PROTOCOL , 
-		WPD_DEVICE_MANUFACTURER , 
-		WPD_DEVICE_MODEL , 
-		WPD_DEVICE_SERIAL_NUMBER , 
-		WPD_DEVICE_SUPPORTS_NON_CONSUMABLE , 
-		WPD_DEVICE_DATETIME , 
-		WPD_DEVICE_FRIENDLY_NAME , 
-		WPD_DEVICE_SUPPORTED_DRM_SCHEMES , 
-		WPD_DEVICE_SUPPORTED_FORMATS_ARE_ORDERED , 
-		WPD_DEVICE_TYPE , 
-		WPD_DEVICE_NETWORK_IDENTIFIER , 
-		WPD_DEVICE_FUNCTIONAL_UNIQUE_ID , 
-		WPD_DEVICE_MODEL_UNIQUE_ID , 
-		WPD_DEVICE_TRANSPORT , 
-		WPD_DEVICE_USE_DEVICE_STAGE ));
-	static final Collection<PropertyKey> WPD_METHOD_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_METHOD_ATTRIBUTE_NAME , 
-		WPD_METHOD_ATTRIBUTE_ASSOCIATED_FORMAT , 
-		WPD_METHOD_ATTRIBUTE_ACCESS , 
-		WPD_METHOD_ATTRIBUTE_PARAMETERS ));
-	static final Collection<PropertyKey> WPD_IMAGE_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_IMAGE_BITDEPTH , 
-		WPD_IMAGE_CROPPED_STATUS , 
-		WPD_IMAGE_COLOR_CORRECTED_STATUS , 
-		WPD_IMAGE_FNUMBER , 
-		WPD_IMAGE_EXPOSURE_TIME , 
-		WPD_IMAGE_EXPOSURE_INDEX , 
-		WPD_IMAGE_HORIZONTAL_RESOLUTION , 
-		WPD_IMAGE_VERTICAL_RESOLUTION ));
-	static final Collection<PropertyKey> WPD_CLASS_EXTENSION_OPTIONS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_CLASS_EXTENSION_OPTIONS_SUPPORTED_CONTENT_TYPES , 
-		WPD_CLASS_EXTENSION_OPTIONS_DONT_REGISTER_WPD_DEVICE_INTERFACE , 
-		WPD_CLASS_EXTENSION_OPTIONS_REGISTER_WPD_PRIVATE_DEVICE_INTERFACE , 
-		WPD_CLASS_EXTENSION_OPTIONS_MULTITRANSPORT_MODE , 
-		WPD_CLASS_EXTENSION_OPTIONS_DEVICE_IDENTIFICATION_VALUES , 
-		WPD_CLASS_EXTENSION_OPTIONS_TRANSPORT_BANDWIDTH , 
-		WPD_CLASS_EXTENSION_OPTIONS_SILENCE_AUTOPLAY ));
-	static final Collection<PropertyKey> WPD_CATEGORY_STILL_IMAGE_CAPTURE_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_STILL_IMAGE_CAPTURE_INITIATE ));
-	static final Collection<PropertyKey> WPD_FOLDER_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_FOLDER_CONTENT_TYPES_ALLOWED ));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_ENUMERATION_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_OBJECT_ENUMERATION_PARENT_ID , 
-		WPD_PROPERTY_OBJECT_ENUMERATION_FILTER , 
-		WPD_PROPERTY_OBJECT_ENUMERATION_OBJECT_IDS , 
-		WPD_PROPERTY_OBJECT_ENUMERATION_CONTEXT , 
-		WPD_PROPERTY_OBJECT_ENUMERATION_NUM_OBJECTS_REQUESTED ));
-	static final Collection<PropertyKey> WPD_VIDEO_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_VIDEO_AUTHOR , 
-		WPD_VIDEO_RECORDEDTV_STATION_NAME , 
-		WPD_VIDEO_RECORDEDTV_CHANNEL_NUMBER , 
-		WPD_VIDEO_RECORDEDTV_REPEAT , 
-		WPD_VIDEO_BUFFER_SIZE , 
-		WPD_VIDEO_CREDITS , 
-		WPD_VIDEO_KEY_FRAME_DISTANCE , 
-		WPD_VIDEO_QUALITY_SETTING , 
-		WPD_VIDEO_SCAN_TYPE , 
-		WPD_VIDEO_BITRATE , 
-		WPD_VIDEO_FOURCC_CODE , 
-		WPD_VIDEO_FRAMERATE ));
-	static final Collection<PropertyKey> WPD_SECTION_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_SECTION_DATA_OFFSET , 
-		WPD_SECTION_DATA_LENGTH , 
-		WPD_SECTION_DATA_UNITS , 
-		WPD_SECTION_DATA_REFERENCED_OBJECT_RESOURCE ));
-	static final Collection<PropertyKey> WPD_MEMO_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_RESOURCES_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_OBJECT_RESOURCES_OBJECT_ID , 
-		WPD_PROPERTY_OBJECT_RESOURCES_ACCESS_MODE , 
-		WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_KEYS , 
-		WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_ATTRIBUTES , 
-		WPD_PROPERTY_OBJECT_RESOURCES_CONTEXT , 
-		WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_READ , 
-		WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_READ , 
-		WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_WRITE , 
-		WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_WRITTEN , 
-		WPD_PROPERTY_OBJECT_RESOURCES_DATA , 
-		WPD_PROPERTY_OBJECT_RESOURCES_OPTIMAL_TRANSFER_BUFFER_SIZE , 
-		WPD_PROPERTY_OBJECT_RESOURCES_SEEK_OFFSET , 
-		WPD_PROPERTY_OBJECT_RESOURCES_SEEK_ORIGIN_FLAG , 
-		WPD_PROPERTY_OBJECT_RESOURCES_POSITION_FROM_START , 
-		WPD_PROPERTY_OBJECT_RESOURCES_SUPPORTS_UNITS , 
-		WPD_PROPERTY_OBJECT_RESOURCES_STREAM_UNITS ));
-	static final Collection<PropertyKey> WPD_CATEGORY_COMMON_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_COMMON_COMMAND_CATEGORY , 
-		WPD_PROPERTY_COMMON_COMMAND_ID , 
-		WPD_PROPERTY_COMMON_HRESULT , 
-		WPD_PROPERTY_COMMON_DRIVER_ERROR_CODE , 
-		WPD_PROPERTY_COMMON_COMMAND_TARGET , 
-		WPD_PROPERTY_COMMON_PERSISTENT_UNIQUE_IDS , 
-		WPD_PROPERTY_COMMON_OBJECT_IDS , 
-		WPD_PROPERTY_COMMON_CLIENT_INFORMATION , 
-		WPD_PROPERTY_COMMON_CLIENT_INFORMATION_CONTEXT , 
-		WPD_PROPERTY_COMMON_ACTIVITY_ID ));
-	static final Collection<PropertyKey> WPD_RESOURCE_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_RESOURCE_ATTRIBUTE_TOTAL_SIZE , 
-		WPD_RESOURCE_ATTRIBUTE_CAN_READ , 
-		WPD_RESOURCE_ATTRIBUTE_CAN_WRITE , 
-		WPD_RESOURCE_ATTRIBUTE_CAN_DELETE , 
-		WPD_RESOURCE_ATTRIBUTE_OPTIMAL_READ_BUFFER_SIZE , 
-		WPD_RESOURCE_ATTRIBUTE_OPTIMAL_WRITE_BUFFER_SIZE , 
-		WPD_RESOURCE_ATTRIBUTE_FORMAT , 
-		WPD_RESOURCE_ATTRIBUTE_RESOURCE_KEY ));
-	static final Collection<PropertyKey> WPD_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_OBJECT_CONTENT_TYPE , 
-		WPD_OBJECT_REFERENCES , 
-		WPD_OBJECT_CONTAINER_FUNCTIONAL_OBJECT_ID , 
-		WPD_OBJECT_GENERATE_THUMBNAIL_FROM_RESOURCE , 
-		WPD_OBJECT_HINT_LOCATION_DISPLAY_NAME , 
-		WPD_OBJECT_SUPPORTED_UNITS , 
-		WPD_OBJECT_ID , 
-		WPD_OBJECT_PARENT_ID , 
-		WPD_OBJECT_NAME , 
-		WPD_OBJECT_PERSISTENT_UNIQUE_ID , 
-		WPD_OBJECT_FORMAT , 
-		WPD_OBJECT_ISHIDDEN , 
-		WPD_OBJECT_ISSYSTEM , 
-		WPD_OBJECT_SIZE , 
-		WPD_OBJECT_ORIGINAL_FILE_NAME , 
-		WPD_OBJECT_NON_CONSUMABLE , 
-		WPD_OBJECT_KEYWORDS , 
-		WPD_OBJECT_SYNC_ID , 
-		WPD_OBJECT_IS_DRM_PROTECTED , 
-		WPD_OBJECT_DATE_CREATED , 
-		WPD_OBJECT_DATE_MODIFIED , 
-		WPD_OBJECT_DATE_AUTHORED , 
-		WPD_OBJECT_BACK_REFERENCES , 
-		WPD_OBJECT_CAN_DELETE , 
-		WPD_OBJECT_LANGUAGE_LOCALE ));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_PROPERTIES_BULK_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_IDS , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_CONTEXT , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_VALUES , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PROPERTY_KEYS , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_DEPTH , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PARENT_OBJECT_ID , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_FORMAT , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_WRITE_RESULTS ));
-	static final Collection<PropertyKey> WPD_SERVICE_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_SERVICE_VERSION ));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_PROPERTIES_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_OBJECT_PROPERTIES_GET_SUPPORTED , 
-		WPD_COMMAND_OBJECT_PROPERTIES_GET_ATTRIBUTES , 
-		WPD_COMMAND_OBJECT_PROPERTIES_GET , 
-		WPD_COMMAND_OBJECT_PROPERTIES_SET , 
-		WPD_COMMAND_OBJECT_PROPERTIES_GET_ALL , 
-		WPD_COMMAND_OBJECT_PROPERTIES_DELETE , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_START , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_NEXT , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_END , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_START , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_NEXT , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_END , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_START , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_NEXT , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_END ));
-	static final Collection<PropertyKey> WPD_CATEGORY_SERVICE_CAPABILITIES_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS_BY_FORMAT , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_ATTRIBUTES , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_PARAMETER_ATTRIBUTES , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMATS , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_ATTRIBUTES , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_PROPERTY_ATTRIBUTES , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_EVENTS , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_ATTRIBUTES , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_PARAMETER_ATTRIBUTES , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_INHERITED_SERVICES , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_RENDERING_PROFILES , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_COMMANDS , 
-		WPD_COMMAND_SERVICE_CAPABILITIES_GET_COMMAND_OPTIONS ));
-	static final Collection<PropertyKey> WPD_CATEGORY_SERVICE_CAPABILITIES_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_METHODS , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD_ATTRIBUTES , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER_ATTRIBUTES , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_FORMATS , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT_ATTRIBUTES , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_KEYS , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_ATTRIBUTES , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_EVENTS , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT_ATTRIBUTES , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITANCE_TYPE , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITED_SERVICES , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_RENDERING_PROFILES , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_COMMANDS , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND , 
-		WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND_OPTIONS ));
-	static final Collection<PropertyKey> WPD_DOCUMENT_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		));
-	static final Collection<PropertyKey> WPD_COMMON_INFORMATION_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMON_INFORMATION_SUBJECT , 
-		WPD_COMMON_INFORMATION_BODY_TEXT , 
-		WPD_COMMON_INFORMATION_PRIORITY , 
-		WPD_COMMON_INFORMATION_START_DATETIME , 
-		WPD_COMMON_INFORMATION_END_DATETIME , 
-		WPD_COMMON_INFORMATION_NOTES ));
-	static final Collection<PropertyKey> WPD_CATEGORY_SMS_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_SMS_SEND ));
-	static final Collection<PropertyKey> WPD_APPOINTMENT_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_APPOINTMENT_LOCATION , 
-		WPD_APPOINTMENT_TYPE , 
-		WPD_APPOINTMENT_REQUIRED_ATTENDEES , 
-		WPD_APPOINTMENT_OPTIONAL_ATTENDEES , 
-		WPD_APPOINTMENT_ACCEPTED_ATTENDEES , 
-		WPD_APPOINTMENT_RESOURCES , 
-		WPD_APPOINTMENT_TENTATIVE_ATTENDEES , 
-		WPD_APPOINTMENT_DECLINED_ATTENDEES ));
-	static final Collection<PropertyKey> WPD_EVENT_OPTIONS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_EVENT_OPTION_IS_BROADCAST_EVENT , 
-		WPD_EVENT_OPTION_IS_AUTOPLAY_EVENT ));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_PROPERTIES_BULK_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_START , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_NEXT , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_END , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_START , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_NEXT , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_END , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_START , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_NEXT , 
-		WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_END ));
-	static final Collection<PropertyKey> WPD_STORAGE_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_STORAGE_TYPE , 
-		WPD_STORAGE_FILE_SYSTEM_TYPE , 
-		WPD_STORAGE_CAPACITY , 
-		WPD_STORAGE_FREE_SPACE_IN_BYTES , 
-		WPD_STORAGE_FREE_SPACE_IN_OBJECTS , 
-		WPD_STORAGE_DESCRIPTION , 
-		WPD_STORAGE_SERIAL_NUMBER , 
-		WPD_STORAGE_MAX_OBJECT_SIZE , 
-		WPD_STORAGE_CAPACITY_IN_OBJECTS , 
-		WPD_STORAGE_ACCESS_CAPABILITY ));
-	static final Collection<PropertyKey> WPD_CATEGORY_STORAGE_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_STORAGE_OBJECT_ID , 
-		WPD_PROPERTY_STORAGE_DESTINATION_OBJECT_ID ));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_PROPERTIES_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_OBJECT_PROPERTIES_OBJECT_ID , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_KEYS , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_ATTRIBUTES , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_VALUES , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_WRITE_RESULTS , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_DELETE_RESULTS , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_IDS , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_CONTEXT , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_VALUES , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PROPERTY_KEYS , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_DEPTH , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PARENT_OBJECT_ID , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_FORMAT , 
-		WPD_PROPERTY_OBJECT_PROPERTIES_BULK_WRITE_RESULTS ));
-	static final Collection<PropertyKey> WPD_CATEGORY_MEDIA_CAPTURE_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_MEDIA_CAPTURE_START , 
-		WPD_COMMAND_MEDIA_CAPTURE_STOP , 
-		WPD_COMMAND_MEDIA_CAPTURE_PAUSE ));
-	static final Collection<PropertyKey> WPD_MEDIA_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_MEDIA_TOTAL_BITRATE , 
-		WPD_MEDIA_BITRATE_TYPE , 
-		WPD_MEDIA_COPYRIGHT , 
-		WPD_MEDIA_SUBSCRIPTION_CONTENT_ID , 
-		WPD_MEDIA_USE_COUNT , 
-		WPD_MEDIA_SKIP_COUNT , 
-		WPD_MEDIA_LAST_ACCESSED_TIME , 
-		WPD_MEDIA_PARENTAL_RATING , 
-		WPD_MEDIA_META_GENRE , 
-		WPD_MEDIA_COMPOSER , 
-		WPD_MEDIA_EFFECTIVE_RATING , 
-		WPD_MEDIA_SUB_TITLE , 
-		WPD_MEDIA_RELEASE_DATE , 
-		WPD_MEDIA_SAMPLE_RATE , 
-		WPD_MEDIA_STAR_RATING , 
-		WPD_MEDIA_USER_EFFECTIVE_RATING , 
-		WPD_MEDIA_TITLE , 
-		WPD_MEDIA_DURATION , 
-		WPD_MEDIA_BUY_NOW , 
-		WPD_MEDIA_ENCODING_PROFILE , 
-		WPD_MEDIA_WIDTH , 
-		WPD_MEDIA_HEIGHT , 
-		WPD_MEDIA_ARTIST , 
-		WPD_MEDIA_ALBUM_ARTIST , 
-		WPD_MEDIA_OWNER , 
-		WPD_MEDIA_MANAGING_EDITOR , 
-		WPD_MEDIA_WEBMASTER , 
-		WPD_MEDIA_SOURCE_URL , 
-		WPD_MEDIA_DESTINATION_URL , 
-		WPD_MEDIA_DESCRIPTION , 
-		WPD_MEDIA_GENRE , 
-		WPD_MEDIA_TIME_BOOKMARK , 
-		WPD_MEDIA_OBJECT_BOOKMARK , 
-		WPD_MEDIA_LAST_BUILD_DATE , 
-		WPD_MEDIA_BYTE_BOOKMARK , 
-		WPD_MEDIA_TIME_TO_LIVE , 
-		WPD_MEDIA_GUID , 
-		WPD_MEDIA_SUB_DESCRIPTION , 
-		WPD_MEDIA_AUDIO_ENCODING_PROFILE ));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_MANAGEMENT_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_ONLY , 
-		WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_AND_DATA , 
-		WPD_COMMAND_OBJECT_MANAGEMENT_WRITE_OBJECT_DATA , 
-		WPD_COMMAND_OBJECT_MANAGEMENT_COMMIT_OBJECT , 
-		WPD_COMMAND_OBJECT_MANAGEMENT_REVERT_OBJECT , 
-		WPD_COMMAND_OBJECT_MANAGEMENT_DELETE_OBJECTS , 
-		WPD_COMMAND_OBJECT_MANAGEMENT_MOVE_OBJECTS , 
-		WPD_COMMAND_OBJECT_MANAGEMENT_COPY_OBJECTS , 
-		WPD_COMMAND_OBJECT_MANAGEMENT_UPDATE_OBJECT_WITH_PROPERTIES_AND_DATA ));
-	static final Collection<PropertyKey> WPD_CATEGORY_DEVICE_HINTS_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_DEVICE_HINTS_CONTENT_TYPE , 
-		WPD_PROPERTY_DEVICE_HINTS_CONTENT_LOCATIONS ));
-	static final Collection<PropertyKey> WPD_TASK_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_TASK_STATUS , 
-		WPD_TASK_PERCENT_COMPLETE , 
-		WPD_TASK_REMINDER_DATE , 
-		WPD_TASK_OWNER ));
-	static final Collection<PropertyKey> WPD_SMS_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_SMS_PROVIDER , 
-		WPD_SMS_TIMEOUT , 
-		WPD_SMS_MAX_PAYLOAD , 
-		WPD_SMS_ENCODING ));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_RESOURCES_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_OBJECT_RESOURCES_GET_SUPPORTED , 
-		WPD_COMMAND_OBJECT_RESOURCES_GET_ATTRIBUTES , 
-		WPD_COMMAND_OBJECT_RESOURCES_OPEN , 
-		WPD_COMMAND_OBJECT_RESOURCES_READ , 
-		WPD_COMMAND_OBJECT_RESOURCES_WRITE , 
-		WPD_COMMAND_OBJECT_RESOURCES_CLOSE , 
-		WPD_COMMAND_OBJECT_RESOURCES_DELETE , 
-		WPD_COMMAND_OBJECT_RESOURCES_CREATE_RESOURCE , 
-		WPD_COMMAND_OBJECT_RESOURCES_REVERT , 
-		WPD_COMMAND_OBJECT_RESOURCES_SEEK , 
-		WPD_COMMAND_OBJECT_RESOURCES_COMMIT , 
-		WPD_COMMAND_OBJECT_RESOURCES_SEEK_IN_UNITS ));
-	static final Collection<PropertyKey> WPD_CATEGORY_SMS_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_SMS_RECIPIENT , 
-		WPD_PROPERTY_SMS_MESSAGE_TYPE , 
-		WPD_PROPERTY_SMS_TEXT_MESSAGE , 
-		WPD_PROPERTY_SMS_BINARY_MESSAGE ));
-	static final Collection<PropertyKey> WPD_CLASS_EXTENSION_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_CLASS_EXTENSION_WRITE_DEVICE_INFORMATION , 
-		WPD_COMMAND_CLASS_EXTENSION_REGISTER_SERVICE_INTERFACES , 
-		WPD_COMMAND_CLASS_EXTENSION_UNREGISTER_SERVICE_INTERFACES ));
-	static final Collection<PropertyKey> WPD_MUSIC_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_MUSIC_ALBUM , 
-		WPD_MUSIC_TRACK , 
-		WPD_MUSIC_LYRICS , 
-		WPD_MUSIC_MOOD ));
-	static final Collection<PropertyKey> WPD_CATEGORY_SERVICE_METHODS_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_SERVICE_METHOD , 
-		WPD_PROPERTY_SERVICE_METHOD_PARAMETER_VALUES , 
-		WPD_PROPERTY_SERVICE_METHOD_RESULT_VALUES , 
-		WPD_PROPERTY_SERVICE_METHOD_CONTEXT , 
-		WPD_PROPERTY_SERVICE_METHOD_HRESULT ));
-	static final Collection<PropertyKey> WPD_CATEGORY_SERVICE_METHODS_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_SERVICE_METHODS_START_INVOKE , 
-		WPD_COMMAND_SERVICE_METHODS_CANCEL_INVOKE , 
-		WPD_COMMAND_SERVICE_METHODS_END_INVOKE ));
-	static final Collection<PropertyKey> WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_RENDERING_INFORMATION_PROFILES , 
-		WPD_RENDERING_INFORMATION_PROFILE_ENTRY_TYPE , 
-		WPD_RENDERING_INFORMATION_PROFILE_ENTRY_CREATABLE_RESOURCES ));
-	static final Collection<PropertyKey> WPD_CONTACT_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_CONTACT_DISPLAY_NAME , 
-		WPD_CONTACT_FIRST_NAME , 
-		WPD_CONTACT_MIDDLE_NAMES , 
-		WPD_CONTACT_LAST_NAME , 
-		WPD_CONTACT_PREFIX , 
-		WPD_CONTACT_SUFFIX , 
-		WPD_CONTACT_PHONETIC_FIRST_NAME , 
-		WPD_CONTACT_PHONETIC_LAST_NAME , 
-		WPD_CONTACT_PERSONAL_FULL_POSTAL_ADDRESS , 
-		WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE1 , 
-		WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE2 , 
-		WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_CITY , 
-		WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_REGION , 
-		WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_POSTAL_CODE , 
-		WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_COUNTRY , 
-		WPD_CONTACT_BUSINESS_FULL_POSTAL_ADDRESS , 
-		WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE1 , 
-		WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE2 , 
-		WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_CITY , 
-		WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_REGION , 
-		WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_POSTAL_CODE , 
-		WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_COUNTRY , 
-		WPD_CONTACT_OTHER_FULL_POSTAL_ADDRESS , 
-		WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE1 , 
-		WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE2 , 
-		WPD_CONTACT_OTHER_POSTAL_ADDRESS_CITY , 
-		WPD_CONTACT_OTHER_POSTAL_ADDRESS_REGION , 
-		WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_CODE , 
-		WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_COUNTRY , 
-		WPD_CONTACT_PRIMARY_EMAIL_ADDRESS , 
-		WPD_CONTACT_PERSONAL_EMAIL , 
-		WPD_CONTACT_PERSONAL_EMAIL2 , 
-		WPD_CONTACT_BUSINESS_EMAIL , 
-		WPD_CONTACT_BUSINESS_EMAIL2 , 
-		WPD_CONTACT_OTHER_EMAILS , 
-		WPD_CONTACT_PRIMARY_PHONE , 
-		WPD_CONTACT_PERSONAL_PHONE , 
-		WPD_CONTACT_PERSONAL_PHONE2 , 
-		WPD_CONTACT_BUSINESS_PHONE , 
-		WPD_CONTACT_BUSINESS_PHONE2 , 
-		WPD_CONTACT_MOBILE_PHONE , 
-		WPD_CONTACT_MOBILE_PHONE2 , 
-		WPD_CONTACT_PERSONAL_FAX , 
-		WPD_CONTACT_BUSINESS_FAX , 
-		WPD_CONTACT_PAGER , 
-		WPD_CONTACT_OTHER_PHONES , 
-		WPD_CONTACT_PRIMARY_WEB_ADDRESS , 
-		WPD_CONTACT_PERSONAL_WEB_ADDRESS , 
-		WPD_CONTACT_BUSINESS_WEB_ADDRESS , 
-		WPD_CONTACT_INSTANT_MESSENGER , 
-		WPD_CONTACT_INSTANT_MESSENGER2 , 
-		WPD_CONTACT_INSTANT_MESSENGER3 , 
-		WPD_CONTACT_COMPANY_NAME , 
-		WPD_CONTACT_PHONETIC_COMPANY_NAME , 
-		WPD_CONTACT_ROLE , 
-		WPD_CONTACT_BIRTHDATE , 
-		WPD_CONTACT_PRIMARY_FAX , 
-		WPD_CONTACT_SPOUSE , 
-		WPD_CONTACT_CHILDREN , 
-		WPD_CONTACT_ASSISTANT , 
-		WPD_CONTACT_ANNIVERSARY_DATE , 
-		WPD_CONTACT_RINGTONE ));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_ENUMERATION_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_OBJECT_ENUMERATION_START_FIND , 
-		WPD_COMMAND_OBJECT_ENUMERATION_FIND_NEXT , 
-		WPD_COMMAND_OBJECT_ENUMERATION_END_FIND ));
-	static final Collection<PropertyKey> WPD_NETWORK_ASSOCIATION_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_NETWORK_ASSOCIATION_HOST_NETWORK_IDENTIFIERS , 
-		WPD_NETWORK_ASSOCIATION_X509V3SEQUENCE ));
-	static final Collection<PropertyKey> WPD_EMAIL_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_EMAIL_TO_LINE , 
-		WPD_EMAIL_CC_LINE , 
-		WPD_EMAIL_BCC_LINE , 
-		WPD_EMAIL_HAS_BEEN_READ , 
-		WPD_EMAIL_RECEIVED_TIME , 
-		WPD_EMAIL_HAS_ATTACHMENTS , 
-		WPD_EMAIL_SENDER_ADDRESS ));
-	static final Collection<PropertyKey> WPD_EVENT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_EVENT_PARAMETER_PNP_DEVICE_ID , 
-		WPD_EVENT_PARAMETER_EVENT_ID , 
-		WPD_EVENT_PARAMETER_OPERATION_STATE , 
-		WPD_EVENT_PARAMETER_OPERATION_PROGRESS , 
-		WPD_EVENT_PARAMETER_OBJECT_PARENT_PERSISTENT_UNIQUE_ID , 
-		WPD_EVENT_PARAMETER_OBJECT_CREATION_COOKIE , 
-		WPD_EVENT_PARAMETER_CHILD_HIERARCHY_CHANGED , 
-		WPD_EVENT_PARAMETER_SERVICE_METHOD_CONTEXT ));
-	static final Collection<PropertyKey> WPD_CATEGORY_CAPABILITIES_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_COMMANDS , 
-		WPD_COMMAND_CAPABILITIES_GET_COMMAND_OPTIONS , 
-		WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FUNCTIONAL_CATEGORIES , 
-		WPD_COMMAND_CAPABILITIES_GET_FUNCTIONAL_OBJECTS , 
-		WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_CONTENT_TYPES , 
-		WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMATS , 
-		WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES , 
-		WPD_COMMAND_CAPABILITIES_GET_FIXED_PROPERTY_ATTRIBUTES , 
-		WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_EVENTS , 
-		WPD_COMMAND_CAPABILITIES_GET_EVENT_OPTIONS ));
-	static final Collection<PropertyKey> WPD_CLIENT_INFORMATION_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_CLIENT_NAME , 
-		WPD_CLIENT_MAJOR_VERSION , 
-		WPD_CLIENT_MINOR_VERSION , 
-		WPD_CLIENT_REVISION , 
-		WPD_CLIENT_WMDRM_APPLICATION_PRIVATE_KEY , 
-		WPD_CLIENT_WMDRM_APPLICATION_CERTIFICATE , 
-		WPD_CLIENT_SECURITY_QUALITY_OF_SERVICE , 
-		WPD_CLIENT_DESIRED_ACCESS , 
-		WPD_CLIENT_SHARE_MODE , 
-		WPD_CLIENT_EVENT_COOKIE , 
-		WPD_CLIENT_MINIMUM_RESULTS_BUFFER_SIZE , 
-		WPD_CLIENT_MANUAL_CLOSE_ON_DISCONNECT ));
-	static final Collection<PropertyKey> WPD_CLASS_EXTENSION_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_VALUES , 
-		WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_WRITE_RESULTS , 
-		WPD_PROPERTY_CLASS_EXTENSION_SERVICE_OBJECT_ID , 
-		WPD_PROPERTY_CLASS_EXTENSION_SERVICE_INTERFACES , 
-		WPD_PROPERTY_CLASS_EXTENSION_SERVICE_REGISTRATION_RESULTS ));
-	static final Collection<PropertyKey> WPD_EVENT_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_EVENT_ATTRIBUTE_NAME , 
-		WPD_EVENT_ATTRIBUTE_PARAMETERS , 
-		WPD_EVENT_ATTRIBUTE_OPTIONS ));
-	static final Collection<PropertyKey> WPD_CATEGORY_OBJECT_MANAGEMENT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_OBJECT_MANAGEMENT_CREATION_PROPERTIES , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_CONTEXT , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_TO_WRITE , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_WRITTEN , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_DATA , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_ID , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_OPTIONS , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_OPTIMAL_TRANSFER_BUFFER_SIZE , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_IDS , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_RESULTS , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_DESTINATION_FOLDER_OBJECT_ID , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_MOVE_RESULTS , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_COPY_RESULTS , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_UPDATE_PROPERTIES , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_PROPERTY_KEYS , 
-		WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_FORMAT ));
-	static final Collection<PropertyKey> WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_STILL_IMAGE_CAPTURE_RESOLUTION , 
-		WPD_STILL_IMAGE_CAPTURE_FORMAT , 
-		WPD_STILL_IMAGE_COMPRESSION_SETTING , 
-		WPD_STILL_IMAGE_WHITE_BALANCE , 
-		WPD_STILL_IMAGE_RGB_GAIN , 
-		WPD_STILL_IMAGE_FNUMBER , 
-		WPD_STILL_IMAGE_FOCAL_LENGTH , 
-		WPD_STILL_IMAGE_FOCUS_DISTANCE , 
-		WPD_STILL_IMAGE_FOCUS_MODE , 
-		WPD_STILL_IMAGE_EXPOSURE_METERING_MODE , 
-		WPD_STILL_IMAGE_FLASH_MODE , 
-		WPD_STILL_IMAGE_EXPOSURE_TIME , 
-		WPD_STILL_IMAGE_EXPOSURE_PROGRAM_MODE , 
-		WPD_STILL_IMAGE_EXPOSURE_INDEX , 
-		WPD_STILL_IMAGE_EXPOSURE_BIAS_COMPENSATION , 
-		WPD_STILL_IMAGE_CAPTURE_DELAY , 
-		WPD_STILL_IMAGE_CAPTURE_MODE , 
-		WPD_STILL_IMAGE_CONTRAST , 
-		WPD_STILL_IMAGE_SHARPNESS , 
-		WPD_STILL_IMAGE_DIGITAL_ZOOM , 
-		WPD_STILL_IMAGE_EFFECT_MODE , 
-		WPD_STILL_IMAGE_BURST_NUMBER , 
-		WPD_STILL_IMAGE_BURST_INTERVAL , 
-		WPD_STILL_IMAGE_TIMELAPSE_NUMBER , 
-		WPD_STILL_IMAGE_TIMELAPSE_INTERVAL , 
-		WPD_STILL_IMAGE_FOCUS_METERING_MODE , 
-		WPD_STILL_IMAGE_UPLOAD_URL , 
-		WPD_STILL_IMAGE_ARTIST , 
-		WPD_STILL_IMAGE_CAMERA_MODEL , 
-		WPD_STILL_IMAGE_CAMERA_MANUFACTURER ));
-	static final Collection<PropertyKey> WPD_CATEGORY_CAPABILITIES_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_CAPABILITIES_SUPPORTED_COMMANDS , 
-		WPD_PROPERTY_CAPABILITIES_COMMAND , 
-		WPD_PROPERTY_CAPABILITIES_COMMAND_OPTIONS , 
-		WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORIES , 
-		WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORY , 
-		WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_OBJECTS , 
-		WPD_PROPERTY_CAPABILITIES_CONTENT_TYPES , 
-		WPD_PROPERTY_CAPABILITIES_CONTENT_TYPE , 
-		WPD_PROPERTY_CAPABILITIES_FORMATS , 
-		WPD_PROPERTY_CAPABILITIES_FORMAT , 
-		WPD_PROPERTY_CAPABILITIES_PROPERTY_KEYS , 
-		WPD_PROPERTY_CAPABILITIES_PROPERTY_ATTRIBUTES , 
-		WPD_PROPERTY_CAPABILITIES_SUPPORTED_EVENTS , 
-		WPD_PROPERTY_CAPABILITIES_EVENT , 
-		WPD_PROPERTY_CAPABILITIES_EVENT_OPTIONS ));
-	static final Collection<PropertyKey> WPD_CATEGORY_DEVICE_HINTS_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_COMMAND_DEVICE_HINTS_GET_CONTENT_LOCATION ));
-	static final Collection<PropertyKey> WPD_PARAMETER_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PARAMETER_ATTRIBUTE_ORDER , 
-		WPD_PARAMETER_ATTRIBUTE_USAGE , 
-		WPD_PARAMETER_ATTRIBUTE_FORM , 
-		WPD_PARAMETER_ATTRIBUTE_DEFAULT_VALUE , 
-		WPD_PARAMETER_ATTRIBUTE_RANGE_MIN , 
-		WPD_PARAMETER_ATTRIBUTE_RANGE_MAX , 
-		WPD_PARAMETER_ATTRIBUTE_RANGE_STEP , 
-		WPD_PARAMETER_ATTRIBUTE_ENUMERATION_ELEMENTS , 
-		WPD_PARAMETER_ATTRIBUTE_REGULAR_EXPRESSION , 
-		WPD_PARAMETER_ATTRIBUTE_MAX_SIZE , 
-		WPD_PARAMETER_ATTRIBUTE_VARTYPE , 
-		WPD_PARAMETER_ATTRIBUTE_NAME ));
-	static final Collection<PropertyKey> WPD_FUNCTIONAL_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_FUNCTIONAL_OBJECT_CATEGORY ));
-	static final Collection<PropertyKey> WPD_CATEGORY_SERVICE_METHODS_RESOURCES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_RESOURCE_ATTRIBUTE_TOTAL_SIZE , 
-		WPD_RESOURCE_ATTRIBUTE_CAN_READ , 
-		WPD_RESOURCE_ATTRIBUTE_CAN_WRITE , 
-		WPD_RESOURCE_ATTRIBUTE_CAN_DELETE , 
-		WPD_RESOURCE_ATTRIBUTE_OPTIMAL_READ_BUFFER_SIZE , 
-		WPD_RESOURCE_ATTRIBUTE_OPTIMAL_WRITE_BUFFER_SIZE , 
-		WPD_RESOURCE_ATTRIBUTE_FORMAT , 
-		WPD_RESOURCE_ATTRIBUTE_RESOURCE_KEY , 
-		WPD_RESOURCE_DEFAULT , 
-		WPD_RESOURCE_CONTACT_PHOTO , 
-		WPD_RESOURCE_THUMBNAIL , 
-		WPD_RESOURCE_ICON , 
-		WPD_RESOURCE_AUDIO_CLIP , 
-		WPD_RESOURCE_ALBUM_ART , 
-		WPD_RESOURCE_GENERIC , 
-		WPD_RESOURCE_VIDEO_CLIP , 
-		WPD_RESOURCE_BRANDING_ART ));
-	static final Collection<PropertyKey> WPD_PROPERTY_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_PROPERTY_ATTRIBUTE_FORM , 
-		WPD_PROPERTY_ATTRIBUTE_CAN_READ , 
-		WPD_PROPERTY_ATTRIBUTE_CAN_WRITE , 
-		WPD_PROPERTY_ATTRIBUTE_CAN_DELETE , 
-		WPD_PROPERTY_ATTRIBUTE_DEFAULT_VALUE , 
-		WPD_PROPERTY_ATTRIBUTE_FAST_PROPERTY , 
-		WPD_PROPERTY_ATTRIBUTE_RANGE_MIN , 
-		WPD_PROPERTY_ATTRIBUTE_RANGE_MAX , 
-		WPD_PROPERTY_ATTRIBUTE_RANGE_STEP , 
-		WPD_PROPERTY_ATTRIBUTE_ENUMERATION_ELEMENTS , 
-		WPD_PROPERTY_ATTRIBUTE_REGULAR_EXPRESSION , 
-		WPD_PROPERTY_ATTRIBUTE_MAX_SIZE , 
-		WPD_PROPERTY_ATTRIBUTE_NAME , 
-		WPD_PROPERTY_ATTRIBUTE_VARTYPE ));
-static final Collection<Guid> WPD_OBJECT_FORMATS = Collections.unmodifiableCollection(Arrays.asList(
-		WPD_OBJECT_FORMAT_PLSPLAYLIST, 
-		WPD_OBJECT_FORMAT_CIFF, 
-		WPD_OBJECT_FORMAT_WMV, 
-		WPD_OBJECT_FORMAT_ICALENDAR, 
-		WPD_OBJECT_FORMAT_WINDOWSIMAGEFORMAT, 
-		WPD_OBJECT_FORMAT_TIFFIT, 
-		WPD_OBJECT_FORMAT_ABSTRACT_CONTACT, 
-		WPD_OBJECT_FORMAT_HTML, 
-		WPD_OBJECT_FORMAT_AAC, 
-		WPD_OBJECT_FORMAT_AVCHD, 
-		WPD_OBJECT_FORMAT_MKV, 
-		WPD_OBJECT_FORMAT_M3UPLAYLIST, 
-		WPD_OBJECT_FORMAT_MPEG, 
-		WPD_OBJECT_FORMAT_PNG, 
-		WPD_OBJECT_FORMAT_TIFFEP, 
-		WPD_OBJECT_FORMAT_NETWORK_ASSOCIATION, 
-		WPD_OBJECT_FORMAT_SCRIPT, 
-		WPD_OBJECT_FORMAT_ICON, 
-		WPD_OBJECT_FORMAT_ABSTRACT_CONTACT_GROUP, 
-		WPD_OBJECT_FORMAT_FLAC, 
-		WPD_OBJECT_FORMAT_GIF, 
-		WPD_OBJECT_FORMAT_MP2, 
-		WPD_OBJECT_FORMAT_MICROSOFT_POWERPOINT, 
-		WPD_OBJECT_FORMAT_MICROSOFT_WORD, 
-		WPD_OBJECT_FORMAT_AIFF, 
-		WPD_OBJECT_FORMAT_WMA, 
-		WPD_OBJECT_FORMAT_ASXPLAYLIST, 
-		WPD_OBJECT_FORMAT_BMP, 
-		WPD_OBJECT_FORMAT_DVBTS, 
-		WPD_OBJECT_FORMAT_TIFF, 
-		WPD_OBJECT_FORMAT_VCARD2, 
-		WPD_OBJECT_FORMAT_MICROSOFT_WFC, 
-		WPD_OBJECT_FORMAT_TEXT, 
-		WPD_OBJECT_FORMAT_JPX, 
-		WPD_OBJECT_FORMAT_JPEGXR, 
-		WPD_OBJECT_FORMAT_AUDIBLE, 
-		WPD_OBJECT_FORMAT_WPLPLAYLIST, 
-		WPD_OBJECT_FORMAT_PICT, 
-		WPD_OBJECT_FORMAT_AVI, 
-		WPD_OBJECT_FORMAT_3G2, 
-		WPD_OBJECT_FORMAT_M4A, 
-		WPD_OBJECT_FORMAT_EXIF, 
-		WPD_OBJECT_FORMAT_MICROSOFT_EXCEL, 
-		WPD_OBJECT_FORMAT_PROPERTIES_ONLY, 
-		WPD_OBJECT_FORMAT_PCD, 
-		WPD_OBJECT_FORMAT_MP3, 
-		WPD_OBJECT_FORMAT_QCELP, 
-		WPD_OBJECT_FORMAT_VCALENDAR1, 
-		WPD_OBJECT_FORMAT_ABSTRACT_MEDIA_CAST, 
-		WPD_OBJECT_FORMAT_MP4, 
-		WPD_OBJECT_FORMAT_JP2, 
-		WPD_OBJECT_FORMAT_XML, 
-		WPD_OBJECT_FORMAT_DPOF, 
-		WPD_OBJECT_FORMAT_3G2A, 
-		WPD_OBJECT_FORMAT_ATSCTS, 
-		WPD_OBJECT_FORMAT_MPLPLAYLIST, 
-		WPD_OBJECT_FORMAT_OGG, 
-		WPD_OBJECT_FORMAT_FLASHPIX, 
-		WPD_OBJECT_FORMAT_ASF, 
-		WPD_OBJECT_FORMAT_EXECUTABLE, 
-		WPD_OBJECT_FORMAT_X509V3CERTIFICATE, 
-		WPD_OBJECT_FORMAT_VCARD3, 
-		WPD_OBJECT_FORMAT_3GPA, 
-		WPD_OBJECT_FORMAT_ALL, 
-		WPD_OBJECT_FORMAT_WBMP, 
-		WPD_OBJECT_FORMAT_3GP, 
-		WPD_OBJECT_FORMAT_UNSPECIFIED, 
-		WPD_OBJECT_FORMAT_MHT_COMPILED_HTML, 
-		WPD_OBJECT_FORMAT_JFIF, 
-		WPD_OBJECT_FORMAT_WAVE, 
-		WPD_OBJECT_FORMAT_AMR));
+	public static final NamedJmtpGuid GUID_DEVINTERFACE_WPD = new NamedJmtpGuid(0x6AC27878l, 0xA6FA, 0x4155, new short[]{0xBA, 0x85, 0xF9, 0x8F, 0x49, 0x1D, 0x4F, 0x33}, "GUID_DEVINTERFACE_WPD");
+	public static final NamedJmtpGuid GUID_DEVINTERFACE_WPD_PRIVATE = new NamedJmtpGuid(0xBA0C718Fl, 0x4DED, 0x49B7, new short[]{0xBD, 0xD3, 0xFA, 0xBE, 0x28, 0x66, 0x12, 0x11}, "GUID_DEVINTERFACE_WPD_PRIVATE");
+	public static final NamedJmtpGuid GUID_DEVINTERFACE_WPD_SERVICE = new NamedJmtpGuid(0x9EF44F80l, 0x3D64, 0x4246, new short[]{0xA6, 0xAA, 0x20, 0x6F, 0x32, 0x8D, 0x1E, 0xDC}, "GUID_DEVINTERFACE_WPD_SERVICE");
+	public static final String WPD_DEVICE_OBJECT_ID = "DEVICE";
+	public static final String PORTABLE_DEVICE_TYPE = "PortableDeviceType";
+	public static final String PORTABLE_DEVICE_ICON = "Icons";
+	public static final String PORTABLE_DEVICE_NAMESPACE_TIMEOUT = "PortableDeviceNameSpaceTimeout";
+	public static final String PORTABLE_DEVICE_NAMESPACE_EXCLUDE_FROM_SHELL = "PortableDeviceNameSpaceExcludeFromShell";
+	public static final String PORTABLE_DEVICE_NAMESPACE_THUMBNAIL_CONTENT_TYPES = "PortableDeviceNameSpaceThumbnailContentTypes";
+	public static final String PORTABLE_DEVICE_IS_MASS_STORAGE = "PortableDeviceIsMassStorage";
+	public static final String PORTABLE_DEVICE_DRM_SCHEME_WMDRM10_PD = "WMDRM10-PD";
+	public static final String PORTABLE_DEVICE_DRM_SCHEME_PDDRM = "PDDRM";
+	public static final NamedJmtpGuid WPD_EVENT_NOTIFICATION = new NamedJmtpGuid(0x2BA2E40Al, 0x6B4C, 0x4295, new short[]{0xBB, 0x43, 0x26, 0x32, 0x2B, 0x99, 0xAE, 0xB2}, "WPD_EVENT_NOTIFICATION");
+	public static final NamedJmtpGuid WPD_EVENT_OBJECT_ADDED = new NamedJmtpGuid(0xA726DA95l, 0xE207, 0x4B02, new short[]{0x8D, 0x44, 0xBE, 0xF2, 0xE8, 0x6C, 0xBF, 0xFC}, "WPD_EVENT_OBJECT_ADDED");
+	public static final NamedJmtpGuid WPD_EVENT_OBJECT_REMOVED = new NamedJmtpGuid(0xBE82AB88l, 0xA52C, 0x4823, new short[]{0x96, 0xE5, 0xD0, 0x27, 0x26, 0x71, 0xFC, 0x38}, "WPD_EVENT_OBJECT_REMOVED");
+	public static final NamedJmtpGuid WPD_EVENT_OBJECT_UPDATED = new NamedJmtpGuid(0x1445A759l, 0x2E01, 0x485D, new short[]{0x9F, 0x27, 0xFF, 0x07, 0xDA, 0xE6, 0x97, 0xAB}, "WPD_EVENT_OBJECT_UPDATED");
+	public static final NamedJmtpGuid WPD_EVENT_DEVICE_RESET = new NamedJmtpGuid(0x7755CF53l, 0xC1ED, 0x44F3, new short[]{0xB5, 0xA2, 0x45, 0x1E, 0x2C, 0x37, 0x6B, 0x27}, "WPD_EVENT_DEVICE_RESET");
+	public static final NamedJmtpGuid WPD_EVENT_DEVICE_CAPABILITIES_UPDATED = new NamedJmtpGuid(0x36885AA1l, 0xCD54, 0x4DAA, new short[]{0xB3, 0xD0, 0xAF, 0xB3, 0xE0, 0x3F, 0x59, 0x99}, "WPD_EVENT_DEVICE_CAPABILITIES_UPDATED");
+	public static final NamedJmtpGuid WPD_EVENT_STORAGE_FORMAT = new NamedJmtpGuid(0x3782616Bl, 0x22BC, 0x4474, new short[]{0xA2, 0x51, 0x30, 0x70, 0xF8, 0xD3, 0x88, 0x57}, "WPD_EVENT_STORAGE_FORMAT");
+	public static final NamedJmtpGuid WPD_EVENT_OBJECT_TRANSFER_REQUESTED = new NamedJmtpGuid(0x8D16A0A1l, 0xF2C6, 0x41DA, new short[]{0x8F, 0x19, 0x5E, 0x53, 0x72, 0x1A, 0xDB, 0xF2}, "WPD_EVENT_OBJECT_TRANSFER_REQUESTED");
+	public static final NamedJmtpGuid WPD_EVENT_DEVICE_REMOVED = new NamedJmtpGuid(0xE4CBCA1Bl, 0x6918, 0x48B9, new short[]{0x85, 0xEE, 0x02, 0xBE, 0x7C, 0x85, 0x0A, 0xF9}, "WPD_EVENT_DEVICE_REMOVED");
+	public static final NamedJmtpGuid WPD_EVENT_SERVICE_METHOD_COMPLETE = new NamedJmtpGuid(0x8A33F5F8l, 0x0ACC, 0x4D9B, new short[]{0x9C, 0xC4, 0x11, 0x2D, 0x35, 0x3B, 0x86, 0xCA}, "WPD_EVENT_SERVICE_METHOD_COMPLETE");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_FUNCTIONAL_OBJECT = new NamedJmtpGuid(0x99ED0160l, 0x17FF, 0x4C44, new short[]{0x9D, 0x98, 0x1D, 0x7A, 0x6F, 0x94, 0x19, 0x21}, "WPD_CONTENT_TYPE_FUNCTIONAL_OBJECT");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_FOLDER = new NamedJmtpGuid(0x27E2E392l, 0xA111, 0x48E0, new short[]{0xAB, 0x0C, 0xE1, 0x77, 0x05, 0xA0, 0x5F, 0x85}, "WPD_CONTENT_TYPE_FOLDER");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_IMAGE = new NamedJmtpGuid(0xef2107d5l, 0xa52a, 0x4243, new short[]{0xa2, 0x6b, 0x62, 0xd4, 0x17, 0x6d, 0x76, 0x03}, "WPD_CONTENT_TYPE_IMAGE");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_DOCUMENT = new NamedJmtpGuid(0x680ADF52l, 0x950A, 0x4041, new short[]{0x9B, 0x41, 0x65, 0xE3, 0x93, 0x64, 0x81, 0x55}, "WPD_CONTENT_TYPE_DOCUMENT");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_CONTACT = new NamedJmtpGuid(0xEABA8313l, 0x4525, 0x4707, new short[]{0x9F, 0x0E, 0x87, 0xC6, 0x80, 0x8E, 0x94, 0x35}, "WPD_CONTENT_TYPE_CONTACT");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_CONTACT_GROUP = new NamedJmtpGuid(0x346B8932l, 0x4C36, 0x40D8, new short[]{0x94, 0x15, 0x18, 0x28, 0x29, 0x1F, 0x9D, 0xE9}, "WPD_CONTENT_TYPE_CONTACT_GROUP");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_AUDIO = new NamedJmtpGuid(0x4AD2C85El, 0x5E2D, 0x45E5, new short[]{0x88, 0x64, 0x4F, 0x22, 0x9E, 0x3C, 0x6C, 0xF0}, "WPD_CONTENT_TYPE_AUDIO");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_VIDEO = new NamedJmtpGuid(0x9261B03Cl, 0x3D78, 0x4519, new short[]{0x85, 0xE3, 0x02, 0xC5, 0xE1, 0xF5, 0x0B, 0xB9}, "WPD_CONTENT_TYPE_VIDEO");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_TELEVISION = new NamedJmtpGuid(0x60A169CFl, 0xF2AE, 0x4E21, new short[]{0x93, 0x75, 0x96, 0x77, 0xF1, 0x1C, 0x1C, 0x6E}, "WPD_CONTENT_TYPE_TELEVISION");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_PLAYLIST = new NamedJmtpGuid(0x1A33F7E4l, 0xAF13, 0x48F5, new short[]{0x99, 0x4E, 0x77, 0x36, 0x9D, 0xFE, 0x04, 0xA3}, "WPD_CONTENT_TYPE_PLAYLIST");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_MIXED_CONTENT_ALBUM = new NamedJmtpGuid(0x00F0C3ACl, 0xA593, 0x49AC, new short[]{0x92, 0x19, 0x24, 0xAB, 0xCA, 0x5A, 0x25, 0x63}, "WPD_CONTENT_TYPE_MIXED_CONTENT_ALBUM");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_AUDIO_ALBUM = new NamedJmtpGuid(0xAA18737El, 0x5009, 0x48FA, new short[]{0xAE, 0x21, 0x85, 0xF2, 0x43, 0x83, 0xB4, 0xE6}, "WPD_CONTENT_TYPE_AUDIO_ALBUM");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_IMAGE_ALBUM = new NamedJmtpGuid(0x75793148l, 0x15F5, 0x4A30, new short[]{0xA8, 0x13, 0x54, 0xED, 0x8A, 0x37, 0xE2, 0x26}, "WPD_CONTENT_TYPE_IMAGE_ALBUM");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_VIDEO_ALBUM = new NamedJmtpGuid(0x012B0DB7l, 0xD4C1, 0x45D6, new short[]{0xB0, 0x81, 0x94, 0xB8, 0x77, 0x79, 0x61, 0x4F}, "WPD_CONTENT_TYPE_VIDEO_ALBUM");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_MEMO = new NamedJmtpGuid(0x9CD20ECFl, 0x3B50, 0x414F, new short[]{0xA6, 0x41, 0xE4, 0x73, 0xFF, 0xE4, 0x57, 0x51}, "WPD_CONTENT_TYPE_MEMO");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_EMAIL = new NamedJmtpGuid(0x8038044Al, 0x7E51, 0x4F8F, new short[]{0x88, 0x3D, 0x1D, 0x06, 0x23, 0xD1, 0x45, 0x33}, "WPD_CONTENT_TYPE_EMAIL");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_APPOINTMENT = new NamedJmtpGuid(0x0FED060El, 0x8793, 0x4B1E, new short[]{0x90, 0xC9, 0x48, 0xAC, 0x38, 0x9A, 0xC6, 0x31}, "WPD_CONTENT_TYPE_APPOINTMENT");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_TASK = new NamedJmtpGuid(0x63252F2Cl, 0x887F, 0x4CB6, new short[]{0xB1, 0xAC, 0xD2, 0x98, 0x55, 0xDC, 0xEF, 0x6C}, "WPD_CONTENT_TYPE_TASK");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_PROGRAM = new NamedJmtpGuid(0xD269F96Al, 0x247C, 0x4BFF, new short[]{0x98, 0xFB, 0x97, 0xF3, 0xC4, 0x92, 0x20, 0xE6}, "WPD_CONTENT_TYPE_PROGRAM");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_GENERIC_FILE = new NamedJmtpGuid(0x0085E0A6l, 0x8D34, 0x45D7, new short[]{0xBC, 0x5C, 0x44, 0x7E, 0x59, 0xC7, 0x3D, 0x48}, "WPD_CONTENT_TYPE_GENERIC_FILE");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_CALENDAR = new NamedJmtpGuid(0xA1FD5967l, 0x6023, 0x49A0, new short[]{0x9D, 0xF1, 0xF8, 0x06, 0x0B, 0xE7, 0x51, 0xB0}, "WPD_CONTENT_TYPE_CALENDAR");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_GENERIC_MESSAGE = new NamedJmtpGuid(0xE80EAAF8l, 0xB2DB, 0x4133, new short[]{0xB6, 0x7E, 0x1B, 0xEF, 0x4B, 0x4A, 0x6E, 0x5F}, "WPD_CONTENT_TYPE_GENERIC_MESSAGE");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_NETWORK_ASSOCIATION = new NamedJmtpGuid(0x031DA7EEl, 0x18C8, 0x4205, new short[]{0x84, 0x7E, 0x89, 0xA1, 0x12, 0x61, 0xD0, 0xF3}, "WPD_CONTENT_TYPE_NETWORK_ASSOCIATION");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_CERTIFICATE = new NamedJmtpGuid(0xDC3876E8l, 0xA948, 0x4060, new short[]{0x90, 0x50, 0xCB, 0xD7, 0x7E, 0x8A, 0x3D, 0x87}, "WPD_CONTENT_TYPE_CERTIFICATE");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_WIRELESS_PROFILE = new NamedJmtpGuid(0x0BAC070Al, 0x9F5F, 0x4DA4, new short[]{0xA8, 0xF6, 0x3D, 0xE4, 0x4D, 0x68, 0xFD, 0x6C}, "WPD_CONTENT_TYPE_WIRELESS_PROFILE");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_MEDIA_CAST = new NamedJmtpGuid(0x5E88B3CCl, 0x3E65, 0x4E62, new short[]{0xBF, 0xFF, 0x22, 0x94, 0x95, 0x25, 0x3A, 0xB0}, "WPD_CONTENT_TYPE_MEDIA_CAST");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_SECTION = new NamedJmtpGuid(0x821089F5l, 0x1D91, 0x4DC9, new short[]{0xBE, 0x3C, 0xBB, 0xB1, 0xB3, 0x5B, 0x18, 0xCE}, "WPD_CONTENT_TYPE_SECTION");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_UNSPECIFIED = new NamedJmtpGuid(0x28D8D31El, 0x249C, 0x454E, new short[]{0xAA, 0xBC, 0x34, 0x88, 0x31, 0x68, 0xE6, 0x34}, "WPD_CONTENT_TYPE_UNSPECIFIED");
+	public static final NamedJmtpGuid WPD_CONTENT_TYPE_ALL = new NamedJmtpGuid(0x80E170D2l, 0x1055, 0x4A3E, new short[]{0xB9, 0x52, 0x82, 0xCC, 0x4F, 0x8A, 0x86, 0x89}, "WPD_CONTENT_TYPE_ALL");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_CATEGORY_DEVICE = new NamedJmtpGuid(0x08EA466Bl, 0xE3A4, 0x4336, new short[]{0xA1, 0xF3, 0xA4, 0x4D, 0x2B, 0x5C, 0x43, 0x8C}, "WPD_FUNCTIONAL_CATEGORY_DEVICE");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_CATEGORY_STORAGE = new NamedJmtpGuid(0x23F05BBCl, 0x15DE, 0x4C2A, new short[]{0xA5, 0x5B, 0xA9, 0xAF, 0x5C, 0xE4, 0x12, 0xEF}, "WPD_FUNCTIONAL_CATEGORY_STORAGE");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_CATEGORY_STILL_IMAGE_CAPTURE = new NamedJmtpGuid(0x613CA327l, 0xAB93, 0x4900, new short[]{0xB4, 0xFA, 0x89, 0x5B, 0xB5, 0x87, 0x4B, 0x79}, "WPD_FUNCTIONAL_CATEGORY_STILL_IMAGE_CAPTURE");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_CATEGORY_AUDIO_CAPTURE = new NamedJmtpGuid(0x3F2A1919l, 0xC7C2, 0x4A00, new short[]{0x85, 0x5D, 0xF5, 0x7C, 0xF0, 0x6D, 0xEB, 0xBB}, "WPD_FUNCTIONAL_CATEGORY_AUDIO_CAPTURE");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_CATEGORY_VIDEO_CAPTURE = new NamedJmtpGuid(0xE23E5F6Bl, 0x7243, 0x43AA, new short[]{0x8D, 0xF1, 0x0E, 0xB3, 0xD9, 0x68, 0xA9, 0x18}, "WPD_FUNCTIONAL_CATEGORY_VIDEO_CAPTURE");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_CATEGORY_SMS = new NamedJmtpGuid(0x0044A0B1l, 0xC1E9, 0x4AFD, new short[]{0xB3, 0x58, 0xA6, 0x2C, 0x61, 0x17, 0xC9, 0xCF}, "WPD_FUNCTIONAL_CATEGORY_SMS");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_CATEGORY_RENDERING_INFORMATION = new NamedJmtpGuid(0x08600BA4l, 0xA7BA, 0x4A01, new short[]{0xAB, 0x0E, 0x00, 0x65, 0xD0, 0xA3, 0x56, 0xD3}, "WPD_FUNCTIONAL_CATEGORY_RENDERING_INFORMATION");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_CATEGORY_NETWORK_CONFIGURATION = new NamedJmtpGuid(0x48F4DB72l, 0x7C6A, 0x4AB0, new short[]{0x9E, 0x1A, 0x47, 0x0E, 0x3C, 0xDB, 0xF2, 0x6A}, "WPD_FUNCTIONAL_CATEGORY_NETWORK_CONFIGURATION");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_CATEGORY_ALL = new NamedJmtpGuid(0x2D8A6512l, 0xA74C, 0x448E, new short[]{0xBA, 0x8A, 0xF4, 0xAC, 0x07, 0xC4, 0x93, 0x99}, "WPD_FUNCTIONAL_CATEGORY_ALL");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_ICON = new NamedJmtpGuid(0x077232EDl, 0x102C, 0x4638, new short[]{0x9C, 0x22, 0x83, 0xF1, 0x42, 0xBF, 0xC8, 0x22}, "WPD_OBJECT_FORMAT_ICON");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_M4A = new NamedJmtpGuid(0x30ABA7ACl, 0x6FFD, 0x4C23, new short[]{0xA3, 0x59, 0x3E, 0x9B, 0x52, 0xF3, 0xF1, 0xC8}, "WPD_OBJECT_FORMAT_M4A");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_NETWORK_ASSOCIATION = new NamedJmtpGuid(0xB1020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_NETWORK_ASSOCIATION");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_X509V3CERTIFICATE = new NamedJmtpGuid(0xB1030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_X509V3CERTIFICATE");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MICROSOFT_WFC = new NamedJmtpGuid(0xB1040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MICROSOFT_WFC");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_3GPA = new NamedJmtpGuid(0xE5172730l, 0xF971, 0x41EF, new short[]{0xA1, 0x0B, 0x22, 0x71, 0xA0, 0x01, 0x9D, 0x7A}, "WPD_OBJECT_FORMAT_3GPA");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_3G2A = new NamedJmtpGuid(0x1A11202Dl, 0x8759, 0x4E34, new short[]{0xBA, 0x5E, 0xB1, 0x21, 0x10, 0x87, 0xEE, 0xE4}, "WPD_OBJECT_FORMAT_3G2A");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_ALL = new NamedJmtpGuid(0xC1F62EB2l, 0x4BB3, 0x479C, new short[]{0x9C, 0xFA, 0x05, 0xB5, 0xF3, 0xA5, 0x7B, 0x22}, "WPD_OBJECT_FORMAT_ALL");
+	public static final NamedJmtpGuid WPD_CATEGORY_NULL = new NamedJmtpGuid(0x00000000l, 0x0000, 0x0000, new short[]{0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, "WPD_CATEGORY_NULL");
+	public static final PropertyKey WPD_PROPERTY_NULL = new PropertyKey(WPD_CATEGORY_NULL , 0, "WPD_PROPERTY_NULL");
+	public static final NamedJmtpGuid WPD_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0xEF6B490Dl, 0x5CD8, 0x437A, new short[]{0xAF, 0xFC, 0xDA, 0x8B, 0x60, 0xEE, 0x4A, 0x3C}, "WPD_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_OBJECT_CONTENT_TYPE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 7, "WPD_OBJECT_CONTENT_TYPE");
+	public static final PropertyKey WPD_OBJECT_REFERENCES = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 14, "WPD_OBJECT_REFERENCES");
+	public static final PropertyKey WPD_OBJECT_CONTAINER_FUNCTIONAL_OBJECT_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 23, "WPD_OBJECT_CONTAINER_FUNCTIONAL_OBJECT_ID");
+	public static final PropertyKey WPD_OBJECT_GENERATE_THUMBNAIL_FROM_RESOURCE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 24, "WPD_OBJECT_GENERATE_THUMBNAIL_FROM_RESOURCE");
+	public static final PropertyKey WPD_OBJECT_HINT_LOCATION_DISPLAY_NAME = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 25, "WPD_OBJECT_HINT_LOCATION_DISPLAY_NAME");
+	public static final NamedJmtpGuid WPD_OBJECT_PROPERTIES_V2 = new NamedJmtpGuid(0x0373CD3Dl, 0x4A46, 0x40D7, new short[]{0xB4, 0xD8, 0x73, 0xE8, 0xDA, 0x74, 0xE7, 0x75}, "WPD_OBJECT_PROPERTIES_V2");
+	public static final PropertyKey WPD_OBJECT_SUPPORTED_UNITS = new PropertyKey(WPD_OBJECT_PROPERTIES_V2 , 2, "WPD_OBJECT_SUPPORTED_UNITS");
+	public static final NamedJmtpGuid WPD_FUNCTIONAL_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x8F052D93l, 0xABCA, 0x4FC5, new short[]{0xA5, 0xAC, 0xB0, 0x1D, 0xF4, 0xDB, 0xE5, 0x98}, "WPD_FUNCTIONAL_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_FUNCTIONAL_OBJECT_CATEGORY = new PropertyKey(WPD_FUNCTIONAL_OBJECT_PROPERTIES_V1 , 2, "WPD_FUNCTIONAL_OBJECT_CATEGORY");
+	public static final NamedJmtpGuid WPD_STORAGE_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x01A3057Al, 0x74D6, 0x4E80, new short[]{0xBE, 0xA7, 0xDC, 0x4C, 0x21, 0x2C, 0xE5, 0x0A}, "WPD_STORAGE_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_STORAGE_TYPE = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 2, "WPD_STORAGE_TYPE");
+	public static final PropertyKey WPD_STORAGE_FILE_SYSTEM_TYPE = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 3, "WPD_STORAGE_FILE_SYSTEM_TYPE");
+	public static final PropertyKey WPD_STORAGE_CAPACITY = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 4, "WPD_STORAGE_CAPACITY");
+	public static final PropertyKey WPD_STORAGE_FREE_SPACE_IN_BYTES = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 5, "WPD_STORAGE_FREE_SPACE_IN_BYTES");
+	public static final PropertyKey WPD_STORAGE_FREE_SPACE_IN_OBJECTS = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 6, "WPD_STORAGE_FREE_SPACE_IN_OBJECTS");
+	public static final PropertyKey WPD_STORAGE_DESCRIPTION = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 7, "WPD_STORAGE_DESCRIPTION");
+	public static final PropertyKey WPD_STORAGE_SERIAL_NUMBER = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 8, "WPD_STORAGE_SERIAL_NUMBER");
+	public static final PropertyKey WPD_STORAGE_MAX_OBJECT_SIZE = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 9, "WPD_STORAGE_MAX_OBJECT_SIZE");
+	public static final PropertyKey WPD_STORAGE_CAPACITY_IN_OBJECTS = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 10, "WPD_STORAGE_CAPACITY_IN_OBJECTS");
+	public static final PropertyKey WPD_STORAGE_ACCESS_CAPABILITY = new PropertyKey(WPD_STORAGE_OBJECT_PROPERTIES_V1 , 11, "WPD_STORAGE_ACCESS_CAPABILITY");
+	public static final NamedJmtpGuid WPD_NETWORK_ASSOCIATION_PROPERTIES_V1 = new NamedJmtpGuid(0xE4C93C1Fl, 0xB203, 0x43F1, new short[]{0xA1, 0x00, 0x5A, 0x07, 0xD1, 0x1B, 0x02, 0x74}, "WPD_NETWORK_ASSOCIATION_PROPERTIES_V1");
+	public static final PropertyKey WPD_NETWORK_ASSOCIATION_HOST_NETWORK_IDENTIFIERS = new PropertyKey(WPD_NETWORK_ASSOCIATION_PROPERTIES_V1 , 2, "WPD_NETWORK_ASSOCIATION_HOST_NETWORK_IDENTIFIERS");
+	public static final PropertyKey WPD_NETWORK_ASSOCIATION_X509V3SEQUENCE = new PropertyKey(WPD_NETWORK_ASSOCIATION_PROPERTIES_V1 , 3, "WPD_NETWORK_ASSOCIATION_X509V3SEQUENCE");
+	public static final NamedJmtpGuid WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x58C571ECl, 0x1BCB, 0x42A7, new short[]{0x8A, 0xC5, 0xBB, 0x29, 0x15, 0x73, 0xA2, 0x60}, "WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_STILL_IMAGE_CAPTURE_RESOLUTION = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 2, "WPD_STILL_IMAGE_CAPTURE_RESOLUTION");
+	public static final PropertyKey WPD_STILL_IMAGE_CAPTURE_FORMAT = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 3, "WPD_STILL_IMAGE_CAPTURE_FORMAT");
+	public static final PropertyKey WPD_STILL_IMAGE_COMPRESSION_SETTING = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 4, "WPD_STILL_IMAGE_COMPRESSION_SETTING");
+	public static final PropertyKey WPD_STILL_IMAGE_WHITE_BALANCE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 5, "WPD_STILL_IMAGE_WHITE_BALANCE");
+	public static final PropertyKey WPD_STILL_IMAGE_RGB_GAIN = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 6, "WPD_STILL_IMAGE_RGB_GAIN");
+	public static final PropertyKey WPD_STILL_IMAGE_FNUMBER = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 7, "WPD_STILL_IMAGE_FNUMBER");
+	public static final PropertyKey WPD_STILL_IMAGE_FOCAL_LENGTH = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 8, "WPD_STILL_IMAGE_FOCAL_LENGTH");
+	public static final PropertyKey WPD_STILL_IMAGE_FOCUS_DISTANCE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 9, "WPD_STILL_IMAGE_FOCUS_DISTANCE");
+	public static final PropertyKey WPD_STILL_IMAGE_FOCUS_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 10, "WPD_STILL_IMAGE_FOCUS_MODE");
+	public static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_METERING_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 11, "WPD_STILL_IMAGE_EXPOSURE_METERING_MODE");
+	public static final PropertyKey WPD_STILL_IMAGE_FLASH_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 12, "WPD_STILL_IMAGE_FLASH_MODE");
+	public static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_TIME = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 13, "WPD_STILL_IMAGE_EXPOSURE_TIME");
+	public static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_PROGRAM_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 14, "WPD_STILL_IMAGE_EXPOSURE_PROGRAM_MODE");
+	public static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_INDEX = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 15, "WPD_STILL_IMAGE_EXPOSURE_INDEX");
+	public static final PropertyKey WPD_STILL_IMAGE_EXPOSURE_BIAS_COMPENSATION = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 16, "WPD_STILL_IMAGE_EXPOSURE_BIAS_COMPENSATION");
+	public static final PropertyKey WPD_STILL_IMAGE_CAPTURE_DELAY = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 17, "WPD_STILL_IMAGE_CAPTURE_DELAY");
+	public static final PropertyKey WPD_STILL_IMAGE_CAPTURE_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 18, "WPD_STILL_IMAGE_CAPTURE_MODE");
+	public static final PropertyKey WPD_STILL_IMAGE_CONTRAST = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 19, "WPD_STILL_IMAGE_CONTRAST");
+	public static final PropertyKey WPD_STILL_IMAGE_SHARPNESS = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 20, "WPD_STILL_IMAGE_SHARPNESS");
+	public static final PropertyKey WPD_STILL_IMAGE_DIGITAL_ZOOM = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 21, "WPD_STILL_IMAGE_DIGITAL_ZOOM");
+	public static final PropertyKey WPD_STILL_IMAGE_EFFECT_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 22, "WPD_STILL_IMAGE_EFFECT_MODE");
+	public static final PropertyKey WPD_STILL_IMAGE_BURST_NUMBER = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 23, "WPD_STILL_IMAGE_BURST_NUMBER");
+	public static final PropertyKey WPD_STILL_IMAGE_BURST_INTERVAL = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 24, "WPD_STILL_IMAGE_BURST_INTERVAL");
+	public static final PropertyKey WPD_STILL_IMAGE_TIMELAPSE_NUMBER = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 25, "WPD_STILL_IMAGE_TIMELAPSE_NUMBER");
+	public static final PropertyKey WPD_STILL_IMAGE_TIMELAPSE_INTERVAL = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 26, "WPD_STILL_IMAGE_TIMELAPSE_INTERVAL");
+	public static final PropertyKey WPD_STILL_IMAGE_FOCUS_METERING_MODE = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 27, "WPD_STILL_IMAGE_FOCUS_METERING_MODE");
+	public static final PropertyKey WPD_STILL_IMAGE_UPLOAD_URL = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 28, "WPD_STILL_IMAGE_UPLOAD_URL");
+	public static final PropertyKey WPD_STILL_IMAGE_ARTIST = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 29, "WPD_STILL_IMAGE_ARTIST");
+	public static final PropertyKey WPD_STILL_IMAGE_CAMERA_MODEL = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 30, "WPD_STILL_IMAGE_CAMERA_MODEL");
+	public static final PropertyKey WPD_STILL_IMAGE_CAMERA_MANUFACTURER = new PropertyKey(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 31, "WPD_STILL_IMAGE_CAMERA_MANUFACTURER");
+	public static final NamedJmtpGuid WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0xC53D039Fl, 0xEE23, 0x4A31, new short[]{0x85, 0x90, 0x76, 0x39, 0x87, 0x98, 0x70, 0xB4}, "WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_RENDERING_INFORMATION_PROFILES = new PropertyKey(WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1 , 2, "WPD_RENDERING_INFORMATION_PROFILES");
+	public static final PropertyKey WPD_RENDERING_INFORMATION_PROFILE_ENTRY_TYPE = new PropertyKey(WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1 , 3, "WPD_RENDERING_INFORMATION_PROFILE_ENTRY_TYPE");
+	public static final PropertyKey WPD_RENDERING_INFORMATION_PROFILE_ENTRY_CREATABLE_RESOURCES = new PropertyKey(WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1 , 4, "WPD_RENDERING_INFORMATION_PROFILE_ENTRY_CREATABLE_RESOURCES");
+	public static final NamedJmtpGuid WPD_CLIENT_INFORMATION_PROPERTIES_V1 = new NamedJmtpGuid(0x204D9F0Cl, 0x2292, 0x4080, new short[]{0x9F, 0x42, 0x40, 0x66, 0x4E, 0x70, 0xF8, 0x59}, "WPD_CLIENT_INFORMATION_PROPERTIES_V1");
+	public static final PropertyKey WPD_CLIENT_NAME = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 2, "WPD_CLIENT_NAME");
+	public static final PropertyKey WPD_CLIENT_MAJOR_VERSION = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 3, "WPD_CLIENT_MAJOR_VERSION");
+	public static final PropertyKey WPD_CLIENT_MINOR_VERSION = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 4, "WPD_CLIENT_MINOR_VERSION");
+	public static final PropertyKey WPD_CLIENT_REVISION = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 5, "WPD_CLIENT_REVISION");
+	public static final PropertyKey WPD_CLIENT_WMDRM_APPLICATION_PRIVATE_KEY = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 6, "WPD_CLIENT_WMDRM_APPLICATION_PRIVATE_KEY");
+	public static final PropertyKey WPD_CLIENT_WMDRM_APPLICATION_CERTIFICATE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 7, "WPD_CLIENT_WMDRM_APPLICATION_CERTIFICATE");
+	public static final PropertyKey WPD_CLIENT_SECURITY_QUALITY_OF_SERVICE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 8, "WPD_CLIENT_SECURITY_QUALITY_OF_SERVICE");
+	public static final PropertyKey WPD_CLIENT_DESIRED_ACCESS = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 9, "WPD_CLIENT_DESIRED_ACCESS");
+	public static final PropertyKey WPD_CLIENT_SHARE_MODE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 10, "WPD_CLIENT_SHARE_MODE");
+	public static final PropertyKey WPD_CLIENT_EVENT_COOKIE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 11, "WPD_CLIENT_EVENT_COOKIE");
+	public static final PropertyKey WPD_CLIENT_MINIMUM_RESULTS_BUFFER_SIZE = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 12, "WPD_CLIENT_MINIMUM_RESULTS_BUFFER_SIZE");
+	public static final PropertyKey WPD_CLIENT_MANUAL_CLOSE_ON_DISCONNECT = new PropertyKey(WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 13, "WPD_CLIENT_MANUAL_CLOSE_ON_DISCONNECT");
+	public static final NamedJmtpGuid WPD_PROPERTY_ATTRIBUTES_V1 = new NamedJmtpGuid(0xAB7943D8l, 0x6332, 0x445F, new short[]{0xA0, 0x0D, 0x8D, 0x5E, 0xF1, 0xE9, 0x6F, 0x37}, "WPD_PROPERTY_ATTRIBUTES_V1");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_FORM = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 2, "WPD_PROPERTY_ATTRIBUTE_FORM");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_CAN_READ = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 3, "WPD_PROPERTY_ATTRIBUTE_CAN_READ");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_CAN_WRITE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 4, "WPD_PROPERTY_ATTRIBUTE_CAN_WRITE");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_CAN_DELETE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 5, "WPD_PROPERTY_ATTRIBUTE_CAN_DELETE");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_DEFAULT_VALUE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 6, "WPD_PROPERTY_ATTRIBUTE_DEFAULT_VALUE");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_FAST_PROPERTY = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 7, "WPD_PROPERTY_ATTRIBUTE_FAST_PROPERTY");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_RANGE_MIN = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 8, "WPD_PROPERTY_ATTRIBUTE_RANGE_MIN");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_RANGE_MAX = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 9, "WPD_PROPERTY_ATTRIBUTE_RANGE_MAX");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_RANGE_STEP = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 10, "WPD_PROPERTY_ATTRIBUTE_RANGE_STEP");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_ENUMERATION_ELEMENTS = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 11, "WPD_PROPERTY_ATTRIBUTE_ENUMERATION_ELEMENTS");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_REGULAR_EXPRESSION = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 12, "WPD_PROPERTY_ATTRIBUTE_REGULAR_EXPRESSION");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_MAX_SIZE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V1 , 13, "WPD_PROPERTY_ATTRIBUTE_MAX_SIZE");
+	public static final NamedJmtpGuid WPD_PROPERTY_ATTRIBUTES_V2 = new NamedJmtpGuid(0x5D9DA160l, 0x74AE, 0x43CC, new short[]{0x85, 0xA9, 0xFE, 0x55, 0x5A, 0x80, 0x79, 0x8E}, "WPD_PROPERTY_ATTRIBUTES_V2");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_NAME = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V2 , 2, "WPD_PROPERTY_ATTRIBUTE_NAME");
+	public static final PropertyKey WPD_PROPERTY_ATTRIBUTE_VARTYPE = new PropertyKey(WPD_PROPERTY_ATTRIBUTES_V2 , 3, "WPD_PROPERTY_ATTRIBUTE_VARTYPE");
+	public static final NamedJmtpGuid WPD_CLASS_EXTENSION_OPTIONS_V1 = new NamedJmtpGuid(0x6309FFEFl, 0xA87C, 0x4CA7, new short[]{0x84, 0x34, 0x79, 0x75, 0x76, 0xE4, 0x0A, 0x96}, "WPD_CLASS_EXTENSION_OPTIONS_V1");
+	public static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_SUPPORTED_CONTENT_TYPES = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V1 , 2, "WPD_CLASS_EXTENSION_OPTIONS_SUPPORTED_CONTENT_TYPES");
+	public static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_DONT_REGISTER_WPD_DEVICE_INTERFACE = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V1 , 3, "WPD_CLASS_EXTENSION_OPTIONS_DONT_REGISTER_WPD_DEVICE_INTERFACE");
+	public static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_REGISTER_WPD_PRIVATE_DEVICE_INTERFACE = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V1 , 4, "WPD_CLASS_EXTENSION_OPTIONS_REGISTER_WPD_PRIVATE_DEVICE_INTERFACE");
+	public static final NamedJmtpGuid WPD_CLASS_EXTENSION_OPTIONS_V2 = new NamedJmtpGuid(0x3E3595DAl, 0x4D71, 0x49FE, new short[]{0xA0, 0xB4, 0xD4, 0x40, 0x6C, 0x3A, 0xE9, 0x3F}, "WPD_CLASS_EXTENSION_OPTIONS_V2");
+	public static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_MULTITRANSPORT_MODE = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V2 , 2, "WPD_CLASS_EXTENSION_OPTIONS_MULTITRANSPORT_MODE");
+	public static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_DEVICE_IDENTIFICATION_VALUES = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V2 , 3, "WPD_CLASS_EXTENSION_OPTIONS_DEVICE_IDENTIFICATION_VALUES");
+	public static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_TRANSPORT_BANDWIDTH = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V2 , 4, "WPD_CLASS_EXTENSION_OPTIONS_TRANSPORT_BANDWIDTH");
+	public static final NamedJmtpGuid WPD_CLASS_EXTENSION_OPTIONS_V3 = new NamedJmtpGuid(0x65C160F8l, 0x1367, 0x4CE2, new short[]{0x93, 0x9D, 0x83, 0x10, 0x83, 0x9F, 0x0D, 0x30}, "WPD_CLASS_EXTENSION_OPTIONS_V3");
+	public static final PropertyKey WPD_CLASS_EXTENSION_OPTIONS_SILENCE_AUTOPLAY = new PropertyKey(WPD_CLASS_EXTENSION_OPTIONS_V3 , 2, "WPD_CLASS_EXTENSION_OPTIONS_SILENCE_AUTOPLAY");
+	public static final NamedJmtpGuid WPD_RESOURCE_ATTRIBUTES_V1 = new NamedJmtpGuid(0x1EB6F604l, 0x9278, 0x429F, new short[]{0x93, 0xCC, 0x5B, 0xB8, 0xC0, 0x66, 0x56, 0xB6}, "WPD_RESOURCE_ATTRIBUTES_V1");
+	public static final PropertyKey WPD_RESOURCE_ATTRIBUTE_TOTAL_SIZE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 2, "WPD_RESOURCE_ATTRIBUTE_TOTAL_SIZE");
+	public static final PropertyKey WPD_RESOURCE_ATTRIBUTE_CAN_READ = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 3, "WPD_RESOURCE_ATTRIBUTE_CAN_READ");
+	public static final PropertyKey WPD_RESOURCE_ATTRIBUTE_CAN_WRITE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 4, "WPD_RESOURCE_ATTRIBUTE_CAN_WRITE");
+	public static final PropertyKey WPD_RESOURCE_ATTRIBUTE_CAN_DELETE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 5, "WPD_RESOURCE_ATTRIBUTE_CAN_DELETE");
+	public static final PropertyKey WPD_RESOURCE_ATTRIBUTE_OPTIMAL_READ_BUFFER_SIZE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 6, "WPD_RESOURCE_ATTRIBUTE_OPTIMAL_READ_BUFFER_SIZE");
+	public static final PropertyKey WPD_RESOURCE_ATTRIBUTE_OPTIMAL_WRITE_BUFFER_SIZE = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 7, "WPD_RESOURCE_ATTRIBUTE_OPTIMAL_WRITE_BUFFER_SIZE");
+	public static final PropertyKey WPD_RESOURCE_ATTRIBUTE_FORMAT = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 8, "WPD_RESOURCE_ATTRIBUTE_FORMAT");
+	public static final PropertyKey WPD_RESOURCE_ATTRIBUTE_RESOURCE_KEY = new PropertyKey(WPD_RESOURCE_ATTRIBUTES_V1 , 9, "WPD_RESOURCE_ATTRIBUTE_RESOURCE_KEY");
+	public static final NamedJmtpGuid WPD_DEVICE_PROPERTIES_V1 = new NamedJmtpGuid(0x26D4979Al, 0xE643, 0x4626, new short[]{0x9E, 0x2B, 0x73, 0x6D, 0xC0, 0xC9, 0x2F, 0xDC}, "WPD_DEVICE_PROPERTIES_V1");
+	public static final PropertyKey WPD_DEVICE_SYNC_PARTNER = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 2, "WPD_DEVICE_SYNC_PARTNER");
+	public static final PropertyKey WPD_DEVICE_FIRMWARE_VERSION = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 3, "WPD_DEVICE_FIRMWARE_VERSION");
+	public static final PropertyKey WPD_DEVICE_POWER_LEVEL = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 4, "WPD_DEVICE_POWER_LEVEL");
+	public static final PropertyKey WPD_DEVICE_POWER_SOURCE = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 5, "WPD_DEVICE_POWER_SOURCE");
+	public static final PropertyKey WPD_DEVICE_PROTOCOL = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 6, "WPD_DEVICE_PROTOCOL");
+	public static final PropertyKey WPD_DEVICE_MANUFACTURER = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 7, "WPD_DEVICE_MANUFACTURER");
+	public static final PropertyKey WPD_DEVICE_MODEL = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 8, "WPD_DEVICE_MODEL");
+	public static final PropertyKey WPD_DEVICE_SERIAL_NUMBER = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 9, "WPD_DEVICE_SERIAL_NUMBER");
+	public static final PropertyKey WPD_DEVICE_SUPPORTS_NON_CONSUMABLE = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 10, "WPD_DEVICE_SUPPORTS_NON_CONSUMABLE");
+	public static final PropertyKey WPD_DEVICE_DATETIME = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 11, "WPD_DEVICE_DATETIME");
+	public static final PropertyKey WPD_DEVICE_FRIENDLY_NAME = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 12, "WPD_DEVICE_FRIENDLY_NAME");
+	public static final PropertyKey WPD_DEVICE_SUPPORTED_DRM_SCHEMES = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 13, "WPD_DEVICE_SUPPORTED_DRM_SCHEMES");
+	public static final PropertyKey WPD_DEVICE_SUPPORTED_FORMATS_ARE_ORDERED = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 14, "WPD_DEVICE_SUPPORTED_FORMATS_ARE_ORDERED");
+	public static final PropertyKey WPD_DEVICE_TYPE = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 15, "WPD_DEVICE_TYPE");
+	public static final PropertyKey WPD_DEVICE_NETWORK_IDENTIFIER = new PropertyKey(WPD_DEVICE_PROPERTIES_V1 , 16, "WPD_DEVICE_NETWORK_IDENTIFIER");
+	public static final NamedJmtpGuid WPD_DEVICE_PROPERTIES_V2 = new NamedJmtpGuid(0x463DD662l, 0x7FC4, 0x4291, new short[]{0x91, 0x1C, 0x7F, 0x4C, 0x9C, 0xCA, 0x97, 0x99}, "WPD_DEVICE_PROPERTIES_V2");
+	public static final PropertyKey WPD_DEVICE_FUNCTIONAL_UNIQUE_ID = new PropertyKey(WPD_DEVICE_PROPERTIES_V2 , 2, "WPD_DEVICE_FUNCTIONAL_UNIQUE_ID");
+	public static final PropertyKey WPD_DEVICE_MODEL_UNIQUE_ID = new PropertyKey(WPD_DEVICE_PROPERTIES_V2 , 3, "WPD_DEVICE_MODEL_UNIQUE_ID");
+	public static final PropertyKey WPD_DEVICE_TRANSPORT = new PropertyKey(WPD_DEVICE_PROPERTIES_V2 , 4, "WPD_DEVICE_TRANSPORT");
+	public static final PropertyKey WPD_DEVICE_USE_DEVICE_STAGE = new PropertyKey(WPD_DEVICE_PROPERTIES_V2 , 5, "WPD_DEVICE_USE_DEVICE_STAGE");
+	public static final NamedJmtpGuid WPD_SERVICE_PROPERTIES_V1 = new NamedJmtpGuid(0x7510698Al, 0xCB54, 0x481C, new short[]{0xB8, 0xDB, 0x0D, 0x75, 0xC9, 0x3F, 0x1C, 0x06}, "WPD_SERVICE_PROPERTIES_V1");
+	public static final PropertyKey WPD_SERVICE_VERSION = new PropertyKey(WPD_SERVICE_PROPERTIES_V1 , 2, "WPD_SERVICE_VERSION");
+	public static final NamedJmtpGuid WPD_EVENT_PROPERTIES_V1 = new NamedJmtpGuid(0x15AB1953l, 0xF817, 0x4FEF, new short[]{0xA9, 0x21, 0x56, 0x76, 0xE8, 0x38, 0xF6, 0xE0}, "WPD_EVENT_PROPERTIES_V1");
+	public static final PropertyKey WPD_EVENT_PARAMETER_PNP_DEVICE_ID = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 2, "WPD_EVENT_PARAMETER_PNP_DEVICE_ID");
+	public static final PropertyKey WPD_EVENT_PARAMETER_EVENT_ID = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 3, "WPD_EVENT_PARAMETER_EVENT_ID");
+	public static final PropertyKey WPD_EVENT_PARAMETER_OPERATION_STATE = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 4, "WPD_EVENT_PARAMETER_OPERATION_STATE");
+	public static final PropertyKey WPD_EVENT_PARAMETER_OPERATION_PROGRESS = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 5, "WPD_EVENT_PARAMETER_OPERATION_PROGRESS");
+	public static final PropertyKey WPD_EVENT_PARAMETER_OBJECT_PARENT_PERSISTENT_UNIQUE_ID = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 6, "WPD_EVENT_PARAMETER_OBJECT_PARENT_PERSISTENT_UNIQUE_ID");
+	public static final PropertyKey WPD_EVENT_PARAMETER_OBJECT_CREATION_COOKIE = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 7, "WPD_EVENT_PARAMETER_OBJECT_CREATION_COOKIE");
+	public static final PropertyKey WPD_EVENT_PARAMETER_CHILD_HIERARCHY_CHANGED = new PropertyKey(WPD_EVENT_PROPERTIES_V1 , 8, "WPD_EVENT_PARAMETER_CHILD_HIERARCHY_CHANGED");
+	public static final NamedJmtpGuid WPD_EVENT_PROPERTIES_V2 = new NamedJmtpGuid(0x52807B8Al, 0x4914, 0x4323, new short[]{0x9B, 0x9A, 0x74, 0xF6, 0x54, 0xB2, 0xB8, 0x46}, "WPD_EVENT_PROPERTIES_V2");
+	public static final PropertyKey WPD_EVENT_PARAMETER_SERVICE_METHOD_CONTEXT = new PropertyKey(WPD_EVENT_PROPERTIES_V2 , 2, "WPD_EVENT_PARAMETER_SERVICE_METHOD_CONTEXT");
+	public static final NamedJmtpGuid WPD_EVENT_OPTIONS_V1 = new NamedJmtpGuid(0xB3D8DAD7l, 0xA361, 0x4B83, new short[]{0x8A, 0x48, 0x5B, 0x02, 0xCE, 0x10, 0x71, 0x3B}, "WPD_EVENT_OPTIONS_V1");
+	public static final PropertyKey WPD_EVENT_OPTION_IS_BROADCAST_EVENT = new PropertyKey(WPD_EVENT_OPTIONS_V1 , 2, "WPD_EVENT_OPTION_IS_BROADCAST_EVENT");
+	public static final PropertyKey WPD_EVENT_OPTION_IS_AUTOPLAY_EVENT = new PropertyKey(WPD_EVENT_OPTIONS_V1 , 3, "WPD_EVENT_OPTION_IS_AUTOPLAY_EVENT");
+	public static final NamedJmtpGuid WPD_EVENT_ATTRIBUTES_V1 = new NamedJmtpGuid(0x10C96578l, 0x2E81, 0x4111, new short[]{0xAD, 0xDE, 0xE0, 0x8C, 0xA6, 0x13, 0x8F, 0x6D}, "WPD_EVENT_ATTRIBUTES_V1");
+	public static final PropertyKey WPD_EVENT_ATTRIBUTE_NAME = new PropertyKey(WPD_EVENT_ATTRIBUTES_V1 , 2, "WPD_EVENT_ATTRIBUTE_NAME");
+	public static final PropertyKey WPD_EVENT_ATTRIBUTE_PARAMETERS = new PropertyKey(WPD_EVENT_ATTRIBUTES_V1 , 3, "WPD_EVENT_ATTRIBUTE_PARAMETERS");
+	public static final PropertyKey WPD_EVENT_ATTRIBUTE_OPTIONS = new PropertyKey(WPD_EVENT_ATTRIBUTES_V1 , 4, "WPD_EVENT_ATTRIBUTE_OPTIONS");
+	public static final NamedJmtpGuid WPD_API_OPTIONS_V1 = new NamedJmtpGuid(0x10E54A3El, 0x052D, 0x4777, new short[]{0xA1, 0x3C, 0xDE, 0x76, 0x14, 0xBE, 0x2B, 0xC4}, "WPD_API_OPTIONS_V1");
+	public static final PropertyKey WPD_API_OPTION_USE_CLEAR_DATA_STREAM = new PropertyKey(WPD_API_OPTIONS_V1 , 2, "WPD_API_OPTION_USE_CLEAR_DATA_STREAM");
+	public static final PropertyKey WPD_API_OPTION_IOCTL_ACCESS = new PropertyKey(WPD_API_OPTIONS_V1 , 3, "WPD_API_OPTION_IOCTL_ACCESS");
+	public static final NamedJmtpGuid WPD_FORMAT_ATTRIBUTES_V1 = new NamedJmtpGuid(0xA0A02000l, 0xBCAF, 0x4BE8, new short[]{0xB3, 0xF5, 0x23, 0x3F, 0x23, 0x1C, 0xF5, 0x8F}, "WPD_FORMAT_ATTRIBUTES_V1");
+	public static final PropertyKey WPD_FORMAT_ATTRIBUTE_NAME = new PropertyKey(WPD_FORMAT_ATTRIBUTES_V1 , 2, "WPD_FORMAT_ATTRIBUTE_NAME");
+	public static final PropertyKey WPD_FORMAT_ATTRIBUTE_MIMETYPE = new PropertyKey(WPD_FORMAT_ATTRIBUTES_V1 , 3, "WPD_FORMAT_ATTRIBUTE_MIMETYPE");
+	public static final NamedJmtpGuid WPD_METHOD_ATTRIBUTES_V1 = new NamedJmtpGuid(0xF17A5071l, 0xF039, 0x44AF, new short[]{0x8E, 0xFE, 0x43, 0x2C, 0xF3, 0x2E, 0x43, 0x2A}, "WPD_METHOD_ATTRIBUTES_V1");
+	public static final PropertyKey WPD_METHOD_ATTRIBUTE_NAME = new PropertyKey(WPD_METHOD_ATTRIBUTES_V1 , 2, "WPD_METHOD_ATTRIBUTE_NAME");
+	public static final PropertyKey WPD_METHOD_ATTRIBUTE_ASSOCIATED_FORMAT = new PropertyKey(WPD_METHOD_ATTRIBUTES_V1 , 3, "WPD_METHOD_ATTRIBUTE_ASSOCIATED_FORMAT");
+	public static final PropertyKey WPD_METHOD_ATTRIBUTE_ACCESS = new PropertyKey(WPD_METHOD_ATTRIBUTES_V1 , 4, "WPD_METHOD_ATTRIBUTE_ACCESS");
+	public static final PropertyKey WPD_METHOD_ATTRIBUTE_PARAMETERS = new PropertyKey(WPD_METHOD_ATTRIBUTES_V1 , 5, "WPD_METHOD_ATTRIBUTE_PARAMETERS");
+	public static final NamedJmtpGuid WPD_PARAMETER_ATTRIBUTES_V1 = new NamedJmtpGuid(0xE6864DD7l, 0xF325, 0x45EA, new short[]{0xA1, 0xD5, 0x97, 0xCF, 0x73, 0xB6, 0xCA, 0x58}, "WPD_PARAMETER_ATTRIBUTES_V1");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_ORDER = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 2, "WPD_PARAMETER_ATTRIBUTE_ORDER");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_USAGE = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 3, "WPD_PARAMETER_ATTRIBUTE_USAGE");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_FORM = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 4, "WPD_PARAMETER_ATTRIBUTE_FORM");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_DEFAULT_VALUE = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 5, "WPD_PARAMETER_ATTRIBUTE_DEFAULT_VALUE");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_RANGE_MIN = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 6, "WPD_PARAMETER_ATTRIBUTE_RANGE_MIN");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_RANGE_MAX = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 7, "WPD_PARAMETER_ATTRIBUTE_RANGE_MAX");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_RANGE_STEP = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 8, "WPD_PARAMETER_ATTRIBUTE_RANGE_STEP");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_ENUMERATION_ELEMENTS = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 9, "WPD_PARAMETER_ATTRIBUTE_ENUMERATION_ELEMENTS");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_REGULAR_EXPRESSION = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 10, "WPD_PARAMETER_ATTRIBUTE_REGULAR_EXPRESSION");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_MAX_SIZE = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 11, "WPD_PARAMETER_ATTRIBUTE_MAX_SIZE");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_VARTYPE = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 12, "WPD_PARAMETER_ATTRIBUTE_VARTYPE");
+	public static final PropertyKey WPD_PARAMETER_ATTRIBUTE_NAME = new PropertyKey(WPD_PARAMETER_ATTRIBUTES_V1 , 13, "WPD_PARAMETER_ATTRIBUTE_NAME");
+	public static final NamedJmtpGuid WPD_CATEGORY_COMMON = new NamedJmtpGuid(0xF0422A9Cl, 0x5DC8, 0x4440, new short[]{0xB5, 0xBD, 0x5D, 0xF2, 0x88, 0x35, 0x65, 0x8A}, "WPD_CATEGORY_COMMON");
+	public static final PropertyKey WPD_COMMAND_COMMON_RESET_DEVICE = new PropertyKey(WPD_CATEGORY_COMMON , 2, "WPD_COMMAND_COMMON_RESET_DEVICE");
+	public static final PropertyKey WPD_COMMAND_COMMON_GET_OBJECT_IDS_FROM_PERSISTENT_UNIQUE_IDS = new PropertyKey(WPD_CATEGORY_COMMON , 3, "WPD_COMMAND_COMMON_GET_OBJECT_IDS_FROM_PERSISTENT_UNIQUE_IDS");
+	public static final PropertyKey WPD_COMMAND_COMMON_SAVE_CLIENT_INFORMATION = new PropertyKey(WPD_CATEGORY_COMMON , 4, "WPD_COMMAND_COMMON_SAVE_CLIENT_INFORMATION");
+	public static final PropertyKey WPD_PROPERTY_COMMON_COMMAND_CATEGORY = new PropertyKey(WPD_CATEGORY_COMMON , 1001, "WPD_PROPERTY_COMMON_COMMAND_CATEGORY");
+	public static final PropertyKey WPD_PROPERTY_COMMON_COMMAND_ID = new PropertyKey(WPD_CATEGORY_COMMON , 1002, "WPD_PROPERTY_COMMON_COMMAND_ID");
+	public static final PropertyKey WPD_PROPERTY_COMMON_HRESULT = new PropertyKey(WPD_CATEGORY_COMMON , 1003, "WPD_PROPERTY_COMMON_HRESULT");
+	public static final PropertyKey WPD_PROPERTY_COMMON_DRIVER_ERROR_CODE = new PropertyKey(WPD_CATEGORY_COMMON , 1004, "WPD_PROPERTY_COMMON_DRIVER_ERROR_CODE");
+	public static final PropertyKey WPD_PROPERTY_COMMON_COMMAND_TARGET = new PropertyKey(WPD_CATEGORY_COMMON , 1006, "WPD_PROPERTY_COMMON_COMMAND_TARGET");
+	public static final PropertyKey WPD_PROPERTY_COMMON_PERSISTENT_UNIQUE_IDS = new PropertyKey(WPD_CATEGORY_COMMON , 1007, "WPD_PROPERTY_COMMON_PERSISTENT_UNIQUE_IDS");
+	public static final PropertyKey WPD_PROPERTY_COMMON_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_COMMON , 1008, "WPD_PROPERTY_COMMON_OBJECT_IDS");
+	public static final PropertyKey WPD_PROPERTY_COMMON_CLIENT_INFORMATION = new PropertyKey(WPD_CATEGORY_COMMON , 1009, "WPD_PROPERTY_COMMON_CLIENT_INFORMATION");
+	public static final PropertyKey WPD_PROPERTY_COMMON_CLIENT_INFORMATION_CONTEXT = new PropertyKey(WPD_CATEGORY_COMMON , 1010, "WPD_PROPERTY_COMMON_CLIENT_INFORMATION_CONTEXT");
+	public static final PropertyKey WPD_PROPERTY_COMMON_ACTIVITY_ID = new PropertyKey(WPD_CATEGORY_COMMON , 1011, "WPD_PROPERTY_COMMON_ACTIVITY_ID");
+	public static final PropertyKey WPD_OPTION_VALID_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_COMMON , 5001, "WPD_OPTION_VALID_OBJECT_IDS");
+	public static final NamedJmtpGuid WPD_CATEGORY_OBJECT_ENUMERATION = new NamedJmtpGuid(0xB7474E91l, 0xE7F8, 0x4AD9, new short[]{0xB4, 0x00, 0xAD, 0x1A, 0x4B, 0x58, 0xEE, 0xEC}, "WPD_CATEGORY_OBJECT_ENUMERATION");
+	public static final PropertyKey WPD_COMMAND_OBJECT_ENUMERATION_START_FIND = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 2, "WPD_COMMAND_OBJECT_ENUMERATION_START_FIND");
+	public static final PropertyKey WPD_COMMAND_OBJECT_ENUMERATION_FIND_NEXT = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 3, "WPD_COMMAND_OBJECT_ENUMERATION_FIND_NEXT");
+	public static final PropertyKey WPD_COMMAND_OBJECT_ENUMERATION_END_FIND = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 4, "WPD_COMMAND_OBJECT_ENUMERATION_END_FIND");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_PARENT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1001, "WPD_PROPERTY_OBJECT_ENUMERATION_PARENT_ID");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_FILTER = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1002, "WPD_PROPERTY_OBJECT_ENUMERATION_FILTER");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1003, "WPD_PROPERTY_OBJECT_ENUMERATION_OBJECT_IDS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_CONTEXT = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1004, "WPD_PROPERTY_OBJECT_ENUMERATION_CONTEXT");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_ENUMERATION_NUM_OBJECTS_REQUESTED = new PropertyKey(WPD_CATEGORY_OBJECT_ENUMERATION , 1005, "WPD_PROPERTY_OBJECT_ENUMERATION_NUM_OBJECTS_REQUESTED");
+	public static final NamedJmtpGuid WPD_CATEGORY_OBJECT_PROPERTIES = new NamedJmtpGuid(0x9E5582E4l, 0x0814, 0x44E6, new short[]{0x98, 0x1A, 0xB2, 0x99, 0x8D, 0x58, 0x38, 0x04}, "WPD_CATEGORY_OBJECT_PROPERTIES");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_GET_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 2, "WPD_COMMAND_OBJECT_PROPERTIES_GET_SUPPORTED");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_GET_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 3, "WPD_COMMAND_OBJECT_PROPERTIES_GET_ATTRIBUTES");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_GET = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 4, "WPD_COMMAND_OBJECT_PROPERTIES_GET");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_SET = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 5, "WPD_COMMAND_OBJECT_PROPERTIES_SET");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_GET_ALL = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 6, "WPD_COMMAND_OBJECT_PROPERTIES_GET_ALL");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_DELETE = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 7, "WPD_COMMAND_OBJECT_PROPERTIES_DELETE");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1001, "WPD_PROPERTY_OBJECT_PROPERTIES_OBJECT_ID");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1002, "WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_KEYS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1003, "WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_ATTRIBUTES");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_VALUES = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1004, "WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_VALUES");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_WRITE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1005, "WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_WRITE_RESULTS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_DELETE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES , 1006, "WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_DELETE_RESULTS");
+	public static final NamedJmtpGuid WPD_CATEGORY_OBJECT_PROPERTIES_BULK = new NamedJmtpGuid(0x11C824DDl, 0x04CD, 0x4E4E, new short[]{0x8C, 0x7B, 0xF6, 0xEF, 0xB7, 0x94, 0xD8, 0x4E}, "WPD_CATEGORY_OBJECT_PROPERTIES_BULK");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_START = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 2, "WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_START");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_NEXT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 3, "WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_NEXT");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_END = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 4, "WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_END");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_START = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 5, "WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_START");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_NEXT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 6, "WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_NEXT");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_END = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 7, "WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_END");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_START = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 8, "WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_START");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_NEXT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 9, "WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_NEXT");
+	public static final PropertyKey WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_END = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 10, "WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_END");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1001, "WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_IDS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_CONTEXT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1002, "WPD_PROPERTY_OBJECT_PROPERTIES_BULK_CONTEXT");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_VALUES = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1003, "WPD_PROPERTY_OBJECT_PROPERTIES_BULK_VALUES");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1004, "WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PROPERTY_KEYS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_DEPTH = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1005, "WPD_PROPERTY_OBJECT_PROPERTIES_BULK_DEPTH");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PARENT_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1006, "WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PARENT_OBJECT_ID");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_FORMAT = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1007, "WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_FORMAT");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_PROPERTIES_BULK_WRITE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 1008, "WPD_PROPERTY_OBJECT_PROPERTIES_BULK_WRITE_RESULTS");
+	public static final NamedJmtpGuid WPD_CATEGORY_OBJECT_RESOURCES = new NamedJmtpGuid(0xB3A2B22Dl, 0xA595, 0x4108, new short[]{0xBE, 0x0A, 0xFC, 0x3C, 0x96, 0x5F, 0x3D, 0x4A}, "WPD_CATEGORY_OBJECT_RESOURCES");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_GET_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 2, "WPD_COMMAND_OBJECT_RESOURCES_GET_SUPPORTED");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_GET_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 3, "WPD_COMMAND_OBJECT_RESOURCES_GET_ATTRIBUTES");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_OPEN = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 4, "WPD_COMMAND_OBJECT_RESOURCES_OPEN");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_READ = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 5, "WPD_COMMAND_OBJECT_RESOURCES_READ");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_WRITE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 6, "WPD_COMMAND_OBJECT_RESOURCES_WRITE");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_CLOSE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 7, "WPD_COMMAND_OBJECT_RESOURCES_CLOSE");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_DELETE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 8, "WPD_COMMAND_OBJECT_RESOURCES_DELETE");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_CREATE_RESOURCE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 9, "WPD_COMMAND_OBJECT_RESOURCES_CREATE_RESOURCE");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_REVERT = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 10, "WPD_COMMAND_OBJECT_RESOURCES_REVERT");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_SEEK = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 11, "WPD_COMMAND_OBJECT_RESOURCES_SEEK");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_COMMIT = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 12, "WPD_COMMAND_OBJECT_RESOURCES_COMMIT");
+	public static final PropertyKey WPD_COMMAND_OBJECT_RESOURCES_SEEK_IN_UNITS = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 13, "WPD_COMMAND_OBJECT_RESOURCES_SEEK_IN_UNITS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1001, "WPD_PROPERTY_OBJECT_RESOURCES_OBJECT_ID");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_ACCESS_MODE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1002, "WPD_PROPERTY_OBJECT_RESOURCES_ACCESS_MODE");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_KEYS = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1003, "WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_KEYS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1004, "WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_ATTRIBUTES");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_CONTEXT = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1005, "WPD_PROPERTY_OBJECT_RESOURCES_CONTEXT");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_READ = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1006, "WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_READ");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_READ = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1007, "WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_READ");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_WRITE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1008, "WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_WRITE");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_WRITTEN = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1009, "WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_WRITTEN");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1010, "WPD_PROPERTY_OBJECT_RESOURCES_DATA");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_OPTIMAL_TRANSFER_BUFFER_SIZE = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1011, "WPD_PROPERTY_OBJECT_RESOURCES_OPTIMAL_TRANSFER_BUFFER_SIZE");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_SEEK_OFFSET = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1012, "WPD_PROPERTY_OBJECT_RESOURCES_SEEK_OFFSET");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_SEEK_ORIGIN_FLAG = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1013, "WPD_PROPERTY_OBJECT_RESOURCES_SEEK_ORIGIN_FLAG");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_POSITION_FROM_START = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1014, "WPD_PROPERTY_OBJECT_RESOURCES_POSITION_FROM_START");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_SUPPORTS_UNITS = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1015, "WPD_PROPERTY_OBJECT_RESOURCES_SUPPORTS_UNITS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_RESOURCES_STREAM_UNITS = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 1016, "WPD_PROPERTY_OBJECT_RESOURCES_STREAM_UNITS");
+	public static final PropertyKey WPD_OPTION_OBJECT_RESOURCES_SEEK_ON_READ_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 5001, "WPD_OPTION_OBJECT_RESOURCES_SEEK_ON_READ_SUPPORTED");
+	public static final PropertyKey WPD_OPTION_OBJECT_RESOURCES_SEEK_ON_WRITE_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 5002, "WPD_OPTION_OBJECT_RESOURCES_SEEK_ON_WRITE_SUPPORTED");
+	public static final PropertyKey WPD_OPTION_OBJECT_RESOURCES_NO_INPUT_BUFFER_ON_READ = new PropertyKey(WPD_CATEGORY_OBJECT_RESOURCES , 5003, "WPD_OPTION_OBJECT_RESOURCES_NO_INPUT_BUFFER_ON_READ");
+	public static final NamedJmtpGuid WPD_CATEGORY_OBJECT_MANAGEMENT = new NamedJmtpGuid(0xEF1E43DDl, 0xA9ED, 0x4341, new short[]{0x8B, 0xCC, 0x18, 0x61, 0x92, 0xAE, 0xA0, 0x89}, "WPD_CATEGORY_OBJECT_MANAGEMENT");
+	public static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_ONLY = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 2, "WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_ONLY");
+	public static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_AND_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 3, "WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_AND_DATA");
+	public static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_WRITE_OBJECT_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 4, "WPD_COMMAND_OBJECT_MANAGEMENT_WRITE_OBJECT_DATA");
+	public static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_COMMIT_OBJECT = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 5, "WPD_COMMAND_OBJECT_MANAGEMENT_COMMIT_OBJECT");
+	public static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_REVERT_OBJECT = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 6, "WPD_COMMAND_OBJECT_MANAGEMENT_REVERT_OBJECT");
+	public static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_DELETE_OBJECTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 7, "WPD_COMMAND_OBJECT_MANAGEMENT_DELETE_OBJECTS");
+	public static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_MOVE_OBJECTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 8, "WPD_COMMAND_OBJECT_MANAGEMENT_MOVE_OBJECTS");
+	public static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_COPY_OBJECTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 9, "WPD_COMMAND_OBJECT_MANAGEMENT_COPY_OBJECTS");
+	public static final PropertyKey WPD_COMMAND_OBJECT_MANAGEMENT_UPDATE_OBJECT_WITH_PROPERTIES_AND_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 10, "WPD_COMMAND_OBJECT_MANAGEMENT_UPDATE_OBJECT_WITH_PROPERTIES_AND_DATA");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_CREATION_PROPERTIES = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1001, "WPD_PROPERTY_OBJECT_MANAGEMENT_CREATION_PROPERTIES");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_CONTEXT = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1002, "WPD_PROPERTY_OBJECT_MANAGEMENT_CONTEXT");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_TO_WRITE = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1003, "WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_TO_WRITE");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_WRITTEN = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1004, "WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_WRITTEN");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_DATA = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1005, "WPD_PROPERTY_OBJECT_MANAGEMENT_DATA");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1006, "WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_ID");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_OPTIONS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1007, "WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_OPTIONS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_OPTIMAL_TRANSFER_BUFFER_SIZE = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1008, "WPD_PROPERTY_OBJECT_MANAGEMENT_OPTIMAL_TRANSFER_BUFFER_SIZE");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_IDS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1009, "WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_IDS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1010, "WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_RESULTS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_DESTINATION_FOLDER_OBJECT_ID = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1011, "WPD_PROPERTY_OBJECT_MANAGEMENT_DESTINATION_FOLDER_OBJECT_ID");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_MOVE_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1012, "WPD_PROPERTY_OBJECT_MANAGEMENT_MOVE_RESULTS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_COPY_RESULTS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1013, "WPD_PROPERTY_OBJECT_MANAGEMENT_COPY_RESULTS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_UPDATE_PROPERTIES = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1014, "WPD_PROPERTY_OBJECT_MANAGEMENT_UPDATE_PROPERTIES");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1015, "WPD_PROPERTY_OBJECT_MANAGEMENT_PROPERTY_KEYS");
+	public static final PropertyKey WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_FORMAT = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 1016, "WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_FORMAT");
+	public static final PropertyKey WPD_OPTION_OBJECT_MANAGEMENT_RECURSIVE_DELETE_SUPPORTED = new PropertyKey(WPD_CATEGORY_OBJECT_MANAGEMENT , 5001, "WPD_OPTION_OBJECT_MANAGEMENT_RECURSIVE_DELETE_SUPPORTED");
+	public static final NamedJmtpGuid WPD_CATEGORY_CAPABILITIES = new NamedJmtpGuid(0x0CABEC78l, 0x6B74, 0x41C6, new short[]{0x92, 0x16, 0x26, 0x39, 0xD1, 0xFC, 0xE3, 0x56}, "WPD_CATEGORY_CAPABILITIES");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_COMMANDS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 2, "WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_COMMANDS");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_COMMAND_OPTIONS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 3, "WPD_COMMAND_CAPABILITIES_GET_COMMAND_OPTIONS");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FUNCTIONAL_CATEGORIES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 4, "WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FUNCTIONAL_CATEGORIES");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_FUNCTIONAL_OBJECTS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 5, "WPD_COMMAND_CAPABILITIES_GET_FUNCTIONAL_OBJECTS");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_CONTENT_TYPES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 6, "WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_CONTENT_TYPES");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMATS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 7, "WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMATS");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 8, "WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_FIXED_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 9, "WPD_COMMAND_CAPABILITIES_GET_FIXED_PROPERTY_ATTRIBUTES");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_EVENTS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 10, "WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_EVENTS");
+	public static final PropertyKey WPD_COMMAND_CAPABILITIES_GET_EVENT_OPTIONS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 11, "WPD_COMMAND_CAPABILITIES_GET_EVENT_OPTIONS");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_SUPPORTED_COMMANDS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1001, "WPD_PROPERTY_CAPABILITIES_SUPPORTED_COMMANDS");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_COMMAND = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1002, "WPD_PROPERTY_CAPABILITIES_COMMAND");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_COMMAND_OPTIONS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1003, "WPD_PROPERTY_CAPABILITIES_COMMAND_OPTIONS");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORIES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1004, "WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORIES");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORY = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1005, "WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORY");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_OBJECTS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1006, "WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_OBJECTS");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_CONTENT_TYPES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1007, "WPD_PROPERTY_CAPABILITIES_CONTENT_TYPES");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_CONTENT_TYPE = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1008, "WPD_PROPERTY_CAPABILITIES_CONTENT_TYPE");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_FORMATS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1009, "WPD_PROPERTY_CAPABILITIES_FORMATS");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_FORMAT = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1010, "WPD_PROPERTY_CAPABILITIES_FORMAT");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1011, "WPD_PROPERTY_CAPABILITIES_PROPERTY_KEYS");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1012, "WPD_PROPERTY_CAPABILITIES_PROPERTY_ATTRIBUTES");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_SUPPORTED_EVENTS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1013, "WPD_PROPERTY_CAPABILITIES_SUPPORTED_EVENTS");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_EVENT = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1014, "WPD_PROPERTY_CAPABILITIES_EVENT");
+	public static final PropertyKey WPD_PROPERTY_CAPABILITIES_EVENT_OPTIONS = new PropertyKey(WPD_CATEGORY_CAPABILITIES , 1015, "WPD_PROPERTY_CAPABILITIES_EVENT_OPTIONS");
+	public static final NamedJmtpGuid WPD_CATEGORY_STORAGE = new NamedJmtpGuid(0xD8F907A6l, 0x34CC, 0x45FA, new short[]{0x97, 0xFB, 0xD0, 0x07, 0xFA, 0x47, 0xEC, 0x94}, "WPD_CATEGORY_STORAGE");
+	public static final PropertyKey WPD_COMMAND_STORAGE_FORMAT = new PropertyKey(WPD_CATEGORY_STORAGE , 2, "WPD_COMMAND_STORAGE_FORMAT");
+	public static final PropertyKey WPD_COMMAND_STORAGE_EJECT = new PropertyKey(WPD_CATEGORY_STORAGE , 4, "WPD_COMMAND_STORAGE_EJECT");
+	public static final PropertyKey WPD_PROPERTY_STORAGE_OBJECT_ID = new PropertyKey(WPD_CATEGORY_STORAGE , 1001, "WPD_PROPERTY_STORAGE_OBJECT_ID");
+	public static final PropertyKey WPD_PROPERTY_STORAGE_DESTINATION_OBJECT_ID = new PropertyKey(WPD_CATEGORY_STORAGE , 1002, "WPD_PROPERTY_STORAGE_DESTINATION_OBJECT_ID");
+	public static final NamedJmtpGuid WPD_CATEGORY_SMS = new NamedJmtpGuid(0xAFC25D66l, 0xFE0D, 0x4114, new short[]{0x90, 0x97, 0x97, 0x0C, 0x93, 0xE9, 0x20, 0xD1}, "WPD_CATEGORY_SMS");
+	public static final PropertyKey WPD_COMMAND_SMS_SEND = new PropertyKey(WPD_CATEGORY_SMS , 2, "WPD_COMMAND_SMS_SEND");
+	public static final PropertyKey WPD_PROPERTY_SMS_RECIPIENT = new PropertyKey(WPD_CATEGORY_SMS , 1001, "WPD_PROPERTY_SMS_RECIPIENT");
+	public static final PropertyKey WPD_PROPERTY_SMS_MESSAGE_TYPE = new PropertyKey(WPD_CATEGORY_SMS , 1002, "WPD_PROPERTY_SMS_MESSAGE_TYPE");
+	public static final PropertyKey WPD_PROPERTY_SMS_TEXT_MESSAGE = new PropertyKey(WPD_CATEGORY_SMS , 1003, "WPD_PROPERTY_SMS_TEXT_MESSAGE");
+	public static final PropertyKey WPD_PROPERTY_SMS_BINARY_MESSAGE = new PropertyKey(WPD_CATEGORY_SMS , 1004, "WPD_PROPERTY_SMS_BINARY_MESSAGE");
+	public static final PropertyKey WPD_OPTION_SMS_BINARY_MESSAGE_SUPPORTED = new PropertyKey(WPD_CATEGORY_SMS , 5001, "WPD_OPTION_SMS_BINARY_MESSAGE_SUPPORTED");
+	public static final NamedJmtpGuid WPD_CATEGORY_STILL_IMAGE_CAPTURE = new NamedJmtpGuid(0x4FCD6982l, 0x22A2, 0x4B05, new short[]{0xA4, 0x8B, 0x62, 0xD3, 0x8B, 0xF2, 0x7B, 0x32}, "WPD_CATEGORY_STILL_IMAGE_CAPTURE");
+	public static final PropertyKey WPD_COMMAND_STILL_IMAGE_CAPTURE_INITIATE = new PropertyKey(WPD_CATEGORY_STILL_IMAGE_CAPTURE , 2, "WPD_COMMAND_STILL_IMAGE_CAPTURE_INITIATE");
+	public static final NamedJmtpGuid WPD_CATEGORY_MEDIA_CAPTURE = new NamedJmtpGuid(0x59B433BAl, 0xFE44, 0x4D8D, new short[]{0x80, 0x8C, 0x6B, 0xCB, 0x9B, 0x0F, 0x15, 0xE8}, "WPD_CATEGORY_MEDIA_CAPTURE");
+	public static final PropertyKey WPD_COMMAND_MEDIA_CAPTURE_START = new PropertyKey(WPD_CATEGORY_MEDIA_CAPTURE , 2, "WPD_COMMAND_MEDIA_CAPTURE_START");
+	public static final PropertyKey WPD_COMMAND_MEDIA_CAPTURE_STOP = new PropertyKey(WPD_CATEGORY_MEDIA_CAPTURE , 3, "WPD_COMMAND_MEDIA_CAPTURE_STOP");
+	public static final PropertyKey WPD_COMMAND_MEDIA_CAPTURE_PAUSE = new PropertyKey(WPD_CATEGORY_MEDIA_CAPTURE , 4, "WPD_COMMAND_MEDIA_CAPTURE_PAUSE");
+	public static final NamedJmtpGuid WPD_CATEGORY_DEVICE_HINTS = new NamedJmtpGuid(0x0D5FB92Bl, 0xCB46, 0x4C4F, new short[]{0x83, 0x43, 0x0B, 0xC3, 0xD3, 0xF1, 0x7C, 0x84}, "WPD_CATEGORY_DEVICE_HINTS");
+	public static final PropertyKey WPD_COMMAND_DEVICE_HINTS_GET_CONTENT_LOCATION = new PropertyKey(WPD_CATEGORY_DEVICE_HINTS , 2, "WPD_COMMAND_DEVICE_HINTS_GET_CONTENT_LOCATION");
+	public static final PropertyKey WPD_PROPERTY_DEVICE_HINTS_CONTENT_TYPE = new PropertyKey(WPD_CATEGORY_DEVICE_HINTS , 1001, "WPD_PROPERTY_DEVICE_HINTS_CONTENT_TYPE");
+	public static final PropertyKey WPD_PROPERTY_DEVICE_HINTS_CONTENT_LOCATIONS = new PropertyKey(WPD_CATEGORY_DEVICE_HINTS , 1002, "WPD_PROPERTY_DEVICE_HINTS_CONTENT_LOCATIONS");
+	public static final NamedJmtpGuid WPD_CLASS_EXTENSION_V1 = new NamedJmtpGuid(0x33FB0D11l, 0x64A3, 0x4FAC, new short[]{0xB4, 0xC7, 0x3D, 0xFE, 0xAA, 0x99, 0xB0, 0x51}, "WPD_CLASS_EXTENSION_V1");
+	public static final PropertyKey WPD_COMMAND_CLASS_EXTENSION_WRITE_DEVICE_INFORMATION = new PropertyKey(WPD_CLASS_EXTENSION_V1 , 2, "WPD_COMMAND_CLASS_EXTENSION_WRITE_DEVICE_INFORMATION");
+	public static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_VALUES = new PropertyKey(WPD_CLASS_EXTENSION_V1 , 1001, "WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_VALUES");
+	public static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_WRITE_RESULTS = new PropertyKey(WPD_CLASS_EXTENSION_V1 , 1002, "WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_WRITE_RESULTS");
+	public static final NamedJmtpGuid WPD_CLASS_EXTENSION_V2 = new NamedJmtpGuid(0x7F0779B5l, 0xFA2B, 0x4766, new short[]{0x9C, 0xB2, 0xF7, 0x3B, 0xA3, 0x0B, 0x67, 0x58}, "WPD_CLASS_EXTENSION_V2");
+	public static final PropertyKey WPD_COMMAND_CLASS_EXTENSION_REGISTER_SERVICE_INTERFACES = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 2, "WPD_COMMAND_CLASS_EXTENSION_REGISTER_SERVICE_INTERFACES");
+	public static final PropertyKey WPD_COMMAND_CLASS_EXTENSION_UNREGISTER_SERVICE_INTERFACES = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 3, "WPD_COMMAND_CLASS_EXTENSION_UNREGISTER_SERVICE_INTERFACES");
+	public static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_SERVICE_OBJECT_ID = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 1001, "WPD_PROPERTY_CLASS_EXTENSION_SERVICE_OBJECT_ID");
+	public static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_SERVICE_INTERFACES = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 1002, "WPD_PROPERTY_CLASS_EXTENSION_SERVICE_INTERFACES");
+	public static final PropertyKey WPD_PROPERTY_CLASS_EXTENSION_SERVICE_REGISTRATION_RESULTS = new PropertyKey(WPD_CLASS_EXTENSION_V2 , 1003, "WPD_PROPERTY_CLASS_EXTENSION_SERVICE_REGISTRATION_RESULTS");
+	public static final NamedJmtpGuid WPD_CATEGORY_NETWORK_CONFIGURATION = new NamedJmtpGuid(0x78F9C6FCl, 0x79B8, 0x473C, new short[]{0x90, 0x60, 0x6B, 0xD2, 0x3D, 0xD0, 0x72, 0xC4}, "WPD_CATEGORY_NETWORK_CONFIGURATION");
+	public static final PropertyKey WPD_COMMAND_GENERATE_KEYPAIR = new PropertyKey(WPD_CATEGORY_NETWORK_CONFIGURATION , 2, "WPD_COMMAND_GENERATE_KEYPAIR");
+	public static final PropertyKey WPD_COMMAND_COMMIT_KEYPAIR = new PropertyKey(WPD_CATEGORY_NETWORK_CONFIGURATION , 3, "WPD_COMMAND_COMMIT_KEYPAIR");
+	public static final PropertyKey WPD_COMMAND_PROCESS_WIRELESS_PROFILE = new PropertyKey(WPD_CATEGORY_NETWORK_CONFIGURATION , 4, "WPD_COMMAND_PROCESS_WIRELESS_PROFILE");
+	public static final PropertyKey WPD_PROPERTY_PUBLIC_KEY = new PropertyKey(WPD_CATEGORY_NETWORK_CONFIGURATION , 1001, "WPD_PROPERTY_PUBLIC_KEY");
+	public static final NamedJmtpGuid WPD_CATEGORY_SERVICE_COMMON = new NamedJmtpGuid(0x322F071Dl, 0x36EF, 0x477F, new short[]{0xB4, 0xB5, 0x6F, 0x52, 0xD7, 0x34, 0xBA, 0xEE}, "WPD_CATEGORY_SERVICE_COMMON");
+	public static final PropertyKey WPD_COMMAND_SERVICE_COMMON_GET_SERVICE_OBJECT_ID = new PropertyKey(WPD_CATEGORY_SERVICE_COMMON , 2, "WPD_COMMAND_SERVICE_COMMON_GET_SERVICE_OBJECT_ID");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_OBJECT_ID = new PropertyKey(WPD_CATEGORY_SERVICE_COMMON , 1001, "WPD_PROPERTY_SERVICE_OBJECT_ID");
+	public static final NamedJmtpGuid WPD_CATEGORY_SERVICE_CAPABILITIES = new NamedJmtpGuid(0x24457E74l, 0x2E9F, 0x44F9, new short[]{0x8C, 0x57, 0x1D, 0x1B, 0xCB, 0x17, 0x0B, 0x89}, "WPD_CATEGORY_SERVICE_CAPABILITIES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 2, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS_BY_FORMAT = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 3, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS_BY_FORMAT");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 4, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_ATTRIBUTES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_PARAMETER_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 5, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_PARAMETER_ATTRIBUTES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMATS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 6, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMATS");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 7, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_ATTRIBUTES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 8, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 9, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_PROPERTY_ATTRIBUTES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_EVENTS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 10, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_EVENTS");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 11, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_ATTRIBUTES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_PARAMETER_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 12, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_PARAMETER_ATTRIBUTES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_INHERITED_SERVICES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 13, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_INHERITED_SERVICES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_RENDERING_PROFILES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 14, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_RENDERING_PROFILES");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_COMMANDS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 15, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_COMMANDS");
+	public static final PropertyKey WPD_COMMAND_SERVICE_CAPABILITIES_GET_COMMAND_OPTIONS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 16, "WPD_COMMAND_SERVICE_CAPABILITIES_GET_COMMAND_OPTIONS");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_METHODS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1001, "WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_METHODS");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1002, "WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1003, "WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1004, "WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD_ATTRIBUTES");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1005, "WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1006, "WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER_ATTRIBUTES");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_FORMATS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1007, "WPD_PROPERTY_SERVICE_CAPABILITIES_FORMATS");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1008, "WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT_ATTRIBUTES");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_KEYS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1009, "WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_KEYS");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1010, "WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_ATTRIBUTES");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_EVENTS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1011, "WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_EVENTS");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1012, "WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT_ATTRIBUTES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1013, "WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT_ATTRIBUTES");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITANCE_TYPE = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1014, "WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITANCE_TYPE");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITED_SERVICES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1015, "WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITED_SERVICES");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_RENDERING_PROFILES = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1016, "WPD_PROPERTY_SERVICE_CAPABILITIES_RENDERING_PROFILES");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_COMMANDS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1017, "WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_COMMANDS");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1018, "WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND_OPTIONS = new PropertyKey(WPD_CATEGORY_SERVICE_CAPABILITIES , 1019, "WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND_OPTIONS");
+	public static final NamedJmtpGuid WPD_CATEGORY_SERVICE_METHODS = new NamedJmtpGuid(0x2D521CA8l, 0xC1B0, 0x4268, new short[]{0xA3, 0x42, 0xCF, 0x19, 0x32, 0x15, 0x69, 0xBC}, "WPD_CATEGORY_SERVICE_METHODS");
+	public static final PropertyKey WPD_COMMAND_SERVICE_METHODS_START_INVOKE = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 2, "WPD_COMMAND_SERVICE_METHODS_START_INVOKE");
+	public static final PropertyKey WPD_COMMAND_SERVICE_METHODS_CANCEL_INVOKE = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 3, "WPD_COMMAND_SERVICE_METHODS_CANCEL_INVOKE");
+	public static final PropertyKey WPD_COMMAND_SERVICE_METHODS_END_INVOKE = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 4, "WPD_COMMAND_SERVICE_METHODS_END_INVOKE");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_METHOD = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1001, "WPD_PROPERTY_SERVICE_METHOD");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_METHOD_PARAMETER_VALUES = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1002, "WPD_PROPERTY_SERVICE_METHOD_PARAMETER_VALUES");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_METHOD_RESULT_VALUES = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1003, "WPD_PROPERTY_SERVICE_METHOD_RESULT_VALUES");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_METHOD_CONTEXT = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1004, "WPD_PROPERTY_SERVICE_METHOD_CONTEXT");
+	public static final PropertyKey WPD_PROPERTY_SERVICE_METHOD_HRESULT = new PropertyKey(WPD_CATEGORY_SERVICE_METHODS , 1005, "WPD_PROPERTY_SERVICE_METHOD_HRESULT");
+	public static final PropertyKey WPD_RESOURCE_DEFAULT = new PropertyKey(new NamedJmtpGuid(0xE81E79BEl, 0x34F0, 0x41BF, new short[]{0xB5, 0x3F, 0xF1, 0xA0, 0x6A, 0xE8, 0x78, 0x42}), 0, "WPD_RESOURCE_DEFAULT");
+	public static final PropertyKey WPD_RESOURCE_CONTACT_PHOTO = new PropertyKey(new NamedJmtpGuid(0x2C4D6803l, 0x80EA, 0x4580, new short[]{0xAF, 0x9A, 0x5B, 0xE1, 0xA2, 0x3E, 0xDD, 0xCB}), 0, "WPD_RESOURCE_CONTACT_PHOTO");
+	public static final PropertyKey WPD_RESOURCE_THUMBNAIL = new PropertyKey(new NamedJmtpGuid(0xC7C407BAl, 0x98FA, 0x46B5, new short[]{0x99, 0x60, 0x23, 0xFE, 0xC1, 0x24, 0xCF, 0xDE}), 0, "WPD_RESOURCE_THUMBNAIL");
+	public static final PropertyKey WPD_RESOURCE_ICON = new PropertyKey(new NamedJmtpGuid(0xF195FED8l, 0xAA28, 0x4EE3, new short[]{0xB1, 0x53, 0xE1, 0x82, 0xDD, 0x5E, 0xDC, 0x39}), 0, "WPD_RESOURCE_ICON");
+	public static final PropertyKey WPD_RESOURCE_AUDIO_CLIP = new PropertyKey(new NamedJmtpGuid(0x3BC13982l, 0x85B1, 0x48E0, new short[]{0x95, 0xA6, 0x8D, 0x3A, 0xD0, 0x6B, 0xE1, 0x17}), 0, "WPD_RESOURCE_AUDIO_CLIP");
+	public static final PropertyKey WPD_RESOURCE_ALBUM_ART = new PropertyKey(new NamedJmtpGuid(0xF02AA354l, 0x2300, 0x4E2D, new short[]{0xA1, 0xB9, 0x3B, 0x67, 0x30, 0xF7, 0xFA, 0x21}), 0, "WPD_RESOURCE_ALBUM_ART");
+	public static final PropertyKey WPD_RESOURCE_GENERIC = new PropertyKey(new NamedJmtpGuid(0xB9B9F515l, 0xBA70, 0x4647, new short[]{0x94, 0xDC, 0xFA, 0x49, 0x25, 0xE9, 0x5A, 0x07}), 0, "WPD_RESOURCE_GENERIC");
+	public static final PropertyKey WPD_RESOURCE_VIDEO_CLIP = new PropertyKey(new NamedJmtpGuid(0xB566EE42l, 0x6368, 0x4290, new short[]{0x86, 0x62, 0x70, 0x18, 0x2F, 0xB7, 0x9F, 0x20}), 0, "WPD_RESOURCE_VIDEO_CLIP");
+	public static final PropertyKey WPD_RESOURCE_BRANDING_ART = new PropertyKey(new NamedJmtpGuid(0xB633B1AEl, 0x6CAF, 0x4A87, new short[]{0x95, 0x89, 0x22, 0xDE, 0xD6, 0xDD, 0x58, 0x99}), 0, "WPD_RESOURCE_BRANDING_ART");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_PROPERTIES_ONLY = new NamedJmtpGuid(0x30010000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_PROPERTIES_ONLY");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_UNSPECIFIED = new NamedJmtpGuid(0x30000000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_UNSPECIFIED");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_SCRIPT = new NamedJmtpGuid(0x30020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_SCRIPT");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_EXECUTABLE = new NamedJmtpGuid(0x30030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_EXECUTABLE");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_TEXT = new NamedJmtpGuid(0x30040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_TEXT");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_HTML = new NamedJmtpGuid(0x30050000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_HTML");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_DPOF = new NamedJmtpGuid(0x30060000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_DPOF");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_AIFF = new NamedJmtpGuid(0x30070000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_AIFF");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_WAVE = new NamedJmtpGuid(0x30080000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_WAVE");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MP3 = new NamedJmtpGuid(0x30090000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MP3");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_AVI = new NamedJmtpGuid(0x300A0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_AVI");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MPEG = new NamedJmtpGuid(0x300B0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MPEG");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_ASF = new NamedJmtpGuid(0x300C0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_ASF");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_EXIF = new NamedJmtpGuid(0x38010000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_EXIF");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_TIFFEP = new NamedJmtpGuid(0x38020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_TIFFEP");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_FLASHPIX = new NamedJmtpGuid(0x38030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_FLASHPIX");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_BMP = new NamedJmtpGuid(0x38040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_BMP");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_CIFF = new NamedJmtpGuid(0x38050000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_CIFF");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_GIF = new NamedJmtpGuid(0x38070000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_GIF");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_JFIF = new NamedJmtpGuid(0x38080000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_JFIF");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_PCD = new NamedJmtpGuid(0x38090000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_PCD");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_PICT = new NamedJmtpGuid(0x380A0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_PICT");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_PNG = new NamedJmtpGuid(0x380B0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_PNG");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_TIFF = new NamedJmtpGuid(0x380D0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_TIFF");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_TIFFIT = new NamedJmtpGuid(0x380E0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_TIFFIT");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_JP2 = new NamedJmtpGuid(0x380F0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_JP2");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_JPX = new NamedJmtpGuid(0x38100000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_JPX");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_WBMP = new NamedJmtpGuid(0xB8030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_WBMP");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_JPEGXR = new NamedJmtpGuid(0xB8040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_JPEGXR");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_WINDOWSIMAGEFORMAT = new NamedJmtpGuid(0xB8810000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_WINDOWSIMAGEFORMAT");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_WMA = new NamedJmtpGuid(0xB9010000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_WMA");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_WMV = new NamedJmtpGuid(0xB9810000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_WMV");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_WPLPLAYLIST = new NamedJmtpGuid(0xBA100000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_WPLPLAYLIST");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_M3UPLAYLIST = new NamedJmtpGuid(0xBA110000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_M3UPLAYLIST");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MPLPLAYLIST = new NamedJmtpGuid(0xBA120000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MPLPLAYLIST");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_ASXPLAYLIST = new NamedJmtpGuid(0xBA130000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_ASXPLAYLIST");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_PLSPLAYLIST = new NamedJmtpGuid(0xBA140000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_PLSPLAYLIST");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_ABSTRACT_CONTACT_GROUP = new NamedJmtpGuid(0xBA060000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_ABSTRACT_CONTACT_GROUP");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_ABSTRACT_MEDIA_CAST = new NamedJmtpGuid(0xBA0B0000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_ABSTRACT_MEDIA_CAST");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_VCALENDAR1 = new NamedJmtpGuid(0xBE020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_VCALENDAR1");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_ICALENDAR = new NamedJmtpGuid(0xBE030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_ICALENDAR");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_ABSTRACT_CONTACT = new NamedJmtpGuid(0xBB810000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_ABSTRACT_CONTACT");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_VCARD2 = new NamedJmtpGuid(0xBB820000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_VCARD2");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_VCARD3 = new NamedJmtpGuid(0xBB830000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_VCARD3");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_XML = new NamedJmtpGuid(0xBA820000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_XML");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_AAC = new NamedJmtpGuid(0xB9030000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_AAC");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_AUDIBLE = new NamedJmtpGuid(0xB9040000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_AUDIBLE");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_FLAC = new NamedJmtpGuid(0xB9060000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_FLAC");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_QCELP = new NamedJmtpGuid(0xB9070000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_QCELP");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_AMR = new NamedJmtpGuid(0xB9080000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_AMR");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_OGG = new NamedJmtpGuid(0xB9020000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_OGG");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MP4 = new NamedJmtpGuid(0xB9820000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MP4");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MP2 = new NamedJmtpGuid(0xB9830000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MP2");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MICROSOFT_WORD = new NamedJmtpGuid(0xBA830000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MICROSOFT_WORD");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MHT_COMPILED_HTML = new NamedJmtpGuid(0xBA840000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MHT_COMPILED_HTML");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MICROSOFT_EXCEL = new NamedJmtpGuid(0xBA850000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MICROSOFT_EXCEL");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MICROSOFT_POWERPOINT = new NamedJmtpGuid(0xBA860000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MICROSOFT_POWERPOINT");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_3GP = new NamedJmtpGuid(0xB9840000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_3GP");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_3G2 = new NamedJmtpGuid(0xB9850000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_3G2");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_AVCHD = new NamedJmtpGuid(0xB9860000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_AVCHD");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_ATSCTS = new NamedJmtpGuid(0xB9870000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_ATSCTS");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_DVBTS = new NamedJmtpGuid(0xB9880000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xC5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_DVBTS");
+	public static final NamedJmtpGuid WPD_OBJECT_FORMAT_MKV = new NamedJmtpGuid(0xB9900000l, 0xAE6C, 0x4804, new short[]{0x98, 0xBA, 0xc5, 0x7B, 0x46, 0x96, 0x5F, 0xE7}, "WPD_OBJECT_FORMAT_MKV");
+	public static final PropertyKey WPD_OBJECT_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 2, "WPD_OBJECT_ID");
+	public static final PropertyKey WPD_OBJECT_PARENT_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 3, "WPD_OBJECT_PARENT_ID");
+	public static final PropertyKey WPD_OBJECT_NAME = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 4, "WPD_OBJECT_NAME");
+	public static final PropertyKey WPD_OBJECT_PERSISTENT_UNIQUE_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 5, "WPD_OBJECT_PERSISTENT_UNIQUE_ID");
+	public static final PropertyKey WPD_OBJECT_FORMAT = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 6, "WPD_OBJECT_FORMAT");
+	public static final PropertyKey WPD_OBJECT_ISHIDDEN = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 9, "WPD_OBJECT_ISHIDDEN");
+	public static final PropertyKey WPD_OBJECT_ISSYSTEM = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 10, "WPD_OBJECT_ISSYSTEM");
+	public static final PropertyKey WPD_OBJECT_SIZE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 11, "WPD_OBJECT_SIZE");
+	public static final PropertyKey WPD_OBJECT_ORIGINAL_FILE_NAME = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 12, "WPD_OBJECT_ORIGINAL_FILE_NAME");
+	public static final PropertyKey WPD_OBJECT_NON_CONSUMABLE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 13, "WPD_OBJECT_NON_CONSUMABLE");
+	public static final PropertyKey WPD_OBJECT_KEYWORDS = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 15, "WPD_OBJECT_KEYWORDS");
+	public static final PropertyKey WPD_OBJECT_SYNC_ID = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 16, "WPD_OBJECT_SYNC_ID");
+	public static final PropertyKey WPD_OBJECT_IS_DRM_PROTECTED = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 17, "WPD_OBJECT_IS_DRM_PROTECTED");
+	public static final PropertyKey WPD_OBJECT_DATE_CREATED = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 18, "WPD_OBJECT_DATE_CREATED");
+	public static final PropertyKey WPD_OBJECT_DATE_MODIFIED = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 19, "WPD_OBJECT_DATE_MODIFIED");
+	public static final PropertyKey WPD_OBJECT_DATE_AUTHORED = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 20, "WPD_OBJECT_DATE_AUTHORED");
+	public static final PropertyKey WPD_OBJECT_BACK_REFERENCES = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 21, "WPD_OBJECT_BACK_REFERENCES");
+	public static final PropertyKey WPD_OBJECT_CAN_DELETE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 26, "WPD_OBJECT_CAN_DELETE");
+	public static final PropertyKey WPD_OBJECT_LANGUAGE_LOCALE = new PropertyKey(WPD_OBJECT_PROPERTIES_V1 , 27, "WPD_OBJECT_LANGUAGE_LOCALE");
+	public static final NamedJmtpGuid WPD_FOLDER_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x7E9A7ABFl, 0xE568, 0x4B34, new short[]{0xAA, 0x2F, 0x13, 0xBB, 0x12, 0xAB, 0x17, 0x7D}, "WPD_FOLDER_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_FOLDER_CONTENT_TYPES_ALLOWED = new PropertyKey(WPD_FOLDER_OBJECT_PROPERTIES_V1 , 2, "WPD_FOLDER_CONTENT_TYPES_ALLOWED");
+	public static final NamedJmtpGuid WPD_IMAGE_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x63D64908l, 0x9FA1, 0x479F, new short[]{0x85, 0xBA, 0x99, 0x52, 0x21, 0x64, 0x47, 0xDB}, "WPD_IMAGE_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_IMAGE_BITDEPTH = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 3, "WPD_IMAGE_BITDEPTH");
+	public static final PropertyKey WPD_IMAGE_CROPPED_STATUS = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 4, "WPD_IMAGE_CROPPED_STATUS");
+	public static final PropertyKey WPD_IMAGE_COLOR_CORRECTED_STATUS = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 5, "WPD_IMAGE_COLOR_CORRECTED_STATUS");
+	public static final PropertyKey WPD_IMAGE_FNUMBER = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 6, "WPD_IMAGE_FNUMBER");
+	public static final PropertyKey WPD_IMAGE_EXPOSURE_TIME = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 7, "WPD_IMAGE_EXPOSURE_TIME");
+	public static final PropertyKey WPD_IMAGE_EXPOSURE_INDEX = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 8, "WPD_IMAGE_EXPOSURE_INDEX");
+	public static final PropertyKey WPD_IMAGE_HORIZONTAL_RESOLUTION = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 9, "WPD_IMAGE_HORIZONTAL_RESOLUTION");
+	public static final PropertyKey WPD_IMAGE_VERTICAL_RESOLUTION = new PropertyKey(WPD_IMAGE_OBJECT_PROPERTIES_V1 , 10, "WPD_IMAGE_VERTICAL_RESOLUTION");
+	public static final NamedJmtpGuid WPD_DOCUMENT_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x0B110203l, 0xEB95, 0x4F02, new short[]{0x93, 0xE0, 0x97, 0xC6, 0x31, 0x49, 0x3A, 0xD5}, "WPD_DOCUMENT_OBJECT_PROPERTIES_V1");
+	public static final NamedJmtpGuid WPD_MEDIA_PROPERTIES_V1 = new NamedJmtpGuid(0x2ED8BA05l, 0x0AD3, 0x42DC, new short[]{0xB0, 0xD0, 0xBC, 0x95, 0xAC, 0x39, 0x6A, 0xC8}, "WPD_MEDIA_PROPERTIES_V1");
+	public static final PropertyKey WPD_MEDIA_TOTAL_BITRATE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 2, "WPD_MEDIA_TOTAL_BITRATE");
+	public static final PropertyKey WPD_MEDIA_BITRATE_TYPE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 3, "WPD_MEDIA_BITRATE_TYPE");
+	public static final PropertyKey WPD_MEDIA_COPYRIGHT = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 4, "WPD_MEDIA_COPYRIGHT");
+	public static final PropertyKey WPD_MEDIA_SUBSCRIPTION_CONTENT_ID = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 5, "WPD_MEDIA_SUBSCRIPTION_CONTENT_ID");
+	public static final PropertyKey WPD_MEDIA_USE_COUNT = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 6, "WPD_MEDIA_USE_COUNT");
+	public static final PropertyKey WPD_MEDIA_SKIP_COUNT = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 7, "WPD_MEDIA_SKIP_COUNT");
+	public static final PropertyKey WPD_MEDIA_LAST_ACCESSED_TIME = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 8, "WPD_MEDIA_LAST_ACCESSED_TIME");
+	public static final PropertyKey WPD_MEDIA_PARENTAL_RATING = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 9, "WPD_MEDIA_PARENTAL_RATING");
+	public static final PropertyKey WPD_MEDIA_META_GENRE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 10, "WPD_MEDIA_META_GENRE");
+	public static final PropertyKey WPD_MEDIA_COMPOSER = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 11, "WPD_MEDIA_COMPOSER");
+	public static final PropertyKey WPD_MEDIA_EFFECTIVE_RATING = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 12, "WPD_MEDIA_EFFECTIVE_RATING");
+	public static final PropertyKey WPD_MEDIA_SUB_TITLE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 13, "WPD_MEDIA_SUB_TITLE");
+	public static final PropertyKey WPD_MEDIA_RELEASE_DATE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 14, "WPD_MEDIA_RELEASE_DATE");
+	public static final PropertyKey WPD_MEDIA_SAMPLE_RATE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 15, "WPD_MEDIA_SAMPLE_RATE");
+	public static final PropertyKey WPD_MEDIA_STAR_RATING = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 16, "WPD_MEDIA_STAR_RATING");
+	public static final PropertyKey WPD_MEDIA_USER_EFFECTIVE_RATING = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 17, "WPD_MEDIA_USER_EFFECTIVE_RATING");
+	public static final PropertyKey WPD_MEDIA_TITLE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 18, "WPD_MEDIA_TITLE");
+	public static final PropertyKey WPD_MEDIA_DURATION = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 19, "WPD_MEDIA_DURATION");
+	public static final PropertyKey WPD_MEDIA_BUY_NOW = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 20, "WPD_MEDIA_BUY_NOW");
+	public static final PropertyKey WPD_MEDIA_ENCODING_PROFILE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 21, "WPD_MEDIA_ENCODING_PROFILE");
+	public static final PropertyKey WPD_MEDIA_WIDTH = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 22, "WPD_MEDIA_WIDTH");
+	public static final PropertyKey WPD_MEDIA_HEIGHT = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 23, "WPD_MEDIA_HEIGHT");
+	public static final PropertyKey WPD_MEDIA_ARTIST = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 24, "WPD_MEDIA_ARTIST");
+	public static final PropertyKey WPD_MEDIA_ALBUM_ARTIST = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 25, "WPD_MEDIA_ALBUM_ARTIST");
+	public static final PropertyKey WPD_MEDIA_OWNER = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 26, "WPD_MEDIA_OWNER");
+	public static final PropertyKey WPD_MEDIA_MANAGING_EDITOR = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 27, "WPD_MEDIA_MANAGING_EDITOR");
+	public static final PropertyKey WPD_MEDIA_WEBMASTER = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 28, "WPD_MEDIA_WEBMASTER");
+	public static final PropertyKey WPD_MEDIA_SOURCE_URL = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 29, "WPD_MEDIA_SOURCE_URL");
+	public static final PropertyKey WPD_MEDIA_DESTINATION_URL = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 30, "WPD_MEDIA_DESTINATION_URL");
+	public static final PropertyKey WPD_MEDIA_DESCRIPTION = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 31, "WPD_MEDIA_DESCRIPTION");
+	public static final PropertyKey WPD_MEDIA_GENRE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 32, "WPD_MEDIA_GENRE");
+	public static final PropertyKey WPD_MEDIA_TIME_BOOKMARK = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 33, "WPD_MEDIA_TIME_BOOKMARK");
+	public static final PropertyKey WPD_MEDIA_OBJECT_BOOKMARK = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 34, "WPD_MEDIA_OBJECT_BOOKMARK");
+	public static final PropertyKey WPD_MEDIA_LAST_BUILD_DATE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 35, "WPD_MEDIA_LAST_BUILD_DATE");
+	public static final PropertyKey WPD_MEDIA_BYTE_BOOKMARK = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 36, "WPD_MEDIA_BYTE_BOOKMARK");
+	public static final PropertyKey WPD_MEDIA_TIME_TO_LIVE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 37, "WPD_MEDIA_TIME_TO_LIVE");
+	public static final PropertyKey WPD_MEDIA_GUID = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 38, "WPD_MEDIA_GUID");
+	public static final PropertyKey WPD_MEDIA_SUB_DESCRIPTION = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 39, "WPD_MEDIA_SUB_DESCRIPTION");
+	public static final PropertyKey WPD_MEDIA_AUDIO_ENCODING_PROFILE = new PropertyKey(WPD_MEDIA_PROPERTIES_V1 , 49, "WPD_MEDIA_AUDIO_ENCODING_PROFILE");
+	public static final NamedJmtpGuid WPD_CONTACT_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0xFBD4FDABl, 0x987D, 0x4777, new short[]{0xB3, 0xF9, 0x72, 0x61, 0x85, 0xA9, 0x31, 0x2B}, "WPD_CONTACT_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_CONTACT_DISPLAY_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 2, "WPD_CONTACT_DISPLAY_NAME");
+	public static final PropertyKey WPD_CONTACT_FIRST_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 3, "WPD_CONTACT_FIRST_NAME");
+	public static final PropertyKey WPD_CONTACT_MIDDLE_NAMES = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 4, "WPD_CONTACT_MIDDLE_NAMES");
+	public static final PropertyKey WPD_CONTACT_LAST_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 5, "WPD_CONTACT_LAST_NAME");
+	public static final PropertyKey WPD_CONTACT_PREFIX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 6, "WPD_CONTACT_PREFIX");
+	public static final PropertyKey WPD_CONTACT_SUFFIX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 7, "WPD_CONTACT_SUFFIX");
+	public static final PropertyKey WPD_CONTACT_PHONETIC_FIRST_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 8, "WPD_CONTACT_PHONETIC_FIRST_NAME");
+	public static final PropertyKey WPD_CONTACT_PHONETIC_LAST_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 9, "WPD_CONTACT_PHONETIC_LAST_NAME");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_FULL_POSTAL_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 10, "WPD_CONTACT_PERSONAL_FULL_POSTAL_ADDRESS");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE1 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 11, "WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE1");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 12, "WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE2");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_CITY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 13, "WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_CITY");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_REGION = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 14, "WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_REGION");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_POSTAL_CODE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 15, "WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_POSTAL_CODE");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_COUNTRY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 16, "WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_COUNTRY");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_FULL_POSTAL_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 17, "WPD_CONTACT_BUSINESS_FULL_POSTAL_ADDRESS");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE1 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 18, "WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE1");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 19, "WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE2");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_CITY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 20, "WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_CITY");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_REGION = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 21, "WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_REGION");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_POSTAL_CODE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 22, "WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_POSTAL_CODE");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_COUNTRY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 23, "WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_COUNTRY");
+	public static final PropertyKey WPD_CONTACT_OTHER_FULL_POSTAL_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 24, "WPD_CONTACT_OTHER_FULL_POSTAL_ADDRESS");
+	public static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE1 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 25, "WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE1");
+	public static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 26, "WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE2");
+	public static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_CITY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 27, "WPD_CONTACT_OTHER_POSTAL_ADDRESS_CITY");
+	public static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_REGION = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 28, "WPD_CONTACT_OTHER_POSTAL_ADDRESS_REGION");
+	public static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_CODE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 29, "WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_CODE");
+	public static final PropertyKey WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_COUNTRY = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 30, "WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_COUNTRY");
+	public static final PropertyKey WPD_CONTACT_PRIMARY_EMAIL_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 31, "WPD_CONTACT_PRIMARY_EMAIL_ADDRESS");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_EMAIL = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 32, "WPD_CONTACT_PERSONAL_EMAIL");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_EMAIL2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 33, "WPD_CONTACT_PERSONAL_EMAIL2");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_EMAIL = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 34, "WPD_CONTACT_BUSINESS_EMAIL");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_EMAIL2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 35, "WPD_CONTACT_BUSINESS_EMAIL2");
+	public static final PropertyKey WPD_CONTACT_OTHER_EMAILS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 36, "WPD_CONTACT_OTHER_EMAILS");
+	public static final PropertyKey WPD_CONTACT_PRIMARY_PHONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 37, "WPD_CONTACT_PRIMARY_PHONE");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_PHONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 38, "WPD_CONTACT_PERSONAL_PHONE");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_PHONE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 39, "WPD_CONTACT_PERSONAL_PHONE2");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_PHONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 40, "WPD_CONTACT_BUSINESS_PHONE");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_PHONE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 41, "WPD_CONTACT_BUSINESS_PHONE2");
+	public static final PropertyKey WPD_CONTACT_MOBILE_PHONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 42, "WPD_CONTACT_MOBILE_PHONE");
+	public static final PropertyKey WPD_CONTACT_MOBILE_PHONE2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 43, "WPD_CONTACT_MOBILE_PHONE2");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_FAX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 44, "WPD_CONTACT_PERSONAL_FAX");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_FAX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 45, "WPD_CONTACT_BUSINESS_FAX");
+	public static final PropertyKey WPD_CONTACT_PAGER = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 46, "WPD_CONTACT_PAGER");
+	public static final PropertyKey WPD_CONTACT_OTHER_PHONES = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 47, "WPD_CONTACT_OTHER_PHONES");
+	public static final PropertyKey WPD_CONTACT_PRIMARY_WEB_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 48, "WPD_CONTACT_PRIMARY_WEB_ADDRESS");
+	public static final PropertyKey WPD_CONTACT_PERSONAL_WEB_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 49, "WPD_CONTACT_PERSONAL_WEB_ADDRESS");
+	public static final PropertyKey WPD_CONTACT_BUSINESS_WEB_ADDRESS = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 50, "WPD_CONTACT_BUSINESS_WEB_ADDRESS");
+	public static final PropertyKey WPD_CONTACT_INSTANT_MESSENGER = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 51, "WPD_CONTACT_INSTANT_MESSENGER");
+	public static final PropertyKey WPD_CONTACT_INSTANT_MESSENGER2 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 52, "WPD_CONTACT_INSTANT_MESSENGER2");
+	public static final PropertyKey WPD_CONTACT_INSTANT_MESSENGER3 = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 53, "WPD_CONTACT_INSTANT_MESSENGER3");
+	public static final PropertyKey WPD_CONTACT_COMPANY_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 54, "WPD_CONTACT_COMPANY_NAME");
+	public static final PropertyKey WPD_CONTACT_PHONETIC_COMPANY_NAME = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 55, "WPD_CONTACT_PHONETIC_COMPANY_NAME");
+	public static final PropertyKey WPD_CONTACT_ROLE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 56, "WPD_CONTACT_ROLE");
+	public static final PropertyKey WPD_CONTACT_BIRTHDATE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 57, "WPD_CONTACT_BIRTHDATE");
+	public static final PropertyKey WPD_CONTACT_PRIMARY_FAX = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 58, "WPD_CONTACT_PRIMARY_FAX");
+	public static final PropertyKey WPD_CONTACT_SPOUSE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 59, "WPD_CONTACT_SPOUSE");
+	public static final PropertyKey WPD_CONTACT_CHILDREN = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 60, "WPD_CONTACT_CHILDREN");
+	public static final PropertyKey WPD_CONTACT_ASSISTANT = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 61, "WPD_CONTACT_ASSISTANT");
+	public static final PropertyKey WPD_CONTACT_ANNIVERSARY_DATE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 62, "WPD_CONTACT_ANNIVERSARY_DATE");
+	public static final PropertyKey WPD_CONTACT_RINGTONE = new PropertyKey(WPD_CONTACT_OBJECT_PROPERTIES_V1 , 63, "WPD_CONTACT_RINGTONE");
+	public static final NamedJmtpGuid WPD_MUSIC_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0xB324F56Al, 0xDC5D, 0x46E5, new short[]{0xB6, 0xDF, 0xD2, 0xEA, 0x41, 0x48, 0x88, 0xC6}, "WPD_MUSIC_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_MUSIC_ALBUM = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 3, "WPD_MUSIC_ALBUM");
+	public static final PropertyKey WPD_MUSIC_TRACK = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 4, "WPD_MUSIC_TRACK");
+	public static final PropertyKey WPD_MUSIC_LYRICS = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 6, "WPD_MUSIC_LYRICS");
+	public static final PropertyKey WPD_MUSIC_MOOD = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 8, "WPD_MUSIC_MOOD");
+	public static final PropertyKey WPD_AUDIO_BITRATE = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 9, "WPD_AUDIO_BITRATE");
+	public static final PropertyKey WPD_AUDIO_CHANNEL_COUNT = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 10, "WPD_AUDIO_CHANNEL_COUNT");
+	public static final PropertyKey WPD_AUDIO_FORMAT_CODE = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 11, "WPD_AUDIO_FORMAT_CODE");
+	public static final PropertyKey WPD_AUDIO_BIT_DEPTH = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 12, "WPD_AUDIO_BIT_DEPTH");
+	public static final PropertyKey WPD_AUDIO_BLOCK_ALIGNMENT = new PropertyKey(WPD_MUSIC_OBJECT_PROPERTIES_V1 , 13, "WPD_AUDIO_BLOCK_ALIGNMENT");
+	public static final NamedJmtpGuid WPD_VIDEO_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x346F2163l, 0xF998, 0x4146, new short[]{0x8B, 0x01, 0xD1, 0x9B, 0x4C, 0x00, 0xDE, 0x9A}, "WPD_VIDEO_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_VIDEO_AUTHOR = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 2, "WPD_VIDEO_AUTHOR");
+	public static final PropertyKey WPD_VIDEO_RECORDEDTV_STATION_NAME = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 4, "WPD_VIDEO_RECORDEDTV_STATION_NAME");
+	public static final PropertyKey WPD_VIDEO_RECORDEDTV_CHANNEL_NUMBER = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 5, "WPD_VIDEO_RECORDEDTV_CHANNEL_NUMBER");
+	public static final PropertyKey WPD_VIDEO_RECORDEDTV_REPEAT = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 7, "WPD_VIDEO_RECORDEDTV_REPEAT");
+	public static final PropertyKey WPD_VIDEO_BUFFER_SIZE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 8, "WPD_VIDEO_BUFFER_SIZE");
+	public static final PropertyKey WPD_VIDEO_CREDITS = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 9, "WPD_VIDEO_CREDITS");
+	public static final PropertyKey WPD_VIDEO_KEY_FRAME_DISTANCE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 10, "WPD_VIDEO_KEY_FRAME_DISTANCE");
+	public static final PropertyKey WPD_VIDEO_QUALITY_SETTING = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 11, "WPD_VIDEO_QUALITY_SETTING");
+	public static final PropertyKey WPD_VIDEO_SCAN_TYPE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 12, "WPD_VIDEO_SCAN_TYPE");
+	public static final PropertyKey WPD_VIDEO_BITRATE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 13, "WPD_VIDEO_BITRATE");
+	public static final PropertyKey WPD_VIDEO_FOURCC_CODE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 14, "WPD_VIDEO_FOURCC_CODE");
+	public static final PropertyKey WPD_VIDEO_FRAMERATE = new PropertyKey(WPD_VIDEO_OBJECT_PROPERTIES_V1 , 15, "WPD_VIDEO_FRAMERATE");
+	public static final NamedJmtpGuid WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0xB28AE94Bl, 0x05A4, 0x4E8E, new short[]{0xBE, 0x01, 0x72, 0xCC, 0x7E, 0x09, 0x9D, 0x8F}, "WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_COMMON_INFORMATION_SUBJECT = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 2, "WPD_COMMON_INFORMATION_SUBJECT");
+	public static final PropertyKey WPD_COMMON_INFORMATION_BODY_TEXT = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 3, "WPD_COMMON_INFORMATION_BODY_TEXT");
+	public static final PropertyKey WPD_COMMON_INFORMATION_PRIORITY = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 4, "WPD_COMMON_INFORMATION_PRIORITY");
+	public static final PropertyKey WPD_COMMON_INFORMATION_START_DATETIME = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 5, "WPD_COMMON_INFORMATION_START_DATETIME");
+	public static final PropertyKey WPD_COMMON_INFORMATION_END_DATETIME = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 6, "WPD_COMMON_INFORMATION_END_DATETIME");
+	public static final PropertyKey WPD_COMMON_INFORMATION_NOTES = new PropertyKey(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 7, "WPD_COMMON_INFORMATION_NOTES");
+	public static final NamedJmtpGuid WPD_MEMO_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x5FFBFC7Bl, 0x7483, 0x41AD, new short[]{0xAF, 0xB9, 0xDA, 0x3F, 0x4E, 0x59, 0x2B, 0x8D}, "WPD_MEMO_OBJECT_PROPERTIES_V1");
+	public static final NamedJmtpGuid WPD_EMAIL_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x41F8F65Al, 0x5484, 0x4782, new short[]{0xB1, 0x3D, 0x47, 0x40, 0xDD, 0x7C, 0x37, 0xC5}, "WPD_EMAIL_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_EMAIL_TO_LINE = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 2, "WPD_EMAIL_TO_LINE");
+	public static final PropertyKey WPD_EMAIL_CC_LINE = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 3, "WPD_EMAIL_CC_LINE");
+	public static final PropertyKey WPD_EMAIL_BCC_LINE = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 4, "WPD_EMAIL_BCC_LINE");
+	public static final PropertyKey WPD_EMAIL_HAS_BEEN_READ = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 7, "WPD_EMAIL_HAS_BEEN_READ");
+	public static final PropertyKey WPD_EMAIL_RECEIVED_TIME = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 8, "WPD_EMAIL_RECEIVED_TIME");
+	public static final PropertyKey WPD_EMAIL_HAS_ATTACHMENTS = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 9, "WPD_EMAIL_HAS_ATTACHMENTS");
+	public static final PropertyKey WPD_EMAIL_SENDER_ADDRESS = new PropertyKey(WPD_EMAIL_OBJECT_PROPERTIES_V1 , 10, "WPD_EMAIL_SENDER_ADDRESS");
+	public static final NamedJmtpGuid WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0xF99EFD03l, 0x431D, 0x40D8, new short[]{0xA1, 0xC9, 0x4E, 0x22, 0x0D, 0x9C, 0x88, 0xD3}, "WPD_APPOINTMENT_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_APPOINTMENT_LOCATION = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 3, "WPD_APPOINTMENT_LOCATION");
+	public static final PropertyKey WPD_APPOINTMENT_TYPE = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 7, "WPD_APPOINTMENT_TYPE");
+	public static final PropertyKey WPD_APPOINTMENT_REQUIRED_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 8, "WPD_APPOINTMENT_REQUIRED_ATTENDEES");
+	public static final PropertyKey WPD_APPOINTMENT_OPTIONAL_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 9, "WPD_APPOINTMENT_OPTIONAL_ATTENDEES");
+	public static final PropertyKey WPD_APPOINTMENT_ACCEPTED_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 10, "WPD_APPOINTMENT_ACCEPTED_ATTENDEES");
+	public static final PropertyKey WPD_APPOINTMENT_RESOURCES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 11, "WPD_APPOINTMENT_RESOURCES");
+	public static final PropertyKey WPD_APPOINTMENT_TENTATIVE_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 12, "WPD_APPOINTMENT_TENTATIVE_ATTENDEES");
+	public static final PropertyKey WPD_APPOINTMENT_DECLINED_ATTENDEES = new PropertyKey(WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 13, "WPD_APPOINTMENT_DECLINED_ATTENDEES");
+	public static final NamedJmtpGuid WPD_TASK_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0xE354E95El, 0xD8A0, 0x4637, new short[]{0xA0, 0x3A, 0x0C, 0xB2, 0x68, 0x38, 0xDB, 0xC7}, "WPD_TASK_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_TASK_STATUS = new PropertyKey(WPD_TASK_OBJECT_PROPERTIES_V1 , 6, "WPD_TASK_STATUS");
+	public static final PropertyKey WPD_TASK_PERCENT_COMPLETE = new PropertyKey(WPD_TASK_OBJECT_PROPERTIES_V1 , 8, "WPD_TASK_PERCENT_COMPLETE");
+	public static final PropertyKey WPD_TASK_REMINDER_DATE = new PropertyKey(WPD_TASK_OBJECT_PROPERTIES_V1 , 10, "WPD_TASK_REMINDER_DATE");
+	public static final PropertyKey WPD_TASK_OWNER = new PropertyKey(WPD_TASK_OBJECT_PROPERTIES_V1 , 11, "WPD_TASK_OWNER");
+	public static final NamedJmtpGuid WPD_SMS_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x7E1074CCl, 0x50FF, 0x4DD1, new short[]{0xA7, 0x42, 0x53, 0xBE, 0x6F, 0x09, 0x3A, 0x0D}, "WPD_SMS_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_SMS_PROVIDER = new PropertyKey(WPD_SMS_OBJECT_PROPERTIES_V1 , 2, "WPD_SMS_PROVIDER");
+	public static final PropertyKey WPD_SMS_TIMEOUT = new PropertyKey(WPD_SMS_OBJECT_PROPERTIES_V1 , 3, "WPD_SMS_TIMEOUT");
+	public static final PropertyKey WPD_SMS_MAX_PAYLOAD = new PropertyKey(WPD_SMS_OBJECT_PROPERTIES_V1 , 4, "WPD_SMS_MAX_PAYLOAD");
+	public static final PropertyKey WPD_SMS_ENCODING = new PropertyKey(WPD_SMS_OBJECT_PROPERTIES_V1 , 5, "WPD_SMS_ENCODING");
+	public static final NamedJmtpGuid WPD_SECTION_OBJECT_PROPERTIES_V1 = new NamedJmtpGuid(0x516AFD2Bl, 0xC64E, 0x44F0, new short[]{0x98, 0xDC, 0xBE, 0xE1, 0xC8, 0x8F, 0x7D, 0x66}, "WPD_SECTION_OBJECT_PROPERTIES_V1");
+	public static final PropertyKey WPD_SECTION_DATA_OFFSET = new PropertyKey(WPD_SECTION_OBJECT_PROPERTIES_V1 , 2, "WPD_SECTION_DATA_OFFSET");
+	public static final PropertyKey WPD_SECTION_DATA_LENGTH = new PropertyKey(WPD_SECTION_OBJECT_PROPERTIES_V1 , 3, "WPD_SECTION_DATA_LENGTH");
+	public static final PropertyKey WPD_SECTION_DATA_UNITS = new PropertyKey(WPD_SECTION_OBJECT_PROPERTIES_V1 , 4, "WPD_SECTION_DATA_UNITS");
+	public static final PropertyKey WPD_SECTION_DATA_REFERENCED_OBJECT_RESOURCE = new PropertyKey(WPD_SECTION_OBJECT_PROPERTIES_V1 , 5, "WPD_SECTION_DATA_REFERENCED_OBJECT_RESOURCE");
+	private static Collection<PropertyKey> WPD_FORMAT_ATTRIBUTES;
+	public static Collection<PropertyKey> getWPD_FORMAT_ATTRIBUTES() {
+		if(WPD_FORMAT_ATTRIBUTES == null) {
+			WPD_FORMAT_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_FORMAT_ATTRIBUTE_NAME , 
+				WPD_FORMAT_ATTRIBUTE_MIMETYPE )
+			);
+		}
+		return WPD_FORMAT_ATTRIBUTES;
+	}
+	private static Collection<PropertyKey> WPD_API_OPTIONS;
+	public static Collection<PropertyKey> getWPD_API_OPTIONS() {
+		if(WPD_API_OPTIONS == null) {
+			WPD_API_OPTIONS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_API_OPTION_USE_CLEAR_DATA_STREAM , 
+				WPD_API_OPTION_IOCTL_ACCESS )
+			);
+		}
+		return WPD_API_OPTIONS;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_COMMON_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_COMMON_COMMANDS() {
+		if(WPD_CATEGORY_COMMON_COMMANDS == null) {
+			WPD_CATEGORY_COMMON_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_COMMON_RESET_DEVICE , 
+				WPD_COMMAND_COMMON_GET_OBJECT_IDS_FROM_PERSISTENT_UNIQUE_IDS , 
+				WPD_COMMAND_COMMON_SAVE_CLIENT_INFORMATION )
+			);
+		}
+		return WPD_CATEGORY_COMMON_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_STORAGE_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_STORAGE_COMMANDS() {
+		if(WPD_CATEGORY_STORAGE_COMMANDS == null) {
+			WPD_CATEGORY_STORAGE_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_STORAGE_FORMAT , 
+				WPD_COMMAND_STORAGE_EJECT )
+			);
+		}
+		return WPD_CATEGORY_STORAGE_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_DEVICE_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_DEVICE_PROPERTIES() {
+		if(WPD_DEVICE_PROPERTIES == null) {
+			WPD_DEVICE_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_DEVICE_SYNC_PARTNER , 
+				WPD_DEVICE_FIRMWARE_VERSION , 
+				WPD_DEVICE_POWER_LEVEL , 
+				WPD_DEVICE_POWER_SOURCE , 
+				WPD_DEVICE_PROTOCOL , 
+				WPD_DEVICE_MANUFACTURER , 
+				WPD_DEVICE_MODEL , 
+				WPD_DEVICE_SERIAL_NUMBER , 
+				WPD_DEVICE_SUPPORTS_NON_CONSUMABLE , 
+				WPD_DEVICE_DATETIME , 
+				WPD_DEVICE_FRIENDLY_NAME , 
+				WPD_DEVICE_SUPPORTED_DRM_SCHEMES , 
+				WPD_DEVICE_SUPPORTED_FORMATS_ARE_ORDERED , 
+				WPD_DEVICE_TYPE , 
+				WPD_DEVICE_NETWORK_IDENTIFIER , 
+				WPD_DEVICE_FUNCTIONAL_UNIQUE_ID , 
+				WPD_DEVICE_MODEL_UNIQUE_ID , 
+				WPD_DEVICE_TRANSPORT , 
+				WPD_DEVICE_USE_DEVICE_STAGE )
+			);
+		}
+		return WPD_DEVICE_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_METHOD_ATTRIBUTES;
+	public static Collection<PropertyKey> getWPD_METHOD_ATTRIBUTES() {
+		if(WPD_METHOD_ATTRIBUTES == null) {
+			WPD_METHOD_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_METHOD_ATTRIBUTE_NAME , 
+				WPD_METHOD_ATTRIBUTE_ASSOCIATED_FORMAT , 
+				WPD_METHOD_ATTRIBUTE_ACCESS , 
+				WPD_METHOD_ATTRIBUTE_PARAMETERS )
+			);
+		}
+		return WPD_METHOD_ATTRIBUTES;
+	}
+	private static Collection<PropertyKey> WPD_IMAGE_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_IMAGE_OBJECT_PROPERTIES() {
+		if(WPD_IMAGE_OBJECT_PROPERTIES == null) {
+			WPD_IMAGE_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_IMAGE_BITDEPTH , 
+				WPD_IMAGE_CROPPED_STATUS , 
+				WPD_IMAGE_COLOR_CORRECTED_STATUS , 
+				WPD_IMAGE_FNUMBER , 
+				WPD_IMAGE_EXPOSURE_TIME , 
+				WPD_IMAGE_EXPOSURE_INDEX , 
+				WPD_IMAGE_HORIZONTAL_RESOLUTION , 
+				WPD_IMAGE_VERTICAL_RESOLUTION )
+			);
+		}
+		return WPD_IMAGE_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CLASS_EXTENSION_OPTIONS;
+	public static Collection<PropertyKey> getWPD_CLASS_EXTENSION_OPTIONS() {
+		if(WPD_CLASS_EXTENSION_OPTIONS == null) {
+			WPD_CLASS_EXTENSION_OPTIONS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_CLASS_EXTENSION_OPTIONS_SUPPORTED_CONTENT_TYPES , 
+				WPD_CLASS_EXTENSION_OPTIONS_DONT_REGISTER_WPD_DEVICE_INTERFACE , 
+				WPD_CLASS_EXTENSION_OPTIONS_REGISTER_WPD_PRIVATE_DEVICE_INTERFACE , 
+				WPD_CLASS_EXTENSION_OPTIONS_MULTITRANSPORT_MODE , 
+				WPD_CLASS_EXTENSION_OPTIONS_DEVICE_IDENTIFICATION_VALUES , 
+				WPD_CLASS_EXTENSION_OPTIONS_TRANSPORT_BANDWIDTH , 
+				WPD_CLASS_EXTENSION_OPTIONS_SILENCE_AUTOPLAY )
+			);
+		}
+		return WPD_CLASS_EXTENSION_OPTIONS;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_STILL_IMAGE_CAPTURE_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_STILL_IMAGE_CAPTURE_COMMANDS() {
+		if(WPD_CATEGORY_STILL_IMAGE_CAPTURE_COMMANDS == null) {
+			WPD_CATEGORY_STILL_IMAGE_CAPTURE_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_STILL_IMAGE_CAPTURE_INITIATE )
+			);
+		}
+		return WPD_CATEGORY_STILL_IMAGE_CAPTURE_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_FOLDER_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_FOLDER_OBJECT_PROPERTIES() {
+		if(WPD_FOLDER_OBJECT_PROPERTIES == null) {
+			WPD_FOLDER_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_FOLDER_CONTENT_TYPES_ALLOWED )
+			);
+		}
+		return WPD_FOLDER_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_ENUMERATION_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_ENUMERATION_PROPERTIES() {
+		if(WPD_CATEGORY_OBJECT_ENUMERATION_PROPERTIES == null) {
+			WPD_CATEGORY_OBJECT_ENUMERATION_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_OBJECT_ENUMERATION_PARENT_ID , 
+				WPD_PROPERTY_OBJECT_ENUMERATION_FILTER , 
+				WPD_PROPERTY_OBJECT_ENUMERATION_OBJECT_IDS , 
+				WPD_PROPERTY_OBJECT_ENUMERATION_CONTEXT , 
+				WPD_PROPERTY_OBJECT_ENUMERATION_NUM_OBJECTS_REQUESTED )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_ENUMERATION_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_VIDEO_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_VIDEO_OBJECT_PROPERTIES() {
+		if(WPD_VIDEO_OBJECT_PROPERTIES == null) {
+			WPD_VIDEO_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_VIDEO_AUTHOR , 
+				WPD_VIDEO_RECORDEDTV_STATION_NAME , 
+				WPD_VIDEO_RECORDEDTV_CHANNEL_NUMBER , 
+				WPD_VIDEO_RECORDEDTV_REPEAT , 
+				WPD_VIDEO_BUFFER_SIZE , 
+				WPD_VIDEO_CREDITS , 
+				WPD_VIDEO_KEY_FRAME_DISTANCE , 
+				WPD_VIDEO_QUALITY_SETTING , 
+				WPD_VIDEO_SCAN_TYPE , 
+				WPD_VIDEO_BITRATE , 
+				WPD_VIDEO_FOURCC_CODE , 
+				WPD_VIDEO_FRAMERATE )
+			);
+		}
+		return WPD_VIDEO_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_SECTION_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_SECTION_OBJECT_PROPERTIES() {
+		if(WPD_SECTION_OBJECT_PROPERTIES == null) {
+			WPD_SECTION_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_SECTION_DATA_OFFSET , 
+				WPD_SECTION_DATA_LENGTH , 
+				WPD_SECTION_DATA_UNITS , 
+				WPD_SECTION_DATA_REFERENCED_OBJECT_RESOURCE )
+			);
+		}
+		return WPD_SECTION_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_MEMO_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_MEMO_OBJECT_PROPERTIES() {
+		if(WPD_MEMO_OBJECT_PROPERTIES == null) {
+			WPD_MEMO_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				)
+			);
+		}
+		return WPD_MEMO_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_RESOURCES_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_RESOURCES_PROPERTIES() {
+		if(WPD_CATEGORY_OBJECT_RESOURCES_PROPERTIES == null) {
+			WPD_CATEGORY_OBJECT_RESOURCES_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_OBJECT_RESOURCES_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_RESOURCES_ACCESS_MODE , 
+				WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_KEYS , 
+				WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_ATTRIBUTES , 
+				WPD_PROPERTY_OBJECT_RESOURCES_CONTEXT , 
+				WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_READ , 
+				WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_READ , 
+				WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_WRITE , 
+				WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_WRITTEN , 
+				WPD_PROPERTY_OBJECT_RESOURCES_DATA , 
+				WPD_PROPERTY_OBJECT_RESOURCES_OPTIMAL_TRANSFER_BUFFER_SIZE , 
+				WPD_PROPERTY_OBJECT_RESOURCES_SEEK_OFFSET , 
+				WPD_PROPERTY_OBJECT_RESOURCES_SEEK_ORIGIN_FLAG , 
+				WPD_PROPERTY_OBJECT_RESOURCES_POSITION_FROM_START , 
+				WPD_PROPERTY_OBJECT_RESOURCES_SUPPORTS_UNITS , 
+				WPD_PROPERTY_OBJECT_RESOURCES_STREAM_UNITS )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_RESOURCES_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_COMMON_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_COMMON_PROPERTIES() {
+		if(WPD_CATEGORY_COMMON_PROPERTIES == null) {
+			WPD_CATEGORY_COMMON_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_COMMON_COMMAND_CATEGORY , 
+				WPD_PROPERTY_COMMON_COMMAND_ID , 
+				WPD_PROPERTY_COMMON_HRESULT , 
+				WPD_PROPERTY_COMMON_DRIVER_ERROR_CODE , 
+				WPD_PROPERTY_COMMON_COMMAND_TARGET , 
+				WPD_PROPERTY_COMMON_PERSISTENT_UNIQUE_IDS , 
+				WPD_PROPERTY_COMMON_OBJECT_IDS , 
+				WPD_PROPERTY_COMMON_CLIENT_INFORMATION , 
+				WPD_PROPERTY_COMMON_CLIENT_INFORMATION_CONTEXT , 
+				WPD_PROPERTY_COMMON_ACTIVITY_ID )
+			);
+		}
+		return WPD_CATEGORY_COMMON_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_RESOURCE_ATTRIBUTES;
+	public static Collection<PropertyKey> getWPD_RESOURCE_ATTRIBUTES() {
+		if(WPD_RESOURCE_ATTRIBUTES == null) {
+			WPD_RESOURCE_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_RESOURCE_ATTRIBUTE_TOTAL_SIZE , 
+				WPD_RESOURCE_ATTRIBUTE_CAN_READ , 
+				WPD_RESOURCE_ATTRIBUTE_CAN_WRITE , 
+				WPD_RESOURCE_ATTRIBUTE_CAN_DELETE , 
+				WPD_RESOURCE_ATTRIBUTE_OPTIMAL_READ_BUFFER_SIZE , 
+				WPD_RESOURCE_ATTRIBUTE_OPTIMAL_WRITE_BUFFER_SIZE , 
+				WPD_RESOURCE_ATTRIBUTE_FORMAT , 
+				WPD_RESOURCE_ATTRIBUTE_RESOURCE_KEY )
+			);
+		}
+		return WPD_RESOURCE_ATTRIBUTES;
+	}
+	private static Collection<PropertyKey> WPD_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_OBJECT_PROPERTIES() {
+		if(WPD_OBJECT_PROPERTIES == null) {
+			WPD_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_OBJECT_CONTENT_TYPE , 
+				WPD_OBJECT_REFERENCES , 
+				WPD_OBJECT_CONTAINER_FUNCTIONAL_OBJECT_ID , 
+				WPD_OBJECT_GENERATE_THUMBNAIL_FROM_RESOURCE , 
+				WPD_OBJECT_HINT_LOCATION_DISPLAY_NAME , 
+				WPD_OBJECT_SUPPORTED_UNITS , 
+				WPD_OBJECT_ID , 
+				WPD_OBJECT_PARENT_ID , 
+				WPD_OBJECT_NAME , 
+				WPD_OBJECT_PERSISTENT_UNIQUE_ID , 
+				WPD_OBJECT_FORMAT , 
+				WPD_OBJECT_ISHIDDEN , 
+				WPD_OBJECT_ISSYSTEM , 
+				WPD_OBJECT_SIZE , 
+				WPD_OBJECT_ORIGINAL_FILE_NAME , 
+				WPD_OBJECT_NON_CONSUMABLE , 
+				WPD_OBJECT_KEYWORDS , 
+				WPD_OBJECT_SYNC_ID , 
+				WPD_OBJECT_IS_DRM_PROTECTED , 
+				WPD_OBJECT_DATE_CREATED , 
+				WPD_OBJECT_DATE_MODIFIED , 
+				WPD_OBJECT_DATE_AUTHORED , 
+				WPD_OBJECT_BACK_REFERENCES , 
+				WPD_OBJECT_CAN_DELETE , 
+				WPD_OBJECT_LANGUAGE_LOCALE )
+			);
+		}
+		return WPD_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_PROPERTIES_BULK_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_PROPERTIES_BULK_PROPERTIES() {
+		if(WPD_CATEGORY_OBJECT_PROPERTIES_BULK_PROPERTIES == null) {
+			WPD_CATEGORY_OBJECT_PROPERTIES_BULK_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_IDS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_CONTEXT , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_VALUES , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PROPERTY_KEYS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_DEPTH , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PARENT_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_FORMAT , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_WRITE_RESULTS )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_PROPERTIES_BULK_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_SERVICE_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_SERVICE_PROPERTIES() {
+		if(WPD_SERVICE_PROPERTIES == null) {
+			WPD_SERVICE_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_SERVICE_VERSION )
+			);
+		}
+		return WPD_SERVICE_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_PROPERTIES_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_PROPERTIES_COMMANDS() {
+		if(WPD_CATEGORY_OBJECT_PROPERTIES_COMMANDS == null) {
+			WPD_CATEGORY_OBJECT_PROPERTIES_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_OBJECT_PROPERTIES_GET_SUPPORTED , 
+				WPD_COMMAND_OBJECT_PROPERTIES_GET_ATTRIBUTES , 
+				WPD_COMMAND_OBJECT_PROPERTIES_GET , 
+				WPD_COMMAND_OBJECT_PROPERTIES_SET , 
+				WPD_COMMAND_OBJECT_PROPERTIES_GET_ALL , 
+				WPD_COMMAND_OBJECT_PROPERTIES_DELETE , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_START , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_NEXT , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_END , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_START , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_NEXT , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_END , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_START , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_NEXT , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_END )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_PROPERTIES_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_SERVICE_CAPABILITIES_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_SERVICE_CAPABILITIES_COMMANDS() {
+		if(WPD_CATEGORY_SERVICE_CAPABILITIES_COMMANDS == null) {
+			WPD_CATEGORY_SERVICE_CAPABILITIES_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS_BY_FORMAT , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_PARAMETER_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMATS , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_PROPERTY_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_EVENTS , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_PARAMETER_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_INHERITED_SERVICES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_RENDERING_PROFILES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_COMMANDS , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_COMMAND_OPTIONS )
+			);
+		}
+		return WPD_CATEGORY_SERVICE_CAPABILITIES_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_SERVICE_CAPABILITIES_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_SERVICE_CAPABILITIES_PROPERTIES() {
+		if(WPD_CATEGORY_SERVICE_CAPABILITIES_PROPERTIES == null) {
+			WPD_CATEGORY_SERVICE_CAPABILITIES_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_METHODS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_FORMATS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_KEYS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_EVENTS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITANCE_TYPE , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITED_SERVICES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_RENDERING_PROFILES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_COMMANDS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND_OPTIONS )
+			);
+		}
+		return WPD_CATEGORY_SERVICE_CAPABILITIES_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_DOCUMENT_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_DOCUMENT_OBJECT_PROPERTIES() {
+		if(WPD_DOCUMENT_OBJECT_PROPERTIES == null) {
+			WPD_DOCUMENT_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				)
+			);
+		}
+		return WPD_DOCUMENT_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_COMMON_INFORMATION_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_COMMON_INFORMATION_OBJECT_PROPERTIES() {
+		if(WPD_COMMON_INFORMATION_OBJECT_PROPERTIES == null) {
+			WPD_COMMON_INFORMATION_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMON_INFORMATION_SUBJECT , 
+				WPD_COMMON_INFORMATION_BODY_TEXT , 
+				WPD_COMMON_INFORMATION_PRIORITY , 
+				WPD_COMMON_INFORMATION_START_DATETIME , 
+				WPD_COMMON_INFORMATION_END_DATETIME , 
+				WPD_COMMON_INFORMATION_NOTES )
+			);
+		}
+		return WPD_COMMON_INFORMATION_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_SMS_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_SMS_COMMANDS() {
+		if(WPD_CATEGORY_SMS_COMMANDS == null) {
+			WPD_CATEGORY_SMS_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_SMS_SEND )
+			);
+		}
+		return WPD_CATEGORY_SMS_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_APPOINTMENT_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_APPOINTMENT_OBJECT_PROPERTIES() {
+		if(WPD_APPOINTMENT_OBJECT_PROPERTIES == null) {
+			WPD_APPOINTMENT_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_APPOINTMENT_LOCATION , 
+				WPD_APPOINTMENT_TYPE , 
+				WPD_APPOINTMENT_REQUIRED_ATTENDEES , 
+				WPD_APPOINTMENT_OPTIONAL_ATTENDEES , 
+				WPD_APPOINTMENT_ACCEPTED_ATTENDEES , 
+				WPD_APPOINTMENT_RESOURCES , 
+				WPD_APPOINTMENT_TENTATIVE_ATTENDEES , 
+				WPD_APPOINTMENT_DECLINED_ATTENDEES )
+			);
+		}
+		return WPD_APPOINTMENT_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_EVENT_OPTIONS;
+	public static Collection<PropertyKey> getWPD_EVENT_OPTIONS() {
+		if(WPD_EVENT_OPTIONS == null) {
+			WPD_EVENT_OPTIONS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_EVENT_OPTION_IS_BROADCAST_EVENT , 
+				WPD_EVENT_OPTION_IS_AUTOPLAY_EVENT )
+			);
+		}
+		return WPD_EVENT_OPTIONS;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_PROPERTIES_BULK_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_PROPERTIES_BULK_COMMANDS() {
+		if(WPD_CATEGORY_OBJECT_PROPERTIES_BULK_COMMANDS == null) {
+			WPD_CATEGORY_OBJECT_PROPERTIES_BULK_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_START , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_NEXT , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_END , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_START , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_NEXT , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_END , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_START , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_NEXT , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_END )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_PROPERTIES_BULK_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_STORAGE_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_STORAGE_OBJECT_PROPERTIES() {
+		if(WPD_STORAGE_OBJECT_PROPERTIES == null) {
+			WPD_STORAGE_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_STORAGE_TYPE , 
+				WPD_STORAGE_FILE_SYSTEM_TYPE , 
+				WPD_STORAGE_CAPACITY , 
+				WPD_STORAGE_FREE_SPACE_IN_BYTES , 
+				WPD_STORAGE_FREE_SPACE_IN_OBJECTS , 
+				WPD_STORAGE_DESCRIPTION , 
+				WPD_STORAGE_SERIAL_NUMBER , 
+				WPD_STORAGE_MAX_OBJECT_SIZE , 
+				WPD_STORAGE_CAPACITY_IN_OBJECTS , 
+				WPD_STORAGE_ACCESS_CAPABILITY )
+			);
+		}
+		return WPD_STORAGE_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_STORAGE_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_STORAGE_PROPERTIES() {
+		if(WPD_CATEGORY_STORAGE_PROPERTIES == null) {
+			WPD_CATEGORY_STORAGE_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_STORAGE_OBJECT_ID , 
+				WPD_PROPERTY_STORAGE_DESTINATION_OBJECT_ID )
+			);
+		}
+		return WPD_CATEGORY_STORAGE_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_PROPERTIES_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_PROPERTIES_PROPERTIES() {
+		if(WPD_CATEGORY_OBJECT_PROPERTIES_PROPERTIES == null) {
+			WPD_CATEGORY_OBJECT_PROPERTIES_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_OBJECT_PROPERTIES_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_KEYS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_ATTRIBUTES , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_VALUES , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_WRITE_RESULTS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_DELETE_RESULTS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_IDS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_CONTEXT , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_VALUES , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PROPERTY_KEYS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_DEPTH , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PARENT_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_FORMAT , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_WRITE_RESULTS )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_PROPERTIES_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_MEDIA_CAPTURE_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_MEDIA_CAPTURE_COMMANDS() {
+		if(WPD_CATEGORY_MEDIA_CAPTURE_COMMANDS == null) {
+			WPD_CATEGORY_MEDIA_CAPTURE_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_MEDIA_CAPTURE_START , 
+				WPD_COMMAND_MEDIA_CAPTURE_STOP , 
+				WPD_COMMAND_MEDIA_CAPTURE_PAUSE )
+			);
+		}
+		return WPD_CATEGORY_MEDIA_CAPTURE_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_MEDIA_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_MEDIA_PROPERTIES() {
+		if(WPD_MEDIA_PROPERTIES == null) {
+			WPD_MEDIA_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_MEDIA_TOTAL_BITRATE , 
+				WPD_MEDIA_BITRATE_TYPE , 
+				WPD_MEDIA_COPYRIGHT , 
+				WPD_MEDIA_SUBSCRIPTION_CONTENT_ID , 
+				WPD_MEDIA_USE_COUNT , 
+				WPD_MEDIA_SKIP_COUNT , 
+				WPD_MEDIA_LAST_ACCESSED_TIME , 
+				WPD_MEDIA_PARENTAL_RATING , 
+				WPD_MEDIA_META_GENRE , 
+				WPD_MEDIA_COMPOSER , 
+				WPD_MEDIA_EFFECTIVE_RATING , 
+				WPD_MEDIA_SUB_TITLE , 
+				WPD_MEDIA_RELEASE_DATE , 
+				WPD_MEDIA_SAMPLE_RATE , 
+				WPD_MEDIA_STAR_RATING , 
+				WPD_MEDIA_USER_EFFECTIVE_RATING , 
+				WPD_MEDIA_TITLE , 
+				WPD_MEDIA_DURATION , 
+				WPD_MEDIA_BUY_NOW , 
+				WPD_MEDIA_ENCODING_PROFILE , 
+				WPD_MEDIA_WIDTH , 
+				WPD_MEDIA_HEIGHT , 
+				WPD_MEDIA_ARTIST , 
+				WPD_MEDIA_ALBUM_ARTIST , 
+				WPD_MEDIA_OWNER , 
+				WPD_MEDIA_MANAGING_EDITOR , 
+				WPD_MEDIA_WEBMASTER , 
+				WPD_MEDIA_SOURCE_URL , 
+				WPD_MEDIA_DESTINATION_URL , 
+				WPD_MEDIA_DESCRIPTION , 
+				WPD_MEDIA_GENRE , 
+				WPD_MEDIA_TIME_BOOKMARK , 
+				WPD_MEDIA_OBJECT_BOOKMARK , 
+				WPD_MEDIA_LAST_BUILD_DATE , 
+				WPD_MEDIA_BYTE_BOOKMARK , 
+				WPD_MEDIA_TIME_TO_LIVE , 
+				WPD_MEDIA_GUID , 
+				WPD_MEDIA_SUB_DESCRIPTION , 
+				WPD_MEDIA_AUDIO_ENCODING_PROFILE )
+			);
+		}
+		return WPD_MEDIA_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_MANAGEMENT_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_MANAGEMENT_COMMANDS() {
+		if(WPD_CATEGORY_OBJECT_MANAGEMENT_COMMANDS == null) {
+			WPD_CATEGORY_OBJECT_MANAGEMENT_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_ONLY , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_AND_DATA , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_WRITE_OBJECT_DATA , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_COMMIT_OBJECT , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_REVERT_OBJECT , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_DELETE_OBJECTS , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_MOVE_OBJECTS , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_COPY_OBJECTS , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_UPDATE_OBJECT_WITH_PROPERTIES_AND_DATA )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_MANAGEMENT_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_DEVICE_HINTS_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_DEVICE_HINTS_PROPERTIES() {
+		if(WPD_CATEGORY_DEVICE_HINTS_PROPERTIES == null) {
+			WPD_CATEGORY_DEVICE_HINTS_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_DEVICE_HINTS_CONTENT_TYPE , 
+				WPD_PROPERTY_DEVICE_HINTS_CONTENT_LOCATIONS )
+			);
+		}
+		return WPD_CATEGORY_DEVICE_HINTS_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_TASK_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_TASK_OBJECT_PROPERTIES() {
+		if(WPD_TASK_OBJECT_PROPERTIES == null) {
+			WPD_TASK_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_TASK_STATUS , 
+				WPD_TASK_PERCENT_COMPLETE , 
+				WPD_TASK_REMINDER_DATE , 
+				WPD_TASK_OWNER )
+			);
+		}
+		return WPD_TASK_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_SMS_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_SMS_OBJECT_PROPERTIES() {
+		if(WPD_SMS_OBJECT_PROPERTIES == null) {
+			WPD_SMS_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_SMS_PROVIDER , 
+				WPD_SMS_TIMEOUT , 
+				WPD_SMS_MAX_PAYLOAD , 
+				WPD_SMS_ENCODING )
+			);
+		}
+		return WPD_SMS_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_RESOURCES_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_RESOURCES_COMMANDS() {
+		if(WPD_CATEGORY_OBJECT_RESOURCES_COMMANDS == null) {
+			WPD_CATEGORY_OBJECT_RESOURCES_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_OBJECT_RESOURCES_GET_SUPPORTED , 
+				WPD_COMMAND_OBJECT_RESOURCES_GET_ATTRIBUTES , 
+				WPD_COMMAND_OBJECT_RESOURCES_OPEN , 
+				WPD_COMMAND_OBJECT_RESOURCES_READ , 
+				WPD_COMMAND_OBJECT_RESOURCES_WRITE , 
+				WPD_COMMAND_OBJECT_RESOURCES_CLOSE , 
+				WPD_COMMAND_OBJECT_RESOURCES_DELETE , 
+				WPD_COMMAND_OBJECT_RESOURCES_CREATE_RESOURCE , 
+				WPD_COMMAND_OBJECT_RESOURCES_REVERT , 
+				WPD_COMMAND_OBJECT_RESOURCES_SEEK , 
+				WPD_COMMAND_OBJECT_RESOURCES_COMMIT , 
+				WPD_COMMAND_OBJECT_RESOURCES_SEEK_IN_UNITS )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_RESOURCES_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_SMS_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_SMS_PROPERTIES() {
+		if(WPD_CATEGORY_SMS_PROPERTIES == null) {
+			WPD_CATEGORY_SMS_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_SMS_RECIPIENT , 
+				WPD_PROPERTY_SMS_MESSAGE_TYPE , 
+				WPD_PROPERTY_SMS_TEXT_MESSAGE , 
+				WPD_PROPERTY_SMS_BINARY_MESSAGE )
+			);
+		}
+		return WPD_CATEGORY_SMS_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CLASS_EXTENSION_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CLASS_EXTENSION_COMMANDS() {
+		if(WPD_CLASS_EXTENSION_COMMANDS == null) {
+			WPD_CLASS_EXTENSION_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_CLASS_EXTENSION_WRITE_DEVICE_INFORMATION , 
+				WPD_COMMAND_CLASS_EXTENSION_REGISTER_SERVICE_INTERFACES , 
+				WPD_COMMAND_CLASS_EXTENSION_UNREGISTER_SERVICE_INTERFACES )
+			);
+		}
+		return WPD_CLASS_EXTENSION_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_MUSIC_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_MUSIC_OBJECT_PROPERTIES() {
+		if(WPD_MUSIC_OBJECT_PROPERTIES == null) {
+			WPD_MUSIC_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_MUSIC_ALBUM , 
+				WPD_MUSIC_TRACK , 
+				WPD_MUSIC_LYRICS , 
+				WPD_MUSIC_MOOD )
+			);
+		}
+		return WPD_MUSIC_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_SERVICE_METHODS_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_SERVICE_METHODS_PROPERTIES() {
+		if(WPD_CATEGORY_SERVICE_METHODS_PROPERTIES == null) {
+			WPD_CATEGORY_SERVICE_METHODS_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_SERVICE_METHOD , 
+				WPD_PROPERTY_SERVICE_METHOD_PARAMETER_VALUES , 
+				WPD_PROPERTY_SERVICE_METHOD_RESULT_VALUES , 
+				WPD_PROPERTY_SERVICE_METHOD_CONTEXT , 
+				WPD_PROPERTY_SERVICE_METHOD_HRESULT )
+			);
+		}
+		return WPD_CATEGORY_SERVICE_METHODS_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_SERVICE_METHODS_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_SERVICE_METHODS_COMMANDS() {
+		if(WPD_CATEGORY_SERVICE_METHODS_COMMANDS == null) {
+			WPD_CATEGORY_SERVICE_METHODS_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_SERVICE_METHODS_START_INVOKE , 
+				WPD_COMMAND_SERVICE_METHODS_CANCEL_INVOKE , 
+				WPD_COMMAND_SERVICE_METHODS_END_INVOKE )
+			);
+		}
+		return WPD_CATEGORY_SERVICE_METHODS_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_RENDERING_INFORMATION_OBJECT_PROPERTIES() {
+		if(WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES == null) {
+			WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_RENDERING_INFORMATION_PROFILES , 
+				WPD_RENDERING_INFORMATION_PROFILE_ENTRY_TYPE , 
+				WPD_RENDERING_INFORMATION_PROFILE_ENTRY_CREATABLE_RESOURCES )
+			);
+		}
+		return WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CONTACT_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CONTACT_OBJECT_PROPERTIES() {
+		if(WPD_CONTACT_OBJECT_PROPERTIES == null) {
+			WPD_CONTACT_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_CONTACT_DISPLAY_NAME , 
+				WPD_CONTACT_FIRST_NAME , 
+				WPD_CONTACT_MIDDLE_NAMES , 
+				WPD_CONTACT_LAST_NAME , 
+				WPD_CONTACT_PREFIX , 
+				WPD_CONTACT_SUFFIX , 
+				WPD_CONTACT_PHONETIC_FIRST_NAME , 
+				WPD_CONTACT_PHONETIC_LAST_NAME , 
+				WPD_CONTACT_PERSONAL_FULL_POSTAL_ADDRESS , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE1 , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE2 , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_CITY , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_REGION , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_POSTAL_CODE , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_COUNTRY , 
+				WPD_CONTACT_BUSINESS_FULL_POSTAL_ADDRESS , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE1 , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE2 , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_CITY , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_REGION , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_POSTAL_CODE , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_COUNTRY , 
+				WPD_CONTACT_OTHER_FULL_POSTAL_ADDRESS , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE1 , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE2 , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_CITY , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_REGION , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_CODE , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_COUNTRY , 
+				WPD_CONTACT_PRIMARY_EMAIL_ADDRESS , 
+				WPD_CONTACT_PERSONAL_EMAIL , 
+				WPD_CONTACT_PERSONAL_EMAIL2 , 
+				WPD_CONTACT_BUSINESS_EMAIL , 
+				WPD_CONTACT_BUSINESS_EMAIL2 , 
+				WPD_CONTACT_OTHER_EMAILS , 
+				WPD_CONTACT_PRIMARY_PHONE , 
+				WPD_CONTACT_PERSONAL_PHONE , 
+				WPD_CONTACT_PERSONAL_PHONE2 , 
+				WPD_CONTACT_BUSINESS_PHONE , 
+				WPD_CONTACT_BUSINESS_PHONE2 , 
+				WPD_CONTACT_MOBILE_PHONE , 
+				WPD_CONTACT_MOBILE_PHONE2 , 
+				WPD_CONTACT_PERSONAL_FAX , 
+				WPD_CONTACT_BUSINESS_FAX , 
+				WPD_CONTACT_PAGER , 
+				WPD_CONTACT_OTHER_PHONES , 
+				WPD_CONTACT_PRIMARY_WEB_ADDRESS , 
+				WPD_CONTACT_PERSONAL_WEB_ADDRESS , 
+				WPD_CONTACT_BUSINESS_WEB_ADDRESS , 
+				WPD_CONTACT_INSTANT_MESSENGER , 
+				WPD_CONTACT_INSTANT_MESSENGER2 , 
+				WPD_CONTACT_INSTANT_MESSENGER3 , 
+				WPD_CONTACT_COMPANY_NAME , 
+				WPD_CONTACT_PHONETIC_COMPANY_NAME , 
+				WPD_CONTACT_ROLE , 
+				WPD_CONTACT_BIRTHDATE , 
+				WPD_CONTACT_PRIMARY_FAX , 
+				WPD_CONTACT_SPOUSE , 
+				WPD_CONTACT_CHILDREN , 
+				WPD_CONTACT_ASSISTANT , 
+				WPD_CONTACT_ANNIVERSARY_DATE , 
+				WPD_CONTACT_RINGTONE )
+			);
+		}
+		return WPD_CONTACT_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_ENUMERATION_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_ENUMERATION_COMMANDS() {
+		if(WPD_CATEGORY_OBJECT_ENUMERATION_COMMANDS == null) {
+			WPD_CATEGORY_OBJECT_ENUMERATION_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_OBJECT_ENUMERATION_START_FIND , 
+				WPD_COMMAND_OBJECT_ENUMERATION_FIND_NEXT , 
+				WPD_COMMAND_OBJECT_ENUMERATION_END_FIND )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_ENUMERATION_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_NETWORK_ASSOCIATION_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_NETWORK_ASSOCIATION_PROPERTIES() {
+		if(WPD_NETWORK_ASSOCIATION_PROPERTIES == null) {
+			WPD_NETWORK_ASSOCIATION_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_NETWORK_ASSOCIATION_HOST_NETWORK_IDENTIFIERS , 
+				WPD_NETWORK_ASSOCIATION_X509V3SEQUENCE )
+			);
+		}
+		return WPD_NETWORK_ASSOCIATION_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_EMAIL_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_EMAIL_OBJECT_PROPERTIES() {
+		if(WPD_EMAIL_OBJECT_PROPERTIES == null) {
+			WPD_EMAIL_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_EMAIL_TO_LINE , 
+				WPD_EMAIL_CC_LINE , 
+				WPD_EMAIL_BCC_LINE , 
+				WPD_EMAIL_HAS_BEEN_READ , 
+				WPD_EMAIL_RECEIVED_TIME , 
+				WPD_EMAIL_HAS_ATTACHMENTS , 
+				WPD_EMAIL_SENDER_ADDRESS )
+			);
+		}
+		return WPD_EMAIL_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_EVENT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_EVENT_PROPERTIES() {
+		if(WPD_EVENT_PROPERTIES == null) {
+			WPD_EVENT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_EVENT_PARAMETER_PNP_DEVICE_ID , 
+				WPD_EVENT_PARAMETER_EVENT_ID , 
+				WPD_EVENT_PARAMETER_OPERATION_STATE , 
+				WPD_EVENT_PARAMETER_OPERATION_PROGRESS , 
+				WPD_EVENT_PARAMETER_OBJECT_PARENT_PERSISTENT_UNIQUE_ID , 
+				WPD_EVENT_PARAMETER_OBJECT_CREATION_COOKIE , 
+				WPD_EVENT_PARAMETER_CHILD_HIERARCHY_CHANGED , 
+				WPD_EVENT_PARAMETER_SERVICE_METHOD_CONTEXT )
+			);
+		}
+		return WPD_EVENT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_CAPABILITIES_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_CAPABILITIES_COMMANDS() {
+		if(WPD_CATEGORY_CAPABILITIES_COMMANDS == null) {
+			WPD_CATEGORY_CAPABILITIES_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_COMMANDS , 
+				WPD_COMMAND_CAPABILITIES_GET_COMMAND_OPTIONS , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FUNCTIONAL_CATEGORIES , 
+				WPD_COMMAND_CAPABILITIES_GET_FUNCTIONAL_OBJECTS , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_CONTENT_TYPES , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMATS , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES , 
+				WPD_COMMAND_CAPABILITIES_GET_FIXED_PROPERTY_ATTRIBUTES , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_EVENTS , 
+				WPD_COMMAND_CAPABILITIES_GET_EVENT_OPTIONS )
+			);
+		}
+		return WPD_CATEGORY_CAPABILITIES_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_CLIENT_INFORMATION_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CLIENT_INFORMATION_PROPERTIES() {
+		if(WPD_CLIENT_INFORMATION_PROPERTIES == null) {
+			WPD_CLIENT_INFORMATION_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_CLIENT_NAME , 
+				WPD_CLIENT_MAJOR_VERSION , 
+				WPD_CLIENT_MINOR_VERSION , 
+				WPD_CLIENT_REVISION , 
+				WPD_CLIENT_WMDRM_APPLICATION_PRIVATE_KEY , 
+				WPD_CLIENT_WMDRM_APPLICATION_CERTIFICATE , 
+				WPD_CLIENT_SECURITY_QUALITY_OF_SERVICE , 
+				WPD_CLIENT_DESIRED_ACCESS , 
+				WPD_CLIENT_SHARE_MODE , 
+				WPD_CLIENT_EVENT_COOKIE , 
+				WPD_CLIENT_MINIMUM_RESULTS_BUFFER_SIZE , 
+				WPD_CLIENT_MANUAL_CLOSE_ON_DISCONNECT )
+			);
+		}
+		return WPD_CLIENT_INFORMATION_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CLASS_EXTENSION_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CLASS_EXTENSION_PROPERTIES() {
+		if(WPD_CLASS_EXTENSION_PROPERTIES == null) {
+			WPD_CLASS_EXTENSION_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_VALUES , 
+				WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_WRITE_RESULTS , 
+				WPD_PROPERTY_CLASS_EXTENSION_SERVICE_OBJECT_ID , 
+				WPD_PROPERTY_CLASS_EXTENSION_SERVICE_INTERFACES , 
+				WPD_PROPERTY_CLASS_EXTENSION_SERVICE_REGISTRATION_RESULTS )
+			);
+		}
+		return WPD_CLASS_EXTENSION_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_EVENT_ATTRIBUTES;
+	public static Collection<PropertyKey> getWPD_EVENT_ATTRIBUTES() {
+		if(WPD_EVENT_ATTRIBUTES == null) {
+			WPD_EVENT_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_EVENT_ATTRIBUTE_NAME , 
+				WPD_EVENT_ATTRIBUTE_PARAMETERS , 
+				WPD_EVENT_ATTRIBUTE_OPTIONS )
+			);
+		}
+		return WPD_EVENT_ATTRIBUTES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_OBJECT_MANAGEMENT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_OBJECT_MANAGEMENT_PROPERTIES() {
+		if(WPD_CATEGORY_OBJECT_MANAGEMENT_PROPERTIES == null) {
+			WPD_CATEGORY_OBJECT_MANAGEMENT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_OBJECT_MANAGEMENT_CREATION_PROPERTIES , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_CONTEXT , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_TO_WRITE , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_WRITTEN , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_DATA , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_OPTIONS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_OPTIMAL_TRANSFER_BUFFER_SIZE , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_IDS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_RESULTS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_DESTINATION_FOLDER_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_MOVE_RESULTS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_COPY_RESULTS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_UPDATE_PROPERTIES , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_PROPERTY_KEYS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_FORMAT )
+			);
+		}
+		return WPD_CATEGORY_OBJECT_MANAGEMENT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES() {
+		if(WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES == null) {
+			WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_STILL_IMAGE_CAPTURE_RESOLUTION , 
+				WPD_STILL_IMAGE_CAPTURE_FORMAT , 
+				WPD_STILL_IMAGE_COMPRESSION_SETTING , 
+				WPD_STILL_IMAGE_WHITE_BALANCE , 
+				WPD_STILL_IMAGE_RGB_GAIN , 
+				WPD_STILL_IMAGE_FNUMBER , 
+				WPD_STILL_IMAGE_FOCAL_LENGTH , 
+				WPD_STILL_IMAGE_FOCUS_DISTANCE , 
+				WPD_STILL_IMAGE_FOCUS_MODE , 
+				WPD_STILL_IMAGE_EXPOSURE_METERING_MODE , 
+				WPD_STILL_IMAGE_FLASH_MODE , 
+				WPD_STILL_IMAGE_EXPOSURE_TIME , 
+				WPD_STILL_IMAGE_EXPOSURE_PROGRAM_MODE , 
+				WPD_STILL_IMAGE_EXPOSURE_INDEX , 
+				WPD_STILL_IMAGE_EXPOSURE_BIAS_COMPENSATION , 
+				WPD_STILL_IMAGE_CAPTURE_DELAY , 
+				WPD_STILL_IMAGE_CAPTURE_MODE , 
+				WPD_STILL_IMAGE_CONTRAST , 
+				WPD_STILL_IMAGE_SHARPNESS , 
+				WPD_STILL_IMAGE_DIGITAL_ZOOM , 
+				WPD_STILL_IMAGE_EFFECT_MODE , 
+				WPD_STILL_IMAGE_BURST_NUMBER , 
+				WPD_STILL_IMAGE_BURST_INTERVAL , 
+				WPD_STILL_IMAGE_TIMELAPSE_NUMBER , 
+				WPD_STILL_IMAGE_TIMELAPSE_INTERVAL , 
+				WPD_STILL_IMAGE_FOCUS_METERING_MODE , 
+				WPD_STILL_IMAGE_UPLOAD_URL , 
+				WPD_STILL_IMAGE_ARTIST , 
+				WPD_STILL_IMAGE_CAMERA_MODEL , 
+				WPD_STILL_IMAGE_CAMERA_MANUFACTURER )
+			);
+		}
+		return WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_CAPABILITIES_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_CAPABILITIES_PROPERTIES() {
+		if(WPD_CATEGORY_CAPABILITIES_PROPERTIES == null) {
+			WPD_CATEGORY_CAPABILITIES_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_CAPABILITIES_SUPPORTED_COMMANDS , 
+				WPD_PROPERTY_CAPABILITIES_COMMAND , 
+				WPD_PROPERTY_CAPABILITIES_COMMAND_OPTIONS , 
+				WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORIES , 
+				WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORY , 
+				WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_OBJECTS , 
+				WPD_PROPERTY_CAPABILITIES_CONTENT_TYPES , 
+				WPD_PROPERTY_CAPABILITIES_CONTENT_TYPE , 
+				WPD_PROPERTY_CAPABILITIES_FORMATS , 
+				WPD_PROPERTY_CAPABILITIES_FORMAT , 
+				WPD_PROPERTY_CAPABILITIES_PROPERTY_KEYS , 
+				WPD_PROPERTY_CAPABILITIES_PROPERTY_ATTRIBUTES , 
+				WPD_PROPERTY_CAPABILITIES_SUPPORTED_EVENTS , 
+				WPD_PROPERTY_CAPABILITIES_EVENT , 
+				WPD_PROPERTY_CAPABILITIES_EVENT_OPTIONS )
+			);
+		}
+		return WPD_CATEGORY_CAPABILITIES_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_DEVICE_HINTS_COMMANDS;
+	public static Collection<PropertyKey> getWPD_CATEGORY_DEVICE_HINTS_COMMANDS() {
+		if(WPD_CATEGORY_DEVICE_HINTS_COMMANDS == null) {
+			WPD_CATEGORY_DEVICE_HINTS_COMMANDS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_COMMAND_DEVICE_HINTS_GET_CONTENT_LOCATION )
+			);
+		}
+		return WPD_CATEGORY_DEVICE_HINTS_COMMANDS;
+	}
+	private static Collection<PropertyKey> WPD_PARAMETER_ATTRIBUTES;
+	public static Collection<PropertyKey> getWPD_PARAMETER_ATTRIBUTES() {
+		if(WPD_PARAMETER_ATTRIBUTES == null) {
+			WPD_PARAMETER_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PARAMETER_ATTRIBUTE_ORDER , 
+				WPD_PARAMETER_ATTRIBUTE_USAGE , 
+				WPD_PARAMETER_ATTRIBUTE_FORM , 
+				WPD_PARAMETER_ATTRIBUTE_DEFAULT_VALUE , 
+				WPD_PARAMETER_ATTRIBUTE_RANGE_MIN , 
+				WPD_PARAMETER_ATTRIBUTE_RANGE_MAX , 
+				WPD_PARAMETER_ATTRIBUTE_RANGE_STEP , 
+				WPD_PARAMETER_ATTRIBUTE_ENUMERATION_ELEMENTS , 
+				WPD_PARAMETER_ATTRIBUTE_REGULAR_EXPRESSION , 
+				WPD_PARAMETER_ATTRIBUTE_MAX_SIZE , 
+				WPD_PARAMETER_ATTRIBUTE_VARTYPE , 
+				WPD_PARAMETER_ATTRIBUTE_NAME )
+			);
+		}
+		return WPD_PARAMETER_ATTRIBUTES;
+	}
+	private static Collection<PropertyKey> WPD_FUNCTIONAL_OBJECT_PROPERTIES;
+	public static Collection<PropertyKey> getWPD_FUNCTIONAL_OBJECT_PROPERTIES() {
+		if(WPD_FUNCTIONAL_OBJECT_PROPERTIES == null) {
+			WPD_FUNCTIONAL_OBJECT_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_FUNCTIONAL_OBJECT_CATEGORY )
+			);
+		}
+		return WPD_FUNCTIONAL_OBJECT_PROPERTIES;
+	}
+	private static Collection<PropertyKey> WPD_CATEGORY_SERVICE_METHODS_RESOURCES;
+	public static Collection<PropertyKey> getWPD_CATEGORY_SERVICE_METHODS_RESOURCES() {
+		if(WPD_CATEGORY_SERVICE_METHODS_RESOURCES == null) {
+			WPD_CATEGORY_SERVICE_METHODS_RESOURCES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_RESOURCE_ATTRIBUTE_TOTAL_SIZE , 
+				WPD_RESOURCE_ATTRIBUTE_CAN_READ , 
+				WPD_RESOURCE_ATTRIBUTE_CAN_WRITE , 
+				WPD_RESOURCE_ATTRIBUTE_CAN_DELETE , 
+				WPD_RESOURCE_ATTRIBUTE_OPTIMAL_READ_BUFFER_SIZE , 
+				WPD_RESOURCE_ATTRIBUTE_OPTIMAL_WRITE_BUFFER_SIZE , 
+				WPD_RESOURCE_ATTRIBUTE_FORMAT , 
+				WPD_RESOURCE_ATTRIBUTE_RESOURCE_KEY , 
+				WPD_RESOURCE_DEFAULT , 
+				WPD_RESOURCE_CONTACT_PHOTO , 
+				WPD_RESOURCE_THUMBNAIL , 
+				WPD_RESOURCE_ICON , 
+				WPD_RESOURCE_AUDIO_CLIP , 
+				WPD_RESOURCE_ALBUM_ART , 
+				WPD_RESOURCE_GENERIC , 
+				WPD_RESOURCE_VIDEO_CLIP , 
+				WPD_RESOURCE_BRANDING_ART )
+			);
+		}
+		return WPD_CATEGORY_SERVICE_METHODS_RESOURCES;
+	}
+	private static Collection<PropertyKey> WPD_PROPERTY_ATTRIBUTES;
+	public static Collection<PropertyKey> getWPD_PROPERTY_ATTRIBUTES() {
+		if(WPD_PROPERTY_ATTRIBUTES == null) {
+			WPD_PROPERTY_ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_ATTRIBUTE_FORM , 
+				WPD_PROPERTY_ATTRIBUTE_CAN_READ , 
+				WPD_PROPERTY_ATTRIBUTE_CAN_WRITE , 
+				WPD_PROPERTY_ATTRIBUTE_CAN_DELETE , 
+				WPD_PROPERTY_ATTRIBUTE_DEFAULT_VALUE , 
+				WPD_PROPERTY_ATTRIBUTE_FAST_PROPERTY , 
+				WPD_PROPERTY_ATTRIBUTE_RANGE_MIN , 
+				WPD_PROPERTY_ATTRIBUTE_RANGE_MAX , 
+				WPD_PROPERTY_ATTRIBUTE_RANGE_STEP , 
+				WPD_PROPERTY_ATTRIBUTE_ENUMERATION_ELEMENTS , 
+				WPD_PROPERTY_ATTRIBUTE_REGULAR_EXPRESSION , 
+				WPD_PROPERTY_ATTRIBUTE_MAX_SIZE , 
+				WPD_PROPERTY_ATTRIBUTE_NAME , 
+				WPD_PROPERTY_ATTRIBUTE_VARTYPE )
+			);
+		}
+		return WPD_PROPERTY_ATTRIBUTES;
+	}
+	private static Collection<Guid> WPD_OBJECT_FORMATS;
+	public static Collection<Guid> getWPD_OBJECT_FORMATS() {
+		if(WPD_OBJECT_FORMATS == null) {
+			WPD_OBJECT_FORMATS = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_OBJECT_FORMAT_ASF, 
+				WPD_OBJECT_FORMAT_VCARD3, 
+				WPD_OBJECT_FORMAT_AUDIBLE, 
+				WPD_OBJECT_FORMAT_3G2A, 
+				WPD_OBJECT_FORMAT_TEXT, 
+				WPD_OBJECT_FORMAT_MICROSOFT_EXCEL, 
+				WPD_OBJECT_FORMAT_PLSPLAYLIST, 
+				WPD_OBJECT_FORMAT_TIFF, 
+				WPD_OBJECT_FORMAT_WPLPLAYLIST, 
+				WPD_OBJECT_FORMAT_TIFFEP, 
+				WPD_OBJECT_FORMAT_WAVE, 
+				WPD_OBJECT_FORMAT_JPX, 
+				WPD_OBJECT_FORMAT_PROPERTIES_ONLY, 
+				WPD_OBJECT_FORMAT_ATSCTS, 
+				WPD_OBJECT_FORMAT_WMV, 
+				WPD_OBJECT_FORMAT_QCELP, 
+				WPD_OBJECT_FORMAT_ASXPLAYLIST, 
+				WPD_OBJECT_FORMAT_HTML, 
+				WPD_OBJECT_FORMAT_WMA, 
+				WPD_OBJECT_FORMAT_FLASHPIX, 
+				WPD_OBJECT_FORMAT_MHT_COMPILED_HTML, 
+				WPD_OBJECT_FORMAT_VCARD2, 
+				WPD_OBJECT_FORMAT_MP3, 
+				WPD_OBJECT_FORMAT_WBMP, 
+				WPD_OBJECT_FORMAT_X509V3CERTIFICATE, 
+				WPD_OBJECT_FORMAT_ICON, 
+				WPD_OBJECT_FORMAT_UNSPECIFIED, 
+				WPD_OBJECT_FORMAT_GIF, 
+				WPD_OBJECT_FORMAT_AVCHD, 
+				WPD_OBJECT_FORMAT_FLAC, 
+				WPD_OBJECT_FORMAT_AVI, 
+				WPD_OBJECT_FORMAT_MP4, 
+				WPD_OBJECT_FORMAT_MKV, 
+				WPD_OBJECT_FORMAT_3GPA, 
+				WPD_OBJECT_FORMAT_MPLPLAYLIST, 
+				WPD_OBJECT_FORMAT_DPOF, 
+				WPD_OBJECT_FORMAT_VCALENDAR1, 
+				WPD_OBJECT_FORMAT_OGG, 
+				WPD_OBJECT_FORMAT_BMP, 
+				WPD_OBJECT_FORMAT_MICROSOFT_WFC, 
+				WPD_OBJECT_FORMAT_JPEGXR, 
+				WPD_OBJECT_FORMAT_JP2, 
+				WPD_OBJECT_FORMAT_ABSTRACT_CONTACT, 
+				WPD_OBJECT_FORMAT_PNG, 
+				WPD_OBJECT_FORMAT_WINDOWSIMAGEFORMAT, 
+				WPD_OBJECT_FORMAT_JFIF, 
+				WPD_OBJECT_FORMAT_MICROSOFT_WORD, 
+				WPD_OBJECT_FORMAT_EXECUTABLE, 
+				WPD_OBJECT_FORMAT_M4A, 
+				WPD_OBJECT_FORMAT_ABSTRACT_MEDIA_CAST, 
+				WPD_OBJECT_FORMAT_3G2, 
+				WPD_OBJECT_FORMAT_MPEG, 
+				WPD_OBJECT_FORMAT_MP2, 
+				WPD_OBJECT_FORMAT_AIFF, 
+				WPD_OBJECT_FORMAT_AAC, 
+				WPD_OBJECT_FORMAT_ICALENDAR, 
+				WPD_OBJECT_FORMAT_ABSTRACT_CONTACT_GROUP, 
+				WPD_OBJECT_FORMAT_TIFFIT, 
+				WPD_OBJECT_FORMAT_NETWORK_ASSOCIATION, 
+				WPD_OBJECT_FORMAT_EXIF, 
+				WPD_OBJECT_FORMAT_M3UPLAYLIST, 
+				WPD_OBJECT_FORMAT_MICROSOFT_POWERPOINT, 
+				WPD_OBJECT_FORMAT_XML, 
+				WPD_OBJECT_FORMAT_CIFF, 
+				WPD_OBJECT_FORMAT_SCRIPT, 
+				WPD_OBJECT_FORMAT_DVBTS, 
+				WPD_OBJECT_FORMAT_PICT, 
+				WPD_OBJECT_FORMAT_PCD, 
+				WPD_OBJECT_FORMAT_ALL, 
+				WPD_OBJECT_FORMAT_3GP, 
+				WPD_OBJECT_FORMAT_AMR)
+			);
+		}
+		return WPD_OBJECT_FORMATS;
+	}
+	private static Collection<PropertyKey> allKnownKeys;
+	public static Collection<PropertyKey> getAllKnownKeys() {
+		if(allKnownKeys == null) {
+			allKnownKeys = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_PROPERTY_NULL , 
+				WPD_OBJECT_CONTENT_TYPE , 
+				WPD_OBJECT_REFERENCES , 
+				WPD_OBJECT_CONTAINER_FUNCTIONAL_OBJECT_ID , 
+				WPD_OBJECT_GENERATE_THUMBNAIL_FROM_RESOURCE , 
+				WPD_OBJECT_HINT_LOCATION_DISPLAY_NAME , 
+				WPD_OBJECT_SUPPORTED_UNITS , 
+				WPD_FUNCTIONAL_OBJECT_CATEGORY , 
+				WPD_STORAGE_TYPE , 
+				WPD_STORAGE_FILE_SYSTEM_TYPE , 
+				WPD_STORAGE_CAPACITY , 
+				WPD_STORAGE_FREE_SPACE_IN_BYTES , 
+				WPD_STORAGE_FREE_SPACE_IN_OBJECTS , 
+				WPD_STORAGE_DESCRIPTION , 
+				WPD_STORAGE_SERIAL_NUMBER , 
+				WPD_STORAGE_MAX_OBJECT_SIZE , 
+				WPD_STORAGE_CAPACITY_IN_OBJECTS , 
+				WPD_STORAGE_ACCESS_CAPABILITY , 
+				WPD_NETWORK_ASSOCIATION_HOST_NETWORK_IDENTIFIERS , 
+				WPD_NETWORK_ASSOCIATION_X509V3SEQUENCE , 
+				WPD_STILL_IMAGE_CAPTURE_RESOLUTION , 
+				WPD_STILL_IMAGE_CAPTURE_FORMAT , 
+				WPD_STILL_IMAGE_COMPRESSION_SETTING , 
+				WPD_STILL_IMAGE_WHITE_BALANCE , 
+				WPD_STILL_IMAGE_RGB_GAIN , 
+				WPD_STILL_IMAGE_FNUMBER , 
+				WPD_STILL_IMAGE_FOCAL_LENGTH , 
+				WPD_STILL_IMAGE_FOCUS_DISTANCE , 
+				WPD_STILL_IMAGE_FOCUS_MODE , 
+				WPD_STILL_IMAGE_EXPOSURE_METERING_MODE , 
+				WPD_STILL_IMAGE_FLASH_MODE , 
+				WPD_STILL_IMAGE_EXPOSURE_TIME , 
+				WPD_STILL_IMAGE_EXPOSURE_PROGRAM_MODE , 
+				WPD_STILL_IMAGE_EXPOSURE_INDEX , 
+				WPD_STILL_IMAGE_EXPOSURE_BIAS_COMPENSATION , 
+				WPD_STILL_IMAGE_CAPTURE_DELAY , 
+				WPD_STILL_IMAGE_CAPTURE_MODE , 
+				WPD_STILL_IMAGE_CONTRAST , 
+				WPD_STILL_IMAGE_SHARPNESS , 
+				WPD_STILL_IMAGE_DIGITAL_ZOOM , 
+				WPD_STILL_IMAGE_EFFECT_MODE , 
+				WPD_STILL_IMAGE_BURST_NUMBER , 
+				WPD_STILL_IMAGE_BURST_INTERVAL , 
+				WPD_STILL_IMAGE_TIMELAPSE_NUMBER , 
+				WPD_STILL_IMAGE_TIMELAPSE_INTERVAL , 
+				WPD_STILL_IMAGE_FOCUS_METERING_MODE , 
+				WPD_STILL_IMAGE_UPLOAD_URL , 
+				WPD_STILL_IMAGE_ARTIST , 
+				WPD_STILL_IMAGE_CAMERA_MODEL , 
+				WPD_STILL_IMAGE_CAMERA_MANUFACTURER , 
+				WPD_RENDERING_INFORMATION_PROFILES , 
+				WPD_RENDERING_INFORMATION_PROFILE_ENTRY_TYPE , 
+				WPD_RENDERING_INFORMATION_PROFILE_ENTRY_CREATABLE_RESOURCES , 
+				WPD_CLIENT_NAME , 
+				WPD_CLIENT_MAJOR_VERSION , 
+				WPD_CLIENT_MINOR_VERSION , 
+				WPD_CLIENT_REVISION , 
+				WPD_CLIENT_WMDRM_APPLICATION_PRIVATE_KEY , 
+				WPD_CLIENT_WMDRM_APPLICATION_CERTIFICATE , 
+				WPD_CLIENT_SECURITY_QUALITY_OF_SERVICE , 
+				WPD_CLIENT_DESIRED_ACCESS , 
+				WPD_CLIENT_SHARE_MODE , 
+				WPD_CLIENT_EVENT_COOKIE , 
+				WPD_CLIENT_MINIMUM_RESULTS_BUFFER_SIZE , 
+				WPD_CLIENT_MANUAL_CLOSE_ON_DISCONNECT , 
+				WPD_PROPERTY_ATTRIBUTE_FORM , 
+				WPD_PROPERTY_ATTRIBUTE_CAN_READ , 
+				WPD_PROPERTY_ATTRIBUTE_CAN_WRITE , 
+				WPD_PROPERTY_ATTRIBUTE_CAN_DELETE , 
+				WPD_PROPERTY_ATTRIBUTE_DEFAULT_VALUE , 
+				WPD_PROPERTY_ATTRIBUTE_FAST_PROPERTY , 
+				WPD_PROPERTY_ATTRIBUTE_RANGE_MIN , 
+				WPD_PROPERTY_ATTRIBUTE_RANGE_MAX , 
+				WPD_PROPERTY_ATTRIBUTE_RANGE_STEP , 
+				WPD_PROPERTY_ATTRIBUTE_ENUMERATION_ELEMENTS , 
+				WPD_PROPERTY_ATTRIBUTE_REGULAR_EXPRESSION , 
+				WPD_PROPERTY_ATTRIBUTE_MAX_SIZE , 
+				WPD_PROPERTY_ATTRIBUTE_NAME , 
+				WPD_PROPERTY_ATTRIBUTE_VARTYPE , 
+				WPD_CLASS_EXTENSION_OPTIONS_SUPPORTED_CONTENT_TYPES , 
+				WPD_CLASS_EXTENSION_OPTIONS_DONT_REGISTER_WPD_DEVICE_INTERFACE , 
+				WPD_CLASS_EXTENSION_OPTIONS_REGISTER_WPD_PRIVATE_DEVICE_INTERFACE , 
+				WPD_CLASS_EXTENSION_OPTIONS_MULTITRANSPORT_MODE , 
+				WPD_CLASS_EXTENSION_OPTIONS_DEVICE_IDENTIFICATION_VALUES , 
+				WPD_CLASS_EXTENSION_OPTIONS_TRANSPORT_BANDWIDTH , 
+				WPD_CLASS_EXTENSION_OPTIONS_SILENCE_AUTOPLAY , 
+				WPD_RESOURCE_ATTRIBUTE_TOTAL_SIZE , 
+				WPD_RESOURCE_ATTRIBUTE_CAN_READ , 
+				WPD_RESOURCE_ATTRIBUTE_CAN_WRITE , 
+				WPD_RESOURCE_ATTRIBUTE_CAN_DELETE , 
+				WPD_RESOURCE_ATTRIBUTE_OPTIMAL_READ_BUFFER_SIZE , 
+				WPD_RESOURCE_ATTRIBUTE_OPTIMAL_WRITE_BUFFER_SIZE , 
+				WPD_RESOURCE_ATTRIBUTE_FORMAT , 
+				WPD_RESOURCE_ATTRIBUTE_RESOURCE_KEY , 
+				WPD_DEVICE_SYNC_PARTNER , 
+				WPD_DEVICE_FIRMWARE_VERSION , 
+				WPD_DEVICE_POWER_LEVEL , 
+				WPD_DEVICE_POWER_SOURCE , 
+				WPD_DEVICE_PROTOCOL , 
+				WPD_DEVICE_MANUFACTURER , 
+				WPD_DEVICE_MODEL , 
+				WPD_DEVICE_SERIAL_NUMBER , 
+				WPD_DEVICE_SUPPORTS_NON_CONSUMABLE , 
+				WPD_DEVICE_DATETIME , 
+				WPD_DEVICE_FRIENDLY_NAME , 
+				WPD_DEVICE_SUPPORTED_DRM_SCHEMES , 
+				WPD_DEVICE_SUPPORTED_FORMATS_ARE_ORDERED , 
+				WPD_DEVICE_TYPE , 
+				WPD_DEVICE_NETWORK_IDENTIFIER , 
+				WPD_DEVICE_FUNCTIONAL_UNIQUE_ID , 
+				WPD_DEVICE_MODEL_UNIQUE_ID , 
+				WPD_DEVICE_TRANSPORT , 
+				WPD_DEVICE_USE_DEVICE_STAGE , 
+				WPD_SERVICE_VERSION , 
+				WPD_EVENT_PARAMETER_PNP_DEVICE_ID , 
+				WPD_EVENT_PARAMETER_EVENT_ID , 
+				WPD_EVENT_PARAMETER_OPERATION_STATE , 
+				WPD_EVENT_PARAMETER_OPERATION_PROGRESS , 
+				WPD_EVENT_PARAMETER_OBJECT_PARENT_PERSISTENT_UNIQUE_ID , 
+				WPD_EVENT_PARAMETER_OBJECT_CREATION_COOKIE , 
+				WPD_EVENT_PARAMETER_CHILD_HIERARCHY_CHANGED , 
+				WPD_EVENT_PARAMETER_SERVICE_METHOD_CONTEXT , 
+				WPD_EVENT_OPTION_IS_BROADCAST_EVENT , 
+				WPD_EVENT_OPTION_IS_AUTOPLAY_EVENT , 
+				WPD_EVENT_ATTRIBUTE_NAME , 
+				WPD_EVENT_ATTRIBUTE_PARAMETERS , 
+				WPD_EVENT_ATTRIBUTE_OPTIONS , 
+				WPD_API_OPTION_USE_CLEAR_DATA_STREAM , 
+				WPD_API_OPTION_IOCTL_ACCESS , 
+				WPD_FORMAT_ATTRIBUTE_NAME , 
+				WPD_FORMAT_ATTRIBUTE_MIMETYPE , 
+				WPD_METHOD_ATTRIBUTE_NAME , 
+				WPD_METHOD_ATTRIBUTE_ASSOCIATED_FORMAT , 
+				WPD_METHOD_ATTRIBUTE_ACCESS , 
+				WPD_METHOD_ATTRIBUTE_PARAMETERS , 
+				WPD_PARAMETER_ATTRIBUTE_ORDER , 
+				WPD_PARAMETER_ATTRIBUTE_USAGE , 
+				WPD_PARAMETER_ATTRIBUTE_FORM , 
+				WPD_PARAMETER_ATTRIBUTE_DEFAULT_VALUE , 
+				WPD_PARAMETER_ATTRIBUTE_RANGE_MIN , 
+				WPD_PARAMETER_ATTRIBUTE_RANGE_MAX , 
+				WPD_PARAMETER_ATTRIBUTE_RANGE_STEP , 
+				WPD_PARAMETER_ATTRIBUTE_ENUMERATION_ELEMENTS , 
+				WPD_PARAMETER_ATTRIBUTE_REGULAR_EXPRESSION , 
+				WPD_PARAMETER_ATTRIBUTE_MAX_SIZE , 
+				WPD_PARAMETER_ATTRIBUTE_VARTYPE , 
+				WPD_PARAMETER_ATTRIBUTE_NAME , 
+				WPD_COMMAND_COMMON_RESET_DEVICE , 
+				WPD_COMMAND_COMMON_GET_OBJECT_IDS_FROM_PERSISTENT_UNIQUE_IDS , 
+				WPD_COMMAND_COMMON_SAVE_CLIENT_INFORMATION , 
+				WPD_PROPERTY_COMMON_COMMAND_CATEGORY , 
+				WPD_PROPERTY_COMMON_COMMAND_ID , 
+				WPD_PROPERTY_COMMON_HRESULT , 
+				WPD_PROPERTY_COMMON_DRIVER_ERROR_CODE , 
+				WPD_PROPERTY_COMMON_COMMAND_TARGET , 
+				WPD_PROPERTY_COMMON_PERSISTENT_UNIQUE_IDS , 
+				WPD_PROPERTY_COMMON_OBJECT_IDS , 
+				WPD_PROPERTY_COMMON_CLIENT_INFORMATION , 
+				WPD_PROPERTY_COMMON_CLIENT_INFORMATION_CONTEXT , 
+				WPD_PROPERTY_COMMON_ACTIVITY_ID , 
+				WPD_OPTION_VALID_OBJECT_IDS , 
+				WPD_COMMAND_OBJECT_ENUMERATION_START_FIND , 
+				WPD_COMMAND_OBJECT_ENUMERATION_FIND_NEXT , 
+				WPD_COMMAND_OBJECT_ENUMERATION_END_FIND , 
+				WPD_PROPERTY_OBJECT_ENUMERATION_PARENT_ID , 
+				WPD_PROPERTY_OBJECT_ENUMERATION_FILTER , 
+				WPD_PROPERTY_OBJECT_ENUMERATION_OBJECT_IDS , 
+				WPD_PROPERTY_OBJECT_ENUMERATION_CONTEXT , 
+				WPD_PROPERTY_OBJECT_ENUMERATION_NUM_OBJECTS_REQUESTED , 
+				WPD_COMMAND_OBJECT_PROPERTIES_GET_SUPPORTED , 
+				WPD_COMMAND_OBJECT_PROPERTIES_GET_ATTRIBUTES , 
+				WPD_COMMAND_OBJECT_PROPERTIES_GET , 
+				WPD_COMMAND_OBJECT_PROPERTIES_SET , 
+				WPD_COMMAND_OBJECT_PROPERTIES_GET_ALL , 
+				WPD_COMMAND_OBJECT_PROPERTIES_DELETE , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_KEYS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_ATTRIBUTES , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_VALUES , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_WRITE_RESULTS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_PROPERTY_DELETE_RESULTS , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_START , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_NEXT , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_LIST_END , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_START , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_NEXT , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_GET_VALUES_BY_OBJECT_FORMAT_END , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_START , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_NEXT , 
+				WPD_COMMAND_OBJECT_PROPERTIES_BULK_SET_VALUES_BY_OBJECT_LIST_END , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_IDS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_CONTEXT , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_VALUES , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PROPERTY_KEYS , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_DEPTH , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_PARENT_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_OBJECT_FORMAT , 
+				WPD_PROPERTY_OBJECT_PROPERTIES_BULK_WRITE_RESULTS , 
+				WPD_COMMAND_OBJECT_RESOURCES_GET_SUPPORTED , 
+				WPD_COMMAND_OBJECT_RESOURCES_GET_ATTRIBUTES , 
+				WPD_COMMAND_OBJECT_RESOURCES_OPEN , 
+				WPD_COMMAND_OBJECT_RESOURCES_READ , 
+				WPD_COMMAND_OBJECT_RESOURCES_WRITE , 
+				WPD_COMMAND_OBJECT_RESOURCES_CLOSE , 
+				WPD_COMMAND_OBJECT_RESOURCES_DELETE , 
+				WPD_COMMAND_OBJECT_RESOURCES_CREATE_RESOURCE , 
+				WPD_COMMAND_OBJECT_RESOURCES_REVERT , 
+				WPD_COMMAND_OBJECT_RESOURCES_SEEK , 
+				WPD_COMMAND_OBJECT_RESOURCES_COMMIT , 
+				WPD_COMMAND_OBJECT_RESOURCES_SEEK_IN_UNITS , 
+				WPD_PROPERTY_OBJECT_RESOURCES_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_RESOURCES_ACCESS_MODE , 
+				WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_KEYS , 
+				WPD_PROPERTY_OBJECT_RESOURCES_RESOURCE_ATTRIBUTES , 
+				WPD_PROPERTY_OBJECT_RESOURCES_CONTEXT , 
+				WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_READ , 
+				WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_READ , 
+				WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_TO_WRITE , 
+				WPD_PROPERTY_OBJECT_RESOURCES_NUM_BYTES_WRITTEN , 
+				WPD_PROPERTY_OBJECT_RESOURCES_DATA , 
+				WPD_PROPERTY_OBJECT_RESOURCES_OPTIMAL_TRANSFER_BUFFER_SIZE , 
+				WPD_PROPERTY_OBJECT_RESOURCES_SEEK_OFFSET , 
+				WPD_PROPERTY_OBJECT_RESOURCES_SEEK_ORIGIN_FLAG , 
+				WPD_PROPERTY_OBJECT_RESOURCES_POSITION_FROM_START , 
+				WPD_PROPERTY_OBJECT_RESOURCES_SUPPORTS_UNITS , 
+				WPD_PROPERTY_OBJECT_RESOURCES_STREAM_UNITS , 
+				WPD_OPTION_OBJECT_RESOURCES_SEEK_ON_READ_SUPPORTED , 
+				WPD_OPTION_OBJECT_RESOURCES_SEEK_ON_WRITE_SUPPORTED , 
+				WPD_OPTION_OBJECT_RESOURCES_NO_INPUT_BUFFER_ON_READ , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_ONLY , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_CREATE_OBJECT_WITH_PROPERTIES_AND_DATA , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_WRITE_OBJECT_DATA , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_COMMIT_OBJECT , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_REVERT_OBJECT , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_DELETE_OBJECTS , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_MOVE_OBJECTS , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_COPY_OBJECTS , 
+				WPD_COMMAND_OBJECT_MANAGEMENT_UPDATE_OBJECT_WITH_PROPERTIES_AND_DATA , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_CREATION_PROPERTIES , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_CONTEXT , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_TO_WRITE , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_NUM_BYTES_WRITTEN , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_DATA , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_OPTIONS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_OPTIMAL_TRANSFER_BUFFER_SIZE , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_IDS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_DELETE_RESULTS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_DESTINATION_FOLDER_OBJECT_ID , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_MOVE_RESULTS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_COPY_RESULTS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_UPDATE_PROPERTIES , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_PROPERTY_KEYS , 
+				WPD_PROPERTY_OBJECT_MANAGEMENT_OBJECT_FORMAT , 
+				WPD_OPTION_OBJECT_MANAGEMENT_RECURSIVE_DELETE_SUPPORTED , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_COMMANDS , 
+				WPD_COMMAND_CAPABILITIES_GET_COMMAND_OPTIONS , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FUNCTIONAL_CATEGORIES , 
+				WPD_COMMAND_CAPABILITIES_GET_FUNCTIONAL_OBJECTS , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_CONTENT_TYPES , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMATS , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES , 
+				WPD_COMMAND_CAPABILITIES_GET_FIXED_PROPERTY_ATTRIBUTES , 
+				WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_EVENTS , 
+				WPD_COMMAND_CAPABILITIES_GET_EVENT_OPTIONS , 
+				WPD_PROPERTY_CAPABILITIES_SUPPORTED_COMMANDS , 
+				WPD_PROPERTY_CAPABILITIES_COMMAND , 
+				WPD_PROPERTY_CAPABILITIES_COMMAND_OPTIONS , 
+				WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORIES , 
+				WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_CATEGORY , 
+				WPD_PROPERTY_CAPABILITIES_FUNCTIONAL_OBJECTS , 
+				WPD_PROPERTY_CAPABILITIES_CONTENT_TYPES , 
+				WPD_PROPERTY_CAPABILITIES_CONTENT_TYPE , 
+				WPD_PROPERTY_CAPABILITIES_FORMATS , 
+				WPD_PROPERTY_CAPABILITIES_FORMAT , 
+				WPD_PROPERTY_CAPABILITIES_PROPERTY_KEYS , 
+				WPD_PROPERTY_CAPABILITIES_PROPERTY_ATTRIBUTES , 
+				WPD_PROPERTY_CAPABILITIES_SUPPORTED_EVENTS , 
+				WPD_PROPERTY_CAPABILITIES_EVENT , 
+				WPD_PROPERTY_CAPABILITIES_EVENT_OPTIONS , 
+				WPD_COMMAND_STORAGE_FORMAT , 
+				WPD_COMMAND_STORAGE_EJECT , 
+				WPD_PROPERTY_STORAGE_OBJECT_ID , 
+				WPD_PROPERTY_STORAGE_DESTINATION_OBJECT_ID , 
+				WPD_COMMAND_SMS_SEND , 
+				WPD_PROPERTY_SMS_RECIPIENT , 
+				WPD_PROPERTY_SMS_MESSAGE_TYPE , 
+				WPD_PROPERTY_SMS_TEXT_MESSAGE , 
+				WPD_PROPERTY_SMS_BINARY_MESSAGE , 
+				WPD_OPTION_SMS_BINARY_MESSAGE_SUPPORTED , 
+				WPD_COMMAND_STILL_IMAGE_CAPTURE_INITIATE , 
+				WPD_COMMAND_MEDIA_CAPTURE_START , 
+				WPD_COMMAND_MEDIA_CAPTURE_STOP , 
+				WPD_COMMAND_MEDIA_CAPTURE_PAUSE , 
+				WPD_COMMAND_DEVICE_HINTS_GET_CONTENT_LOCATION , 
+				WPD_PROPERTY_DEVICE_HINTS_CONTENT_TYPE , 
+				WPD_PROPERTY_DEVICE_HINTS_CONTENT_LOCATIONS , 
+				WPD_COMMAND_CLASS_EXTENSION_WRITE_DEVICE_INFORMATION , 
+				WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_VALUES , 
+				WPD_PROPERTY_CLASS_EXTENSION_DEVICE_INFORMATION_WRITE_RESULTS , 
+				WPD_COMMAND_CLASS_EXTENSION_REGISTER_SERVICE_INTERFACES , 
+				WPD_COMMAND_CLASS_EXTENSION_UNREGISTER_SERVICE_INTERFACES , 
+				WPD_PROPERTY_CLASS_EXTENSION_SERVICE_OBJECT_ID , 
+				WPD_PROPERTY_CLASS_EXTENSION_SERVICE_INTERFACES , 
+				WPD_PROPERTY_CLASS_EXTENSION_SERVICE_REGISTRATION_RESULTS , 
+				WPD_COMMAND_GENERATE_KEYPAIR , 
+				WPD_COMMAND_COMMIT_KEYPAIR , 
+				WPD_COMMAND_PROCESS_WIRELESS_PROFILE , 
+				WPD_PROPERTY_PUBLIC_KEY , 
+				WPD_COMMAND_SERVICE_COMMON_GET_SERVICE_OBJECT_ID , 
+				WPD_PROPERTY_SERVICE_OBJECT_ID , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_METHODS_BY_FORMAT , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_METHOD_PARAMETER_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMATS , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_FORMAT_PROPERTIES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_PROPERTY_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_EVENTS , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_EVENT_PARAMETER_ATTRIBUTES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_INHERITED_SERVICES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_FORMAT_RENDERING_PROFILES , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_SUPPORTED_COMMANDS , 
+				WPD_COMMAND_SERVICE_CAPABILITIES_GET_COMMAND_OPTIONS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_METHODS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_METHOD_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_PARAMETER_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_FORMATS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_FORMAT_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_KEYS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_PROPERTY_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_EVENTS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_EVENT_ATTRIBUTES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITANCE_TYPE , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_INHERITED_SERVICES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_RENDERING_PROFILES , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_SUPPORTED_COMMANDS , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND , 
+				WPD_PROPERTY_SERVICE_CAPABILITIES_COMMAND_OPTIONS , 
+				WPD_COMMAND_SERVICE_METHODS_START_INVOKE , 
+				WPD_COMMAND_SERVICE_METHODS_CANCEL_INVOKE , 
+				WPD_COMMAND_SERVICE_METHODS_END_INVOKE , 
+				WPD_PROPERTY_SERVICE_METHOD , 
+				WPD_PROPERTY_SERVICE_METHOD_PARAMETER_VALUES , 
+				WPD_PROPERTY_SERVICE_METHOD_RESULT_VALUES , 
+				WPD_PROPERTY_SERVICE_METHOD_CONTEXT , 
+				WPD_PROPERTY_SERVICE_METHOD_HRESULT , 
+				WPD_RESOURCE_DEFAULT , 
+				WPD_RESOURCE_CONTACT_PHOTO , 
+				WPD_RESOURCE_THUMBNAIL , 
+				WPD_RESOURCE_ICON , 
+				WPD_RESOURCE_AUDIO_CLIP , 
+				WPD_RESOURCE_ALBUM_ART , 
+				WPD_RESOURCE_GENERIC , 
+				WPD_RESOURCE_VIDEO_CLIP , 
+				WPD_RESOURCE_BRANDING_ART , 
+				WPD_OBJECT_ID , 
+				WPD_OBJECT_PARENT_ID , 
+				WPD_OBJECT_NAME , 
+				WPD_OBJECT_PERSISTENT_UNIQUE_ID , 
+				WPD_OBJECT_FORMAT , 
+				WPD_OBJECT_ISHIDDEN , 
+				WPD_OBJECT_ISSYSTEM , 
+				WPD_OBJECT_SIZE , 
+				WPD_OBJECT_ORIGINAL_FILE_NAME , 
+				WPD_OBJECT_NON_CONSUMABLE , 
+				WPD_OBJECT_KEYWORDS , 
+				WPD_OBJECT_SYNC_ID , 
+				WPD_OBJECT_IS_DRM_PROTECTED , 
+				WPD_OBJECT_DATE_CREATED , 
+				WPD_OBJECT_DATE_MODIFIED , 
+				WPD_OBJECT_DATE_AUTHORED , 
+				WPD_OBJECT_BACK_REFERENCES , 
+				WPD_OBJECT_CAN_DELETE , 
+				WPD_OBJECT_LANGUAGE_LOCALE , 
+				WPD_FOLDER_CONTENT_TYPES_ALLOWED , 
+				WPD_IMAGE_BITDEPTH , 
+				WPD_IMAGE_CROPPED_STATUS , 
+				WPD_IMAGE_COLOR_CORRECTED_STATUS , 
+				WPD_IMAGE_FNUMBER , 
+				WPD_IMAGE_EXPOSURE_TIME , 
+				WPD_IMAGE_EXPOSURE_INDEX , 
+				WPD_IMAGE_HORIZONTAL_RESOLUTION , 
+				WPD_IMAGE_VERTICAL_RESOLUTION , 
+				WPD_MEDIA_TOTAL_BITRATE , 
+				WPD_MEDIA_BITRATE_TYPE , 
+				WPD_MEDIA_COPYRIGHT , 
+				WPD_MEDIA_SUBSCRIPTION_CONTENT_ID , 
+				WPD_MEDIA_USE_COUNT , 
+				WPD_MEDIA_SKIP_COUNT , 
+				WPD_MEDIA_LAST_ACCESSED_TIME , 
+				WPD_MEDIA_PARENTAL_RATING , 
+				WPD_MEDIA_META_GENRE , 
+				WPD_MEDIA_COMPOSER , 
+				WPD_MEDIA_EFFECTIVE_RATING , 
+				WPD_MEDIA_SUB_TITLE , 
+				WPD_MEDIA_RELEASE_DATE , 
+				WPD_MEDIA_SAMPLE_RATE , 
+				WPD_MEDIA_STAR_RATING , 
+				WPD_MEDIA_USER_EFFECTIVE_RATING , 
+				WPD_MEDIA_TITLE , 
+				WPD_MEDIA_DURATION , 
+				WPD_MEDIA_BUY_NOW , 
+				WPD_MEDIA_ENCODING_PROFILE , 
+				WPD_MEDIA_WIDTH , 
+				WPD_MEDIA_HEIGHT , 
+				WPD_MEDIA_ARTIST , 
+				WPD_MEDIA_ALBUM_ARTIST , 
+				WPD_MEDIA_OWNER , 
+				WPD_MEDIA_MANAGING_EDITOR , 
+				WPD_MEDIA_WEBMASTER , 
+				WPD_MEDIA_SOURCE_URL , 
+				WPD_MEDIA_DESTINATION_URL , 
+				WPD_MEDIA_DESCRIPTION , 
+				WPD_MEDIA_GENRE , 
+				WPD_MEDIA_TIME_BOOKMARK , 
+				WPD_MEDIA_OBJECT_BOOKMARK , 
+				WPD_MEDIA_LAST_BUILD_DATE , 
+				WPD_MEDIA_BYTE_BOOKMARK , 
+				WPD_MEDIA_TIME_TO_LIVE , 
+				WPD_MEDIA_GUID , 
+				WPD_MEDIA_SUB_DESCRIPTION , 
+				WPD_MEDIA_AUDIO_ENCODING_PROFILE , 
+				WPD_CONTACT_DISPLAY_NAME , 
+				WPD_CONTACT_FIRST_NAME , 
+				WPD_CONTACT_MIDDLE_NAMES , 
+				WPD_CONTACT_LAST_NAME , 
+				WPD_CONTACT_PREFIX , 
+				WPD_CONTACT_SUFFIX , 
+				WPD_CONTACT_PHONETIC_FIRST_NAME , 
+				WPD_CONTACT_PHONETIC_LAST_NAME , 
+				WPD_CONTACT_PERSONAL_FULL_POSTAL_ADDRESS , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE1 , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_LINE2 , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_CITY , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_REGION , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_POSTAL_CODE , 
+				WPD_CONTACT_PERSONAL_POSTAL_ADDRESS_COUNTRY , 
+				WPD_CONTACT_BUSINESS_FULL_POSTAL_ADDRESS , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE1 , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_LINE2 , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_CITY , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_REGION , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_POSTAL_CODE , 
+				WPD_CONTACT_BUSINESS_POSTAL_ADDRESS_COUNTRY , 
+				WPD_CONTACT_OTHER_FULL_POSTAL_ADDRESS , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE1 , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_LINE2 , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_CITY , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_REGION , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_CODE , 
+				WPD_CONTACT_OTHER_POSTAL_ADDRESS_POSTAL_COUNTRY , 
+				WPD_CONTACT_PRIMARY_EMAIL_ADDRESS , 
+				WPD_CONTACT_PERSONAL_EMAIL , 
+				WPD_CONTACT_PERSONAL_EMAIL2 , 
+				WPD_CONTACT_BUSINESS_EMAIL , 
+				WPD_CONTACT_BUSINESS_EMAIL2 , 
+				WPD_CONTACT_OTHER_EMAILS , 
+				WPD_CONTACT_PRIMARY_PHONE , 
+				WPD_CONTACT_PERSONAL_PHONE , 
+				WPD_CONTACT_PERSONAL_PHONE2 , 
+				WPD_CONTACT_BUSINESS_PHONE , 
+				WPD_CONTACT_BUSINESS_PHONE2 , 
+				WPD_CONTACT_MOBILE_PHONE , 
+				WPD_CONTACT_MOBILE_PHONE2 , 
+				WPD_CONTACT_PERSONAL_FAX , 
+				WPD_CONTACT_BUSINESS_FAX , 
+				WPD_CONTACT_PAGER , 
+				WPD_CONTACT_OTHER_PHONES , 
+				WPD_CONTACT_PRIMARY_WEB_ADDRESS , 
+				WPD_CONTACT_PERSONAL_WEB_ADDRESS , 
+				WPD_CONTACT_BUSINESS_WEB_ADDRESS , 
+				WPD_CONTACT_INSTANT_MESSENGER , 
+				WPD_CONTACT_INSTANT_MESSENGER2 , 
+				WPD_CONTACT_INSTANT_MESSENGER3 , 
+				WPD_CONTACT_COMPANY_NAME , 
+				WPD_CONTACT_PHONETIC_COMPANY_NAME , 
+				WPD_CONTACT_ROLE , 
+				WPD_CONTACT_BIRTHDATE , 
+				WPD_CONTACT_PRIMARY_FAX , 
+				WPD_CONTACT_SPOUSE , 
+				WPD_CONTACT_CHILDREN , 
+				WPD_CONTACT_ASSISTANT , 
+				WPD_CONTACT_ANNIVERSARY_DATE , 
+				WPD_CONTACT_RINGTONE , 
+				WPD_MUSIC_ALBUM , 
+				WPD_MUSIC_TRACK , 
+				WPD_MUSIC_LYRICS , 
+				WPD_MUSIC_MOOD , 
+				WPD_AUDIO_BITRATE , 
+				WPD_AUDIO_CHANNEL_COUNT , 
+				WPD_AUDIO_FORMAT_CODE , 
+				WPD_AUDIO_BIT_DEPTH , 
+				WPD_AUDIO_BLOCK_ALIGNMENT , 
+				WPD_VIDEO_AUTHOR , 
+				WPD_VIDEO_RECORDEDTV_STATION_NAME , 
+				WPD_VIDEO_RECORDEDTV_CHANNEL_NUMBER , 
+				WPD_VIDEO_RECORDEDTV_REPEAT , 
+				WPD_VIDEO_BUFFER_SIZE , 
+				WPD_VIDEO_CREDITS , 
+				WPD_VIDEO_KEY_FRAME_DISTANCE , 
+				WPD_VIDEO_QUALITY_SETTING , 
+				WPD_VIDEO_SCAN_TYPE , 
+				WPD_VIDEO_BITRATE , 
+				WPD_VIDEO_FOURCC_CODE , 
+				WPD_VIDEO_FRAMERATE , 
+				WPD_COMMON_INFORMATION_SUBJECT , 
+				WPD_COMMON_INFORMATION_BODY_TEXT , 
+				WPD_COMMON_INFORMATION_PRIORITY , 
+				WPD_COMMON_INFORMATION_START_DATETIME , 
+				WPD_COMMON_INFORMATION_END_DATETIME , 
+				WPD_COMMON_INFORMATION_NOTES , 
+				WPD_EMAIL_TO_LINE , 
+				WPD_EMAIL_CC_LINE , 
+				WPD_EMAIL_BCC_LINE , 
+				WPD_EMAIL_HAS_BEEN_READ , 
+				WPD_EMAIL_RECEIVED_TIME , 
+				WPD_EMAIL_HAS_ATTACHMENTS , 
+				WPD_EMAIL_SENDER_ADDRESS , 
+				WPD_APPOINTMENT_LOCATION , 
+				WPD_APPOINTMENT_TYPE , 
+				WPD_APPOINTMENT_REQUIRED_ATTENDEES , 
+				WPD_APPOINTMENT_OPTIONAL_ATTENDEES , 
+				WPD_APPOINTMENT_ACCEPTED_ATTENDEES , 
+				WPD_APPOINTMENT_RESOURCES , 
+				WPD_APPOINTMENT_TENTATIVE_ATTENDEES , 
+				WPD_APPOINTMENT_DECLINED_ATTENDEES , 
+				WPD_TASK_STATUS , 
+				WPD_TASK_PERCENT_COMPLETE , 
+				WPD_TASK_REMINDER_DATE , 
+				WPD_TASK_OWNER , 
+				WPD_SMS_PROVIDER , 
+				WPD_SMS_TIMEOUT , 
+				WPD_SMS_MAX_PAYLOAD , 
+				WPD_SMS_ENCODING , 
+				WPD_SECTION_DATA_OFFSET , 
+				WPD_SECTION_DATA_LENGTH , 
+				WPD_SECTION_DATA_UNITS , 
+				WPD_SECTION_DATA_REFERENCED_OBJECT_RESOURCE )
+			);
+		}
+		return allKnownKeys;
+	}
+	private static Collection<NamedJmtpGuid> allKnownGuids;
+	public static Collection<NamedJmtpGuid> getAllKnownGuids() {
+		if(allKnownGuids == null) {
+			allKnownGuids = Collections.unmodifiableCollection(Arrays.asList(
+				WPD_OBJECT_FORMAT_ASF, 
+				WPD_CATEGORY_OBJECT_ENUMERATION , 
+				WPD_FUNCTIONAL_CATEGORY_STORAGE, 
+				WPD_OBJECT_FORMAT_VCARD3, 
+				WPD_OBJECT_FORMAT_AUDIBLE, 
+				WPD_EMAIL_OBJECT_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_3G2A, 
+				WPD_CONTENT_TYPE_WIRELESS_PROFILE, 
+				WPD_OBJECT_FORMAT_TEXT, 
+				WPD_OBJECT_FORMAT_MICROSOFT_EXCEL, 
+				WPD_OBJECT_FORMAT_PLSPLAYLIST, 
+				WPD_CONTENT_TYPE_AUDIO_ALBUM, 
+				WPD_RENDERING_INFORMATION_OBJECT_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_TIFF, 
+				WPD_OBJECT_FORMAT_WPLPLAYLIST, 
+				WPD_EVENT_NOTIFICATION, 
+				WPD_DEVICE_PROPERTIES_V2 , 
+				WPD_OBJECT_FORMAT_TIFFEP, 
+				WPD_OBJECT_FORMAT_WAVE, 
+				WPD_OBJECT_PROPERTIES_V1 , 
+				WPD_FUNCTIONAL_OBJECT_PROPERTIES_V1 , 
+				WPD_EVENT_PROPERTIES_V1 , 
+				WPD_PARAMETER_ATTRIBUTES_V1 , 
+				WPD_OBJECT_FORMAT_JPX, 
+				WPD_CLASS_EXTENSION_OPTIONS_V2 , 
+				WPD_VIDEO_OBJECT_PROPERTIES_V1 , 
+				WPD_CONTENT_TYPE_GENERIC_FILE, 
+				WPD_OBJECT_FORMAT_PROPERTIES_ONLY, 
+				WPD_PROPERTY_ATTRIBUTES_V1 , 
+				WPD_OBJECT_FORMAT_ATSCTS, 
+				WPD_API_OPTIONS_V1 , 
+				GUID_DEVINTERFACE_WPD_SERVICE, 
+				WPD_CONTENT_TYPE_PROGRAM, 
+				WPD_CONTENT_TYPE_SECTION, 
+				WPD_OBJECT_FORMAT_WMV, 
+				WPD_OBJECT_FORMAT_QCELP, 
+				WPD_FUNCTIONAL_CATEGORY_STILL_IMAGE_CAPTURE, 
+				WPD_CATEGORY_OBJECT_PROPERTIES_BULK , 
+				WPD_CATEGORY_SERVICE_METHODS , 
+				WPD_CONTENT_TYPE_PLAYLIST, 
+				WPD_CATEGORY_MEDIA_CAPTURE , 
+				WPD_OBJECT_FORMAT_ASXPLAYLIST, 
+				WPD_CONTENT_TYPE_TASK, 
+				WPD_CONTENT_TYPE_ALL, 
+				WPD_OBJECT_FORMAT_HTML, 
+				WPD_OBJECT_FORMAT_WMA, 
+				WPD_MEDIA_PROPERTIES_V1 , 
+				WPD_CATEGORY_SMS , 
+				WPD_EVENT_DEVICE_REMOVED, 
+				WPD_MUSIC_OBJECT_PROPERTIES_V1 , 
+				WPD_SECTION_OBJECT_PROPERTIES_V1 , 
+				WPD_CATEGORY_DEVICE_HINTS , 
+				WPD_FOLDER_OBJECT_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_FLASHPIX, 
+				WPD_OBJECT_FORMAT_MHT_COMPILED_HTML, 
+				GUID_DEVINTERFACE_WPD, 
+				WPD_CATEGORY_OBJECT_PROPERTIES , 
+				WPD_OBJECT_FORMAT_VCARD2, 
+				WPD_CONTENT_TYPE_UNSPECIFIED, 
+				WPD_OBJECT_FORMAT_MP3, 
+				WPD_OBJECT_FORMAT_WBMP, 
+				WPD_DOCUMENT_OBJECT_PROPERTIES_V1 , 
+				WPD_EVENT_DEVICE_CAPABILITIES_UPDATED, 
+				WPD_OBJECT_FORMAT_X509V3CERTIFICATE, 
+				WPD_FUNCTIONAL_CATEGORY_DEVICE, 
+				WPD_OBJECT_FORMAT_ICON, 
+				WPD_OBJECT_FORMAT_UNSPECIFIED, 
+				WPD_CONTENT_TYPE_VIDEO, 
+				WPD_FUNCTIONAL_CATEGORY_VIDEO_CAPTURE, 
+				WPD_EVENT_ATTRIBUTES_V1 , 
+				WPD_CONTENT_TYPE_AUDIO, 
+				WPD_FUNCTIONAL_CATEGORY_SMS, 
+				WPD_OBJECT_FORMAT_GIF, 
+				WPD_OBJECT_FORMAT_AVCHD, 
+				WPD_OBJECT_FORMAT_FLAC, 
+				WPD_OBJECT_FORMAT_AVI, 
+				WPD_METHOD_ATTRIBUTES_V1 , 
+				WPD_CATEGORY_NULL , 
+				WPD_OBJECT_FORMAT_MP4, 
+				WPD_CONTENT_TYPE_EMAIL, 
+				WPD_SERVICE_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_MKV, 
+				WPD_OBJECT_FORMAT_3GPA, 
+				WPD_OBJECT_FORMAT_MPLPLAYLIST, 
+				WPD_CONTENT_TYPE_CALENDAR, 
+				WPD_CATEGORY_NETWORK_CONFIGURATION , 
+				WPD_OBJECT_FORMAT_DPOF, 
+				WPD_CLASS_EXTENSION_OPTIONS_V1 , 
+				GUID_DEVINTERFACE_WPD_PRIVATE, 
+				WPD_FORMAT_ATTRIBUTES_V1 , 
+				WPD_MEMO_OBJECT_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_VCALENDAR1, 
+				WPD_OBJECT_FORMAT_OGG, 
+				WPD_EVENT_OPTIONS_V1 , 
+				WPD_CONTENT_TYPE_TELEVISION, 
+				WPD_OBJECT_FORMAT_BMP, 
+				WPD_CATEGORY_CAPABILITIES , 
+				WPD_CONTACT_OBJECT_PROPERTIES_V1 , 
+				WPD_NETWORK_ASSOCIATION_PROPERTIES_V1 , 
+				WPD_CONTENT_TYPE_CONTACT_GROUP, 
+				WPD_CONTENT_TYPE_VIDEO_ALBUM, 
+				WPD_COMMON_INFORMATION_OBJECT_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_MICROSOFT_WFC, 
+				WPD_OBJECT_FORMAT_JPEGXR, 
+				WPD_OBJECT_FORMAT_JP2, 
+				WPD_OBJECT_FORMAT_ABSTRACT_CONTACT, 
+				WPD_DEVICE_PROPERTIES_V1 , 
+				WPD_CLASS_EXTENSION_V2 , 
+				WPD_OBJECT_FORMAT_PNG, 
+				WPD_PROPERTY_ATTRIBUTES_V2 , 
+				WPD_CONTENT_TYPE_IMAGE, 
+				WPD_CATEGORY_SERVICE_CAPABILITIES , 
+				WPD_OBJECT_FORMAT_WINDOWSIMAGEFORMAT, 
+				WPD_CATEGORY_STORAGE , 
+				WPD_CATEGORY_OBJECT_MANAGEMENT , 
+				WPD_FUNCTIONAL_CATEGORY_AUDIO_CAPTURE, 
+				WPD_CATEGORY_COMMON , 
+				WPD_OBJECT_FORMAT_JFIF, 
+				WPD_OBJECT_FORMAT_MICROSOFT_WORD, 
+				WPD_OBJECT_FORMAT_EXECUTABLE, 
+				WPD_SMS_OBJECT_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_M4A, 
+				WPD_OBJECT_FORMAT_ABSTRACT_MEDIA_CAST, 
+				WPD_OBJECT_FORMAT_3G2, 
+				WPD_OBJECT_FORMAT_MPEG, 
+				WPD_APPOINTMENT_OBJECT_PROPERTIES_V1 , 
+				WPD_CONTENT_TYPE_FUNCTIONAL_OBJECT, 
+				WPD_CONTENT_TYPE_MEMO, 
+				WPD_RESOURCE_ATTRIBUTES_V1 , 
+				WPD_EVENT_OBJECT_TRANSFER_REQUESTED, 
+				WPD_CONTENT_TYPE_NETWORK_ASSOCIATION, 
+				WPD_OBJECT_FORMAT_MP2, 
+				WPD_OBJECT_FORMAT_AIFF, 
+				WPD_CONTENT_TYPE_APPOINTMENT, 
+				WPD_CATEGORY_SERVICE_COMMON , 
+				WPD_CONTENT_TYPE_GENERIC_MESSAGE, 
+				WPD_EVENT_PROPERTIES_V2 , 
+				WPD_OBJECT_FORMAT_AAC, 
+				WPD_OBJECT_FORMAT_ICALENDAR, 
+				WPD_CONTENT_TYPE_CERTIFICATE, 
+				WPD_OBJECT_FORMAT_ABSTRACT_CONTACT_GROUP, 
+				WPD_EVENT_OBJECT_UPDATED, 
+				WPD_CATEGORY_OBJECT_RESOURCES , 
+				WPD_IMAGE_OBJECT_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_TIFFIT, 
+				WPD_CLASS_EXTENSION_V1 , 
+				WPD_FUNCTIONAL_CATEGORY_NETWORK_CONFIGURATION, 
+				WPD_EVENT_DEVICE_RESET, 
+				WPD_CONTENT_TYPE_DOCUMENT, 
+				WPD_OBJECT_FORMAT_NETWORK_ASSOCIATION, 
+				WPD_OBJECT_PROPERTIES_V2 , 
+				WPD_OBJECT_FORMAT_EXIF, 
+				WPD_EVENT_OBJECT_REMOVED, 
+				WPD_EVENT_SERVICE_METHOD_COMPLETE, 
+				WPD_OBJECT_FORMAT_M3UPLAYLIST, 
+				WPD_OBJECT_FORMAT_MICROSOFT_POWERPOINT, 
+				WPD_STORAGE_OBJECT_PROPERTIES_V1 , 
+				WPD_CONTENT_TYPE_IMAGE_ALBUM, 
+				WPD_OBJECT_FORMAT_XML, 
+				WPD_CONTENT_TYPE_MEDIA_CAST, 
+				WPD_OBJECT_FORMAT_CIFF, 
+				WPD_FUNCTIONAL_CATEGORY_RENDERING_INFORMATION, 
+				WPD_OBJECT_FORMAT_SCRIPT, 
+				WPD_CLASS_EXTENSION_OPTIONS_V3 , 
+				WPD_FUNCTIONAL_CATEGORY_ALL, 
+				WPD_CATEGORY_STILL_IMAGE_CAPTURE , 
+				WPD_EVENT_STORAGE_FORMAT, 
+				WPD_OBJECT_FORMAT_DVBTS, 
+				WPD_OBJECT_FORMAT_PICT, 
+				WPD_STILL_IMAGE_CAPTURE_OBJECT_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_PCD, 
+				WPD_TASK_OBJECT_PROPERTIES_V1 , 
+				WPD_CONTENT_TYPE_FOLDER, 
+				WPD_OBJECT_FORMAT_ALL, 
+				WPD_OBJECT_FORMAT_3GP, 
+				WPD_EVENT_OBJECT_ADDED, 
+				WPD_CONTENT_TYPE_CONTACT, 
+				WPD_CLIENT_INFORMATION_PROPERTIES_V1 , 
+				WPD_OBJECT_FORMAT_AMR, 
+				WPD_CONTENT_TYPE_MIXED_CONTENT_ALBUM)
+			);
+		}
+		return allKnownGuids;
+	}
+	private static Map<PropertyKey, String> allKeyMap;
+	public static Map<PropertyKey, String> getAllKeyMap() {
+		if(allKeyMap == null) {
+			HashMap<PropertyKey, String> keyMap = new HashMap<>();
+			for (PropertyKey propertyKey : getAllKnownKeys()) {
+				keyMap.put(propertyKey, propertyKey.getName());
+			}
+			allKeyMap = Collections.unmodifiableMap(keyMap);
+		}
+		return allKeyMap;
+	}
 	//PLACE GENERATED CODE HERE END
 }

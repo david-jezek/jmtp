@@ -21,7 +21,7 @@
 #include <PortableDeviceApi.h>
 
 #include "jmtp.h"
-#include "jmtp_PortableDeviceImplWin32.h"
+#include "jmtp_implWin32_PortableDeviceImplWin32.h"
 
 static inline IPortableDevice* GetPortableDevice(JNIEnv* env, jobject obj)
 {
@@ -33,7 +33,7 @@ static inline IPortableDeviceManager* GetPortableDeviceManager(JNIEnv* env, jobj
 	return (IPortableDeviceManager*)GetComReferencePointer(env, obj, "pDeviceManager");
 }
 
-JNIEXPORT jstring JNICALL Java_jmtp_PortableDeviceImplWin32_getDeviceFriendlyName
+JNIEXPORT jstring JNICALL Java_jmtp_implWin32_PortableDeviceImplWin32_getDeviceFriendlyName
 	(JNIEnv* env, jobject obj, jstring deviceID)
 {
 	IPortableDeviceManager* pDeviceManager;
@@ -43,43 +43,49 @@ JNIEXPORT jstring JNICALL Java_jmtp_PortableDeviceImplWin32_getDeviceFriendlyNam
 	jstring friendlyName;
 
 	pDeviceManager = GetPortableDeviceManager(env, obj);
-	wszDeviceID = (WCHAR*)env->GetStringChars(deviceID, NULL);
-
+	wszDeviceID = ConvertJavaStringToWCHAR(env, deviceID);// (WCHAR*)env->GetStringChars(deviceID, NULL);
 	pDeviceManager->GetDeviceFriendlyName(wszDeviceID, NULL, &length);
 	wszDeviceFriendlyName = new WCHAR[length + 1];
 	pDeviceManager->GetDeviceFriendlyName(wszDeviceID, wszDeviceFriendlyName, &length);	
-	friendlyName = env->NewString((jchar*)wszDeviceFriendlyName, wcslen(wszDeviceFriendlyName));
+	friendlyName = NewJStringFromWCHAR(env, wszDeviceFriendlyName);
 
-	env->ReleaseStringChars(deviceID, (jchar*)wszDeviceID);
+	delete wszDeviceID;//env->ReleaseStringChars(deviceID, (jchar*)wszDeviceID);
 	delete wszDeviceFriendlyName;
 
 	return friendlyName;
 }
 
-JNIEXPORT jstring JNICALL Java_jmtp_PortableDeviceImplWin32_getDeviceManufacturer
+JNIEXPORT jstring JNICALL Java_jmtp_implWin32_PortableDeviceImplWin32_getDeviceManufacturer
 	(JNIEnv* env, jobject obj, jstring deviceID)
 {
 	IPortableDeviceManager* pDeviceManager;
 	LPWSTR wszDeviceID;
 	LPWSTR wszDeviceManufacturer;
+	LPWSTR error = NULL;
 	DWORD length;
 	jstring manufacturer;
+	HRESULT hr;
 
 	pDeviceManager = GetPortableDeviceManager(env, obj);
-	wszDeviceID = (WCHAR*)env->GetStringChars(deviceID, NULL);
-
-	pDeviceManager->GetDeviceManufacturer(wszDeviceID, NULL, &length);
+	wszDeviceID = ConvertJavaStringToWCHAR(env, deviceID);//(WCHAR*)env->GetStringChars(deviceID, NULL);
+	//wprintf(L"get man: %s:--\n", wszDeviceID);
+	length = 0;
+	hr = pDeviceManager->GetDeviceManufacturer(wszDeviceID, NULL, &length);
+	CheckSuccess(env, hr, L"Unable retrive manufacture length.");
+	//printf("manufacture length %d\n", length);
 	wszDeviceManufacturer = new WCHAR[length + 1];
-	pDeviceManager->GetDeviceManufacturer(wszDeviceID, wszDeviceManufacturer, &length);	
-	manufacturer = env->NewString((jchar*)wszDeviceManufacturer, wcslen(wszDeviceManufacturer));
-
-	env->ReleaseStringChars(deviceID, (jchar*)wszDeviceID);
+	hr = pDeviceManager->GetDeviceManufacturer(wszDeviceID, wszDeviceManufacturer, &length);	
+	CheckSuccess(env, hr, L"Unable retrive manufacture string.");
+	manufacturer = NewJStringFromWCHAR(env, wszDeviceManufacturer);
+	//env->ReleaseStringChars(deviceID, (jchar*)wszDeviceID);
+	delete wszDeviceID;
 	delete wszDeviceManufacturer;
+	//env->ThrowNew(env->FindClass("java/lang/RuntimeException"), "error");
 
 	return manufacturer;
 }
 
-JNIEXPORT jstring JNICALL Java_jmtp_PortableDeviceImplWin32_getDeviceDescription
+JNIEXPORT jstring JNICALL Java_jmtp_implWin32_PortableDeviceImplWin32_getDeviceDescription
 	(JNIEnv* env, jobject obj, jstring deviceID)
 {
 	IPortableDeviceManager* pDeviceManager;
@@ -89,20 +95,20 @@ JNIEXPORT jstring JNICALL Java_jmtp_PortableDeviceImplWin32_getDeviceDescription
 	jstring description;
 
 	pDeviceManager = GetPortableDeviceManager(env, obj);
-	wszDeviceID = (WCHAR*)env->GetStringChars(deviceID, NULL);
+	wszDeviceID = ConvertJavaStringToWCHAR(env, deviceID);// (WCHAR*)env->GetStringChars(deviceID, NULL);
 
 	pDeviceManager->GetDeviceDescription(wszDeviceID, NULL, &length);
 	wszDeviceDescription = new WCHAR[length + 1];
 	pDeviceManager->GetDeviceDescription(wszDeviceID, wszDeviceDescription, &length);	
-	description = env->NewString((jchar*)wszDeviceDescription, wcslen(wszDeviceDescription));
+	description = NewJStringFromWCHAR(env, wszDeviceDescription);
 
-	env->ReleaseStringChars(deviceID, (jchar*)wszDeviceID);
+	delete wszDeviceID;//env->ReleaseStringChars(deviceID, (jchar*)wszDeviceID);
 	delete wszDeviceDescription;
 
 	return description;
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceImplWin32_openImpl
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceImplWin32_openImpl
 	(JNIEnv* env, jobject obj, jobject values)
 {
 	HRESULT hr;
@@ -126,10 +132,11 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceImplWin32_openImpl
 	//deviceID opvragen
 	fid = env->GetFieldID(env->GetObjectClass(obj), "deviceID", "Ljava/lang/String;");
 	jsDeviceID = (jstring)env->GetObjectField(obj, fid);
-	wszDeviceID = (WCHAR*)env->GetStringChars(jsDeviceID, NULL);
+	wszDeviceID = ConvertJavaStringToWCHAR(env, jsDeviceID);//(WCHAR*)env->GetStringChars(jsDeviceID, NULL);
 
 	hr = pDevice->Open(wszDeviceID, pClientInfo);
-	env->ReleaseStringChars(jsDeviceID, (jchar*)wszDeviceID);
+	delete wszDeviceID;
+	//env->ReleaseStringChars(jsDeviceID, (jchar*)wszDeviceID);
 
 	if(FAILED(hr))
 	{
@@ -138,13 +145,22 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceImplWin32_openImpl
 	}
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceImplWin32_closeImpl
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceImplWin32_closeImpl
 	(JNIEnv* env, jobject obj)
 {
+	HRESULT hr;
+	IPortableDevice* pDevice;
 
+	pDevice = GetPortableDevice(env, obj);
+	hr = pDevice->Close();
+	if (FAILED(hr))
+	{
+		ThrowCOMException(env, L"Couldn't close the device", hr);
+		return;
+	}
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceImplWin32_getDeviceContent
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDeviceImplWin32_getDeviceContent
 	(JNIEnv* env, jobject obj)
 {
 	HRESULT hr;
@@ -167,12 +183,47 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceImplWin32_getDeviceContent
 	mid = env->GetMethodID(cls, "<init>", "(J)V");
 	reference = env->NewObject(cls, mid, pContent);
 	
-	cls = env->FindClass("jmtp/PortableDeviceContentImplWin32");
+	cls = env->FindClass("jmtp/implWin32/PortableDeviceContentImplWin32");
 	mid = env->GetMethodID(cls, "<init>", "(Lbe/derycke/pieter/com/COMReference;)V");
 	return env->NewObject(cls, mid, reference);
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceImplWin32_sendCommand
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDeviceImplWin32_getDeviceResources
+(JNIEnv *env, jobject obj)
+{
+	HRESULT hr;
+	IPortableDevice* pDevice;
+	IPortableDeviceContent* pContent;
+	IPortableDeviceResources* pResource;
+	jclass cls;
+	jmethodID mid;
+	jobject reference;
+
+	pDevice = GetPortableDevice(env, obj);
+	hr = pDevice->Content(&pContent);
+	if (FAILED(hr))
+	{
+		ThrowCOMException(env, L"Couldn't retrieve the device content", hr);
+		return NULL;
+	}
+	hr = pContent->Transfer(&pResource);
+	if (FAILED(hr))
+	{
+		ThrowCOMException(env, L"Couldn't retrieve the device resource", hr);
+		return NULL;
+	}
+
+	//smart reference object aanmaken
+	cls = env->FindClass("be/derycke/pieter/com/COMReference");
+	mid = env->GetMethodID(cls, "<init>", "(J)V");
+	reference = env->NewObject(cls, mid, pResource);
+
+	cls = env->FindClass("jmtp/implWin32/PortableDeviceResourcesImplWin32");
+	mid = env->GetMethodID(cls, "<init>", "(Lbe/derycke/pieter/com/COMReference;)V");
+	return env->NewObject(cls, mid, reference);
+}
+
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDeviceImplWin32_sendCommand
 	(JNIEnv* env, jobject obj, jobject values)
 {
 	HRESULT hr;
@@ -205,7 +256,7 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceImplWin32_sendCommand
 	mid = env->GetMethodID(cls, "<init>", "(J)V");
 	reference = env->NewObject(cls, mid, pValuesOut);
 	
-	cls = env->FindClass("jmtp/PortableDeviceValuesImplWin32");
+	cls = env->FindClass("jmtp/implWin32/PortableDeviceValuesImplWin32");
 	mid = env->GetMethodID(cls, "<init>", "(Lbe/derycke/pieter/com/COMReference;)V");
 	return env->NewObject(cls, mid, reference);
 }

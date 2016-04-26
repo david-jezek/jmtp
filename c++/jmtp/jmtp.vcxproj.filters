@@ -45,6 +45,15 @@
     <ClCompile Include="src\PortableDeviceValues.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\PortableDeviceResource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\jmtp_implWin32_PortableDeviceObjectInputStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\jmtp_implWin32_PortableDeviceObjectOutputStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\be_derycke_pieter_com_COM.h">
@@ -59,28 +68,37 @@
     <ClInclude Include="src\jmtp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\jmtp_PortableDeviceContentImplWin32.h">
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceValuesImplWin32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\jmtp_PortableDeviceImplWin32.h">
+    <ClInclude Include="src\jmtp_implWin32_PortableDevicePropVariantCollectionImplWin32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\jmtp_PortableDeviceKeyCollectionImplWin32.h">
+    <ClInclude Include="src\jmtp_implWin32_PortableDevicePropertiesImplWin32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\jmtp_PortableDeviceManagerImplWin32.h">
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceManagerImplWin32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\jmtp_PortableDeviceManagerImplWin32_PortableDeviceIterator.h">
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceKeyCollectionImplWin32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\jmtp_PortableDevicePropertiesImplWin32.h">
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceImplWin32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\jmtp_PortableDevicePropVariantCollectionImplWin32.h">
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceContentImplWin32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\jmtp_PortableDeviceValuesImplWin32.h">
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceResourcesImplWin32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceObjectInputStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceObjectOutputStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\jmtp_implWin32_PortableDeviceObjectImplWin32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

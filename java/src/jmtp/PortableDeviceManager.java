@@ -25,27 +25,12 @@ import java.util.Iterator;
  *
  * @author Pieter De Rycke
  */
-public class PortableDeviceManager implements Iterable<PortableDevice> {
+public interface PortableDeviceManager extends Iterable<PortableDevice> {
     
-    private PortableDeviceManagerProxy proxy;
+    public void refreshDeviceList();
     
-    public PortableDeviceManager() {
-        if(System.getProperty("os.name").toLowerCase().contains("windows")) {
-            proxy = new PortableDeviceManagerImplWin32();
-        }
-        else
-            throw new RuntimeException("not supported os");
-    }
-    
-    public void refreshDeviceList() {
-        proxy.refreshDeviceList();
-    }
-    
-    public PortableDevice[] getDevices() {
-        return proxy.getDevices();
-    }
+    public PortableDevice[] getDevices();
 
-    public Iterator<PortableDevice> iterator() {
-        return proxy.iterator();
-    }
+    public Iterator<PortableDevice> iterator();
+
 }

@@ -18,16 +18,17 @@
  */
 
 #include <PortableDeviceApi.h>
+#include <Stringapiset.h>
 
 #include "jmtp.h"
-#include "jmtp_PortableDeviceValuesImplWin32.h"
+#include "jmtp_implWin32_PortableDeviceValuesImplWin32.h"
 
 inline IPortableDeviceValues* GetPortableDeviceValues(JNIEnv* env, jobject obj)
 {
 	return (IPortableDeviceValues*)GetComReferencePointer(env, obj, "pDeviceValues");
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_clear
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_clear
 	(JNIEnv* env, jobject obj)
 {
 	//variabelen
@@ -45,7 +46,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_clear
 	}
 }
 
-JNIEXPORT jlong JNICALL Java_jmtp_PortableDeviceValuesImplWin32_count
+JNIEXPORT jlong JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_count
 	(JNIEnv* env, jobject obj)
 {
 	//variabelen
@@ -69,7 +70,7 @@ JNIEXPORT jlong JNICALL Java_jmtp_PortableDeviceValuesImplWin32_count
 	}
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setStringValue
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_setStringValue
 	(JNIEnv* env, jobject obj, jobject key, jstring value)
 {
 	//variabelen
@@ -84,9 +85,10 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setStringValue
 		if(value != NULL)
 		{
 			pValues = GetPortableDeviceValues(env, obj);
-			wszValue = (WCHAR*)env->GetStringChars(value, NULL);
+			wszValue = ConvertJavaStringToWCHAR(env, value); //(WCHAR*)env->GetStringChars(value, NULL);
+			//wprintf(L"values:%s\n", wszValue);
 			hr = pValues->SetStringValue(ConvertJavaToPropertyKey(env, key), wszValue);
-			env->ReleaseStringChars(value, (jchar*)wszValue);
+			delete wszValue;// env->ReleaseStringChars(value, (jchar*)wszValue);
 			if(FAILED(hr))
 			{
 				ThrowCOMException(env, L"Failed to set the string value", hr);
@@ -103,7 +105,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setStringValue
 	}
 }
 
-JNIEXPORT jstring JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getStringValue
+JNIEXPORT jstring JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getStringValue
 	(JNIEnv* env, jobject obj, jobject key)
 {
 	//variabelen
@@ -118,10 +120,10 @@ JNIEXPORT jstring JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getStringValue
 	{
 		pValues = GetPortableDeviceValues(env, obj);
 		hr = pValues->GetStringValue(ConvertJavaToPropertyKey(env, key), &wszValue);
-
 		if(SUCCEEDED(hr))
 		{
-			jsValue = env->NewString((jchar*)wszValue, wcslen(wszValue));
+			//wprintf(L"getvalue:%s:--\n", wszValue);
+			jsValue = NewJStringFromWCHAR(env, wszValue);
 			CoTaskMemFree(wszValue);
 			return jsValue;
 		}
@@ -138,7 +140,7 @@ JNIEXPORT jstring JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getStringValue
 	}
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setGuidValue
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_setGuidValue
 	(JNIEnv* env, jobject obj, jobject key, jobject guid)
 {
 	//variabelen
@@ -171,7 +173,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setGuidValue
 	}
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getGuidValue
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getGuidValue
 	(JNIEnv* env, jobject obj, jobject jobjKey)
 {
 	//variabelen
@@ -202,7 +204,7 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getGuidValue
 	}
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setUnsignedIntegerValue
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_setUnsignedIntegerValue
 	(JNIEnv* env, jobject obj, jobject key, jlong value)
 {
 	//variabelen
@@ -233,7 +235,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setUnsignedIntege
 	}
 }
 
-JNIEXPORT jlong JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getUnsignedIntegerValue
+JNIEXPORT jlong JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getUnsignedIntegerValue
 	(JNIEnv* env, jobject obj, jobject key)
 {
 	//variabelen
@@ -262,7 +264,7 @@ JNIEXPORT jlong JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getUnsignedInteg
 	}
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setPortableDeviceValuesCollectionValue
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_setPortableDeviceValuesCollectionValue
 	(JNIEnv* env, jobject obj, jobject jobjKey, jobject jobjValue)
 {
 	//variabelen
@@ -292,7 +294,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setPortableDevice
 	}
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getPortableDeviceValuesCollectionValue
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getPortableDeviceValuesCollectionValue
 	(JNIEnv* env, jobject obj, jobject jobjKey)
 {
 	//variabelen
@@ -333,7 +335,7 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getPortableDev
 	return NULL;
 }
 
-JNIEXPORT jboolean JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getBoolValue
+JNIEXPORT jboolean JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getBoolValue
 	(JNIEnv* env, jobject obj, jobject jobjKey)
 {
 	//variabelen
@@ -363,7 +365,7 @@ JNIEXPORT jboolean JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getBoolValue
 	return NULL;
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setFloateValue
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_setFloateValue
 	(JNIEnv* env, jobject obj, jobject jobjKey, jfloat jfValue)
 {
 	//variabelen
@@ -383,7 +385,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setFloateValue
 	}
 }
 
-JNIEXPORT jfloat JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getFloatValue
+JNIEXPORT jfloat JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getFloatValue
 	(JNIEnv* env, jobject obj, jobject jobjKey)
 {
 	//variabelen
@@ -413,7 +415,7 @@ JNIEXPORT jfloat JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getFloatValue
 	return NULL;
 }
 
-JNIEXPORT jthrowable JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getErrorValue
+JNIEXPORT jthrowable JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getErrorValue
 	(JNIEnv* env, jobject obj, jobject jobjKey)
 {
 	//variabelen
@@ -435,7 +437,7 @@ JNIEXPORT jthrowable JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getErrorVal
 		{
 			cls = env->FindClass("be/derycke/pieter/com/COMException");
 			mid = env->GetMethodID(cls, "<init>", "(Ljava/lang/String;I)V");
-			jsMessage = env->NewString((jchar*)L"The request is not supported.", 29);
+			jsMessage = env->NewStringUTF("The request is not supported.");
 			return (jthrowable)env->NewObject(cls, mid, jsMessage, (jint)error);
 		}
 		else
@@ -451,7 +453,7 @@ JNIEXPORT jthrowable JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getErrorVal
 	}
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setUnsignedLargeIntegerValue
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_setUnsignedLargeIntegerValue
 	(JNIEnv* env, jobject obj, jobject jobjKey, jobject jobjValue)
 {
 	//variabelen
@@ -485,7 +487,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setUnsignedLargeI
 	}
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getUnsignedLargeIntegerValue
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getUnsignedLargeIntegerValue
 	(JNIEnv* env, jobject obj, jobject jobjKey)
 {
 	//variabelen
@@ -515,7 +517,7 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getUnsignedLar
 	return NULL;
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setBufferValue
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_setBufferValue
   (JNIEnv* env, jobject obj, jobject jobjKey, jbyteArray jobjValue)
 {
 	//variabelen
@@ -554,7 +556,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceValuesImplWin32_setBufferValue
 	}
 }
 
-JNIEXPORT jbyteArray JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getBufferValue
+JNIEXPORT jbyteArray JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getBufferValue
   (JNIEnv* env, jobject obj, jobject jobjKey)
 {
 	//variabelen
@@ -593,4 +595,24 @@ JNIEXPORT jbyteArray JNICALL Java_jmtp_PortableDeviceValuesImplWin32_getBufferVa
 	}
 
 	return NULL;
+}
+
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDeviceValuesImplWin32_getAt
+(JNIEnv *env, jobject obj, jlong index)
+{
+	HRESULT hr;
+	IPortableDeviceValues* pValues;
+
+	pValues = GetPortableDeviceValues(env, obj);
+	DWORD count;
+	pValues->GetCount(&count);
+	if (index < 0 || index >= count)
+	{
+		env->ThrowNew(env->FindClass("java/lang/ArrayIndexOutOfBoundsException"), "Index is out of bounds.");
+		return NULL;
+	}
+	PROPERTYKEY key;
+	PROPVARIANT value;
+	hr = pValues->GetAt(index, &key, &value);
+	return CreateJavaValueKeyPair(env, key, value);
 }

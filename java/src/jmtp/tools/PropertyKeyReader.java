@@ -24,13 +24,10 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Collectors;
@@ -203,60 +200,95 @@ public class PropertyKeyReader {
 		}
 		processCollections();
 	}
-
+	
+	private String upperFirstLetter(String s){
+		if(s == null){
+			return null;
+		}
+		if(s.length() < 1){
+			return s.toUpperCase();
+		}
+		return ("" + s.charAt(0)).toUpperCase() + s.substring(1, s.length()); 
+	}
+	private void createLazyInitializer(String propertyName, String type, String[] preInitCodeLines, String initCode){
+		buffer.append("\tprivate static " + type +" " + propertyName+ ";\n");
+		buffer.append("\tpublic static " + type +" get"
+				+ upperFirstLetter(propertyName) + "() {\n");
+		buffer.append("\t\tif(" + propertyName +" == null) {\n");
+		if(preInitCodeLines != null){
+			for (String line : preInitCodeLines) {
+				buffer.append("\t\t\t" + line + "\n");
+			}
+		}
+		buffer.append("\t\t\t" + propertyName + " = "+ initCode + ";\n");
+		buffer.append("\t\t}\n");
+		buffer.append("\t\treturn " + propertyName + ";\n");
+		buffer.append("\t}\n");
+	}
 	private void processCollections() {
 		for (String keyGroupName : keyGroups.keySet()) {
 			String prefix = keyGroups.get(keyGroupName);
 			String collectionElements = keyList.stream()
 					.filter(keyName -> keyName.startsWith(prefix))
-					.collect(Collectors.joining(", \n\t\t"));
-			buffer.append("\tstatic final Collection<PropertyKey> "
-					+ keyGroupName
-					+ " = Collections.unmodifiableCollection(Arrays.asList(\n\t\t"
-					+ collectionElements + "));\n");
+					.collect(Collectors.joining(", \n\t\t\t\t"));
+			
+			createLazyInitializer(keyGroupName, "Collection<PropertyKey>", null, "Collections.unmodifiableCollection(Arrays.asList(\n\t\t\t\t"
+					+ collectionElements + ")\n\t\t\t)");
 		}
 		for (String guidGroupName : guidGroups.keySet()) {
 			String prefix = guidGroups.get(guidGroupName);
 			String collectionElements = guidMap.values().stream()
 					.filter(guidName -> guidName.startsWith(prefix))
-					.collect(Collectors.joining(", \n\t\t"));
-			buffer.append("static final Collection<Guid> "
-					+ guidGroupName
-					+ " = Collections.unmodifiableCollection(Arrays.asList(\n\t\t"
-					+ collectionElements + "));\n");
+					.collect(Collectors.joining(", \n\t\t\t\t"));
+			createLazyInitializer(guidGroupName, "Collection<Guid>", null, "Collections.unmodifiableCollection(Arrays.asList(\n\t\t\t\t"
+					+ collectionElements + ")\n\t\t\t)");
 		}
+		String collectionElements = keyList.stream()
+				.collect(Collectors.joining(", \n\t\t\t\t"));
+		createLazyInitializer("allKnownKeys", "Collection<PropertyKey>", null, "Collections.unmodifiableCollection(Arrays.asList(\n\t\t\t\t"
+				+ collectionElements + ")\n\t\t\t)");
+		collectionElements = guidMap.values().stream()
+				.collect(Collectors.joining(", \n\t\t\t\t"));
+		createLazyInitializer("allKnownGuids", "Collection<NamedJmtpGuid>", null, "Collections.unmodifiableCollection(Arrays.asList(\n\t\t\t\t"
+				+ collectionElements + ")\n\t\t\t)");
+		createLazyInitializer("allKeyMap", "Map<PropertyKey, String>", new String[]{
+				"HashMap<PropertyKey, String> keyMap = new HashMap<>();",
+				"for (PropertyKey propertyKey : getAllKnownKeys()) {",
+				"\tkeyMap.put(propertyKey, propertyKey.getName());",
+				"}"
+		}, "Collections.unmodifiableMap(keyMap)");
 	}
 
 	private void processPropertyKey(String name, String[] arguments) {
-		String guidValue = "new Guid(" + arguments[0].trim() + "l, "
+		String guidValue = arguments[0].trim() + "l, "
 				+ arguments[1].trim() + ", " + arguments[2].trim()
 				+ ", new short[]{" + arguments[3].trim() + ", "
 				+ arguments[4].trim() + ", " + arguments[5].trim() + ", "
 				+ arguments[6].trim() + ", " + arguments[7].trim() + ", "
 				+ arguments[8].trim() + ", " + arguments[9].trim() + ", "
-				+ arguments[10].trim() + "})";
-		guidValue = guidMap.getOrDefault(guidValue, guidValue);
+				+ arguments[10].trim() + "}";
+		guidValue = guidMap.getOrDefault(guidValue, "new NamedJmtpGuid(" + guidValue + ")");
 		keyList.add(name);
-		buffer.append("\tstatic final PropertyKey " + name.trim()
+		buffer.append("\tpublic static final PropertyKey " + name.trim()
 				+ " = new PropertyKey(" + guidValue + ", "
-				+ arguments[11].trim() + ");" + "\n");
+				+ arguments[11].trim() + ", \"" + name.trim() + "\");" + "\n");
 	}
 
 	private void processGuid(String name, String[] arguments) {
-		String guidValue = "new Guid(" + arguments[0].trim() + "l, "
+		String guidValue = arguments[0].trim() + "l, "
 				+ arguments[1].trim() + ", " + arguments[2].trim()
 				+ ", new short[]{" + arguments[3].trim() + ", "
 				+ arguments[4].trim() + ", " + arguments[5].trim() + ", "
 				+ arguments[6].trim() + ", " + arguments[7].trim() + ", "
 				+ arguments[8].trim() + ", " + arguments[9].trim() + ", "
-				+ arguments[10].trim() + "})";
+				+ arguments[10].trim() + "}";
 		guidMap.put(guidValue, name);
-		buffer.append("\tstatic final Guid " + name.trim() + " = " + guidValue
-				+ ";" + "\n");
+		buffer.append("\tpublic static final NamedJmtpGuid " + name.trim() + " = " + "new NamedJmtpGuid(" + guidValue
+				+ ", \"" + name.trim() + "\");" + "\n");
 	}
 
 	private void processString(String name, String value) {
-		buffer.append("\tstatic final String " + name + " = \"" + value
+		buffer.append("\tpublic static final String " + name + " = \"" + value
 				+ "\";\n");
 	}
 
@@ -291,6 +323,10 @@ public class PropertyKeyReader {
 					sourceCodeWriter.write("import java.util.Collections;");
 					sourceCodeWriter.newLine();
 					sourceCodeWriter.write("import java.util.Arrays;");
+					sourceCodeWriter.newLine();
+					sourceCodeWriter.write("import java.util.HashMap;");
+					sourceCodeWriter.newLine();
+					sourceCodeWriter.write("import java.util.Map;");
 					sourceCodeWriter.newLine();
 				} else if(line.trim().equals("//PLACE GENERATED CODE HERE BEGIN")){
 					insertImportsBlock = true;
@@ -337,6 +373,6 @@ public class PropertyKeyReader {
 
 	public static void main(String[] args) {
 		PropertyKeyReader reader = new PropertyKeyReader(new File(HEADER_FILE));
-		reader.save(new File("src\\jmtp\\Win32WPDDefines_new.java"));
+		reader.save(new File("src\\jmtp\\Win32WPDDefines.java"));
 	}
 }

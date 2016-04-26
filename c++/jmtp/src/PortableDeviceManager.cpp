@@ -21,14 +21,14 @@
 #include <PortableDeviceApi.h>
 
 #include "jmtp.h"
-#include "jmtp_PortableDeviceManagerImplWin32.h"
+#include "jmtp_implWin32_PortableDeviceManagerImplWin32.h"
 
 static inline IPortableDeviceManager* GetPortableDeviceManager(JNIEnv* env, jobject obj)
 {
 	return (IPortableDeviceManager*)GetComReferencePointer(env, obj, "pDeviceManager");
 }
 
-JNIEXPORT jobjectArray JNICALL Java_jmtp_PortableDeviceManagerImplWin32_getDevicesImpl
+JNIEXPORT jobjectArray JNICALL Java_jmtp_implWin32_PortableDeviceManagerImplWin32_getDevicesImpl
 	(JNIEnv* env, jobject obj)
 {
 	HRESULT hr;
@@ -38,6 +38,7 @@ JNIEXPORT jobjectArray JNICALL Java_jmtp_PortableDeviceManagerImplWin32_getDevic
 	jobjectArray jobjaDeviceIDs;
 	
 	pDeviceManager = GetPortableDeviceManager(env, obj);
+	dwCount = 0;
 	hr = pDeviceManager->GetDevices(NULL, &dwCount);
 	if(FAILED(hr))
 	{
@@ -52,7 +53,7 @@ JNIEXPORT jobjectArray JNICALL Java_jmtp_PortableDeviceManagerImplWin32_getDevic
 		{
 			jobjaDeviceIDs = env->NewObjectArray(dwCount, env->FindClass("java/lang/String"), NULL);
 			for(DWORD i = 0; i < dwCount; i++) {
-				env->SetObjectArrayElement(jobjaDeviceIDs, i, env->NewString((jchar*)deviceIDs[i], wcslen(deviceIDs[i])));
+				env->SetObjectArrayElement(jobjaDeviceIDs, i, NewJStringFromWCHAR(env, deviceIDs[i]));
 				CoTaskMemFree(deviceIDs[i]);
 			}
 		}
@@ -69,7 +70,7 @@ JNIEXPORT jobjectArray JNICALL Java_jmtp_PortableDeviceManagerImplWin32_getDevic
 	}
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceManagerImplWin32_refreshDeviceListImpl
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceManagerImplWin32_refreshDeviceListImpl
 	(JNIEnv* env, jobject obj)
 {
 	HRESULT hr;

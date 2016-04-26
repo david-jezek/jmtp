@@ -1,5 +1,6 @@
 /*
- * Copyright 2007 Pieter De Rycke
+ * Original work Copyright 2007 Pieter De Rycke
+ * Modified work Copyright 2015 David Jezek
  * 
  * This file is part of JMTP.
  * 
@@ -25,17 +26,25 @@ import be.derycke.pieter.com.Guid;
  *
  * @author Pieter De Rycke
  */
-class PropertyKey {
+public class PropertyKey {
     
     private Guid fmtid;
     private long pid;
+    private String name;
     
     public PropertyKey(Guid fmtid, long pid) {
         this.fmtid = fmtid;
         this.pid = pid;
     }
+    
+    public PropertyKey(Guid fmtid, long pid, String name) {
+		super();
+		this.fmtid = fmtid;
+		this.pid = pid;
+		this.name = name;
+	}
 
-    public Guid getFmtid() {
+	public Guid getFmtid() {
         return fmtid;
     }
 
@@ -43,9 +52,20 @@ class PropertyKey {
         return pid;
     }
     
-    @Override
+    
+    public String getName() {
+		if(name == null){
+			name = Win32WPDDefines.getAllKeyMap().get(this);
+			if(name == null){
+				name = "UKNOWN";
+			}
+		}
+		return name;
+	}
+
+	@Override
     public String toString() {
-        return fmtid.toString() + ", " + pid;
+        return getName() + "(" + fmtid.toString() + ", " + pid + ")";
     }
 
     @Override

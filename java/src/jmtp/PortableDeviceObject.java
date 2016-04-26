@@ -19,7 +19,9 @@
 
 package jmtp;
 
+import java.io.InputStream;
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.Date;
 
 import be.derycke.pieter.com.Guid;
@@ -40,13 +42,15 @@ public interface PortableDeviceObject {
     public Date getDateModified();
     public Date getDateCreated();
     public Date getDateAuthored();
+    public PortableDevice getDevice();
     public PortableDeviceObject getParent();
     public BigInteger getSize();
     public String getPersistentUniqueIdentifier();
     public String getSyncID();
     public Guid getFormat();
-    
+    public Collection<ObjectProperty> getSupportedProperties();
+    public Collection<ObjectResource> getSupportedResources();
     public void setSyncID(String value);	//TODO nog een exception kunnen gooien
-    
-    public void delete();
+    public void delete() throws OperationUnsuccessfulException;
+    public void updateContent(InputStream newContent, long size) throws OperationUnsuccessfulException;;
 }

@@ -22,6 +22,7 @@ package jmtp;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -29,9 +30,8 @@ import java.util.Date;
  *
  * @author Pieter De Rycke
  */
-public interface PortableDeviceFolderObject extends PortableDeviceObject {
+public interface PortableDeviceFolderObject extends PortableDeviceObject, PortableDeviceContainerObject {
     
-    public PortableDeviceObject[] getChildObjects();
     public PortableDeviceAudioObject addAudioObject(File bestand, 
     		String artist, String title, BigInteger duration) throws FileNotFoundException, IOException;
     public PortableDeviceAudioObject addAudioObject(File file,
@@ -39,6 +39,5 @@ public interface PortableDeviceFolderObject extends PortableDeviceObject {
 			String genre, String album, Date releaseDate, int track) throws FileNotFoundException, IOException;
     public PortableDevicePlaylistObject createPlaylistObject(String name,
     		PortableDeviceObject[] references);
-    public PortableDeviceFolderObject createFolderObject(String name);
     public void delete(boolean recursive);
 }

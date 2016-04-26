@@ -20,7 +20,7 @@
 #include <PortableDeviceApi.h>
 
 #include "jmtp.h"
-#include "jmtp_PortableDevicePropVariantCollectionImplWin32.h"
+#include "jmtp_implWin32_PortableDevicePropVariantCollectionImplWin32.h"
 
 static inline IPortableDevicePropVariantCollection* GetPortableDevicePropVariantCollection
 	(JNIEnv* env, jobject obj)
@@ -28,7 +28,7 @@ static inline IPortableDevicePropVariantCollection* GetPortableDevicePropVariant
 	return (IPortableDevicePropVariantCollection*)GetComReferencePointer(env, obj, "pPropVariantCollection");
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32_add
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDevicePropVariantCollectionImplWin32_add
 	(JNIEnv* env, jobject obj, jobject jobjPropVariant)
 {
 	//variabelen
@@ -40,13 +40,20 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32_ad
 	//methode implementatie
 	if(jobjPropVariant != NULL)
 	{
+		//printf("add method\n");
 		pPropVariantCollection = GetPortableDevicePropVariantCollection(env, obj);
+		//printf("add method 2\n");
 		pv = ConvertJavaToPropVariant(env, jobjPropVariant);
+		//printf("ad method 3\n"); 
 		hr = pPropVariantCollection->Add(&pv);
-		PropVariantClear(&pv);
-
+		//printf("add method 4\n");
+		//PropVariantClear(&pv);
+		//DWORD count;
+		//pPropVariantCollection->GetCount(&count);
+		//printf("add method 5:%d\n", count);
 		if(FAILED(hr))
 		{
+			//printf("add method 6\n");
 			ThrowCOMException(env, L"Failed to add the element to the collection", hr);
 			return;
 		}
@@ -58,7 +65,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32_ad
 	}
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32_clear
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDevicePropVariantCollectionImplWin32_clear
 	(JNIEnv* env, jobject obj)
 {
 	HRESULT hr;
@@ -73,7 +80,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32_cl
 	}
 }
 
-JNIEXPORT jlong JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32_count
+JNIEXPORT jlong JNICALL Java_jmtp_implWin32_PortableDevicePropVariantCollectionImplWin32_count
 	(JNIEnv* env, jobject obj)
 {
 	HRESULT hr;
@@ -93,7 +100,7 @@ JNIEXPORT jlong JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32_c
 	}
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32_getAt
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDevicePropVariantCollectionImplWin32_getAt
 	(JNIEnv* env, jobject obj, jlong jlIndex)
 {
 	//variabelen
@@ -136,7 +143,7 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32
 	return NULL;
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDevicePropVariantCollectionImplWin32_removeAt
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDevicePropVariantCollectionImplWin32_removeAt
 	(JNIEnv* env, jobject obj, jlong jlIndex)
 {
 	//variabelen

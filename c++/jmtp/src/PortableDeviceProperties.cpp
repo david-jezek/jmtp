@@ -21,54 +21,48 @@
 #include <PortableDevice.h>
 
 #include "jmtp.h"
-#include "jmtp_PortableDevicePropertiesImplWin32.h"
+#include "jmtp_implWin32_PortableDevicePropertiesImplWin32.h"
 
 inline IPortableDeviceProperties* GetPortableDeviceProperties(JNIEnv* env, jobject obj)
 {
 	return (IPortableDeviceProperties*)GetComReferencePointer(env, obj, "pDeviceProperties");
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropertiesImplWin32_getPropertyAttributes
-	(JNIEnv* env, jobject obj, jstring jsObjectID, jobject key)
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDevicePropertiesImplWin32_getPropertyAttributes
+	(JNIEnv* env, jobject obj, jstring jsObjectID, jobject jKey)
 {
 	HRESULT hr;
 	IPortableDeviceProperties* pProperties;
 	IPortableDeviceValues* pValues;
 	LPWSTR wszObjectID;
+	PROPERTYKEY key;
 	jclass cls;
 	jmethodID mid;
 	jobject reference;
 
 	pProperties = GetPortableDeviceProperties(env, obj);
-	wszObjectID = (WCHAR*)env->GetStringChars(jsObjectID, NULL);
-	//printf("%ws\n", wszObjectID);
-	//printf("s10001\n");
-	hr = pProperties->GetPropertyAttributes(L"DEVICE", WPD_RESOURCE_ATTRIBUTE_CAN_DELETE, &pValues);
-	env->ReleaseStringChars(jsObjectID,(jchar*)wszObjectID);
+	wszObjectID = ConvertJavaStringToWCHAR(env, jsObjectID);//(WCHAR*)env->GetStringChars(jsObjectID, NULL);
+	key = ConvertJavaToPropertyKey(env, jKey);
+	hr = pProperties->GetPropertyAttributes(wszObjectID, key, &pValues);
+	delete wszObjectID;// env->ReleaseStringChars(jsObjectID, (jchar*)wszObjectID);
 
 	if(FAILED(hr))
 	{
 		ThrowCOMException(env, L"Failed to retrieve the property", hr);
 	}
 
-	BOOL del;
-	//hr = pValues->GetBoolValue(WPD_RESOURCE_ATTRIBUTE_CAN_DELETE, &del);;
-	//printf("naam: %i\n", del);
-
-	
-
 	//smart reference object aanmaken
 	cls = env->FindClass("be/derycke/pieter/com/COMReference");
 	mid = env->GetMethodID(cls, "<init>", "(J)V");
 	reference = env->NewObject(cls, mid, pValues);
 	
-	cls = env->FindClass("jmtp/PortableDeviceValues");
+	cls = env->FindClass("jmtp/implWin32/PortableDeviceValuesImplWin32");
 	mid = env->GetMethodID(cls, "<init>", "(Lbe/derycke/pieter/com/COMReference;)V");
 	return env->NewObject(cls, mid, reference);
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropertiesImplWin32_getValues
-	(JNIEnv* env, jobject obj, jstring jsObjectID, jobject jobjKeyCollection)
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDevicePropertiesImplWin32_getValues
+(JNIEnv* env, jobject obj, jstring jsObjectID, jobject jobjKeyCollection)
 {
 	HRESULT hr;
 	IPortableDeviceProperties* pProperties;
@@ -81,15 +75,16 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropertiesImplWin32_getValues
 	jobject jobjReference;
 
 	pProperties = GetPortableDeviceProperties(env, obj);
-	mid = env->GetMethodID(env->GetObjectClass(jobjKeyCollection), "getReference", 
+	mid = env->GetMethodID(env->GetObjectClass(jobjKeyCollection), "getReference",
 		"()Lbe/derycke/pieter/com/COMReference;");
 	jobjKeyCollectionReference = env->CallObjectMethod(jobjKeyCollection, mid);
-	pKeyCollection = 
+	pKeyCollection =
 		(IPortableDeviceKeyCollection*)ConvertComReferenceToPointer(env, jobjKeyCollectionReference);
-	wszObjectID = (WCHAR*)env->GetStringChars(jsObjectID, NULL);
-
+	wszObjectID = ConvertJavaStringToWCHAR(env, jsObjectID); (WCHAR*)env->GetStringChars(jsObjectID, NULL);
+	PROPERTYKEY prop;
+	pKeyCollection->GetAt(0, &prop);
 	hr = pProperties->GetValues(wszObjectID, pKeyCollection, &pValues);
-	env->ReleaseStringChars(jsObjectID,(jchar*)wszObjectID);
+	delete wszObjectID;// env->ReleaseStringChars(jsObjectID, (jchar*)wszObjectID);
 
 	if(FAILED(hr))
 	{
@@ -102,12 +97,12 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropertiesImplWin32_getValues
 	mid = env->GetMethodID(cls, "<init>", "(J)V");
 	jobjReference = env->NewObject(cls, mid, pValues);
 	
-	cls = env->FindClass("jmtp/PortableDeviceValuesImplWin32");
+	cls = env->FindClass("jmtp/implWin32/PortableDeviceValuesImplWin32");
 	mid = env->GetMethodID(cls, "<init>", "(Lbe/derycke/pieter/com/COMReference;)V");
 	return env->NewObject(cls, mid, jobjReference);
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropertiesImplWin32_setValues
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDevicePropertiesImplWin32_setValues
 	(JNIEnv* env, jobject obj, jstring jsObjectID, jobject jobjValues)
 {
 	//variabelen
@@ -129,9 +124,9 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropertiesImplWin32_setValues
 		jobjReference = RetrieveCOMReferenceFromCOMReferenceable(env, jobjValues);
 		pValues = (IPortableDeviceValues*)ConvertComReferenceToPointer(env, jobjReference);
 		
-		wszObjectID = (WCHAR*)env->GetStringChars(jsObjectID, NULL);
+		wszObjectID = ConvertJavaStringToWCHAR(env, jsObjectID); //(WCHAR*)env->GetStringChars(jsObjectID, NULL);
 		hr = pProperties->SetValues(wszObjectID, pValues, &pResults);
-		env->ReleaseStringChars(jsObjectID, (jchar*)wszObjectID);
+		delete wszObjectID;//env->ReleaseStringChars(jsObjectID, (jchar*)wszObjectID);
 
 		if(SUCCEEDED(hr))
 		{
@@ -140,7 +135,7 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropertiesImplWin32_setValues
 			mid = env->GetMethodID(cls, "<init>", "(J)V");
 			jobjReference = env->NewObject(cls, mid, pResults);
 			
-			cls = env->FindClass("jmtp/PortableDeviceValuesImplWin32");
+			cls = env->FindClass("jmtp/implWin32/PortableDeviceValuesImplWin32");
 			mid = env->GetMethodID(cls, "<init>", "(Lbe/derycke/pieter/com/COMReference;)V");
 			return env->NewObject(cls, mid, jobjReference);
 		}
@@ -155,4 +150,27 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDevicePropertiesImplWin32_setValues
 		env->ThrowNew(env->FindClass("java/lang/NullPointerException"), "arguments can't be null");
 		return NULL;
 	}
+}
+
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDevicePropertiesImplWin32_getSupprtedProperties
+(JNIEnv *env, jobject obj, jstring jObjectId)
+{
+	HRESULT hr;
+	IPortableDeviceProperties* pProperties;
+	IPortableDeviceKeyCollection* pKeyCollection;
+	LPWSTR wszObjectID;
+	if (jObjectId == NULL)
+	{
+		env->ThrowNew(env->FindClass("java/lang/NullPointerException"), "ObjectID can't be null.");
+		return NULL;
+	}
+	pProperties = GetPortableDeviceProperties(env, obj);
+	wszObjectID = ConvertJavaStringToWCHAR(env, jObjectId); //(WCHAR*)env->GetStringChars(jObjectId, NULL);
+	hr = pProperties->GetSupportedProperties(wszObjectID, &pKeyCollection);
+	delete wszObjectID;// env->ReleaseStringChars(jObjectId, (jchar*)wszObjectID);
+	if (FAILED(hr))
+	{
+		ThrowCOMException(env, L"Failed to retrieve the supported properties.", hr);
+	}
+	return CreateReferenceToKeyCollection(env, pKeyCollection);
 }

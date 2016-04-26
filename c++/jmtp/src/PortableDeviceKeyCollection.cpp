@@ -20,14 +20,14 @@
 #include <PortableDeviceApi.h>
 
 #include "jmtp.h"
-#include "jmtp_PortableDeviceKeyCollectionImplWin32.h"
+#include "jmtp_implWin32_PortableDeviceKeyCollectionImplWin32.h"
 
 static inline IPortableDeviceKeyCollection* GetPortableDeviceKeyCollection(JNIEnv* env, jobject obj)
 {
 	return (IPortableDeviceKeyCollection*)GetComReferencePointer(env, obj, "pKeyCollection");
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceKeyCollectionImplWin32_add
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceKeyCollectionImplWin32_add
 	(JNIEnv* env, jobject obj, jobject jobjKey)
 {
 	HRESULT hr;
@@ -50,7 +50,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceKeyCollectionImplWin32_add
 	}
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceKeyCollectionImplWin32_clear
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceKeyCollectionImplWin32_clear
 	(JNIEnv* env, jobject obj)
 {
 	HRESULT hr;
@@ -65,7 +65,7 @@ JNIEXPORT void JNICALL Java_jmtp_PortableDeviceKeyCollectionImplWin32_clear
 	}
 }
 
-JNIEXPORT jlong JNICALL Java_jmtp_PortableDeviceKeyCollectionImplWin32_count
+JNIEXPORT jlong JNICALL Java_jmtp_implWin32_PortableDeviceKeyCollectionImplWin32_count
 	(JNIEnv* env, jobject obj)
 {
 	HRESULT hr;
@@ -83,7 +83,7 @@ JNIEXPORT jlong JNICALL Java_jmtp_PortableDeviceKeyCollectionImplWin32_count
 	return dwCount;
 }
 
-JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceKeyCollectionImplWin32_getAt
+JNIEXPORT jobject JNICALL Java_jmtp_implWin32_PortableDeviceKeyCollectionImplWin32_getAt
 	(JNIEnv* env, jobject obj, jlong jlPosition)
 {
 	HRESULT hr;
@@ -117,7 +117,7 @@ JNIEXPORT jobject JNICALL Java_jmtp_PortableDeviceKeyCollectionImplWin32_getAt
 	return ConvertPropertyKeyToJava(env, key);
 }
 
-JNIEXPORT void JNICALL Java_jmtp_PortableDeviceKeyCollectionImplWin32_removeAt
+JNIEXPORT void JNICALL Java_jmtp_implWin32_PortableDeviceKeyCollectionImplWin32_removeAt
 	(JNIEnv* env, jobject obj, jlong jlPosition)
 {
 	HRESULT hr;

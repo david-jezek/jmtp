@@ -26,4 +26,9 @@ public class DeviceClosedException extends RuntimeException {
 	public DeviceClosedException(String message) {
 		super(message);
 	}
+	
+	public DeviceClosedException(String message, Throwable cause) {
+		super(message, cause);
+	}
+	
 }
