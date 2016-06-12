@@ -38,9 +38,11 @@ import jmtp.PortableDeviceManager;
  */
 public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
     
-    static {
-        System.loadLibrary("jmtp");
-    }
+	static{
+		String archDataModel = System.getProperty("sun.arch.data.model");
+	    System.loadLibrary("jmtp"+archDataModel);
+	}
+
     
     private COMReference pDeviceManager;
     
