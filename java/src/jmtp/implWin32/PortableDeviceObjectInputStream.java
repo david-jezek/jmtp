@@ -36,6 +36,7 @@ public class PortableDeviceObjectInputStream extends InputStream implements COMR
 	private int bufPointer = -1;
 	private int bufEndPosition = 0;
 	private COMReference iStream;
+	private boolean isClosed = false;
 	/* (non-Javadoc)
 	 * @see java.io.InputStream#read()
 	 */
@@ -72,9 +73,12 @@ public class PortableDeviceObjectInputStream extends InputStream implements COMR
 		bufPointer = -1;
 	}
 	@Override
-	public void close() throws IOException {
+	public synchronized void close() throws IOException {
 		super.close();
-		closeIStream();
+		if(!isClosed){
+			closeIStream();
+			isClosed = true;
+		}
 	}
 	private native void closeIStream();
 

@@ -39,6 +39,7 @@ public class Win32WPDDefines {
 	public static final long ERROR_NOT_FOUND = 0x80070490L; //The property specified by key is not in the collection.
 	public static final long ERROR_NOT_SUPPORTED = 0x80070032L;
 	public static final long E_FILENOTFOUND = 0x80070002L;
+	public static final long ERROR_BUSY = 0x800700AAL;
 	//MANUALY ADDED BLOCK END
 
 	//PLACE GENERATED CODE HERE BEGIN

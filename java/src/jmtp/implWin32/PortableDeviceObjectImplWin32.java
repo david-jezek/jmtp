@@ -24,17 +24,19 @@ import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Date;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import be.derycke.pieter.com.COMException;
+import be.derycke.pieter.com.Guid;
+import be.derycke.pieter.com.OleDate;
 import jmtp.ObjectProperty;
 import jmtp.ObjectResource;
 import jmtp.OperationUnsuccessfulException;
-import jmtp.PortableDeviceFolderObject;
 import jmtp.PortableDeviceObject;
 import jmtp.PropVariant;
 import jmtp.PropertyKey;
 import jmtp.Win32WPDDefines;
-import be.derycke.pieter.com.COMException;
-import be.derycke.pieter.com.Guid;
-import be.derycke.pieter.com.OleDate;
 
 /**
  *
@@ -42,6 +44,9 @@ import be.derycke.pieter.com.OleDate;
  */
 class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
     
+	
+	private static final Logger logger = LogManager.getLogger(PortableDeviceObjectImplWin32.class);
+	
     protected PortableDeviceImplWin32 device;
     private PortableDeviceKeyCollectionImplWin32 keyCollection;
     private PortableDeviceValuesImplWin32 valuesImpl;
@@ -91,12 +96,12 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
         catch(COMException e) {
         	if(e.getHresult() == Win32WPDDefines.ERROR_NOT_FOUND)
         		return null;
-        	else if(e.getHresult() == Win32WPDDefines.ERROR_NOT_SUPPORTED)
+        	else if(e.getHresult() == Win32WPDDefines.ERROR_NOT_SUPPORTED){
         		throw new UnsupportedOperationException("Couldn't retrieve the specified property.");
-        	else {
-	        	e.printStackTrace();
-	            return null;	//comexception -> de string werd niet ingesteld
+        	} else {
+        		logger.error(String.format("Errror in retrieveStringValue. HRESULT: 0x%x", e.getHresult()), e);
         	}
+    		return null;
         }
     }
     
