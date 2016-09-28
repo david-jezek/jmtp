@@ -29,6 +29,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import jmtp.PortableDevice;
 import jmtp.PortableDeviceManager;
 
@@ -38,6 +41,9 @@ import jmtp.PortableDeviceManager;
  */
 public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
     
+	
+	private static final Logger logger = LogManager.getLogger(PortableDeviceManagerImplWin32.class);
+	
 	static{
 		String archDataModel = System.getProperty("sun.arch.data.model");
 	    System.loadLibrary("jmtp"+archDataModel);
@@ -48,14 +54,17 @@ public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
     
     private Map<String, PortableDeviceImplWin32> deviceMap;
     
+    /**
+     * constructor
+     */
     public PortableDeviceManagerImplWin32() {
         try {
             pDeviceManager = COM.CoCreateInstance(WPDImplWin32.CLSID_PortableDeviceManager, 
                     0, COM.CLSCTX_INPROC_SERVER, WPDImplWin32.IID_IPortableDeviceManager);
-            deviceMap = new HashMap<String, PortableDeviceImplWin32>();
+            deviceMap = new HashMap<>();
         }
         catch (Exception e) {
-            throw new RuntimeException("probleem met de com");
+            throw new RuntimeException("probleem met de com", e);
         }
     }
     
@@ -63,11 +72,12 @@ public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
     
     private native void refreshDeviceListImpl() throws COMException;
     
+    @Override
     public PortableDeviceImplWin32[] getDevices() {
         try {
             String[] devices = getDevicesImpl();
 
-            Set<String> deviceSet = new HashSet<String>();
+            Set<String> deviceSet = new HashSet<>();
             for (String deviceID : devices) {
                 if(!deviceMap.containsKey(deviceID))
                     deviceMap.put(deviceID, new PortableDeviceImplWin32(pDeviceManager, deviceID));
@@ -82,18 +92,22 @@ public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
             return deviceMap.values().toArray(new PortableDeviceImplWin32[0]);
         }
         catch (COMException e) {
-            e.printStackTrace();
+            logger.error("Error geting device list.", e);
             return new PortableDeviceImplWin32[0];
         }
     }
     
+    @Override
     public void refreshDeviceList() {
         try {
             refreshDeviceListImpl();
         }
-        catch(COMException e) {}
+        catch(COMException e) {
+        	logger.error("Error refresh device list.", e);
+        }
     }
 
+    @Override
     public Iterator<PortableDevice> iterator() {
         return new PortableDeviceIterator();
     }
@@ -107,15 +121,18 @@ public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
             iterator = deviceMap.keySet().iterator();
         }
 
+        @Override
         public boolean hasNext() {
             return iterator.hasNext();
         }
 
+        @Override
         public PortableDevice next() {
             String deviceID = iterator.next();
             return deviceMap.get(deviceID);
         }
 
+        @Override
         public void remove() {
             throw new UnsupportedOperationException("Devices can't be removed");
         }
