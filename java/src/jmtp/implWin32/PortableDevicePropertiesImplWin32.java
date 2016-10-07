@@ -74,12 +74,12 @@ class PortableDevicePropertiesImplWin32 {
 	        		return pair.value;
 	        	}
 	        }
-	        throw new OperationUnsuccessfulException("Returned list of values do not contains value with requested key.");
+	        throw new OperationUnsuccessfulException("Returned list of values do not contains value with requested key."); //$NON-NLS-1$
     	}
     	catch(COMException e) {
     		if(e.getHresult() == COMException.E_POINTER) {
     			//there is no connection to the device
-    			throw new DeviceClosedException("The device connection is closed.", e);
+    			throw new DeviceClosedException("The device connection is closed.", e); //$NON-NLS-1$
     		}
     		else {
 	    		throw e;

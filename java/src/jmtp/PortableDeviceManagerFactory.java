@@ -32,11 +32,11 @@ public class PortableDeviceManagerFactory {
 	
 	public static PortableDeviceManager getPortableDeviceManager(){
 		if(deviceManager == null){
-	        if(System.getProperty("os.name").toLowerCase().contains("windows")) {
+	        if(System.getProperty("os.name").toLowerCase().contains("windows")) { //$NON-NLS-1$ //$NON-NLS-2$
 	        	deviceManager = new PortableDeviceManagerImplWin32();
 	        }
 	        else
-	            throw new RuntimeException("not supported os");
+	            throw new RuntimeException("not supported os"); //$NON-NLS-1$
 
 		}
 		return deviceManager;

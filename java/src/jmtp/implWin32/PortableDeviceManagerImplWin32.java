@@ -45,8 +45,8 @@ public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
 	private static final Logger logger = LogManager.getLogger(PortableDeviceManagerImplWin32.class);
 	
 	static{
-		String archDataModel = System.getProperty("sun.arch.data.model");
-	    System.loadLibrary("jmtp"+archDataModel);
+		String archDataModel = System.getProperty("sun.arch.data.model"); //$NON-NLS-1$
+	    System.loadLibrary("jmtp"+archDataModel); //$NON-NLS-1$
 	}
 
     
@@ -64,7 +64,7 @@ public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
             deviceMap = new HashMap<>();
         }
         catch (Exception e) {
-            throw new RuntimeException("probleem met de com", e);
+            throw new RuntimeException("probleem met de com", e); //$NON-NLS-1$
         }
     }
     
@@ -92,7 +92,7 @@ public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
             return deviceMap.values().toArray(new PortableDeviceImplWin32[0]);
         }
         catch (COMException e) {
-            logger.error("Error geting device list.", e);
+            logger.error("Error geting device list.", e); //$NON-NLS-1$
             return new PortableDeviceImplWin32[0];
         }
     }
@@ -103,7 +103,7 @@ public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
             refreshDeviceListImpl();
         }
         catch(COMException e) {
-        	logger.error("Error refresh device list.", e);
+        	logger.error("Error refresh device list.", e); //$NON-NLS-1$
         }
     }
 
@@ -134,7 +134,7 @@ public class PortableDeviceManagerImplWin32 implements PortableDeviceManager {
 
         @Override
         public void remove() {
-            throw new UnsupportedOperationException("Devices can't be removed");
+            throw new UnsupportedOperationException("Devices can't be removed"); //$NON-NLS-1$
         }
         
     }

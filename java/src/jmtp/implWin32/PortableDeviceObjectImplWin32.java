@@ -97,9 +97,9 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
         	if(e.getHresult() == Win32WPDDefines.ERROR_NOT_FOUND)
         		return null;
         	else if(e.getHresult() == Win32WPDDefines.ERROR_NOT_SUPPORTED){
-        		throw new UnsupportedOperationException("Couldn't retrieve the specified property.");
+        		throw new UnsupportedOperationException("Couldn't retrieve the specified property."); //$NON-NLS-1$
         	} else {
-        		logger.error(String.format("Errror in retrieveStringValue. HRESULT: 0x%x", e.getHresult()), e);
+        		logger.error(String.format("Errror in retrieveStringValue. HRESULT: 0x%x", e.getHresult()), e); //$NON-NLS-1$
         	}
     		return null;
         }
@@ -112,7 +112,7 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
     		PortableDeviceValuesImplWin32 results = device.getProperties().setValues(objectID, values);
     		if(results.count() > 0 
     				&& results.getErrorValue(key).getHresult() != COMException.S_OK) {
-    			throw new UnsupportedOperationException("Couldn't change the property.");
+    			throw new UnsupportedOperationException("Couldn't change the property."); //$NON-NLS-1$
     		}
     	}
     	catch(COMException e) {
@@ -130,7 +130,7 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
         	if(e.getHresult() == Win32WPDDefines.ERROR_NOT_FOUND)
         		return -1;
         	else if(e.getHresult() == Win32WPDDefines.ERROR_NOT_SUPPORTED)
-        		throw new UnsupportedOperationException("Couldn't retrieve the specified property.");
+        		throw new UnsupportedOperationException("Couldn't retrieve the specified property."); //$NON-NLS-1$
         	else {
         		e.printStackTrace();
         		return -1;
@@ -145,7 +145,7 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
     		PortableDeviceValuesImplWin32 results = device.getProperties().setValues(objectID, values);
     		if(results.count() > 0 
     				&& results.getErrorValue(key).getHresult() != COMException.S_OK) {
-    			throw new UnsupportedOperationException("Couldn't change the property.");
+    			throw new UnsupportedOperationException("Couldn't change the property."); //$NON-NLS-1$
     		}
     	}
     	catch(COMException e) {
@@ -171,7 +171,7 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
     		PortableDeviceValuesImplWin32 results = device.getProperties().setValues(objectID, values);
     		if(results.count() > 0 
     				&& results.getErrorValue(key).getHresult() != COMException.S_OK) {
-    			throw new UnsupportedOperationException("Couldn't change the property.");
+    			throw new UnsupportedOperationException("Couldn't change the property."); //$NON-NLS-1$
     		}
     	}
     	catch(COMException e) {}
@@ -208,9 +208,9 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
         }
         catch(COMException e) {
         	if(e.getHresult() == Win32WPDDefines.ERROR_NOT_FOUND)
-        		return new BigInteger("-1");
+        		return new BigInteger("-1"); //$NON-NLS-1$
         	else if(e.getHresult() == Win32WPDDefines.ERROR_NOT_SUPPORTED)
-        		throw new UnsupportedOperationException("Couldn't retrieve the specified property.");
+        		throw new UnsupportedOperationException("Couldn't retrieve the specified property."); //$NON-NLS-1$
         	else {
 	        	e.printStackTrace();
 	            return null;	//comexception -> de string werd niet ingesteld
@@ -225,7 +225,7 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
     		PortableDeviceValuesImplWin32 results = device.getProperties().setValues(objectID, values);
     		if(results.count() > 0 
     				&& results.getErrorValue(key).getHresult() != COMException.S_OK) {
-    			throw new UnsupportedOperationException("Couldn't change the property.");
+    			throw new UnsupportedOperationException("Couldn't change the property."); //$NON-NLS-1$
     		}
     	}
     	catch(COMException e) {
@@ -310,7 +310,7 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
 			this.device.getContent().delete(Win32WPDDefines.PORTABLE_DEVICE_DELETE_NO_RECURSION, collection);
 		}
 		catch(COMException e) {
-			throw new OperationUnsuccessfulException("Object cannot be deleted.", e);
+			throw new OperationUnsuccessfulException("Object cannot be deleted.", e); //$NON-NLS-1$
 		}
 	}
 
@@ -335,7 +335,7 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
 			PortableDeviceKeyCollectionImplWin32 collection = device.getProperties().getSupprtedProperties(objectID);
 			return ObjectPropertyWin32Impl.getProperties(this, collection);
 		} catch (COMException e) {
-			throw new OperationUnsuccessfulException("Collection of supported properties cannot be retrieved from device.", e); 
+			throw new OperationUnsuccessfulException("Collection of supported properties cannot be retrieved from device.", e);  //$NON-NLS-1$
 		}
 	}
 
@@ -346,7 +346,7 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
 			PortableDeviceKeyCollectionImplWin32 propertyKes = device.getResources().getSupportedResources(objectID);
 			return ObjectResourceWin32Impl.getResources(this, propertyKes);
 		} catch (COMException e) {
-			throw new OperationUnsuccessfulException("Collection of supported resources cannot be retrieved from device.", e); 
+			throw new OperationUnsuccessfulException("Collection of supported resources cannot be retrieved from device.", e);  //$NON-NLS-1$
 		}
 	}
 
@@ -370,10 +370,10 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
 			PropVariant pv = new PropVariant(obId);
 			objectIds.add(pv);
 			device.getContent().delete(0, objectIds);
-			System.out.println("deleted");
+			System.out.println("deleted"); //$NON-NLS-1$
 			this.objectID = device.getContent().createObjectWithPropertiesAndData(values, newContent, size);
 		} catch (COMException e) {
-			throw new OperationUnsuccessfulException("Update content unsucessfull.", e);
+			throw new OperationUnsuccessfulException("Update content unsucessfull.", e); //$NON-NLS-1$
 		}
 	}
 	

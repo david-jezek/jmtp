@@ -78,7 +78,7 @@ public class ObjectResourceWin32Impl implements ObjectResource{
 		try {
 			return ResourceAttributeWin32Impl.getAttributes(this, parent.getDevice().getResources().getResourceAttributes(getParent().getID(), id));
 		} catch (COMException e) {
-			throw new OperationUnsuccessfulException("Getting attributes of resource was unsuccessfull.", e);
+			throw new OperationUnsuccessfulException("Getting attributes of resource was unsuccessfull.", e); //$NON-NLS-1$
 		}
 	}
 
@@ -97,7 +97,7 @@ public class ObjectResourceWin32Impl implements ObjectResource{
 
 	@Override
 	public String toString() {
-		return "ObjectResourceWin32Impl [parent=" + parent + ", id=" + id + "]";
+		return "ObjectResourceWin32Impl [parent=" + parent + ", id=" + id + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 

@@ -73,7 +73,7 @@ abstract class AbstractPortableDeviceContainerImplWin32 extends
 					this.objectID);
 			values.setStringValue(
 					Win32WPDDefines.WPD_OBJECT_ORIGINAL_FILE_NAME, name
-							+ ".pla");
+							+ ".pla"); //$NON-NLS-1$
 			values.setStringValue(Win32WPDDefines.WPD_OBJECT_NAME, name);
 			values.setGuidValue(Win32WPDDefines.WPD_OBJECT_FORMAT,
 					Win32WPDDefines.WPD_OBJECT_FORMAT_PLA);
@@ -146,8 +146,8 @@ abstract class AbstractPortableDeviceContainerImplWin32 extends
 							new FileInputStream(file), file.length()), device);
 		} catch (COMException e) {
 			if (e.getHresult() == Win32WPDDefines.E_FILENOTFOUND)
-				throw new FileNotFoundException("File " + file
-						+ " was not found.");
+				throw new FileNotFoundException("File " + file //$NON-NLS-1$
+						+ " was not found."); //$NON-NLS-1$
 			else {
 				throw new IOException(e);
 			}

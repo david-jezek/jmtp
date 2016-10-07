@@ -62,7 +62,7 @@ public class Guid {
         String temp = Integer.toHexString(number);
         int length = temp.length();
         for(int i = 0; i < 4 - length; i++)
-            temp += "0" + temp;
+            temp += "0" + temp; //$NON-NLS-1$
         return temp;
     }
     
@@ -70,7 +70,7 @@ public class Guid {
         String buffer = Integer.toHexString(((Short)number).intValue());
         int length = buffer.length();
         if(length != 2)
-            buffer = "0" + buffer;
+            buffer = "0" + buffer; //$NON-NLS-1$
         return buffer;
     }
     
@@ -103,19 +103,19 @@ public class Guid {
     
     @Override
     public String toString() {
-        String guid = "";
+        String guid = ""; //$NON-NLS-1$
         
         String partGuid = Long.toHexString(data1);
         int length = partGuid.length();
         for(int i = 0; i < 8 - length; i++)
-            partGuid += "0" + partGuid;
-        guid += partGuid + "-";
+            partGuid += "0" + partGuid; //$NON-NLS-1$
+        guid += partGuid + "-"; //$NON-NLS-1$
         
-        guid += toBinaryString(data2) + "-";
+        guid += toBinaryString(data2) + "-"; //$NON-NLS-1$
         
-        guid += toBinaryString(data3) + "-";
+        guid += toBinaryString(data3) + "-"; //$NON-NLS-1$
         
-        guid += toBinaryString(data4[0]) + toBinaryString(data4[1]) + "-";
+        guid += toBinaryString(data4[0]) + toBinaryString(data4[1]) + "-"; //$NON-NLS-1$
         
         guid += toBinaryString(data4[2]) + toBinaryString(data4[3]) + toBinaryString(data4[4])
                 + toBinaryString(data4[5]) + toBinaryString(data4[6]) + toBinaryString(data4[7]);

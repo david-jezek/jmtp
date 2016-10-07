@@ -72,7 +72,7 @@ class PortableDeviceImplWin32 implements PortableDevice {
 	}
 
 	/*
-	 * In c++ geïmplementeerde methoden
+	 * In c++ geï¿½mplementeerde methoden
 	 */
 	private native String getDeviceFriendlyName(String deviceID)
 			throws COMException;
@@ -98,7 +98,7 @@ class PortableDeviceImplWin32 implements PortableDevice {
 			PortableDeviceValuesImplWin32 values) throws COMException;
 
 	/*
-	 * In Java geïmplementeerde methoden
+	 * In Java geï¿½mplementeerde methoden
 	 */
 	// private void createStructures() throws COMException {
 	// if(content == null)
@@ -153,7 +153,7 @@ class PortableDeviceImplWin32 implements PortableDevice {
 			if (e.getHresult() == COMException.E_POINTER) {
 				// there is no connection to the device
 				throw new DeviceClosedException(
-						"The device connection is closed.");
+						"The device connection is closed."); //$NON-NLS-1$
 			} else {
 				throw e;
 			}
@@ -172,7 +172,7 @@ class PortableDeviceImplWin32 implements PortableDevice {
 			if (e.getHresult() == COMException.E_POINTER) {
 				// there is no connection to the device
 				throw new DeviceClosedException(
-						"The device connection is closed.");
+						"The device connection is closed."); //$NON-NLS-1$
 			} else {
 				throw e;
 			}
@@ -189,7 +189,7 @@ class PortableDeviceImplWin32 implements PortableDevice {
 		} catch (COMException e) {
 			if (e.getHresult() == COMException.E_POINTER)
 				throw new DeviceClosedException(
-						"The device connection is closed.");
+						"The device connection is closed."); //$NON-NLS-1$
 			else
 				throw e;
 		}
@@ -199,13 +199,13 @@ class PortableDeviceImplWin32 implements PortableDevice {
 		if (friendlyName == null) {
 			boolean wasOpened = opened;
 			if (!opened) {
-				System.out.println("fr name open");
+				System.out.println("fr name open"); //$NON-NLS-1$
 				open();
 			}
 			try {
 				friendlyName = getDeviceFriendlyName(deviceID);
 				if (!wasOpened) {
-					System.out.println("fr name close");
+					System.out.println("fr name close"); //$NON-NLS-1$
 					close();
 				}
 			} catch (COMException e) {
@@ -256,7 +256,7 @@ class PortableDeviceImplWin32 implements PortableDevice {
 			} catch (COMException e) {
 				if (e.getHresult() == Win32WPDDefines.E_WPD_DEVICE_ALREADY_OPENED) {
 					throw new DeviceAlreadyOpenedException(
-							"The device connection has already been opened.");
+							"The device connection has already been opened."); //$NON-NLS-1$
 				} else {
 					e.printStackTrace();
 				}
@@ -294,7 +294,7 @@ class PortableDeviceImplWin32 implements PortableDevice {
 			if (e.getHresult() == COMException.E_POINTER) {
 				// there is no connection to the device
 				throw new DeviceClosedException(
-						"The device connection is closed.");
+						"The device connection is closed."); //$NON-NLS-1$
 			} else {
 				e.printStackTrace();
 				return null;
@@ -327,7 +327,7 @@ class PortableDeviceImplWin32 implements PortableDevice {
 			if (e.getHresult() == COMException.E_POINTER) {
 				// there is no connection to the device
 				throw new DeviceClosedException(
-						"The device connection is closed.");
+						"The device connection is closed."); //$NON-NLS-1$
 			} else {
 				e.printStackTrace();
 				return null;
@@ -415,9 +415,9 @@ class PortableDeviceImplWin32 implements PortableDevice {
 	}
 
 	public static void main(String[] args) {
-		String id = "{00276159-0000-0000-0000-000000000000}";
+		String id = "{00276159-0000-0000-0000-000000000000}"; //$NON-NLS-1$
 		@SuppressWarnings("unused")
-		String wmp_id = "{00128F26-0000-0000-0000-000000000000}";
+		String wmp_id = "{00128F26-0000-0000-0000-000000000000}"; //$NON-NLS-1$
 
 		PortableDeviceManager manager;
 		PortableDevice device;
@@ -449,13 +449,13 @@ class PortableDeviceImplWin32 implements PortableDevice {
 			try {
 				wpdError = results
 						.getErrorValue(Win32WPDDefines.WPD_PROPERTY_COMMON_HRESULT);
-				System.out.println("Exception: ");
+				System.out.println("Exception: "); //$NON-NLS-1$
 				wpdError.printStackTrace();
 			} catch (COMException e) {
 				// ignore exception if "ERROR_NOT_FOUND" -> item not in
 				// collection
 				if (e.getHresult() != Win32WPDDefines.ERROR_NOT_FOUND) {
-					System.out.println("Error: " + e.getErrorCode());
+					System.out.println("Error: " + e.getErrorCode()); //$NON-NLS-1$
 				}
 			}
 
@@ -463,16 +463,16 @@ class PortableDeviceImplWin32 implements PortableDevice {
 			try {
 				driverError = results
 						.getUnsignedIntegerValue(Win32WPDDefines.WPD_PROPERTY_COMMON_DRIVER_ERROR_CODE);
-				System.out.println("Driver Error Code: " + driverError);
+				System.out.println("Driver Error Code: " + driverError); //$NON-NLS-1$
 			} catch (COMException e) {
 				// ignore exception if "ERROR_NOT_FOUND" -> item not in
 				// collection
 				if (e.getHresult() != Win32WPDDefines.ERROR_NOT_FOUND) {
-					System.out.println("Error: " + e.getErrorCode());
+					System.out.println("Error: " + e.getErrorCode()); //$NON-NLS-1$
 				}
 			}
 		} catch (COMException e) {
-			System.out.println("Error: " + e.getErrorCode());
+			System.out.println("Error: " + e.getErrorCode()); //$NON-NLS-1$
 		}
 
 		/*
@@ -493,18 +493,18 @@ class PortableDeviceImplWin32 implements PortableDevice {
 
 		PortableDeviceAudioObject o = (PortableDeviceAudioObject) device
 				.getPortableDeviceObjectsFromPersistentUniqueIDs(id);
-		System.out.println("Original File Name: " + o.getOriginalFileName());
-		System.out.println("Duration: " + o.getDuraction());
-		System.out.println("Size: " + o.getSize());
-		System.out.println("Track Number: " + o.getTrackNumber());
-		System.out.println("Duration: " + o.getDuraction());
-		System.out.println("Use Count: " + o.getUseCount());
+		System.out.println("Original File Name: " + o.getOriginalFileName()); //$NON-NLS-1$
+		System.out.println("Duration: " + o.getDuraction()); //$NON-NLS-1$
+		System.out.println("Size: " + o.getSize()); //$NON-NLS-1$
+		System.out.println("Track Number: " + o.getTrackNumber()); //$NON-NLS-1$
+		System.out.println("Duration: " + o.getDuraction()); //$NON-NLS-1$
+		System.out.println("Use Count: " + o.getUseCount()); //$NON-NLS-1$
 
 		// Date datum = Calendar.getInstance().getTime();
 		Date datum = o.getReleaseDate();
 		System.out.println(datum);
 		o.setReleaseDate(datum);
-		System.out.println("Release Date: " + o.getReleaseDate());
+		System.out.println("Release Date: " + o.getReleaseDate()); //$NON-NLS-1$
 
 		/*
 		 * PortableDeviceStorageObject storage =

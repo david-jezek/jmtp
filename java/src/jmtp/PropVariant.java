@@ -354,7 +354,7 @@ public class PropVariant {
 
 	@Override
 	public String toString() {
-		return "PropVariant [type=" + type + ", value=" + value + "]";
+		return "PropVariant [type=" + type + ", value=" + value + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 	/**

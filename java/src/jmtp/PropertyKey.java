@@ -57,7 +57,7 @@ public class PropertyKey {
 		if(name == null){
 			name = Win32WPDDefines.getAllKeyMap().get(this);
 			if(name == null){
-				name = "UKNOWN";
+				name = "UKNOWN"; //$NON-NLS-1$
 			}
 		}
 		return name;
@@ -65,7 +65,7 @@ public class PropertyKey {
 
 	@Override
     public String toString() {
-        return getName() + "(" + fmtid.toString() + ", " + pid + ")";
+        return getName() + "(" + fmtid.toString() + ", " + pid + ")"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
     }
 
     @Override

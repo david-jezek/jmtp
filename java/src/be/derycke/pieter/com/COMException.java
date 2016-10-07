@@ -91,6 +91,6 @@ public class COMException extends Exception {
     }
     
     public String toString() {
-    	return this.getClass().getCanonicalName() + ": " + getMessage() + " (0x" + Long.toHexString(getHresult()) + ")";
+    	return this.getClass().getCanonicalName() + ": " + getMessage() + " (0x" + Long.toHexString(getHresult()) + ")"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
     }
 }

@@ -76,7 +76,7 @@ public class ObjectPropertyWin32Impl implements ObjectProperty {
 			try {
 				value = parent.getDevice().getProperties().getValue(parent.getID(), id);
 			} catch (Exception e) {
-				throw new OperationUnsuccessfulException("Cannont read value of this property.", e);
+				throw new OperationUnsuccessfulException("Cannont read value of this property.", e); //$NON-NLS-1$
 			}
 		}
 		return value;
@@ -88,14 +88,14 @@ public class ObjectPropertyWin32Impl implements ObjectProperty {
 			return PropertyAttributeWin32Impl.getAttributes(this, parent.getDevice().getProperties().getPropertyAttributes(parent.getID(), id));
 			
 		} catch (COMException e) {
-			throw new OperationUnsuccessfulException("Cannot retrive attributes of property.", e); 
+			throw new OperationUnsuccessfulException("Cannot retrive attributes of property.", e);  //$NON-NLS-1$
 		}
 	}
 
 
 	@Override
 	public String toString() {
-		String s = "";
+		String s = ""; //$NON-NLS-1$
 		PropVariant val = null;
 		try {
 			val = getValue();
@@ -105,8 +105,8 @@ public class ObjectPropertyWin32Impl implements ObjectProperty {
 		if(val != null){
 			s = val.toString();
 		}
-		return "ObjectPropertyWin32Impl [parent=" + parent + ", id=" + id
-				+ ", value=" + s + "]";
+		return "ObjectPropertyWin32Impl [parent=" + parent + ", id=" + id //$NON-NLS-1$ //$NON-NLS-2$
+				+ ", value=" + s + "]"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 }

@@ -77,8 +77,8 @@ public class ResourceAttributeWin32Impl implements ResourceAttribute {
 
 	@Override
 	public String toString() {
-		return "ResourceAttributeWin32Impl [id=" + id
-				+ ", value=" + value + "]";
+		return "ResourceAttributeWin32Impl [id=" + id //$NON-NLS-1$
+				+ ", value=" + value + "]"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	
