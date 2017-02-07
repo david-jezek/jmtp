@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+compileJava.options.encoding = 'UTF-8';
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+		output.classesDir = "target/classes"
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '[4.12,)'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '[2.5,)'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '[2.5,)'
+}
+

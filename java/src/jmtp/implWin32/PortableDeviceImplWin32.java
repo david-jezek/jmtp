@@ -21,8 +21,9 @@ package jmtp.implWin32;
 
 import java.util.Date;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
-
+import be.derycke.pieter.com.COM;
+import be.derycke.pieter.com.COMException;
+import be.derycke.pieter.com.COMReference;
 import jmtp.DeviceAlreadyOpenedException;
 import jmtp.DeviceClosedException;
 import jmtp.PortableDevice;
@@ -35,9 +36,6 @@ import jmtp.PowerSource;
 import jmtp.PropVariant;
 import jmtp.PropertyKey;
 import jmtp.Win32WPDDefines;
-import be.derycke.pieter.com.COM;
-import be.derycke.pieter.com.COMException;
-import be.derycke.pieter.com.COMReference;
 
 /**
  *
