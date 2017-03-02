@@ -19,6 +19,9 @@
 
 package jmtp;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import jmtp.implWin32.PortableDeviceManagerImplWin32;
 
 /**
@@ -28,18 +31,21 @@ import jmtp.implWin32.PortableDeviceManagerImplWin32;
  */
 public class PortableDeviceManagerFactory {
 
+	private static final Logger logger = LogManager.getLogger(PortableDeviceManagerFactory.class);
+
 	private static PortableDeviceManager deviceManager;
-	
-	public static PortableDeviceManager getPortableDeviceManager(){
-		if(deviceManager == null){
-	        if(System.getProperty("os.name").toLowerCase().contains("windows")) { //$NON-NLS-1$ //$NON-NLS-2$
-	        	deviceManager = new PortableDeviceManagerImplWin32();
-	        }
-	        else
-	            throw new RuntimeException("not supported os"); //$NON-NLS-1$
+
+	public static PortableDeviceManager getPortableDeviceManager() {
+		if (deviceManager == null) {
+			if (System.getProperty("os.name").toLowerCase().contains("windows")) { //$NON-NLS-1$ //$NON-NLS-2$
+				deviceManager = new PortableDeviceManagerImplWin32();
+			} else {
+				// throw new RuntimeException("not supported os"); //$NON-NLS-1$
+				logger.error("Not suported OS. currnet OS " + System.getProperty("os.name"));
+			}
 
 		}
 		return deviceManager;
 	}
-	
+
 }
