@@ -82,7 +82,7 @@ public class PortableDeviceObjectOutputStream extends OutputStream implements CO
 		super.close();
 		synchronized(this){
 			if(!isClosed){
-				closeIStream();
+				getReference().pubRelease();
 				isClosed = true;
 			}
 		}

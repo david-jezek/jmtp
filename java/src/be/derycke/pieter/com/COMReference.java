@@ -48,7 +48,7 @@ public class COMReference {
                 synchronized(lock) {
                     for(WeakReference<COMReference> reference : references) {
                     	try {
-	                    	reference.get().release();
+	                    	reference.get().pubRelease();
                     	}
                     	catch(NullPointerException e) {}
                     }
@@ -59,11 +59,14 @@ public class COMReference {
     
     private WeakReference<COMReference> reference;
     private long pIUnknown;
+    private boolean released;
     
     public COMReference(long pIUnkown) {
         this.pIUnknown = pIUnkown;
+        synchronized (this) {
+        	released = true;
+		}
         reference = new WeakReference<COMReference>(this);
-        
         synchronized(lock) {
             references.add(reference);
         }
@@ -71,6 +74,13 @@ public class COMReference {
     
     public long getMemoryAddress() {
         return pIUnknown;
+    }
+    
+    public synchronized void pubRelease(){
+    	if(!released){
+    		release();
+    		released = true;
+    	}
     }
     
     native long release();
@@ -81,7 +91,7 @@ public class COMReference {
     protected void finalize() {
         synchronized(lock) {
             references.remove(reference);
-            release();
+            pubRelease();
         }
     }
 }

@@ -76,7 +76,7 @@ public class PortableDeviceObjectInputStream extends InputStream implements COMR
 	public synchronized void close() throws IOException {
 		super.close();
 		if(!isClosed){
-			closeIStream();
+			getReference().pubRelease();
 			isClosed = true;
 		}
 	}
