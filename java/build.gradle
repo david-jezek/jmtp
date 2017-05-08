@@ -1,10 +1,30 @@
-apply plugin: 'java'
+import groovy.swing.SwingBuilder
+apply plugin: "java"
+apply plugin: "base"
 
-compileJava.options.encoding = 'UTF-8';
+buildscript {
+	repositories {
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+		 mavenCentral()
+	}
+	dependencies {
+		classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.4"
+	}
+}
+
+apply plugin: "org.sonarqube"
+
 
 repositories {
     mavenCentral()
 }
+
+
+sourceCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -24,3 +44,156 @@ dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '[2.5,)'
 }
 
+
+ext.sonarProperties = new HashMap<String, String>();
+ext.sonarProperties.put("sonar.projectName", "jmtp");
+ext.sonarProperties.put("sonar.projectKey", "jmtp");
+ext.sonarProperties.put("sonar.projectVersion", "1.0");
+ext.sonarProperties.put("sonar.sourceEncoding", "UTF-8");
+ext.sonarProperties.put("sonar.language", "java");
+ext.sonarProperties.put("sonar.sources", "src");
+ext.sonarProperties.put("sonar.host.url", "http://vsrvfeia0h-110.vsb.cz:9006");
+ext.sonarProperties.put("sonar.login", System.getProperty("sonar.login"));
+ext.moduleNames = [];
+String libString = project.configurations.compile.resolve().toString();
+libString = libString.substring(1, libString.length()-1).replaceAll(" ", "");
+ext.sonarProperties.put("sonar.java.libraries", libString);
+println(libString);
+
+List<Map<String,String>> commits = new ArrayList<>();
+
+
+def execComand(workDir, command){
+	println("exec comand");
+		def stdOut = new ByteArrayOutputStream()
+		exec {
+		workingDir(workDir);
+				commandLine(command);
+				standardOutput = stdOut
+		}
+		return stdOut.toString();
+}
+
+def analyzeCommit(HashMap<String, String> commit, int count){
+	println("analyzeCommit");
+	println(execComand(".", ["git","reset","--hard", commit["id"]]));
+	List<String> months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+	String[] parts = commit["date"].split(" ");
+
+	def cat = tasks.create(name: commit["id"], type:org.sonarqube.gradle.SonarQubeTask){};
+
+	for(Map.Entry<String,String> entry: ext.sonarProperties.entrySet()){
+		cat.getProperties().put(entry.getKey(), entry.getValue());
+	}
+	String modules = "";
+	for(String moduleName : moduleNames){
+		File f = new File(moduleName);
+		if(f.exists() && f.isDirectory()){
+			if(!modules.isEmpty()){
+				modules +=",";
+			}
+			modules += moduleName;
+		}
+	}
+	cat.getProperties().put("sonar.modules", modules);
+	String commitDate = parts[4] + "-" + (months.indexOf(parts[1])+1) + "-" + parts[2];
+	cat.getProperties().put("sonar.projectVersion", sonarProperties.get("sonar.projectVersion") + "." + count + " - " + commit["author"]);
+	cat.properties.put("sonar.password", project.ext.get("sonar.password"));
+	cat.getProperties().put("sonar.projectDate", commitDate);
+	println("exec task id " + commit["id"] + "task "+ cat)
+	cat.execute();
+}
+
+task getSonarPassword(){
+	doLast{
+		def passwd = "";
+		if(project.ext.has("sonar.password")){
+			passwd = project.ext.get("sonar.password");
+		}
+		if(passwd == null || passwd.isEmpty() ){
+			passwd = System.getProperty("sonar.password");
+			if(passwd == null || passwd.isEmpty() ){
+				if(System.console() == null){
+					println("Fill password in gui form");
+					new SwingBuilder().edt {
+					dialog(modal: true, // Otherwise the build will continue running before you closed the dialog
+						title: 'Enter password', // Dialog title
+						alwaysOnTop: true, // pretty much what the name says
+						resizable: false, // Don't allow the user to resize the dialog
+						locationRelativeTo: null, // Place dialog in center of the screen
+						pack: true, // We need to pack the dialog (so it will take the size of it's children)
+						show: true // Let's show it
+					) {
+						vbox { // Put everything below each other
+						label(text: "Please enter key passphrase:")
+						input = passwordField()
+						button(defaultButton: true, text: 'OK', actionPerformed: {
+							passwd = input.password; // Set pass variable to value of input field
+							dispose(); // Close dialog
+						})
+						} // vbox end
+					} // dialog end
+					} // edt end
+				}
+				else {
+					
+					def p = System.console().readPassword("\nPlease enter sonarqube password: ");
+					passwd = new String(p);
+				}
+			}
+			else{
+				println("Using password from \$HOME/.gradle/gradle.properties");
+			}
+			project.ext.set("sonar.password", passwd);
+		}
+		else {
+		println("Already have passwod");
+		}
+	}
+}
+
+task listCommits() {
+	doLast{
+		println("list commits");
+		//println(execComand(".", ["git","reset","--hard", "HEAD"]));
+		//println(execComand(".", ["git","pull"]));
+		def logOut = execComand(".", ["git","log"]);
+		//List<Map<String,String>> commits = new ArrayList<>();
+		for(String com : logOut.split("^commit |\ncommit ")){
+		if(!com.isEmpty()){
+			def parts = com.split("\nAuthor: |\nDate:  |\ndate:  |\n\n");
+			Map<String,String> commit = new HashMap<>();
+			commit.put("id", parts[0].trim());
+			commit.put("author", parts[1].trim());
+			commit.put("date", parts[2].trim());
+			if(parts.length > 3){
+				commit.put("message", parts[3].replace("    ","").trim());
+			}
+			commits.add(commit);
+		}
+		}
+		java.util.Collections.reverse(commits);
+	}
+}
+
+task analyseAll(dependsOn:[listCommits, getSonarPassword, build]){
+	doLast{
+		println("analseAll");
+		int count = 1;
+		for(HashMap<String, String> commit:commits){
+			analyzeCommit(commit, count++);
+		}
+	}
+}
+
+task analyse(type:org.sonarqube.gradle.SonarQubeTask, dependsOn: [build, getSonarPassword]) {
+	doLast{
+		println("analseAll");
+		for(Map.Entry<String,String> entry: ext.sonarProperties.entrySet()){
+			properties.put(entry.getKey(), entry.getValue());
+		}
+		//properties.put("sonar.sources", sourceSets.main.java.srcDirs.stream().map({dir -> dir.toString()}).collect(java.util.stream.Collectors.joining(";")));
+
+		properties.put("sonar.password", project.ext.get("sonar.password"));
+	}
+}
