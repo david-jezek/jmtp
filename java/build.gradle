@@ -14,9 +14,11 @@ buildscript {
 	}
 }
 
-apply plugin: "org.sonarqube"
-
-
+allprojects {
+	if( rootProject == project ) {
+		apply plugin: 'sonar-runner'
+	}
+}
 repositories {
     mavenCentral()
 }
