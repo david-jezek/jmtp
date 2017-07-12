@@ -366,11 +366,9 @@ class PortableDeviceObjectImplWin32 implements PortableDeviceObject {
 					Win32WPDDefines.WPD_CONTENT_TYPE_GENERIC_FILE);
 			PortableDevicePropVariantCollectionImplWin32 objectIds = new PortableDevicePropVariantCollectionImplWin32();
 			String obId = getID();
-			System.out.println(obId);
 			PropVariant pv = new PropVariant(obId);
 			objectIds.add(pv);
 			device.getContent().delete(0, objectIds);
-			System.out.println("deleted"); //$NON-NLS-1$
 			this.objectID = device.getContent().createObjectWithPropertiesAndData(values, newContent, size);
 		} catch (COMException e) {
 			throw new OperationUnsuccessfulException("Update content unsucessfull.", e); //$NON-NLS-1$

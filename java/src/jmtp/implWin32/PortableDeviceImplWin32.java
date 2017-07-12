@@ -197,13 +197,11 @@ class PortableDeviceImplWin32 implements PortableDevice {
 		if (friendlyName == null) {
 			boolean wasOpened = opened;
 			if (!opened) {
-				System.out.println("fr name open"); //$NON-NLS-1$
 				open();
 			}
 			try {
 				friendlyName = getDeviceFriendlyName(deviceID);
 				if (!wasOpened) {
-					System.out.println("fr name close"); //$NON-NLS-1$
 					close();
 				}
 			} catch (COMException e) {
